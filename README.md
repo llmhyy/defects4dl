@@ -1,7 +1,7 @@
 # defects4dl
 A deep learning general bug library.
 
-Defects4dl is available in two ways，the command line and Web sites.
+Defects4dl is available in two ways，the Command line and Web sites.
 
 Command line:
 It hasn't been adjusted yet.

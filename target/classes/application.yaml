@@ -1,0 +1,11 @@
+server:
+  address: 127.0.0.1
+  port: 9000
+spring:
+  resources:
+    static-locations: classpath:templates/,classpath:js/
+  mvc:
+    view:
+      suffix: .html
+      prefix: static/
+    static-path-pattern: /static/**

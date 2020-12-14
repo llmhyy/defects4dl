@@ -1,0 +1,66 @@
+
+<root>
+
+    <sir>
+        <name>keras</name>
+        <source>https://github.com/Liang813/keras</source>
+        <bug>
+            <id>keras11657</id>
+            <errormessage>TypeError</errormessage>
+            <describe>KerasRegressor.predict does not squeeze batch dims,If the input to KerasRegressor.predict() is an array with one example, then the output should be a 1D array with one example, not a 0D array.</describe>
+            <rootCause>1</rootCause>
+            <type>shape mismatch</type>
+            <buggyVersion>
+                <buggytestCmd>keras11657-buggy.sh</buggytestCmd>
+                <buggycommit>7cd6c59789c8e469c0d3cab6bca7ae3d2d028002</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>keras11657-fix.sh</fixtestCmd>
+                <fixcommit>c2d01f5ea69170a2365050368dfa534b75592c06</fixcommit>
+            </fixVersion>
+        </bug>
+    </sir>
+
+    <sir>
+        <name>keras</name>
+        <source>https://github.com/Liang813/keras</source>
+        <bug>
+            <id>keras9812</id>
+            <errormessage>ValueError</errormessage>
+            <describe>Use NASNetLarge，get Error  It only works with shape (331,331,3) but for larger inputs like (640,640,3) does not work again.     But In docs NASNetLarge: 'It should have exactly 3 inputs channels, and width and height should be no smaller than 32. E.g. (200, 200, 3) would be one valid value.'</describe>
+            <rootCause>1</rootCause>
+            <type>shape mismatch</type>
+            <buggyVersion>
+                <buggytestCmd>keras9812-buggy.sh</buggytestCmd>
+                <buggycommit>736b7a705db802d63ddcee1cd0687f806ef2d495</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>keras9812-fix.sh</fixtestCmd>
+                <fixcommit>2f1a1780436ee91f44944061e046e43e9719300c</fixcommit>
+            </fixVersion>
+        </bug>
+    </sir>
+
+    <sir>
+        <name>GPflow</name>
+        <source>https://github.com/Liang813/GPflow</source>
+        <bug>
+            <id>GPflow813</id>
+            <errormessage>ValueError</errormessage>
+            <describe>The current implementation of ndiag_mc didn't handle multi-dimensional kwargs Ys .</describe>
+            <rootCause>1</rootCause>
+            <type>shape mismatch</type>
+            <buggyVersion>
+                <buggytestCmd>GPflow813-buggy.sh</buggytestCmd>
+                <buggycommit>1db48f3a735eb0fba06a7d503f080a7ead512604</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>GPflow813-fix.sh</fixtestCmd>
+                <fixcommit>13dd23362cdb30f6478f48f5a7ca4fcab4108580</fixcommit>
+            </fixVersion>
+        </bug>
+    </sir>
+
+
+
+</root>

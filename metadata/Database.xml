@@ -60,7 +60,63 @@
             </fixVersion>
         </bug>
     </sir>
-
+    <sir>
+        <name>Keras</name>
+        <source>https://github.com/Liang813/keras</source>
+        <bug>
+            <id>Keras6387</id>
+            <errormessage>InvalidArgumentError</errormessage>
+            <describe>It seems that the TimeDistributed layer has a similar issue as the Bidirectional layer when passed a layer that requires the learning phase. Seems like wrapper is not taking good care of learning phase.</describe>
+            <rootCause>1</rootCause>
+            <type>learning phase</type>
+            <buggyVersion>
+                <buggytestCmd>Keras6387-buggy.sh</buggytestCmd>
+                <buggycommit></buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>Keras6387-fix.sh</fixtestCmd>
+                <fixcommit></fixcommit>
+            </fixVersion>
+        </bug>
+    </sir>
+    <sir>
+        <name>Keras</name>
+        <source>https://github.com/Liang813/keras</source>
+        <bug>
+            <id>Keras5975</id>
+            <errormessage>InvalidArgumentError</errormessage>
+            <describe>Bidirectional wrapper produces error with any Recurrent layer with dropout or recurrent_dropout argument.Seems like wrapper is not taking good care of learning phase.</describe>
+            <rootCause>1</rootCause>
+            <type>learning phase</type>
+            <buggyVersion>
+                <buggytestCmd>Keras5975-buggy.sh</buggytestCmd>
+                <buggycommit></buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>Keras5975-fix.sh</fixtestCmd>
+                <fixcommit></fixcommit>
+            </fixVersion>
+        </bug>
+    </sir>
+    <sir>
+        <name>Keras</name>
+        <source>https://github.com/Liang813/keras</source>
+        <bug>
+            <id>Keras5840</id>
+            <errormessage>AssertionError</errormessage>
+            <describe>Simple merge layers that just extend _Merge and implement _merge_function report that they have multiple outputs (as many as inputs) with the same shape.</describe>
+            <rootCause>1</rootCause>
+            <type>shape mismatch</type>
+            <buggyVersion>
+                <buggytestCmd>Keras5840-buggy.sh</buggytestCmd>
+                <buggycommit></buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>Keras5840-fix.sh</fixtestCmd>
+                <fixcommit></fixcommit>
+            </fixVersion>
+        </bug>
+    </sir>
 
 
 </root>

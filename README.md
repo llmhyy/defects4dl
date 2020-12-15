@@ -10,7 +10,7 @@ Web sites:
 It is a Spring Boot and Maven project.
 
 
-## Useing
+## Using
 You need to configure Maven and it will automatically download dependencies for you.
 
 The entry to the program is: AppEnter

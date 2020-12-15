@@ -3,15 +3,15 @@ A deep learning general bug library.
 
 Defects4dl is available in two ways，the Command line and Web sites.
 
-Command line:
-## Using
+## Command line:
+### Using
 It hasn't been adjusted yet.
 
 ## Web sites:
 It is a Spring Boot and Maven project.
 
 
-## Using
+### Using
 You need to configure Maven and it will automatically download dependencies for you.
 
 The entry to the program is: AppEnter

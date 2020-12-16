@@ -37,17 +37,8 @@ public class DefectsAction {
         return dockerServer.pullBug(bugID);
     }
 
-//    public String info(String bugId, String version) throws Exception {
-//        String SIRName = DefectsDB.getSirName(bugId).toLowerCase();
-//        String commitId =DefectsDB.getBug(bugId).getEntry(version).getOrignCommit();
-//        String cdCmd="cd "+File.separator+"home"+File.separator+SIRName;
-//        return dockerServer.run(cdCmd+";git show "+commitId+"  --name-only");
-//    }
-
     public String info(String bugId) throws Exception {
         Bug bug = DefectsDB.getBug(bugId);
-        //String testCase = bug.getTestCases();
-        //String rootCause = bug.getRootCause();
         String errorMessage = bug.getErrorMessage();
         String describe = bug.getDescribe();
         String rootCause = bug.getRootCause();
@@ -146,6 +137,7 @@ public class DefectsAction {
     public void setEnviroment() {
         Configs.refresh();
         String[] toolPaths = Configs.envPath.split(";");
+        System.out.println(toolPaths);
         exec.setEnviroment(toolPaths);
         dockerServer.setEnviroment(toolPaths);
     }

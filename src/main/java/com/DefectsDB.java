@@ -18,7 +18,6 @@ public class DefectsDB {
     private static Map<String, String> sirBugMap;
 
 
-    //public static Map<String, String> initDB() {
     public static List<SIR> initDB() {
         Document document = DataUtil.getDocument();
         NodeList sirList = document.getElementsByTagName(Constant.XML_SIR_LABEL);

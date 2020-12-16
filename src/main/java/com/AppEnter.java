@@ -28,6 +28,9 @@ public class AppEnter {
         System.out.println(LOGO);
         System.out.println(map);
 
+        //启动web项目
+        SpringApplication.run(AppEnter.class, args);
+
         //启动cli模块
         try {
             Navigation.main(args);
@@ -35,7 +38,5 @@ public class AppEnter {
             e.printStackTrace();
         }
 
-        //启动web项目
-        SpringApplication.run(AppEnter.class, args);
     }
 }

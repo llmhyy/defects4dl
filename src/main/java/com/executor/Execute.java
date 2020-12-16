@@ -20,7 +20,9 @@ public class Execute extends Executor{
     public void setEnviroment(String args[]) {
 
         Map<String, String> map = pb.environment();
-        StringBuilder PATH = new StringBuilder(map.get("PATH"));
+        System.out.println(map);
+        System.out.println(map.get("Path"));
+        StringBuilder PATH = new StringBuilder(map.get("Path"));
         for (int i = 1; i < args.length; i++) {
             PATH.append(File.pathSeparator).append(args[i]);
         }

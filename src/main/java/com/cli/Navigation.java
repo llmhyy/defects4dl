@@ -19,8 +19,7 @@ public class Navigation {
     private final static String FEATURES = LIST + "    --show all bug lise\n" + LIST
             + " grep <Key*>           --filter by keyword\n" + INFO
             + "<bugID>                  --show bug Info,such as testcase,\n"
-            + "                                diff in wc bic,commitcount,datediff\n" + INFO
-            + "<bugID><version>             --show commit Info\n" + TEST
+            + "                                diff in wc bic,commitcount,datediff\n" + TEST
             + "<bugId> <version><param>    --test a case.Note that param equals '-r',means run\n"
             + "                                   the reproducible case, default as null\n" + DIFF
             + "<bugId> <version1> <version2>    --diff two version,~1 means fixed parent version\n" + ADD

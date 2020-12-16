@@ -39,7 +39,7 @@
     </style>
 </head>
 <body>
-<div class="container-fluid">
+<div class="container-fluid" id="BugDetail">
     <p></p>
     <p></p>
     <div class="container-fluid col-xs-12 mt-10">
@@ -96,7 +96,7 @@
 
         <div style=" border:1px solid #bbe1f1;background:#eefaff">
             点击按钮反馈的消息显示再此
-            
+
         </div>
 
     </div>
@@ -104,4 +104,38 @@
 
 </div>
 </body>
+
+
+<script src="/static/vue.min.js"></script>
+<script>
+    var vm = new Vue({
+        el: '#BugDetail',
+        data:{
+            bugID: null,
+            errorMessage: null,
+            type: null,
+            describe: null,
+            dataInfoDetail: [],
+
+        },
+        mounted: function () {
+            //调用在method属性中定义的方法
+            this.getInfoD();
+
+        },
+        methods: {
+            getInfoD: function(bugID) {
+                axios.get("getBugInfo")
+                    .then(response => {
+                        console.log(response);
+                    })
+            },
+
+        }
+
+    })
+
+
+</script>
+
 </html>

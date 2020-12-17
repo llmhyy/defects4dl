@@ -8,13 +8,13 @@ import com.vo.Bug;
 import com.vo.BuggyVersion;
 import com.vo.FixVersion;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.io.File;
 import java.util.ArrayList;
 
 public class DefectsAction {
     public static Execute exec = new Execute();
-    //LocalServer localServer = new LocalServer();
     DockerServer dockerServer =new DockerServer();
 
     public String[] ls() {
@@ -50,11 +50,9 @@ public class DefectsAction {
         sb.append("BugID: ").append(bugId).append("\n");
         sb.append("ErrorMessage: ").append(errorMessage).append("\n");
         sb.append("Describe: ").append(describe).append("\n");
-//        sb.append("TESTCASE:").append(testCase).append("\n");
         sb.append("ROOTCAUSE:").append(rootCause).append("\n");
 
         sb.append("INFO DETAIL:\n");
-        //String wc = "", bfc = "";
         String cdCmd="cd "+File.separator+"home"+File.separator+"metadata"+File.separator+SIRName;
 
         BuggyVersion buggyVersion = bug.getBuggyVersion();
@@ -76,6 +74,30 @@ public class DefectsAction {
         return sb.toString();
 
     }
+
+    public Bug bugDetail(String bugId) throws Exception {
+
+        Bug bug = DefectsDB.getBug(bugId);
+        String errorMessage = bug.getErrorMessage();
+        String describe = bug.getDescribe();
+        String rootCause = bug.getRootCause();
+        String type = bug.getType();
+        BuggyVersion buggyVersion = bug.getBuggyVersion();
+        String buggytestCmd = buggyVersion.getBuggytestCmd();
+        String buggycommit = buggyVersion.getBuggycommit();
+        BuggyVersion BuggyVersion = new BuggyVersion(buggytestCmd,buggycommit);
+
+        FixVersion fixVersion = bug.getFixVersion();
+        String fixtestCmd = fixVersion.getFixtestCmd();
+        String fixcommit = fixVersion.getFixcommit();
+        FixVersion FixVersion = new FixVersion(fixtestCmd,fixcommit);
+
+        Bug Bug = new Bug(bugId, errorMessage,describe,rootCause,type,BuggyVersion,FixVersion);
+
+        return Bug;
+
+    }
+
 
     public void test(String bugId, String version, boolean r) throws Exception {
         Bug bug = DefectsDB.getBug(bugId);

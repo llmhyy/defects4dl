@@ -141,7 +141,7 @@
                         {{ item.bugs[0].describe }}
                     </td>
                     <td>
-                        <button type="button" class="btn btn-info btn-sm">详情</button>
+                        <button type="button" class="btn btn-info btn-sm" v-on:click="getInfoD(item.bugs[0].bugID)">Detail</button>
                     </td>
                 </tr>
 
@@ -183,7 +183,7 @@
             initBug: function() {
                 axios.get("getBug")
                     .then(response => {
-                        //console.log(response.data);
+
                         vm.dataList = response.data;
                         vm.bugCount = response.data.length;
 
@@ -241,6 +241,14 @@
                     }
                 }
                 vm.dataList = SelectErrorMList;
+
+            },
+            getInfoD: function(bugID) {
+                //将localStorage传递到哪个页面
+                location.href = 'bugDetail'
+                //设置localStorage
+                window.localStorage.setItem('bugID',bugID);
+
 
             },
 

@@ -53,23 +53,23 @@
             <tbody>
             <tr>
                 <td class="item-title">The library and the BugID</td>
-                <td>keras9883</td>
+                <td>{{ dataInfoDetail.bugID }}</td>
                 <td class="item-title">ErrorMessage</td>
-                <td>ValueError</td>
+                <td>{{ dataInfoDetail.errorMessage }}</td>
             </tr>
             <tr>
                 <td class="item-title">RootCause</td>
-                <td >11111111111111111111111111111111111111111</td>
+                <td >{{ dataInfoDetail.rootCause }}</td>
                 <td class="item-title">BuggyCommit</td>
-                <td >11111111111111111111111111111111111111111</td>
+                <td >{{ dataInfoDetail.buggyVersion.buggycommit }}</td>
             </tr>
             <tr>
                 <td class="item-title">Describe</td>
-                <td colspan="3">1111111111111111111111111111111111111111111111111111111111111111</td>
+                <td colspan="3">{{ dataInfoDetail.describe }}</td>
             </tr>
             <tr>
                 <td class="item-title">FixCommit</td>
-                <td >11111111111111111111111111111111111111111</td>
+                <td >{{ dataInfoDetail.fixVersion.fixcommit }}</td>
                 <td class="item-title">If you want to view both versions of the modification record, please click the corresponding button on the right</td>
                 <td >
                     <button class="btn btn-primary btn-sm" type="button">Diff</button>
@@ -111,25 +111,26 @@
     var vm = new Vue({
         el: '#BugDetail',
         data:{
-            bugID: null,
-            errorMessage: null,
-            type: null,
-            describe: null,
+
             dataInfoDetail: [],
 
         },
         mounted: function () {
-            //调用在method属性中定义的方法
-            this.getInfoD();
+            //获取传递过来的localStorage
+            console.log(window.localStorage.getItem('bugID'))
+
+            var bugID = window.localStorage.getItem('bugID');
+            axios.get("getBugInfo?bugID="+ bugID)
+                .then(response => {
+
+                    vm.dataInfoDetail = response.data;
+                    console.log(vm.dataInfoDetail)
+
+                })
 
         },
         methods: {
-            getInfoD: function(bugID) {
-                axios.get("getBugInfo")
-                    .then(response => {
-                        console.log(response);
-                    })
-            },
+
 
         }
 

@@ -1,17 +1,15 @@
 package com.executor;
-//import com.utils.CodeUtils;
-//import com.utils.ColorConsole;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 public class Execute extends Executor{
-    public final static String OS_WINDOWS = "windows";
+    public final static String OS_WINDOWS = "windows 10";
     public final static String OS_MAC = "mac";
     public final static String OS_UNIX = "unix";
 
@@ -20,8 +18,8 @@ public class Execute extends Executor{
     public void setEnviroment(String args[]) {
 
         Map<String, String> map = pb.environment();
-        System.out.println(map);
-        System.out.println(map.get("Path"));
+//        System.out.println(map);
+//        System.out.println(map.get("Path"));
         StringBuilder PATH = new StringBuilder(map.get("Path"));
         for (int i = 1; i < args.length; i++) {
             PATH.append(File.pathSeparator).append(args[i]);
@@ -37,16 +35,18 @@ public class Execute extends Executor{
         StringBuilder builder = new StringBuilder();
         try {
             String OS = System.getProperty("os.name").toLowerCase();
+            System.out.println(OS);
+            System.out.println(OS.equals(OS_WINDOWS));
             if (OS.equals(OS_WINDOWS)) {
                 pb.command("cmd.exe", "/c", cmd);
             } else {
                 pb.command("bash", "-c", cmd);
             }
             Process process = pb.start();
-            InputStreamReader inputStr = new InputStreamReader(process.getInputStream());
-            BufferedReader bufferReader = new BufferedReader(inputStr);
+            InputStreamReader inputStr = new InputStreamReader(process.getInputStream());  // java.io.InputStreamReader@2493eec6
+            BufferedReader bufferReader = new BufferedReader(inputStr);   // java.io.BufferedReader@42d174ad
             String line;
-            while ((line = bufferReader.readLine()) != null) {
+            while ((line = bufferReader.readLine()) != null){  // bufferReader.readLine() = null
                 builder.append("\n").append(line);
             }
         } catch (IOException ex) {

@@ -12,12 +12,12 @@ import java.util.Map;
 public class DockerExecutor extends Executor {
     private static ProcessBuilder pb = new ProcessBuilder();
     // .sh file is stored in this folder
-    private final static String SCRIPTS_FOLDER = "scripts";
+    private final static String SCRIPTS_FOLDER = "script";
 
     private final static String BASH = "bash";
     private final  static String  CMD = "cmd.exe";
 
-    public static String DOCKER_JAVA_PLAIN_CONTAINER_ID = "49215f6be256";
+    public static String DOCKER_JAVA_PLAIN_CONTAINER_ID = "c2d6e8a6407c";
 
     private final static String DOCKER_EXEC_BASED_CMD = "docker exec";
 

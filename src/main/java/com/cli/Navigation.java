@@ -34,7 +34,7 @@ public class Navigation {
         jctbe.setEnviroment();
 
         System.out.println("Start docker");
-        String result = jctbe.startDocker();
+        String result = jctbe.startDocker();          //result为空，获取失败
         boolean flag = result.contains(DockerExecutor.DOCKER_JAVA_PLAIN_CONTAINER_ID);
         result = flag == true ? "Docker start successful" : "Something wrong in docker starting";
         System.out.println(result);

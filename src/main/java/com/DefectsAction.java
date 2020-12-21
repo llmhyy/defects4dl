@@ -175,6 +175,7 @@ public class DefectsAction {
     }
 
     public  String  startDocker() {
+
         return exec.exec("docker start "+ DockerExecutor.DOCKER_JAVA_PLAIN_CONTAINER_ID);
     }
     public String exit() {

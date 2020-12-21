@@ -1,0 +1,8 @@
+{
+  "name": "defects4dl",
+  "version": "1.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "vue-code-diff": "0.0.5"
+  }
+}

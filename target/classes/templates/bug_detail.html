@@ -2,14 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Bug Detail</title>
+    <title>Title</title>
     <meta charset="UTF-8">
+    <title>Bug Detail</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <link href="/static/bootstrap4/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.32.0/codemirror.css" />
     <script src="/static/bootstrap4/js/bootstrap.min.js"></script>
     <script src="/static/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/axios/0.18.0/axios.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.32.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.32.0/addon/search/searchcursor.min.js"></script>
+    <script src="/static/mergely/package/lib/mergely.js" type="text/javascript"></script>
+    <link rel="stylesheet" media="all" href="/static/mergely/package/lib/mergely.css" />
     <style type="text/css">
         table
         {
@@ -35,6 +42,11 @@
         table tr:nth-child(even)
         {
             background: #F5FAFA;
+        }
+        .CodeMirror,
+        .mergely-margin,
+        .mergely-column {
+            height: 400px;
         }
     </style>
 </head>
@@ -72,7 +84,7 @@
                 <td >{{ dataInfoDetail.fixVersion.fixcommit }}</td>
                 <td class="item-title">If you want to view both versions of the modification record, please click the corresponding button on the right</td>
                 <td >
-                    <button class="btn btn-primary btn-sm" type="button">Diff</button>
+                    <button class="btn btn-primary btn-sm" type="button" v-on:click="showDiff">Diff</button>
                 </td>
             </tr>
             <tr>
@@ -93,12 +105,13 @@
     <div style="height: 50px"></div>
 
     <div class="container-fluid col-xs-12 mt-10">
-
-        <div style=" border:1px solid #bbe1f1;background:#eefaff">
-            点击按钮反馈的消息显示再此
-
+<!--        <div id="mergely" style=" border:1px solid #bbe1f1;background:#eefaff">-->
+<!--        </div>-->
+        <div class="mergely-full-screen-8">
+            <div class="mergely-resizer">
+                <div id="mergely" style="display: none"></div>
+            </div>
         </div>
-
     </div>
 
 
@@ -107,36 +120,47 @@
 
 
 <script src="/static/vue.min.js"></script>
+<!--<script src="/static/diff.js" type="text/javascript"></script>-->
 <script>
+    $(document).ready(function () {
+        // set editor content
+        $('#mergely').mergely({
+            cmsettings :{
+
+            },
+            lhs: function(setValue) {
+                setValue('the quick red fox\njumped over the hairy dog');
+            },
+            rhs: function(setValue) {
+                setValue('the quick brown fox\njumped over the lazy dog');
+            }
+        });
+    });
+
     var vm = new Vue({
         el: '#BugDetail',
         data:{
-
             dataInfoDetail: [],
-
         },
         mounted: function () {
             //获取传递过来的localStorage
-            console.log(window.localStorage.getItem('bugID'))
-
             var bugID = window.localStorage.getItem('bugID');
             axios.get("getBugInfo?bugID="+ bugID)
                 .then(response => {
-
                     vm.dataInfoDetail = response.data;
-                    console.log(vm.dataInfoDetail)
 
                 })
 
         },
         methods: {
-
+            showDiff: function (){
+                document.getElementById("mergely").style.display="";
+            },
 
         }
-
     })
 
-
 </script>
+
 
 </html>

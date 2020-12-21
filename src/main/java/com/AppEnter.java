@@ -25,13 +25,13 @@ public class AppEnter {
         //初始数据
         //Map<String, String> map = DefectsDB.initDB();
         List<SIR> map = DefectsDB.initDB();
-        System.out.println(LOGO);
         System.out.println(map);
 
         //启动web项目
         SpringApplication.run(AppEnter.class, args);
 
         //启动cli模块
+        System.out.println(LOGO);
         try {
             Navigation.main(args);
         } catch (Exception e) {

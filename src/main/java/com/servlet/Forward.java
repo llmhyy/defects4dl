@@ -15,4 +15,9 @@ public class Forward {
     public String bugDetail(){
         return "bug_detail";
     }
+
+    @RequestMapping("/showDiff")
+    public String codeDiff(){
+        return "showDiff";
+    }
 }

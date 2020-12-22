@@ -69,8 +69,8 @@
                 <tr>
                     <td class="item-title">Count of type Mismatch type</td>
                     <td>{{ tmCount }}</td>
-                    <td class="item-title">Count of learning phase</td>
-                    <td>{{ lpCount }}</td>
+                    <td class="item-title">Count of Argument Error</td>
+                    <td>{{ aeCount }}</td>
                 </tr>
 
             </table>
@@ -83,7 +83,7 @@
                     <option value="shapeMismatch">shape mismatch</option>
                     <option value="API">API</option>
                     <option value="typeMismatch">type mismatch</option>
-                    <option value="lPhase">learning phase</option>
+                    <option value="argumentError">Argument Error</option>
                 </select>
             </div>&nbsp;&nbsp;
             <div class="form-group query-form-group">
@@ -116,13 +116,13 @@
                         ErrorMessage
                     </th>
                     <th style="width: 30px">
-                        General Bug Type
+                        Bug Type
                     </th>
                     <th style="width: 30px">
                         Describe
                     </th>
                     <th style="width: 30px">
-                        操作
+                        Operate
                     </th>
                 </tr>
                 </thead>
@@ -170,7 +170,7 @@
             smCount: null,
             apiCount: null,
             tmCount: null,
-            lpCount: null,
+            aeCount: null,
             dataList: [],
 
         },
@@ -190,7 +190,7 @@
                         var smCount = 0;
                         var apiCount = 0;
                         var tmCount = 0;
-                        var lpCount = 0;
+                        var aeCount = 0;
                         for(var i=0;i<response.data.length;i++){
                             if (response.data[i].bugs[0].type == "shape mismatch"){
                                 smCount++;
@@ -199,14 +199,14 @@
                                 apiCount++;
                             }else if (response.data[i].bugs[0].type == "type mismatch"){
                                 tmCount++;
-                            }else if(response.data[i].bugs[0].type == "learning phase"){
-                                lpCount++;
+                            }else if(response.data[i].bugs[0].type == "Argument Error"){
+                                aeCount++;
                             }
                         }
                         vm.smCount = smCount;
                         vm.apiCount = apiCount;
                         vm.tmCount = tmCount;
-                        vm.lpCount = lpCount;
+                        vm.aeCount = aeCount;
 
                     })
             },

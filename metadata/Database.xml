@@ -68,7 +68,7 @@
             <errormessage>InvalidArgumentError</errormessage>
             <describe>It seems that the TimeDistributed layer has a similar issue as the Bidirectional layer when passed a layer that requires the learning phase. Seems like wrapper is not taking good care of learning phase.</describe>
             <rootCause>1</rootCause>
-            <type>learning phase</type>
+            <type>Argument Error</type>
             <buggyVersion>
                 <buggytestCmd>keras6387-buggy.sh</buggytestCmd>
                 <buggycommit></buggycommit>
@@ -87,7 +87,7 @@
             <errormessage>InvalidArgumentError</errormessage>
             <describe>Bidirectional wrapper produces error with any Recurrent layer with dropout or recurrent_dropout argument.Seems like wrapper is not taking good care of learning phase.</describe>
             <rootCause>1</rootCause>
-            <type>learning phase</type>
+            <type>Argument Error</type>
             <buggyVersion>
                 <buggytestCmd>keras5975-buggy.sh</buggytestCmd>
                 <buggycommit></buggycommit>

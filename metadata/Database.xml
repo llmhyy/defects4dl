@@ -71,11 +71,11 @@
             <type>Argument Error</type>
             <buggyVersion>
                 <buggytestCmd>keras6387-buggy.sh</buggytestCmd>
-                <buggycommit></buggycommit>
+                <buggycommit>7d52af64c03e71bcd23112a7086dc8aab1b37ed2</buggycommit>
             </buggyVersion>
             <fixVersion>
                 <fixtestCmd>keras6387-fix.sh</fixtestCmd>
-                <fixcommit></fixcommit>
+                <fixcommit>04bf5ac57a6071e32ffd340da0acb059912d922c</fixcommit>
             </fixVersion>
         </bug>
     </sir>
@@ -90,11 +90,11 @@
             <type>Argument Error</type>
             <buggyVersion>
                 <buggytestCmd>keras5975-buggy.sh</buggytestCmd>
-                <buggycommit></buggycommit>
+                <buggycommit>9217effdb445d9fd55853f716065579e2ffb9283</buggycommit>
             </buggyVersion>
             <fixVersion>
                 <fixtestCmd>keras5975-fix.sh</fixtestCmd>
-                <fixcommit></fixcommit>
+                <fixcommit>05f82d1534e93361de9181544335f9bcaceb860d</fixcommit>
             </fixVersion>
         </bug>
     </sir>
@@ -109,14 +109,242 @@
             <type>shape mismatch</type>
             <buggyVersion>
                 <buggytestCmd>keras5840-buggy.sh</buggytestCmd>
-                <buggycommit></buggycommit>
+                <buggycommit>9cf7f816f28a6ac7d7a4264ae015addd72e57321</buggycommit>
             </buggyVersion>
             <fixVersion>
                 <fixtestCmd>keras5840-fix.sh</fixtestCmd>
-                <fixcommit></fixcommit>
+                <fixcommit>c328a10b312ca55e949d32a4a896458fad1ebc4b</fixcommit>
+            </fixVersion>
+        </bug>
+    </sir>
+    <sir>
+        <name>Keras</name>
+        <source>https://github.com/Liang813/keras</source>
+        <bug>
+            <id>keras5108</id>
+            <errormessage>ValueError</errormessage>
+            <describe>Running the equivalent code in Convolution2D  for Convolution3D results in a ValueError because the input shape expected by the layer seems to be fixed to the first shape it saw.,Convolution3D fixes the input shape when the layer is built, which happens during the first call. This input shape is useful for some optimisations. Convolution2D does not fix the input shape.</describe>
+            <rootCause>1</rootCause>
+            <type>shape mismatch</type>
+            <buggyVersion>
+                <buggytestCmd>keras5108-buggy.sh</buggytestCmd>
+                <buggycommit>a5a775b79f46f3a198f71d613ccee899bec8e8ae</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>keras5108-fix.sh</fixtestCmd>
+                <fixcommit>a8795957abb2750a1b38cce34e074e6a2644bc43</fixcommit>
+            </fixVersion>
+        </bug>
+    </sir>
+    <sir>
+        <name>Keras</name>
+        <source>https://github.com/Liang813/keras</source>
+        <bug>
+            <id>Keras9883</id>
+            <errormessage>None</errormessage>
+            <describe>Conv2DTranspose infers the shape of the output using deconv_length but because the output shape of a transposed convolution is ambigous it can infer an undesired shape.</describe>
+            <rootCause>1</rootCause>
+            <type>shape mismatch</type>
+            <buggyVersion>
+                <buggytestCmd>Keras9883-buggy.sh</buggytestCmd>
+                <buggycommit>8a5d4bcc62f49d79839de9ddf8c72d97056ee522</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>Keras9883-fix.sh</fixtestCmd>
+                <fixcommit>6b99d2382e53c0f6f8124ed76db399741ad64fa4</fixcommit>
+            </fixVersion>
+        </bug>
+    </sir>
+    <sir>
+        <name>Keras</name>
+        <source>https://github.com/Liang813/keras</source>
+        <bug>
+            <id>Keras13073</id>
+            <errormessage>None</errormessage>
+            <describe>People set embedding with MAX_NUM_WORDS=3，but tokenizer return n-1 words i.e 2. </describe>
+            <rootCause>1</rootCause>
+            <type>shape mismatch</type>
+            <buggyVersion>
+                <buggytestCmd>Keras13073-buggy.sh</buggytestCmd>
+                <buggycommit>0fc33feb5f4efe3bb823c57a8390f52932a966ab</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>Keras13073-fix.sh</fixtestCmd>
+                <fixcommit>09521c9804c3ce218b44efa6d9b4af8b2c8cdd56</fixcommit>
+            </fixVersion>
+        </bug>
+    </sir>
+    <sir>
+        <name>Keras</name>
+        <source>https://github.com/Liang813/keras</source>
+        <bug>
+            <id>Keras2672</id>
+            <errormessage>None</errormessage>
+            <describe>cos mode does not carefully deal with division by zero, might be the cause of NaN. output = K.batch_dot(l1, l2, self.dot_axes) / denominator  </describe>
+            <rootCause>1</rootCause>
+            <type>zero division</type>
+            <buggyVersion>
+                <buggytestCmd>Keras2672-buggy.sh</buggytestCmd>
+                <buggycommit>973b5570aa4aea71323d6c08614d5e2a8f50a6ec</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>Keras2672-fix.sh</fixtestCmd>
+                <fixcommit>58cbb4bf425fc80771ebfe8053cbfe928a081b61</fixcommit>
+            </fixVersion>
+        </bug>
+    </sir>
+    <sir>
+        <name>CapsNet-Tensorflow</name>
+        <source>https://github.com/Liang813/CapsNet-Tensorflow</source>
+        <bug>
+            <id>CapsNet-Tensorflow4</id>
+            <errormessage>ValueError</errormessage>
+            <describe>The reconstruction part has to take the label as input.TODO: before reconstruction the input caps2 should do masking to pick. Out the activity vector of the correct digit capsule. </describe>
+            <rootCause>1</rootCause>
+            <type>shape mismatch</type>
+            <buggyVersion>
+                <buggytestCmd>CapsNet-Tensorflow4-buggy.sh</buggytestCmd>
+                <buggycommit>abbc810771d94bbd25a071a8aa57aabd6c4aa056</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>CapsNet-Tensorflow4-fix.sh</fixtestCmd>
+                <fixcommit>a614ee5dfb22445e8e165c0dfb64c408984062f9</fixcommit>
             </fixVersion>
         </bug>
     </sir>
 
-
+    <sir>
+        <name>TensorFlow.NET</name>
+        <source>https://github.com/Liang813/TensorFlow.NET</source>
+        <bug>
+            <id>TensorFlow.NET377</id>
+            <errormessage>None</errormessage>
+            <describe>Currently TensorShape only support int/long dimensions.
+                We sometimes need to use an unknown dimension that represents a varying batch size that changes from run to run. </describe>
+            <rootCause>1</rootCause>
+            <type>shape mismatch</type>
+            <buggyVersion>
+                <buggytestCmd>TensorFlow.NET377-buggy.sh</buggytestCmd>
+                <buggycommit>269611bf8652bfb031cbc84ca4bd8b995dd903e4</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>TensorFlow.NET377-fix.sh</fixtestCmd>
+                <fixcommit>9e237a67334f00bc59d6dfe7f4ffb2944f95e769</fixcommit>
+            </fixVersion>
+        </bug>
+    </sir>
+    <sir>
+        <name>tensorflow_scala</name>
+        <source>https://github.com/Liang813/tensorflow_scala</source>
+        <bug>
+            <id>tensorflow_scala18</id>
+            <errormessage>ValueError</errormessage>
+            <describe>Trying the random distribution ops with default arguments gave  the  error.</describe>
+            <rootCause>1</rootCause>
+            <type>shape mismatch</type>
+            <buggyVersion>
+                <buggytestCmd>tensorflow_scala18-buggy.sh</buggytestCmd>
+                <buggycommit>dd021285d9ed87377b9956d8b08ac74ddecb4602</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>tensorflow_scala18-fix.sh</fixtestCmd>
+                <fixcommit>83ddc58321f2e4a353b4d241bcb31ae8b4f375bd</fixcommit>
+            </fixVersion>
+        </bug>
+    </sir>
+    <sir>
+        <name>transformers</name>
+        <source>https://github.com/Liang813/transformers</source>
+        <bug>
+            <id>transformers1962</id>
+            <errormessage>ValueError</errormessage>
+            <describe>TFBertModel ValueError: Tried to convert 'dims' to a tensor and failed. Error: Cannot convert a partially known TensorShape to a Tensor</describe>
+            <rootCause>1</rootCause>
+            <type>shape mismatch</type>
+            <buggyVersion>
+                <buggytestCmd>transformers1962-buggy.sh</buggytestCmd>
+                <buggycommit>adb5c79ff2ffcd2e4a43a12f082cca55f7630a96</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>transformers1962-fix.sh</fixtestCmd>
+                <fixcommit>4a666885b501ed6bfd344ec2c4c16d80da8aab79</fixcommit>
+            </fixVersion>
+        </bug>
+    </sir>
+    <sir>
+        <name>probability</name>
+        <source>https://github.com/Liang813/probability</source>
+        <bug>
+            <id>probability417</id>
+            <errormessage>InvalidArgumentError</errormessage>
+            <describe>LinearGaussianStateSpaceModel sample doesn't work with num_timesteps=1.It is because tf.scan in the line below gives empty tensors for latents and observations if num_timesteps=1 as self.initial_step+1 and self.final_step are equal. (because self.final_step = self.initial_step+num_timesteps)</describe>
+            <rootCause>1</rootCause>
+            <type>shape mismatch</type>
+            <buggyVersion>
+                <buggytestCmd>probability417-buggy.sh</buggytestCmd>
+                <buggycommit>499827efa11b55f44fa0d5ef0432f3e1eebeff01</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>probability417-fix.sh</fixtestCmd>
+                <fixcommit>e13e623f03a8c700f4281ab43e1bc80dd903fec7</fixcommit>
+            </fixVersion>
+        </bug>
+    </sir>
+    <sir>
+        <name>segmentation_models.pytorch</name>
+        <source>https://github.com/Liang813/segmentation_models.pytorch</source>
+        <bug>
+            <id>segmentation_models.pytorch186</id>
+            <errormessage>None</errormessage>
+            <describe>This Bug is due to the fact that the divisor is not the same type as the dividend, resulting in the final result being 0</describe>
+            <rootCause>1</rootCause>
+            <type>type mismatch</type>
+            <buggyVersion>
+                <buggytestCmd>segmentation_models.pytorch186-buggy.sh</buggytestCmd>
+                <buggycommit>ecc848f7b600d0e5cc3a7bbe2a139e97de22da49</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>segmentation_models.pytorch186-fix.sh</fixtestCmd>
+                <fixcommit>6884ebf7b4a995cd9f53df8fc529e0f74c438851</fixcommit>
+            </fixVersion>
+        </bug>
+    </sir>
+    <sir>
+        <name>tutorials</name>
+        <source>https://github.com/Liang813/tutorials</source>
+        <bug>
+            <id>tutorials382</id>
+            <errormessage>None</errormessage>
+            <describe>CrossEntropy's size does not match that needed by the mask</describe>
+            <rootCause>1</rootCause>
+            <type>shape mismatch</type>
+            <buggyVersion>
+                <buggytestCmd>tutorials382-buggy.sh</buggytestCmd>
+                <buggycommit>a46b6437b74c30b9683631942b3157788b5cb78f</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>tutorials382-fix.sh</fixtestCmd>
+                <fixcommit>b93ce6e23042da153d6ee04b067e1f3d827d8189</fixcommit>
+            </fixVersion>
+        </bug>
+    </sir>
+    <sir>
+        <name>pytorch-pose</name>
+        <source>https://github.com/Liang813/pytorch-pose</source>
+        <bug>
+            <id>pytorch-pose116</id>
+            <errormessage>None</errormessage>
+            <describe>Input image width and height position reversed</describe>
+            <rootCause>1</rootCause>
+            <type>shape mismatch</type>
+            <buggyVersion>
+                <buggytestCmd>pytorch-pose116-buggy.sh</buggytestCmd>
+                <buggycommit>e09fb262c473e705075d20e8981368e94cdfc4a3</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>pytorch-pose116-fix.sh</fixtestCmd>
+                <fixcommit>6d48375fde4d6ff0322775b342d563bcaf3f818a</fixcommit>
+            </fixVersion>
+        </bug>
+    </sir>
 </root>

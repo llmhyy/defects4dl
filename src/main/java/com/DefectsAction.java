@@ -53,7 +53,7 @@ public class DefectsAction {
         sb.append("ROOTCAUSE:").append(rootCause).append("\n");
 
         sb.append("INFO DETAIL:\n");
-        String cdCmd="cd "+File.separator+"home"+File.separator+"metadata"+File.separator+SIRName;
+        String cdCmd="cd /home/metadata/"+SIRName;
 
         BuggyVersion buggyVersion = bug.getBuggyVersion();
         String buggytestCmd = buggyVersion.getBuggytestCmd();
@@ -101,7 +101,7 @@ public class DefectsAction {
 
     public void test(String bugId, String version, boolean r) throws Exception {
         Bug bug = DefectsDB.getBug(bugId);
-        if (version == "buggy"){
+        if (version.equals("buggy")){
             BuggyVersion buggyVersion = bug.getBuggyVersion();
             String buggytestCmd = buggyVersion.getBuggytestCmd();
             String buggycommit = buggyVersion.getBuggycommit();
@@ -114,7 +114,7 @@ public class DefectsAction {
             dockerServer.runTest(buggytestCmd);
             dockerServer.endTest();
         }
-        else if (version == "fix"){
+        else if (version.equals("fix")){
             FixVersion fixVersion = bug.getFixVersion();
             String fixtestCmd = fixVersion.getFixtestCmd();
             String fixcommit = fixVersion.getFixcommit();
@@ -143,7 +143,7 @@ public class DefectsAction {
         String fixcommit = fixVersion.getFixcommit();
 
         String SIRName = DefectsDB.getSirName(bugId).toLowerCase();
-        String cdCmd="cd /home"+File.separator+"metadata"+File.separator+SIRName;
+        String cdCmd="cd "+File.separator+"home"+File.separator+"metadata"+File.separator+SIRName;
 
         System.out.println("-----------Diff--------------\nCHANGE FILES:");
         //>log.txt;cat log.txt;rm log.txt

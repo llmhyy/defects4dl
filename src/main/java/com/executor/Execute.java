@@ -35,18 +35,16 @@ public class Execute extends Executor{
         StringBuilder builder = new StringBuilder();
         try {
             String OS = System.getProperty("os.name").toLowerCase();
-            System.out.println(OS);
-            System.out.println(OS.equals(OS_WINDOWS));
             if (OS.equals(OS_WINDOWS)) {
                 pb.command("cmd.exe", "/c", cmd);
             } else {
                 pb.command("bash", "-c", cmd);
             }
             Process process = pb.start();
-            InputStreamReader inputStr = new InputStreamReader(process.getInputStream());  // java.io.InputStreamReader@2493eec6
-            BufferedReader bufferReader = new BufferedReader(inputStr);   // java.io.BufferedReader@42d174ad
+            InputStreamReader inputStr = new InputStreamReader(process.getInputStream());
+            BufferedReader bufferReader = new BufferedReader(inputStr);
             String line;
-            while ((line = bufferReader.readLine()) != null){  // bufferReader.readLine() = null
+            while ((line = bufferReader.readLine()) != null){
                 builder.append("\n").append(line);
             }
         } catch (IOException ex) {

@@ -15,26 +15,26 @@ public class DockerExecutor extends Executor {
     private final static String SCRIPTS_FOLDER = "script";
 
     private final static String BASH = "bash";
-    private final  static String  CMD = "cmd.exe";
 
-    public static String DOCKER_JAVA_PLAIN_CONTAINER_ID = "c2d6e8a6407c";
+
+    public static String DOCKER_JAVA_PLAIN_CONTAINER_ID = "fc379fe8669b";
 
     private final static String DOCKER_EXEC_BASED_CMD = "docker exec";
 
     public void runPrintln(String arg) {
-        String cmd = DOCKER_EXEC_BASED_CMD + " " + "" + DOCKER_JAVA_PLAIN_CONTAINER_ID + " " + CMD + " /c '"
+        String cmd = DOCKER_EXEC_BASED_CMD + " " + "" + DOCKER_JAVA_PLAIN_CONTAINER_ID + " " + BASH + " -c '"
                 + arg + "'";
         execPrintln(cmd, pb);
     }
 
     public void runPrintln(String arg, List<String> rootCause) {
-        String cmd = DOCKER_EXEC_BASED_CMD + " " + "" + DOCKER_JAVA_PLAIN_CONTAINER_ID + " " + CMD + " /c '"
+        String cmd = DOCKER_EXEC_BASED_CMD + " " + "" + DOCKER_JAVA_PLAIN_CONTAINER_ID + " " + BASH + " -c '"
                 + arg + "'";
         execPrintln(cmd, pb, rootCause);
     }
 
     public void runTest(String arg) {
-        String cmd = DOCKER_EXEC_BASED_CMD + " " + DOCKER_JAVA_PLAIN_CONTAINER_ID + " " + "cmd.exe "
+        String cmd = DOCKER_EXEC_BASED_CMD + " " + DOCKER_JAVA_PLAIN_CONTAINER_ID + " " + "bash "
                 + File.separator + SCRIPTS_FOLDER + File.separator + arg;
         execPrintln(cmd, pb);
     }
@@ -78,7 +78,7 @@ public class DockerExecutor extends Executor {
     }
 
     public String run(String arg) {
-        String cmd = DOCKER_EXEC_BASED_CMD + " " + "" + DOCKER_JAVA_PLAIN_CONTAINER_ID + " " + CMD + " -c '"
+        String cmd = DOCKER_EXEC_BASED_CMD + " " + "" + DOCKER_JAVA_PLAIN_CONTAINER_ID + " " + BASH + " -c '"
                 + arg + "'";
         return exec(cmd, pb);
     }

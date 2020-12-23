@@ -24,7 +24,7 @@ public class Navigation {
             + "                                   the reproducible case, default as null\n" + DIFF
             + "<bugId> <version1> <version2>    --diff two version,~1 means fixed parent version\n" + ADD
             + "<script file path>     --add a script to docker\n" + PULL
-            + "<bugID><version>      --get a version source code\n" + REFRESH + "    --refresh Configs and DB\n" + HELP
+            + "<bugID> <version>      --get a version source code\n" + REFRESH + "    --refresh Configs and DB\n" + HELP
             + "    --get all features\n" + EXIT + "    --exit system";
     static DefectsAction jctbe = new DefectsAction();
 
@@ -34,7 +34,7 @@ public class Navigation {
         jctbe.setEnviroment();
 
         System.out.println("Start docker");
-        String result = jctbe.startDocker();          //result为空，获取失败
+        String result = jctbe.startDocker();
         boolean flag = result.contains(DockerExecutor.DOCKER_JAVA_PLAIN_CONTAINER_ID);
         result = flag == true ? "Docker start successful" : "Something wrong in docker starting";
         System.out.println(result);
@@ -92,18 +92,18 @@ public class Navigation {
                     System.out.println(jctbe.info(bugID));
                 }
             } else if (params[0].equalsIgnoreCase(TEST)) {
-                String budD = params[1];
+                String budID = params[1];
                 String version = params[2];
                 boolean r = false;
                 if (params.length > 3 && params[3].equalsIgnoreCase("-r")) {
                     r = true;
                 }
-                jctbe.test(budD, version, r);
+                jctbe.test(budID, version, r);
 
             } else if (params[0].equalsIgnoreCase(PULL)) {
-                String budD = params[1];
+                String budID = params[1];
                 if (params.length < 3) {
-                    System.out.println(jctbe.pullBug(budD));
+                    System.out.println(jctbe.pullBug(budID));
                 } else {
                     System.err.println("This feature is removed");
                 }

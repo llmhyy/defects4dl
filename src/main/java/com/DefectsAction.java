@@ -137,29 +137,29 @@ public class DefectsAction {
         Bug bug = DefectsDB.getBug(bugId);
         String rootCause = bug.getRootCause();
         BuggyVersion buggyVersion = bug.getBuggyVersion();
-        String buggycommit = buggyVersion.getBuggycommit();
+        String buggyCommit = buggyVersion.getBuggycommit();
 
         FixVersion fixVersion = bug.getFixVersion();
-        String fixcommit = fixVersion.getFixcommit();
+        String fixCommit = fixVersion.getFixcommit();
 
         String SIRName = DefectsDB.getSirName(bugId).toLowerCase();
-        String cdCmd="cd "+File.separator+"home"+File.separator+"metadata"+File.separator+SIRName;
+        String cdCmd="cd "+"/"+"home"+"/"+"metadata"+"/"+SIRName;
 
         System.out.println("-----------Diff--------------\nCHANGE FILES:");
         //>log.txt;cat log.txt;rm log.txt
-        dockerServer.runPrintln(cdCmd+";git diff " + buggycommit + " " + fixcommit + " --stat");
+        dockerServer.runPrintln(cdCmd+";git diff " + buggyCommit + " " + fixCommit + " --stat");
         System.out.println("CHANGE DETAILS:");
 
         List<String> causeSet = null;
-        causeSet= CodeUtils.getRootCause(bugId);
-        dockerServer.runPrintln(cdCmd+";git diff " + buggycommit + " " + fixcommit,causeSet);
+        // causeSet= CodeUtils.getRootCause(bugId);
+        // dockerServer.runPrintln(cdCmd+";git diff " + buggyCommit + " " + fixCommit,causeSet);
+        dockerServer.runPrintln(cdCmd+";git diff " + buggyCommit + " " + fixCommit);
         return "";
     }
 
     public void setEnviroment() {
         Configs.refresh();
         String[] toolPaths = Configs.envPath.split(";");
-        System.out.println(toolPaths);
         exec.setEnviroment(toolPaths);
         dockerServer.setEnviroment(toolPaths);
     }
@@ -170,8 +170,8 @@ public class DefectsAction {
     }
 
     public void add(String s) {
-        exec.execPrintln("docker cp " + s + "conreg4j-java-plain:/scripts");
-        System.out.println("Success");
+        //exec.execPrintln("docker cp " + s + "conreg4j-java-plain:/scripts");
+        System.out.println("Wait");
     }
 
     public  String  startDocker() {

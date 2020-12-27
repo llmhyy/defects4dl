@@ -30,7 +30,7 @@ public class Navigation {
 
     public static void main(String[] args) {
 
-        System.out.println("Set enviroment....");
+        System.out.println("Set environment....");
         jctbe.setEnviroment();
 
         System.out.println("Start docker");
@@ -69,8 +69,6 @@ public class Navigation {
                 System.out.println(sb);
             } else if (params[0].equalsIgnoreCase(DIFF)) {
                 String bugID = params[1];
-//                String version1 = params[2];
-//                String version2 = params[3];
                 System.out.println(jctbe.diff(bugID));
             } else if (params[0].equalsIgnoreCase(LIST)) {
                 // ls grep pool*

@@ -22,14 +22,14 @@ public class DockerExecutor extends Executor {
     private final static String DOCKER_EXEC_BASED_CMD = "docker exec";
 
     public void runPrintln(String arg) {
-        String cmd = DOCKER_EXEC_BASED_CMD + " " + "" + DOCKER_JAVA_PLAIN_CONTAINER_ID + " " + BASH + " -c '"
-                + arg + "'";
+        String cmd = DOCKER_EXEC_BASED_CMD + " " + "" + DOCKER_JAVA_PLAIN_CONTAINER_ID + " " + BASH + " -c " + "\""
+                + arg + "\"";
         execPrintln(cmd, pb);
     }
 
     public void runPrintln(String arg, List<String> rootCause) {
-        String cmd = DOCKER_EXEC_BASED_CMD + " " + "" + DOCKER_JAVA_PLAIN_CONTAINER_ID + " " + BASH + " -c '"
-                + arg + "'";
+        String cmd = DOCKER_EXEC_BASED_CMD + " " + "" + DOCKER_JAVA_PLAIN_CONTAINER_ID + " " + BASH + " -c " + "\""
+                + arg + "\"";
         execPrintln(cmd, pb, rootCause);
     }
 
@@ -47,6 +47,7 @@ public class DockerExecutor extends Executor {
             InputStreamReader inputStr = new InputStreamReader(process.getInputStream());
             BufferedReader bufferReader = new BufferedReader(inputStr);
             String line;
+            System.out.println(bufferReader.readLine());
             while ((line = bufferReader.readLine()) != null) {
                 System.out.println(line);
 
@@ -78,8 +79,8 @@ public class DockerExecutor extends Executor {
     }
 
     public String run(String arg) {
-        String cmd = DOCKER_EXEC_BASED_CMD + " " + "" + DOCKER_JAVA_PLAIN_CONTAINER_ID + " " + BASH + " -c '"
-                + arg + "'";
+        String cmd = DOCKER_EXEC_BASED_CMD + " " + "" + DOCKER_JAVA_PLAIN_CONTAINER_ID + " " + BASH + " -c " + "\""
+                + arg + "\"";
         return exec(cmd, pb);
     }
 

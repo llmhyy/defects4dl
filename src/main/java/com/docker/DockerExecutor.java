@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.InputStreamReader;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 public class DockerExecutor extends Executor {
     private static ProcessBuilder pb = new ProcessBuilder();
@@ -35,8 +36,10 @@ public class DockerExecutor extends Executor {
 
     public void runTest(String arg) {
         String cmd = DOCKER_EXEC_BASED_CMD + " " + DOCKER_JAVA_PLAIN_CONTAINER_ID + " " + "bash "
-                + File.separator + SCRIPTS_FOLDER + File.separator + arg;
+                + "/" + SCRIPTS_FOLDER + "/" + arg;
+        System.out.println(cmd);
         execPrintln(cmd, pb);
+        //exec(cmd, pb);
     }
 
     public String execPrintln(String cmd, ProcessBuilder pb) {
@@ -44,14 +47,24 @@ public class DockerExecutor extends Executor {
         try {
             pb.command("cmd.exe", "/c", cmd);
             Process process = pb.start();
+            //process.waitFor(10, TimeUnit.SECONDS);
             InputStreamReader inputStr = new InputStreamReader(process.getInputStream());
             BufferedReader bufferReader = new BufferedReader(inputStr);
             String line;
             System.out.println(bufferReader.readLine());
             while ((line = bufferReader.readLine()) != null) {
                 System.out.println(line);
-
             }
+
+            //打印错误日志
+//            InputStreamReader errorStream = new InputStreamReader(process.getErrorStream());
+//            BufferedReader errorReader = new BufferedReader(errorStream);
+//            String errLine;
+//            System.out.println(errorReader.readLine());
+//            while ((errLine = errorReader.readLine()) != null) {
+//                System.out.println(errLine);
+//            }
+
         } catch (Exception ex) {
         }
         return sb.toString();

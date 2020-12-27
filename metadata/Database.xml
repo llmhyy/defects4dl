@@ -140,7 +140,7 @@
         <name>Keras</name>
         <source>https://github.com/Liang813/keras</source>
         <bug>
-            <id>Keras9883</id>
+            <id>keras9883</id>
             <errormessage>None</errormessage>
             <describe>Conv2DTranspose infers the shape of the output using deconv_length but because the output shape of a transposed convolution is ambigous it can infer an undesired shape.</describe>
             <rootCause>1</rootCause>
@@ -159,7 +159,7 @@
         <name>Keras</name>
         <source>https://github.com/Liang813/keras</source>
         <bug>
-            <id>Keras13073</id>
+            <id>keras13073</id>
             <errormessage>None</errormessage>
             <describe>People set embedding with MAX_NUM_WORDS=3，but tokenizer return n-1 words i.e 2. </describe>
             <rootCause>1</rootCause>
@@ -178,7 +178,7 @@
         <name>Keras</name>
         <source>https://github.com/Liang813/keras</source>
         <bug>
-            <id>Keras2672</id>
+            <id>keras2672</id>
             <errormessage>None</errormessage>
             <describe>cos mode does not carefully deal with division by zero, might be the cause of NaN. output = K.batch_dot(l1, l2, self.dot_axes) / denominator  </describe>
             <rootCause>1</rootCause>

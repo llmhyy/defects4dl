@@ -69,8 +69,8 @@ public class DefectsAction {
         sb.append("FixVersion").append(" ").append(fixcommit).append(" ").append(commitTimeFix)
                 .append("\n");
 
-        String diffCount = dockerServer.run(cdCmd+";git rev-list " + buggycommit + ".." + fixcommit + " --count");
-        sb.append("Commits count between BuggyVersion and FixVersion:").append(diffCount);
+        //String diffCount = dockerServer.run(cdCmd+";git rev-list " + buggycommit + ".." + fixcommit + " --count");
+        //sb.append("Commits count between BuggyVersion and FixVersion:").append(diffCount);
         return sb.toString();
 
     }

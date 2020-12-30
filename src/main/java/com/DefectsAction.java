@@ -99,17 +99,13 @@ public class DefectsAction {
     }
 
 
-    public void test(String bugId, String version, boolean r) throws Exception {
+    public void test(String bugId, String version) throws Exception {
         Bug bug = DefectsDB.getBug(bugId);
         if (version.equals("buggy")){
             BuggyVersion buggyVersion = bug.getBuggyVersion();
             String buggytestCmd = buggyVersion.getBuggytestCmd();
             String buggycommit = buggyVersion.getBuggycommit();
             String sirName=DefectsDB.getSirName(bugId);
-            //Some cases can't reproducible,use -r to force
-            if (r==true) {
-                dockerServer.reproducible();
-            }
             System.out.println(dockerServer.checkout(sirName, buggycommit));
             dockerServer.runTest(buggytestCmd);
             dockerServer.endTest();
@@ -119,10 +115,6 @@ public class DefectsAction {
             String fixtestCmd = fixVersion.getFixtestCmd();
             String fixcommit = fixVersion.getFixcommit();
             String sirName=DefectsDB.getSirName(bugId);
-            //Some cases can't reproducible,use -r to force
-            if (r==true) {
-                dockerServer.reproducible();
-            }
             System.out.println(dockerServer.checkout(sirName, fixcommit));
             dockerServer.runTest(fixtestCmd);
             dockerServer.endTest();
@@ -155,6 +147,22 @@ public class DefectsAction {
         // dockerServer.runPrintln(cdCmd+";git diff " + buggyCommit + " " + fixCommit,causeSet);
         dockerServer.runPrintln(cdCmd+";git diff " + buggyCommit + " " + fixCommit);
         return "";
+    }
+
+    public String diffInfo(String bugId) throws Exception {
+
+        Bug bug = DefectsDB.getBug(bugId);
+        String rootCause = bug.getRootCause();
+        BuggyVersion buggyVersion = bug.getBuggyVersion();
+        String buggyCommit = buggyVersion.getBuggycommit();
+        FixVersion fixVersion = bug.getFixVersion();
+        String fixCommit = fixVersion.getFixcommit();
+        String SIRName = DefectsDB.getSirName(bugId).toLowerCase();
+        String cdCmd="cd "+"/"+"home"+"/"+"metadata"+"/"+SIRName;
+        String diffInfo = dockerServer.diffRunPrintln(cdCmd+";git diff " + buggyCommit + " " + fixCommit);
+        System.out.println("=====diffInfo=====");
+        System.out.println(diffInfo);
+        return diffInfo;
     }
 
     public void setEnviroment() {

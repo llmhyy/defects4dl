@@ -72,7 +72,11 @@
                     <td class="item-title">Count of Argument Error</td>
                     <td>{{ aeCount }}</td>
                 </tr>
+                <tr>
+                    <td class="item-title">Count of zero division</td>
+                    <td>{{ zdCount }}</td>
 
+                </tr>
             </table>
 
 
@@ -84,6 +88,7 @@
                     <option value="API">API</option>
                     <option value="typeMismatch">type mismatch</option>
                     <option value="argumentError">Argument Error</option>
+                    <option value="zeroDivision">zero division</option>
                 </select>
             </div>&nbsp;&nbsp;
             <div class="form-group query-form-group">
@@ -171,6 +176,7 @@
             apiCount: null,
             tmCount: null,
             aeCount: null,
+            zdCount: null,
             dataList: [],
 
         },
@@ -191,6 +197,7 @@
                         var apiCount = 0;
                         var tmCount = 0;
                         var aeCount = 0;
+                        var zdCount = 0;
                         for(var i=0;i<response.data.length;i++){
                             if (response.data[i].bugs[0].type == "shape mismatch"){
                                 smCount++;
@@ -201,13 +208,15 @@
                                 tmCount++;
                             }else if(response.data[i].bugs[0].type == "Argument Error"){
                                 aeCount++;
+                            }else if(response.data[i].bugs[0].type == "zero division"){
+                                zdCount++;
                             }
                         }
                         vm.smCount = smCount;
                         vm.apiCount = apiCount;
                         vm.tmCount = tmCount;
                         vm.aeCount = aeCount;
-
+                        vm.zdCount = zdCount;
                     })
             },
             selectByType: function (){

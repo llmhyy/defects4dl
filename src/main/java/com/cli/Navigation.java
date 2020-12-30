@@ -92,11 +92,10 @@ public class Navigation {
             } else if (params[0].equalsIgnoreCase(TEST)) {
                 String budID = params[1];
                 String version = params[2];
-                boolean r = false;
-                if (params.length > 3 && params[3].equalsIgnoreCase("-r")) {
-                    r = true;
+                if (params.length != 3 ) {
+                    System.out.println("Input is wrong");
                 }
-                jctbe.test(budID, version, r);
+                jctbe.test(budID, version);
 
             } else if (params[0].equalsIgnoreCase(PULL)) {
                 String budID = params[1];

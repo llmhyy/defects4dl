@@ -20,4 +20,8 @@ public class Forward {
     public String codeDiff(){
         return "showDiff";
     }
+    @RequestMapping("/diff")
+    public String codeDiff1(){
+        return "diff";
+    }
 }

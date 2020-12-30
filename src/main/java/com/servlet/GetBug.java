@@ -3,13 +3,11 @@ package com.servlet;
 import com.DefectsAction;
 import com.DefectsDB;
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 import com.vo.Bug;
 import com.vo.SIR;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
 
 @RestController
 public class GetBug{
@@ -31,6 +29,14 @@ public class GetBug{
         Bug bugInfoD = da.bugDetail(bugID);
         String bugInfoDe = JSON.toJSONString(bugInfoD);
         return bugInfoDe;
+    }
+
+    @RequestMapping("/getDiffInfo")
+    @CrossOrigin
+    public String getDiff(String bugId) throws Exception{
+        DefectsAction da = new DefectsAction();
+        String diffInfo = da.diffInfo(bugId);
+        return diffInfo;
     }
 
 

@@ -23,12 +23,10 @@ public class AppEnter {
     public static void main(String[] args) {
         System.out.println("Starting...");
         //初始数据
-        //Map<String, String> map = DefectsDB.initDB();
         List<SIR> map = DefectsDB.initDB();
-        
 
         //启动web项目
-        //SpringApplication.run(AppEnter.class, args);
+        SpringApplication.run(AppEnter.class, args);
 
         //启动cli模块
         System.out.println(LOGO);

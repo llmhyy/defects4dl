@@ -27,6 +27,11 @@ public class DockerExecutor extends Executor {
                 + arg + "\"";
         execPrintln(cmd, pb);
     }
+    public String diffRunPrintln(String arg) {
+        String cmd = DOCKER_EXEC_BASED_CMD + " " + "" + DOCKER_JAVA_PLAIN_CONTAINER_ID + " " + BASH + " -c " + "\""
+                + arg + "\"";
+        return diffInfo(cmd, pb);
+    }
 
     public void runPrintln(String arg, List<String> rootCause) {
         String cmd = DOCKER_EXEC_BASED_CMD + " " + "" + DOCKER_JAVA_PLAIN_CONTAINER_ID + " " + BASH + " -c " + "\""
@@ -47,24 +52,29 @@ public class DockerExecutor extends Executor {
         try {
             pb.command("cmd.exe", "/c", cmd);
             Process process = pb.start();
-            //process.waitFor(10, TimeUnit.SECONDS);
+            //process.waitFor(15, TimeUnit.SECONDS);
             InputStreamReader inputStr = new InputStreamReader(process.getInputStream());
             BufferedReader bufferReader = new BufferedReader(inputStr);
             String line;
-            System.out.println(bufferReader.readLine());
             while ((line = bufferReader.readLine()) != null) {
                 System.out.println(line);
             }
+        } catch (Exception ex) {
+        }
+        return sb.toString();
+    }
 
-            //打印错误日志
-//            InputStreamReader errorStream = new InputStreamReader(process.getErrorStream());
-//            BufferedReader errorReader = new BufferedReader(errorStream);
-//            String errLine;
-//            System.out.println(errorReader.readLine());
-//            while ((errLine = errorReader.readLine()) != null) {
-//                System.out.println(errLine);
-//            }
-
+    public String diffInfo(String cmd, ProcessBuilder pb) {
+        StringBuffer sb = new StringBuffer();
+        try {
+            pb.command("cmd.exe", "/c", cmd);
+            Process process = pb.start();
+            InputStreamReader inputStr = new InputStreamReader(process.getInputStream());
+            BufferedReader bufferReader = new BufferedReader(inputStr);
+            String line;
+            while ((line = bufferReader.readLine()) != null) {
+                sb.append(line + '\n');
+            }
         } catch (Exception ex) {
         }
         return sb.toString();

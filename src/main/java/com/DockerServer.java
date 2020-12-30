@@ -17,6 +17,9 @@ public class DockerServer {
     public void runPrintln(String cmd) {
         dockerExecutor.runPrintln(cmd);
     }
+    public String diffRunPrintln(String cmd) {
+        return dockerExecutor.diffRunPrintln(cmd);
+    }
     public void runPrintln(String cmd, List<String> rootcause) {
         dockerExecutor.runPrintln(cmd,rootcause);
     }
@@ -30,10 +33,6 @@ public class DockerServer {
 
     public void runTest(String cmd) {
         dockerExecutor.runTest(cmd);
-    }
-    public void reproducible() {
-        String cmd ="touch /home/rSwitch.lock";
-        dockerExecutor.run(cmd);
     }
 
     public void endTest() {

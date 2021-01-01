@@ -52,7 +52,7 @@ public class DockerExecutor extends Executor {
         try {
             pb.command("cmd.exe", "/c", cmd);
             Process process = pb.start();
-            //process.waitFor(15, TimeUnit.SECONDS);
+            //process.waitFor(10, TimeUnit.SECONDS);
             InputStreamReader inputStr = new InputStreamReader(process.getInputStream());
             BufferedReader bufferReader = new BufferedReader(inputStr);
             String line;

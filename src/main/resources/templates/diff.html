@@ -11,7 +11,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/diff2html/2.12.2/diff2html-ui.js"></script>
     <style type="text/css">
         /*.d2h-file-side-diff{*/
-        /*    float: left;*/
+        /*    width: 49%;*/
         /*}*/
     </style>
 </head>
@@ -24,58 +24,24 @@
 
 <script>
     var bugID = window.localStorage.getItem('bugID');
-    var diffInfo = '';
+
     $.ajax({
         type: "POST",
         url: "getDiffInfo?bugId="+bugID,
         success: function(data){
-            diffInfo = data;
-            console.log(diffInfo)
+            //diffInfo = data;
+            //document.addEventListener('DOMContentLoaded', () => {
+                var diffHtml = window.Diff2Html.html(data, {
+                    drawFileList: true,
+                    matching: 'lines',
+                    outputFormat: 'side-by-side',
+                });
+                document.getElementById('destination-elem-id').innerHTML = diffHtml;
         }
     })
-    alert(diffInfo);
-    document.addEventListener('DOMContentLoaded', () => {
-        var diffHtml = window.Diff2Html.html(diffInfo, {
-            drawFileList: true,
-            matching: 'lines',
-            outputFormat: 'side-by-side',
-        });
-        document.getElementById('destination-elem-id').innerHTML = diffHtml;
-    });
+
+
 
 </script>
-<!--<script src="/static/vue.min.js"></script>-->
-<!--<script>-->
-<!--    var vm = new Vue({-->
-<!--        el: '#destination-elem-id',-->
-<!--        data:{-->
-<!--            //diffInfo: null,-->
-<!--            diffHtml: {},-->
-<!--        },-->
-<!--        mounted: function () {-->
-<!--            //获取传递过来的localStorage-->
-<!--            var bugID = window.localStorage.getItem('bugID');-->
-<!--            var diffMessage = '';-->
-<!--            axios.get("/getDiffInfo?bugId="+ bugID)-->
-<!--                .then(response => {-->
-<!--                    diffMessage = response.data;-->
-<!--                    console.log(diffMessage);-->
-<!--                })-->
-
-<!--            document.addEventListener('DOMContentLoaded', () => {-->
-<!--                vm.diffHtml = window.Diff2Html.html(diffMessage, {-->
-<!--                    drawFileList: true,-->
-<!--                    matching: 'lines',-->
-<!--                    outputFormat: 'side-by-side',-->
-
-<!--                });-->
-<!--                console.log("vm.diffHtml");-->
-<!--                console.log(vm.diffHtml);-->
-<!--                    //document.getElementById('destination-elem-id').innerHTML = diffHtml;-->
-<!--                });-->
-<!--        },-->
-
-<!--    })-->
-<!--</script>-->
 
 </html>

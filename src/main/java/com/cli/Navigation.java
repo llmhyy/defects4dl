@@ -16,13 +16,14 @@ public class Navigation {
     private final static String ADD = "add";
     private final static String PULL = "pull";
     private final static String REFRESH = "refresh";
+    private final static String PULLBUG = "pullBug";
     private final static String FEATURES = LIST + "    --show all bug lise\n" + LIST
             + " grep <Key*>           --filter by keyword\n" + INFO
             + "<bugID>                  --show bug Info,such as testcase,\n"
-            + "                                diff in wc bic,commitcount,datediff\n" + TEST
-            + "<bugId> <version><param>    --test a case.Note that param equals '-r',means run\n"
-            + "                                   the reproducible case, default as null\n" + DIFF
-            + "<bugId> <version1> <version2>    --diff two version,~1 means fixed parent version\n" + ADD
+            + "                                diff in buggy version and fix version,datediff\n" + TEST
+            + "<bugId> <version>               --test a case.\n" + PULLBUG
+            + "    --pull all the bug in the Docker Repo.\n" + DIFF
+            + "<bugId>                    --diff two version\n" + ADD
             + "<script file path>     --add a script to docker\n" + PULL
             + "<bugID> <version>      --get a version source code\n" + REFRESH + "    --refresh Configs and DB\n" + HELP
             + "    --get all features\n" + EXIT + "    --exit system";
@@ -33,12 +34,15 @@ public class Navigation {
         System.out.println("Set environment....");
         jctbe.setEnviroment();
 
-        System.out.println("Start docker");
-        String result = jctbe.startDocker();
-        boolean flag = result.contains(DockerExecutor.DOCKER_JAVA_PLAIN_CONTAINER_ID);
-        result = flag == true ? "Docker start successful" : "Something wrong in docker starting";
-        System.out.println(result);
+        System.out.println("Starting docker...");
+
+//        String result = jctbe.startDocker();
+//        boolean flag = result.contains(DockerExecutor.DOCKER_JAVA_PLAIN_CONTAINER_ID);
+//        result = flag == true ? "Docker start successful" : "Something wrong in docker starting";
+//        System.out.println(result);
+
         System.out.println("DataSet start successful ");
+        System.out.println("When you first use our library, you need to pull the Docker image down using the 'pullBug' command!!! ");
 
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
         System.out.print("defects4dl#:");
@@ -106,6 +110,8 @@ public class Navigation {
                 }
             } else if (params[0].equalsIgnoreCase(REFRESH)) {
                 jctbe.refresh();
+            }else if (params[0].equalsIgnoreCase(PULLBUG)){
+                jctbe.runAllBug();
             } else {
                 System.err.println("Unrecognized commands");
             }

@@ -22,13 +22,13 @@ public class DockerExecutor extends Executor {
 
     private final static String DOCKER_EXEC_BASED_CMD = "docker exec";
 
-    public void runPrintln(String arg) {
-        String cmd = DOCKER_EXEC_BASED_CMD + " " + "" + DOCKER_JAVA_PLAIN_CONTAINER_ID + " " + BASH + " -c " + "\""
+    public void runPrintln(String arg,String bugId) {
+        String cmd = DOCKER_EXEC_BASED_CMD + " " + "" + bugId + " " + BASH + " -c " + "\""
                 + arg + "\"";
         execPrintln(cmd, pb);
     }
-    public String diffRunPrintln(String arg) {
-        String cmd = DOCKER_EXEC_BASED_CMD + " " + "" + DOCKER_JAVA_PLAIN_CONTAINER_ID + " " + BASH + " -c " + "\""
+    public String diffRunPrintln(String arg,String bugId) {
+        String cmd = DOCKER_EXEC_BASED_CMD + " " + "" + bugId + " " + BASH + " -c " + "\""
                 + arg + "\"";
         return diffInfo(cmd, pb);
     }
@@ -39,12 +39,12 @@ public class DockerExecutor extends Executor {
         execPrintln(cmd, pb, rootCause);
     }
 
-    public void runTest(String arg) {
-        String cmd = DOCKER_EXEC_BASED_CMD + " " + DOCKER_JAVA_PLAIN_CONTAINER_ID + " " + "bash "
+    public void runTest(String arg,String bugId) {
+        String cmd = DOCKER_EXEC_BASED_CMD + " " + bugId + " " + "bash "
                 + "/" + SCRIPTS_FOLDER + "/" + arg;
         System.out.println(cmd);
         execPrintln(cmd, pb);
-        //exec(cmd, pb);
+
     }
 
     public String execPrintln(String cmd, ProcessBuilder pb) {
@@ -101,8 +101,8 @@ public class DockerExecutor extends Executor {
         return sb.toString();
     }
 
-    public String run(String arg) {
-        String cmd = DOCKER_EXEC_BASED_CMD + " " + "" + DOCKER_JAVA_PLAIN_CONTAINER_ID + " " + BASH + " -c " + "\""
+    public String run(String arg,String bugId) {
+        String cmd = DOCKER_EXEC_BASED_CMD + " " + "" + bugId + " " + BASH + " -c " + "\""
                 + arg + "\"";
         return exec(cmd, pb);
     }

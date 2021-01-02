@@ -33,9 +33,9 @@ public class DefectsAction {
         return res.toArray(new String[res.size()]);
     }
 
-    public String pullBug(String bugID) throws Exception {
-        return dockerServer.pullBug(bugID);
-    }
+//    public String pullBug(String bugID) throws Exception {
+//        return dockerServer.pullBug(bugID);
+//    }
 
     public String info(String bugId) throws Exception {
         Bug bug = DefectsDB.getBug(bugId);
@@ -58,14 +58,14 @@ public class DefectsAction {
         BuggyVersion buggyVersion = bug.getBuggyVersion();
         String buggytestCmd = buggyVersion.getBuggytestCmd();
         String buggycommit = buggyVersion.getBuggycommit();
-        String commitTimeBuggy = dockerServer.run(cdCmd+";git log --pretty=format:“%cd” " + buggycommit + " -1");
+        String commitTimeBuggy = dockerServer.run(cdCmd+";git log --pretty=format:“%cd” " + buggycommit + " -1",bugId);
         sb.append("BuggyVersion").append(" ").append(buggycommit).append(" ").append(commitTimeBuggy)
                 .append("\n");
 
         FixVersion fixVersion = bug.getFixVersion();
         String fixtestCmd = fixVersion.getFixtestCmd();
         String fixcommit = fixVersion.getFixcommit();
-        String commitTimeFix = dockerServer.run(cdCmd+";git log --pretty=format:“%cd” " + fixcommit + " -1");
+        String commitTimeFix = dockerServer.run(cdCmd+";git log --pretty=format:“%cd” " + fixcommit + " -1",bugId);
         sb.append("FixVersion").append(" ").append(fixcommit).append(" ").append(commitTimeFix)
                 .append("\n");
 
@@ -106,18 +106,18 @@ public class DefectsAction {
             String buggytestCmd = buggyVersion.getBuggytestCmd();
             String buggycommit = buggyVersion.getBuggycommit();
             String sirName=DefectsDB.getSirName(bugId);
-            System.out.println(dockerServer.checkout(sirName, buggycommit));
-            dockerServer.runTest(buggytestCmd);
-            dockerServer.endTest();
+            System.out.println(dockerServer.checkout(sirName, buggycommit,bugId));
+            dockerServer.runTest(buggytestCmd,bugId);
+            //dockerServer.endTest();
         }
         else if (version.equals("fix")){
             FixVersion fixVersion = bug.getFixVersion();
             String fixtestCmd = fixVersion.getFixtestCmd();
             String fixcommit = fixVersion.getFixcommit();
             String sirName=DefectsDB.getSirName(bugId);
-            System.out.println(dockerServer.checkout(sirName, fixcommit));
-            dockerServer.runTest(fixtestCmd);
-            dockerServer.endTest();
+            System.out.println(dockerServer.checkout(sirName, fixcommit,bugId));
+            dockerServer.runTest(fixtestCmd,bugId);
+            //dockerServer.endTest();
         }else {
             System.out.println("Input is wrong!");
         }
@@ -139,13 +139,13 @@ public class DefectsAction {
 
         System.out.println("-----------Diff--------------\nCHANGE FILES:");
         //>log.txt;cat log.txt;rm log.txt
-        dockerServer.runPrintln(cdCmd+";git diff " + buggyCommit + " " + fixCommit + " --stat");
+        dockerServer.runPrintln(cdCmd+";git diff " + buggyCommit + " " + fixCommit + " --stat",bugId);
         System.out.println("CHANGE DETAILS:");
 
         List<String> causeSet = null;
         // causeSet= CodeUtils.getRootCause(bugId);
         // dockerServer.runPrintln(cdCmd+";git diff " + buggyCommit + " " + fixCommit,causeSet);
-        dockerServer.runPrintln(cdCmd+";git diff " + buggyCommit + " " + fixCommit);
+        dockerServer.runPrintln(cdCmd+";git diff " + buggyCommit + " " + fixCommit,bugId);
         return "";
     }
 
@@ -159,9 +159,7 @@ public class DefectsAction {
         String fixCommit = fixVersion.getFixcommit();
         String SIRName = DefectsDB.getSirName(bugId).toLowerCase();
         String cdCmd="cd "+"/"+"home"+"/"+"metadata"+"/"+SIRName;
-        String diffInfo = dockerServer.diffRunPrintln(cdCmd+";git diff " + buggyCommit + " " + fixCommit);
-        System.out.println("=====diffInfo=====");
-        System.out.println(diffInfo);
+        String diffInfo = dockerServer.diffRunPrintln(cdCmd+";git diff " + buggyCommit + " " + fixCommit,bugId);
         return diffInfo;
     }
 
@@ -178,14 +176,38 @@ public class DefectsAction {
     }
 
     public void add(String s) {
-        //exec.execPrintln("docker cp " + s + "conreg4j-java-plain:/scripts");
-        System.out.println("Wait");
+
+        System.out.println("This feature is not yet implemented.");
     }
 
+    public void runAllBug(){
+        // 启动多个容器
+        String[] bugList = ls();
+        for (String bugId: bugList) {
+            System.out.println("Starting the container "+ bugId);
+            pullBug(bugId);
+            reNameBug(bugId);
+            startDocker(bugId);
+        }
+    }
+
+    public String pullBug(String bugId){
+        return  exec.exec("docker pull defects4dl/"+bugId);
+    }
+
+    public String reNameBug(String bugId){
+        return  exec.exec("docker run --name "+bugId+" -d defects4dl/"+bugId);
+    }
+
+    public  String  startDocker(String bugId) {
+
+        return exec.exec("docker start "+ bugId);
+    }
     public  String  startDocker() {
 
         return exec.exec("docker start "+ DockerExecutor.DOCKER_JAVA_PLAIN_CONTAINER_ID);
     }
+
     public String exit() {
 
         return exec.exec("docker stop "+DockerExecutor.DOCKER_JAVA_PLAIN_CONTAINER_ID);

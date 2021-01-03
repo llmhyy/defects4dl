@@ -211,7 +211,7 @@ public class DefectsAction {
     }
 
     public String reNameBug(String bugId){
-        return  exec.exec("docker run --name "+bugId+" -d defects4dl/"+bugId);
+        return  exec.exec("docker run --name "+bugId+" -it -d defects4dl/"+bugId);
     }
 
     public  String  startDocker(String bugId) {

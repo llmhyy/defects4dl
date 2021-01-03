@@ -78,11 +78,11 @@
             <tr>
                 <td class="item-title">If you would like to run the Buggy version of the test case, please click</td>
                 <td >
-                    <button class="btn btn-primary btn-sm" type="button">B_test</button>
+                    <button class="btn btn-primary btn-sm" type="button" v-on:click="testBuggy">B_test</button>
                 </td>
                 <td class="item-title">If you would like to run the Fix version of the test case, please click</td>
                 <td >
-                    <button class="btn btn-primary btn-sm" type="button">F_test</button>
+                    <button class="btn btn-primary btn-sm" type="button" v-on:click="testFix">F_test</button>
                 </td>
             </tr>
 
@@ -93,8 +93,10 @@
     <div style="height: 50px"></div>
 
     <div class="container-fluid col-xs-12 mt-10">
-        <div id="" style=" border:1px solid #bbe1f1;background:#eefaff">
-            show Test
+        <div id="showTest" style=" border:1px solid #bbe1f1;background:#eefaff">
+            <div id="ld" v-if="isShow">Loading...</div>
+            <div v-html="buggyInfo" id="bt"></div>
+            <div v-html="fixInfo" id="ft"></div>
         </div>
 
     </div>
@@ -111,6 +113,9 @@
         el: '#BugDetail',
         data:{
             dataInfoDetail: [],
+            buggyInfo: null,
+            fixInfo: null,
+            isShow: false,
         },
         mounted: function () {
             //获取传递过来的localStorage
@@ -128,6 +133,26 @@
                 location.href = 'diff'
                 //设置localStorage
                 window.localStorage.setItem('bugID',bugID);
+            },
+            testBuggy: function (){
+                var bugId = window.localStorage.getItem('bugID');
+                document.getElementById("ft").innerHTML = "";
+                vm.isShow = true;
+                axios.get("getTestBuggy?bugId="+ bugId)
+                    .then(response => {
+                        vm.buggyInfo = response.data;
+
+                    })
+            },
+            testFix:function (){
+                var bugId = window.localStorage.getItem('bugID');
+                document.getElementById("bt").innerHTML = "";
+                vm.isShow = true;
+                axios.get("getTestFix?bugId="+ bugId)
+                    .then(response => {
+                        vm.fixInfo = response.data;
+
+                    })
             },
 
         }

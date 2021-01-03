@@ -39,6 +39,21 @@ public class GetBug{
         return diffInfo;
     }
 
+    @RequestMapping("/getTestBuggy")
+    @CrossOrigin
+    public String getTestBuggy(String bugId) throws Exception{
+        DefectsAction da = new DefectsAction();
+        String testBuggy = da.testBuggy(bugId);
+        return testBuggy;
+    }
+
+    @RequestMapping("/getTestFix")
+    @CrossOrigin
+    public String getTestFix(String bugId) throws Exception{
+        DefectsAction da = new DefectsAction();
+        String testFix = da.testFix(bugId);
+        return testFix;
+    }
 
     @RequestMapping("/hello")
     public String hello(){

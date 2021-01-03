@@ -30,7 +30,7 @@ public class DockerExecutor extends Executor {
     public String diffRunPrintln(String arg,String bugId) {
         String cmd = DOCKER_EXEC_BASED_CMD + " " + "" + bugId + " " + BASH + " -c " + "\""
                 + arg + "\"";
-        return diffInfo(cmd, pb);
+        return execPrintlnW(cmd, pb);
     }
 
     public void runPrintln(String arg, List<String> rootCause) {
@@ -44,7 +44,12 @@ public class DockerExecutor extends Executor {
                 + "/" + SCRIPTS_FOLDER + "/" + arg;
         System.out.println(cmd);
         execPrintln(cmd, pb);
+    }
 
+    public String runTestW(String arg,String bugId) {
+        String cmd = DOCKER_EXEC_BASED_CMD + " " + bugId + " " + "bash "
+                + "/" + SCRIPTS_FOLDER + "/" + arg;
+        return execPrintlnW(cmd, pb);
     }
 
     public String execPrintln(String cmd, ProcessBuilder pb) {
@@ -64,7 +69,7 @@ public class DockerExecutor extends Executor {
         return sb.toString();
     }
 
-    public String diffInfo(String cmd, ProcessBuilder pb) {
+    public String execPrintlnW(String cmd, ProcessBuilder pb) {
         StringBuffer sb = new StringBuffer();
         try {
             pb.command("cmd.exe", "/c", cmd);

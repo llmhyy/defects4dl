@@ -98,7 +98,6 @@ public class DefectsAction {
 
     }
 
-
     public void test(String bugId, String version) throws Exception {
         Bug bug = DefectsDB.getBug(bugId);
         if (version.equals("buggy")){
@@ -121,7 +120,23 @@ public class DefectsAction {
         }else {
             System.out.println("Input is wrong!");
         }
+    }
 
+    public String testBuggy(String bugId) throws Exception{
+        Bug bug = DefectsDB.getBug(bugId);
+        BuggyVersion buggyVersion = bug.getBuggyVersion();
+        String buggytestCmd = buggyVersion.getBuggytestCmd();
+        String buggycommit = buggyVersion.getBuggycommit();
+        String sirName=DefectsDB.getSirName(bugId);
+        return dockerServer.runTestW(buggytestCmd,bugId);
+    }
+    public String testFix(String bugId) throws Exception{
+        Bug bug = DefectsDB.getBug(bugId);
+        FixVersion fixVersion = bug.getFixVersion();
+        String fixtestCmd = fixVersion.getFixtestCmd();
+        String fixcommit = fixVersion.getFixcommit();
+        String sirName=DefectsDB.getSirName(bugId);
+        return dockerServer.runTestW(fixtestCmd,bugId);
     }
 
     public String diff(String bugId) throws Exception {

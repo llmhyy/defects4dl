@@ -9,6 +9,7 @@ import com.vo.BuggyVersion;
 import com.vo.FixVersion;
 
 import java.math.BigDecimal;
+import java.text.NumberFormat;
 import java.util.List;
 import java.io.File;
 import java.util.ArrayList;
@@ -200,7 +201,12 @@ public class DefectsAction {
         int i = 0;
         for (String bugId: bugList) {
             i++;
-            System.out.println("Pulling and Starting the container "+ bugId + "completed"+ (i/bugList.length)*100 +"%");
+            // 创建一个数值格式化对象
+            NumberFormat numberFormat = NumberFormat.getInstance();
+            // 设置精确到小数点后2位
+            numberFormat.setMaximumFractionDigits(2);
+            String result = numberFormat.format((float) i / (float) bugList.length * 100);
+            System.out.println("Pulling and Starting the container "+ bugId + "  completed  "+ result +"%");
             pullBug(bugId);
             reNameBug(bugId);
         }
@@ -212,7 +218,12 @@ public class DefectsAction {
         int i = 0;
         for (String bugId: bugList) {
             i++;
-            System.out.println("Starting the container "+ bugId + "completed"+ (i/bugList.length)*100 +"%");
+            // 创建一个数值格式化对象
+            NumberFormat numberFormat = NumberFormat.getInstance();
+            // 设置精确到小数点后2位
+            numberFormat.setMaximumFractionDigits(2);
+            String result = numberFormat.format((float) i / (float) bugList.length * 100);
+            System.out.println("Starting the container "+ bugId + "  completed  "+ result +"%");
             startDocker(bugId);
         }
         System.out.println("All Started");

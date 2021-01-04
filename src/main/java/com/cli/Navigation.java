@@ -17,12 +17,14 @@ public class Navigation {
     private final static String PULL = "pull";
     private final static String REFRESH = "refresh";
     private final static String PULLBUG = "pullBug";
+    private final static String RUNBUG = "runBug";
     private final static String FEATURES = LIST + "    --show all bug lise\n" + LIST
             + " grep <Key*>           --filter by keyword\n" + INFO
             + "<bugID>                  --show bug Info,such as testcase,\n"
             + "                                diff in buggy version and fix version,datediff\n" + TEST
             + "<bugId> <version>               --test a case.\n" + PULLBUG
-            + "    --pull all the bug in the Docker Repo.\n" + DIFF
+            + "    --pull and run all the bug in the Docker Repo.\n" + RUNBUG
+            + "    --run all the bug in the Docker Repo.\n" + DIFF
             + "<bugId>                    --diff two version\n" + ADD
             + "<script file path>     --add a script to docker\n" + PULL
             + "<bugID> <version>      --get a version source code\n" + REFRESH + "    --refresh Configs and DB\n" + HELP
@@ -42,7 +44,8 @@ public class Navigation {
 //        System.out.println(result);
 
         System.out.println("DataSet start successful ");
-        System.out.println("When you first use our library, you need to pull the Docker image down using the 'pullBug' command!!! ");
+        System.out.println("When you first use our library, you need to pull the Docker Images down using the 'pullBug' command!!! ");
+        System.out.println("If you have already downloaded our Images, you can start the Containers through ‘runBug’!!! ");
 
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
         System.out.print("defects4dl#:");
@@ -110,7 +113,9 @@ public class Navigation {
                 }
             } else if (params[0].equalsIgnoreCase(REFRESH)) {
                 jctbe.refresh();
-            }else if (params[0].equalsIgnoreCase(PULLBUG)){
+            }else if (params[0].equalsIgnoreCase(PULLBUG)) {
+                jctbe.pullAllBug();
+            }else if(params[0].equalsIgnoreCase(RUNBUG)){
                 jctbe.runAllBug();
             } else {
                 System.err.println("Unrecognized commands");

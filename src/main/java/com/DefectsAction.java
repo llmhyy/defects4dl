@@ -194,16 +194,28 @@ public class DefectsAction {
 
         System.out.println("This feature is not yet implemented.");
     }
-
-    public void runAllBug(){
-        // 启动多个容器
+    // Pull images
+    public void pullAllBug(){
         String[] bugList = ls();
+        int i = 0;
         for (String bugId: bugList) {
-            System.out.println("Starting the container "+ bugId);
+            i++;
+            System.out.println("Pulling and Starting the container "+ bugId + "completed"+ (i/bugList.length)*100 +"%");
             pullBug(bugId);
             reNameBug(bugId);
+        }
+        System.out.println("All Pulled");
+    }
+    // Start Containers
+    public void runAllBug(){
+        String[] bugList = ls();
+        int i = 0;
+        for (String bugId: bugList) {
+            i++;
+            System.out.println("Starting the container "+ bugId + "completed"+ (i/bugList.length)*100 +"%");
             startDocker(bugId);
         }
+        System.out.println("All Started");
     }
 
     public String pullBug(String bugId){

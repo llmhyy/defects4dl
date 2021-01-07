@@ -95,8 +95,8 @@
     <div class="container-fluid col-xs-12 mt-10">
         <div id="showTest" style=" border:1px solid #bbe1f1;background:#eefaff">
             <div id="ld" v-if="isShow">Loading...</div>
-            <div v-html="buggyInfo" id="bt"></div>
-            <div v-html="fixInfo" id="ft"></div>
+            <pre v-html="buggyInfo" id="bt"></pre>
+            <pre v-html="fixInfo" id="ft"></pre>
         </div>
 
     </div>

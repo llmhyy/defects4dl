@@ -106,7 +106,7 @@ public class DefectsAction {
             String buggytestCmd = buggyVersion.getBuggytestCmd();
             String buggycommit = buggyVersion.getBuggycommit();
             String sirName=DefectsDB.getSirName(bugId);
-            System.out.println(dockerServer.checkout(sirName, buggycommit,bugId));
+            //System.out.println(dockerServer.checkout(sirName, buggycommit,bugId));
             dockerServer.runTest(buggytestCmd,bugId);
             //dockerServer.endTest();
         }
@@ -115,7 +115,7 @@ public class DefectsAction {
             String fixtestCmd = fixVersion.getFixtestCmd();
             String fixcommit = fixVersion.getFixcommit();
             String sirName=DefectsDB.getSirName(bugId);
-            System.out.println(dockerServer.checkout(sirName, fixcommit,bugId));
+            //System.out.println(dockerServer.checkout(sirName, fixcommit,bugId));
             dockerServer.runTest(fixtestCmd,bugId);
             //dockerServer.endTest();
         }else {

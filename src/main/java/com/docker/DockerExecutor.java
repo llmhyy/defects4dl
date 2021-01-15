@@ -42,7 +42,7 @@ public class DockerExecutor extends Executor {
     public void runTest(String arg,String bugId) {
         String cmd = DOCKER_EXEC_BASED_CMD + " " + bugId + " " + "bash "
                 + "/" + SCRIPTS_FOLDER + "/" + arg;
-        System.out.println(cmd);
+        //System.out.println(cmd);
         execPrintln(cmd, pb);
     }
 
@@ -51,7 +51,24 @@ public class DockerExecutor extends Executor {
                 + "/" + SCRIPTS_FOLDER + "/" + arg;
         return execPrintlnW(cmd, pb);
     }
+    public String execPrintlnTest(String cmd, ProcessBuilder pb) {
+        StringBuffer sb = new StringBuffer();
+        try {
+            pb.command("cmd.exe", "/c", cmd);
+            Process process = pb.start();
+            InputStreamReader inputStr = new InputStreamReader(process.getInputStream());
+            BufferedReader bufferReader = new BufferedReader(inputStr);
 
+            //读取txt文件
+
+            String line;
+            while ((line = bufferReader.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (Exception ex) {
+        }
+        return sb.toString();
+    }
     public String execPrintln(String cmd, ProcessBuilder pb) {
         StringBuffer sb = new StringBuffer();
         try {

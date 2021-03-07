@@ -36,6 +36,7 @@
             background: #F5FAFA;
         }
 
+
     </style>
 </head>
 <body>
@@ -94,7 +95,9 @@
 
     <div class="container-fluid col-xs-12 mt-10">
         <div id="showTest" style=" border:1px solid #bbe1f1;background:#eefaff">
-            <div id="ld" v-if="isShow">Loading...</div>
+<!--            <div id="ld" v-if="isShow">Loading...</div>-->
+            <div id="tips"></div>
+            <div id="progress"></div>
             <pre v-html="buggyInfo" id="bt"></pre>
             <pre v-html="fixInfo" id="ft"></pre>
         </div>
@@ -107,6 +110,7 @@
 
 
 <script src="/static/vue.min.js"></script>
+<script src="/static/nanobar.js"></script>
 <script>
 
     var vm = new Vue({
@@ -135,21 +139,79 @@
                 window.localStorage.setItem('bugID',bugID);
             },
             testBuggy: function (){
+                var options = {
+                    classname: 'my-class',
+                    id: 'my-id',
+                    target: document.getElementById('progress')
+                };
+                var nanobar = new Nanobar( options );
+                //新加的
+                var intelval=setInterval(function () {
+
+                    //执行ajax
+                    $.ajax({
+                        url:"testProgress",
+                        dataType:"text",
+                        type:"post",
+                        success:function (data) {
+                            $("#tips").html("正在运行，请稍等...");
+                            $(".nanobar").fadeIn();
+                            //显示进度
+                            nanobar.go(data);
+                        }
+                    })
+                },1000);
+
                 var bugId = window.localStorage.getItem('bugID');
                 document.getElementById("ft").innerHTML = "";
-                vm.isShow = true;
+                //vm.isShow = true;
                 axios.get("getTestBuggy?bugId="+ bugId)
                     .then(response => {
+                        //结束后台进度查询
+                        clearInterval(intelval);
+                        nanobar.go(100);
+                        $("#tips").html("");
+                        $(".nanobar").fadeOut();
+                        //显示test结果
                         vm.buggyInfo = response.data;
-
                     })
             },
             testFix:function (){
+
+                var options = {
+                    classname: 'my-class',
+                    id: 'my-id',
+                    target: document.getElementById('progress')
+                };
+                var nanobar = new Nanobar( options );
+                //新加的
+                var intelval=setInterval(function () {
+
+                    //执行ajax
+                    $.ajax({
+                        url:"testProgress",
+                        dataType:"text",
+                        type:"post",
+                        success:function (data) {
+                            $("#tips").html("正在运行，请稍等...");
+                            $(".nanobar").fadeIn();
+                            //显示进度
+                            nanobar.go(data);
+                        }
+                    })
+                },1000);
+
                 var bugId = window.localStorage.getItem('bugID');
                 document.getElementById("bt").innerHTML = "";
-                vm.isShow = true;
+                //vm.isShow = true;
                 axios.get("getTestFix?bugId="+ bugId)
                     .then(response => {
+                        //结束后台进度查询
+                        clearInterval(intelval);
+                        nanobar.go(100);
+                        $("#tips").html("");
+                        $(".nanobar").fadeOut();
+                        //显示test结果
                         vm.fixInfo = response.data;
 
                     })

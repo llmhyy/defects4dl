@@ -19,11 +19,13 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
 public class DataUtil {
-    public final static String DBFILEPATH = "D:"+File.separator+
-            "zWork" + File.separator +
-            "Project" + File.separator +
-            "defects4dl" + File.separator +
-            "Metadata" + File.separator + "Database.xml";
+//    public final static String DBFILEPATH = "D:"+File.separator+
+//            "zWork" + File.separator +
+//            "Project" + File.separator +
+//            "defects4dl" + File.separator +
+//            "Metadata" + File.separator + "Database.xml";
+    public final static String DBFILEPATH = "Metadata" + File.separator + "Database.xml";
+
     static Document doc = null;
     public static Document getDocument() {
 

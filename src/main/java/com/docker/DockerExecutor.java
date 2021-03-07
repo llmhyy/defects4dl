@@ -5,7 +5,10 @@ import com.utils.ColorConsole;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.InputStreamReader;
+import java.sql.SQLOutput;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -33,34 +36,106 @@ public class DockerExecutor extends Executor {
         return execPrintlnW(cmd, pb);
     }
 
-    public void runPrintln(String arg, List<String> rootCause) {
-        String cmd = DOCKER_EXEC_BASED_CMD + " " + "" + DOCKER_JAVA_PLAIN_CONTAINER_ID + " " + BASH + " -c " + "\""
-                + arg + "\"";
-        execPrintln(cmd, pb, rootCause);
-    }
 
-    public void runTest(String arg,String bugId) {
+    // 运行测试用例
+    public void runTest(String arg,String bugId,String version) {
         String cmd = DOCKER_EXEC_BASED_CMD + " " + bugId + " " + "bash "
                 + "/" + SCRIPTS_FOLDER + "/" + arg;
-        //System.out.println(cmd);
-        execPrintln(cmd, pb);
+
+        //将容器的输出拷贝到主机中
+        String CreateTxt = "docker cp" + " " + bugId + ":script/" + bugId + "-" + version +".txt" + " D:\\zWork\\BugTxt";
+        String deleteTxt = DOCKER_EXEC_BASED_CMD + " " + bugId + " " + "rm -r " + "/" + SCRIPTS_FOLDER + "/" + bugId + "-" + version + ".txt";
+        execPrintlnTest(deleteTxt, pb);
+        execPrintlnTest(cmd, pb);
+        execPrintlnTest(CreateTxt, pb);
+        String filePath = "D:\\zWork\\BugTxt\\" + bugId + "-"+ version +".txt";
+        readTxtFileIntoStringArrList(filePath);
     }
 
-    public String runTestW(String arg,String bugId) {
+    public String runTestW(String arg,String bugId,String version) {
         String cmd = DOCKER_EXEC_BASED_CMD + " " + bugId + " " + "bash "
                 + "/" + SCRIPTS_FOLDER + "/" + arg;
-        return execPrintlnW(cmd, pb);
+        //将容器的输出拷贝到主机中
+        String CreateTxt = "docker cp" + " " + bugId + ":script/" + bugId + "-" + version +".txt" + " D:\\zWork\\BugTxt";
+        String deleteTxt = DOCKER_EXEC_BASED_CMD + " " + bugId + " " + "rm -r " + "/" + SCRIPTS_FOLDER + "/" + bugId + "-" + version + ".txt";
+        execPrintlnTest(deleteTxt, pb);
+        execPrintlnTest(cmd, pb);
+        execPrintlnTest(CreateTxt, pb);
+        String filePath = "D:\\zWork\\BugTxt\\" + bugId + "-"+ version +".txt";
+        String result = readTxtFileIntoStringArrListW(filePath);
+        return result;
     }
-    public String execPrintlnTest(String cmd, ProcessBuilder pb) {
+
+    // 读取测试结果txt文件Web版
+    public static String readTxtFileIntoStringArrListW(String filePath){
+        StringBuffer sb = new StringBuffer();
+        try{
+            String encoding = "GBK";
+            File file = new File(filePath);
+            // 判断文件是否存在
+            if (file.isFile() && file.exists()){
+                // 考虑编码格式
+                InputStreamReader read = new InputStreamReader(
+                        new FileInputStream(file), encoding);
+                BufferedReader bufferedReader = new BufferedReader(read);
+                String lineTxt = null;
+
+                while ((lineTxt = bufferedReader.readLine()) != null){
+                    sb.append(lineTxt).append("\n");
+                }
+                bufferedReader.close();
+                read.close();
+            }
+            else {
+                System.out.println("运行完成");
+            }
+        }
+        catch (Exception e){
+            System.out.println("读取文件内容出错");
+            e.printStackTrace();
+        }
+        return sb.toString();
+    }
+
+    // 读取测试结果txt文件
+    public static String readTxtFileIntoStringArrList(String filePath){
+        StringBuffer sb = new StringBuffer();
+        try{
+            String encoding = "GBK";
+            File file = new File(filePath);
+            // 判断文件是否存在
+            if (file.isFile() && file.exists()){
+                // 考虑编码格式
+                InputStreamReader read = new InputStreamReader(
+                        new FileInputStream(file), encoding);
+                BufferedReader bufferedReader = new BufferedReader(read);
+                String lineTxt = null;
+
+                while ((lineTxt = bufferedReader.readLine()) != null){
+                    System.out.println(lineTxt);
+                }
+                bufferedReader.close();
+                read.close();
+            }
+            else {
+                System.out.println("运行完成");
+            }
+        }
+        catch (Exception e){
+            System.out.println("读取文件内容出错");
+            e.printStackTrace();
+        }
+        return sb.toString();
+    }
+
+    // 测试用例以外的执行
+    public String execPrintln(String cmd, ProcessBuilder pb) {
         StringBuffer sb = new StringBuffer();
         try {
             pb.command("cmd.exe", "/c", cmd);
             Process process = pb.start();
             InputStreamReader inputStr = new InputStreamReader(process.getInputStream());
             BufferedReader bufferReader = new BufferedReader(inputStr);
-
-            //读取txt文件
-
             String line;
             while ((line = bufferReader.readLine()) != null) {
                 System.out.println(line);
@@ -69,18 +144,15 @@ public class DockerExecutor extends Executor {
         }
         return sb.toString();
     }
-    public String execPrintln(String cmd, ProcessBuilder pb) {
+
+    // 运行测试用例
+    public String execPrintlnTest(String cmd, ProcessBuilder pb) {
         StringBuffer sb = new StringBuffer();
         try {
             pb.command("cmd.exe", "/c", cmd);
             Process process = pb.start();
-            //process.waitFor(10, TimeUnit.SECONDS);
             InputStreamReader inputStr = new InputStreamReader(process.getInputStream());
             BufferedReader bufferReader = new BufferedReader(inputStr);
-            String line;
-            while ((line = bufferReader.readLine()) != null) {
-                System.out.println(line);
-            }
         } catch (Exception ex) {
         }
         return sb.toString();
@@ -103,26 +175,6 @@ public class DockerExecutor extends Executor {
         return sb.toString();
     }
 
-    public String execPrintln(String cmd, ProcessBuilder pb, List<String> rootCause) {
-        StringBuffer sb = new StringBuffer();
-        try {
-            pb.command("cmd.exe", "/c", cmd);
-            Process process = pb.start();
-            InputStreamReader inputStr = new InputStreamReader(process.getInputStream());
-            BufferedReader bufferReader = new BufferedReader(inputStr);
-            String line;
-            while ((line = bufferReader.readLine()) != null) {
-                if (checkRootCause(line, rootCause)) {
-                    ColorConsole.println(line);
-                } else {
-                    System.out.println(line);
-                }
-
-            }
-        } catch (Exception ex) {
-        }
-        return sb.toString();
-    }
 
     public String run(String arg,String bugId) {
         String cmd = DOCKER_EXEC_BASED_CMD + " " + "" + bugId + " " + BASH + " -c " + "\""

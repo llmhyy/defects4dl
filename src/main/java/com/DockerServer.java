@@ -20,9 +20,7 @@ public class DockerServer {
     public String diffRunPrintln(String cmd,String bugId) {
         return dockerExecutor.diffRunPrintln(cmd,bugId);
     }
-    public void runPrintln(String cmd, List<String> rootcause) {
-        dockerExecutor.runPrintln(cmd,rootcause);
-    }
+
     public String run(String cmd ,String bugId) {
         return dockerExecutor.run(cmd,bugId);
     }
@@ -31,11 +29,11 @@ public class DockerServer {
         dockerExecutor.setEnviroment(toolPaths);
     }
 
-    public void runTest(String cmd,String bugId) {
-        dockerExecutor.runTest(cmd,bugId);
+    public void runTest(String cmd,String bugId,String version) {
+        dockerExecutor.runTest(cmd,bugId,version);
     }
-    public String runTestW(String cmd,String bugId) {
-        return dockerExecutor.runTestW(cmd,bugId);
+    public String runTestW(String cmd,String bugId,String version) {
+        return dockerExecutor.runTestW(cmd,bugId,version);
     }
 //    public void endTest() {
 //        String cmd ="rm -rf /home/rSwitch.lock";

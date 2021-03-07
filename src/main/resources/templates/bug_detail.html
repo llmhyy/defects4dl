@@ -154,7 +154,12 @@
                         dataType:"text",
                         type:"post",
                         success:function (data) {
-                            $("#tips").html("正在运行，请稍等...");
+                            if (data<30){
+                                $("#tips").html("切换分支中...");
+                            }
+                            else {
+                                $("#tips").html("正在运行测试用例...");
+                            }
                             $(".nanobar").fadeIn();
                             //显示进度
                             nanobar.go(data);
@@ -193,7 +198,12 @@
                         dataType:"text",
                         type:"post",
                         success:function (data) {
-                            $("#tips").html("正在运行，请稍等...");
+                            if (data<30){
+                                $("#tips").html("切换分支中...");
+                            }
+                            else {
+                                $("#tips").html("正在运行测试用例...");
+                            }
                             $(".nanobar").fadeIn();
                             //显示进度
                             nanobar.go(data);

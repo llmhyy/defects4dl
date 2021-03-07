@@ -107,7 +107,7 @@ public class DefectsAction {
             String buggycommit = buggyVersion.getBuggycommit();
             String sirName=DefectsDB.getSirName(bugId);
             //System.out.println(dockerServer.checkout(sirName, buggycommit,bugId));
-            dockerServer.runTest(buggytestCmd,bugId);
+            dockerServer.runTest(buggytestCmd,bugId,version);
             //dockerServer.endTest();
         }
         else if (version.equals("fix")){
@@ -116,7 +116,7 @@ public class DefectsAction {
             String fixcommit = fixVersion.getFixcommit();
             String sirName=DefectsDB.getSirName(bugId);
             //System.out.println(dockerServer.checkout(sirName, fixcommit,bugId));
-            dockerServer.runTest(fixtestCmd,bugId);
+            dockerServer.runTest(fixtestCmd,bugId,version);
             //dockerServer.endTest();
         }else {
             System.out.println("Input is wrong!");
@@ -124,20 +124,22 @@ public class DefectsAction {
     }
 
     public String testBuggy(String bugId) throws Exception{
+        String version = "buggy";
         Bug bug = DefectsDB.getBug(bugId);
         BuggyVersion buggyVersion = bug.getBuggyVersion();
         String buggytestCmd = buggyVersion.getBuggytestCmd();
         String buggycommit = buggyVersion.getBuggycommit();
         String sirName=DefectsDB.getSirName(bugId);
-        return dockerServer.runTestW(buggytestCmd,bugId);
+        return dockerServer.runTestW(buggytestCmd,bugId,version);
     }
     public String testFix(String bugId) throws Exception{
+        String version = "fix";
         Bug bug = DefectsDB.getBug(bugId);
         FixVersion fixVersion = bug.getFixVersion();
         String fixtestCmd = fixVersion.getFixtestCmd();
         String fixcommit = fixVersion.getFixcommit();
         String sirName=DefectsDB.getSirName(bugId);
-        return dockerServer.runTestW(fixtestCmd,bugId);
+        return dockerServer.runTestW(fixtestCmd,bugId,version);
     }
 
     public String diff(String bugId) throws Exception {

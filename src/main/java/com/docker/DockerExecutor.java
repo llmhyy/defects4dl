@@ -20,10 +20,10 @@ public class DockerExecutor extends Executor {
 
     private final static String BASH = "bash";
 
-
     public static String DOCKER_JAVA_PLAIN_CONTAINER_ID = "fc379fe8669b";
 
     private final static String DOCKER_EXEC_BASED_CMD = "docker exec";
+    private final static String CAT = "cat";
 
     public void runPrintln(String arg,String bugId) {
         String cmd = DOCKER_EXEC_BASED_CMD + " " + "" + bugId + " " + BASH + " -c " + "\""
@@ -36,99 +36,24 @@ public class DockerExecutor extends Executor {
         return execPrintlnW(cmd, pb);
     }
 
-
-    // 运行测试用例
-    public void runTest(String arg,String bugId,String version) {
+    // ==================运行测试用例=====================
+    public void runTest(String arg,String bugId) {
         String cmd = DOCKER_EXEC_BASED_CMD + " " + bugId + " " + "bash "
                 + "/" + SCRIPTS_FOLDER + "/" + arg;
-
-        //将容器的输出拷贝到主机中
-        String CreateTxt = "docker cp" + " " + bugId + ":script/" + bugId + "-" + version +".txt" + " D:\\zWork\\BugTxt";
-        String deleteTxt = DOCKER_EXEC_BASED_CMD + " " + bugId + " " + "rm -r " + "/" + SCRIPTS_FOLDER + "/" + bugId + "-" + version + ".txt";
-        execPrintlnTest(deleteTxt, pb);
         execPrintlnTest(cmd, pb);
-        execPrintlnTest(CreateTxt, pb);
-        String filePath = "D:\\zWork\\BugTxt\\" + bugId + "-"+ version +".txt";
-        readTxtFileIntoStringArrList(filePath);
+    }
+    public void readTxt(String bugId,String version){
+        // 读取script目录下的txt文件
+        String readTxt = DOCKER_EXEC_BASED_CMD + " " + bugId + " " + CAT + " " + "/" + SCRIPTS_FOLDER + "/"+ bugId + "-" + version + ".txt";
+        execPrintln(readTxt, pb);
     }
 
-    public String runTestW(String arg,String bugId,String version) {
-        String cmd = DOCKER_EXEC_BASED_CMD + " " + bugId + " " + "bash "
-                + "/" + SCRIPTS_FOLDER + "/" + arg;
-        //将容器的输出拷贝到主机中
-        String CreateTxt = "docker cp" + " " + bugId + ":script/" + bugId + "-" + version +".txt" + " D:\\zWork\\BugTxt";
-        String deleteTxt = DOCKER_EXEC_BASED_CMD + " " + bugId + " " + "rm -r " + "/" + SCRIPTS_FOLDER + "/" + bugId + "-" + version + ".txt";
-        execPrintlnTest(deleteTxt, pb);
-        execPrintlnTest(cmd, pb);
-        execPrintlnTest(CreateTxt, pb);
-        String filePath = "D:\\zWork\\BugTxt\\" + bugId + "-"+ version +".txt";
-        String result = readTxtFileIntoStringArrListW(filePath);
-        return result;
+    public String readTxtW(String bugId,String version){
+        // 读取script目录下的txt文件
+        String readTxt = DOCKER_EXEC_BASED_CMD + " " + bugId + " " + CAT + " " + "/" + SCRIPTS_FOLDER + "/"+ bugId + "-" + version + ".txt";
+        return execPrintlnW(readTxt, pb);
     }
 
-    // 读取测试结果txt文件Web版
-    public static String readTxtFileIntoStringArrListW(String filePath){
-        StringBuffer sb = new StringBuffer();
-        try{
-            String encoding = "GBK";
-            File file = new File(filePath);
-            // 判断文件是否存在
-            if (file.isFile() && file.exists()){
-                // 考虑编码格式
-                InputStreamReader read = new InputStreamReader(
-                        new FileInputStream(file), encoding);
-                BufferedReader bufferedReader = new BufferedReader(read);
-                String lineTxt = null;
-
-                while ((lineTxt = bufferedReader.readLine()) != null){
-                    sb.append(lineTxt).append("\n");
-                }
-                bufferedReader.close();
-                read.close();
-            }
-            else {
-                System.out.println("运行完成");
-            }
-        }
-        catch (Exception e){
-            System.out.println("读取文件内容出错");
-            e.printStackTrace();
-        }
-        return sb.toString();
-    }
-
-    // 读取测试结果txt文件
-    public static String readTxtFileIntoStringArrList(String filePath){
-        StringBuffer sb = new StringBuffer();
-        try{
-            String encoding = "GBK";
-            File file = new File(filePath);
-            // 判断文件是否存在
-            if (file.isFile() && file.exists()){
-                // 考虑编码格式
-                InputStreamReader read = new InputStreamReader(
-                        new FileInputStream(file), encoding);
-                BufferedReader bufferedReader = new BufferedReader(read);
-                String lineTxt = null;
-
-                while ((lineTxt = bufferedReader.readLine()) != null){
-                    System.out.println(lineTxt);
-                }
-                bufferedReader.close();
-                read.close();
-            }
-            else {
-                System.out.println("运行完成");
-            }
-        }
-        catch (Exception e){
-            System.out.println("读取文件内容出错");
-            e.printStackTrace();
-        }
-        return sb.toString();
-    }
-
-    // 测试用例以外的执行
     public String execPrintln(String cmd, ProcessBuilder pb) {
         StringBuffer sb = new StringBuffer();
         try {
@@ -171,10 +96,10 @@ public class DockerExecutor extends Executor {
                 sb.append(line).append("\n");
             }
         } catch (Exception ex) {
+            System.out.println("===bufferReader.readLine()为空！===");
         }
         return sb.toString();
     }
-
 
     public String run(String arg,String bugId) {
         String cmd = DOCKER_EXEC_BASED_CMD + " " + "" + bugId + " " + BASH + " -c " + "\""

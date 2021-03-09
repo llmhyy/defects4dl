@@ -585,7 +585,7 @@
         <name>GPflow</name>
         <source>https://github.com/Liang813/GPflow</source>
         <bug>
-            <id>GPflow813</id>
+            <id>gpflow813</id>
             <errormessage>ValueError</errormessage>
             <describe>The current implementation of ndiag_mc didn't handle multi-dimensional kwargs Ys .</describe>
             <rootCause>1</rootCause>
@@ -608,7 +608,7 @@
             <errormessage>InvalidArgumentError</errormessage>
             <describe>It seems that the TimeDistributed layer has a similar issue as the Bidirectional layer when passed a layer that requires the learning phase. Seems like wrapper is not taking good care of learning phase.</describe>
             <rootCause>1</rootCause>
-            <type>Argument Error</type>
+            <type>IPS</type>
             <buggyVersion>
                 <buggytestCmd>keras6387-buggy.sh</buggytestCmd>
                 <buggycommit>7d52af64c03e71bcd23112a7086dc8aab1b37ed2</buggycommit>
@@ -624,10 +624,10 @@
         <source>https://github.com/Liang813/keras</source>
         <bug>
             <id>keras5975</id>
-            <errormessage>InvalidArgumentError</errormessage>
+            <errormessage>MissingInputError</errormessage>
             <describe>Bidirectional wrapper produces error with any Recurrent layer with dropout or recurrent_dropout argument.Seems like wrapper is not taking good care of learning phase.</describe>
             <rootCause>1</rootCause>
-            <type>Argument Error</type>
+            <type>IPS</type>
             <buggyVersion>
                 <buggytestCmd>keras5975-buggy.sh</buggytestCmd>
                 <buggycommit>9217effdb445d9fd55853f716065579e2ffb9283</buggycommit>

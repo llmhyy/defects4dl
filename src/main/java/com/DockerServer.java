@@ -30,10 +30,12 @@ public class DockerServer {
     }
 
     public void runTest(String cmd,String bugId,String version) {
-        dockerExecutor.runTest(cmd,bugId,version);
+        dockerExecutor.runTest(cmd,bugId);
+        dockerExecutor.readTxt(bugId,version);
     }
     public String runTestW(String cmd,String bugId,String version) {
-        return dockerExecutor.runTestW(cmd,bugId,version);
+        dockerExecutor.runTest(cmd,bugId);
+        return dockerExecutor.readTxtW(bugId,version);
     }
 //    public void endTest() {
 //        String cmd ="rm -rf /home/rSwitch.lock";

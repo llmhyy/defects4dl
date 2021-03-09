@@ -44,7 +44,8 @@ public class DefectsAction {
         String describe = bug.getDescribe();
         String rootCause = bug.getRootCause();
 
-        String SIRName = DefectsDB.getSirName(bugId).toLowerCase();
+        // String SIRName = DefectsDB.getSirName(bugId).toLowerCase();
+        String SIRName = DefectsDB.getSirName(bugId);
 
         StringBuilder sb = new StringBuilder("---------bugInfo----------- \n");
 
@@ -152,17 +153,15 @@ public class DefectsAction {
         FixVersion fixVersion = bug.getFixVersion();
         String fixCommit = fixVersion.getFixcommit();
 
-        String SIRName = DefectsDB.getSirName(bugId).toLowerCase();
+        // String SIRName = DefectsDB.getSirName(bugId).toLowerCase();
+        String SIRName = DefectsDB.getSirName(bugId);
         String cdCmd="cd "+"/"+"home"+"/"+"metadata"+"/"+SIRName;
 
         System.out.println("-----------Diff--------------\nCHANGE FILES:");
-        //>log.txt;cat log.txt;rm log.txt
         dockerServer.runPrintln(cdCmd+";git diff " + buggyCommit + " " + fixCommit + " --stat",bugId);
         System.out.println("CHANGE DETAILS:");
 
         List<String> causeSet = null;
-        // causeSet= CodeUtils.getRootCause(bugId);
-        // dockerServer.runPrintln(cdCmd+";git diff " + buggyCommit + " " + fixCommit,causeSet);
         dockerServer.runPrintln(cdCmd+";git diff " + buggyCommit + " " + fixCommit,bugId);
         return "";
     }
@@ -175,7 +174,8 @@ public class DefectsAction {
         String buggyCommit = buggyVersion.getBuggycommit();
         FixVersion fixVersion = bug.getFixVersion();
         String fixCommit = fixVersion.getFixcommit();
-        String SIRName = DefectsDB.getSirName(bugId).toLowerCase();
+        // String SIRName = DefectsDB.getSirName(bugId).toLowerCase();
+        String SIRName = DefectsDB.getSirName(bugId);
         String cdCmd="cd "+"/"+"home"+"/"+"metadata"+"/"+SIRName;
         String diffInfo = dockerServer.diffRunPrintln(cdCmd+";git diff " + buggyCommit + " " + fixCommit,bugId);
         return diffInfo;

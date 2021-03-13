@@ -69,13 +69,14 @@
                 <tr>
                     <td class="item-title">Count of type Mismatch type</td>
                     <td>{{ tmCount }}</td>
-                    <td class="item-title">Count of Argument Error</td>
-                    <td>{{ aeCount }}</td>
+                    <td class="item-title">Count of Incorrect model structure or parameters</td>
+                    <td>{{ ipsCount }}</td>
                 </tr>
                 <tr>
                     <td class="item-title">Count of zero division</td>
                     <td>{{ zdCount }}</td>
-
+                    <td class="item-title">Count of IndexError</td>
+                    <td>{{ ieCount }}</td>
                 </tr>
             </table>
 
@@ -175,8 +176,9 @@
             smCount: null,
             apiCount: null,
             tmCount: null,
-            aeCount: null,
+            ipsCount: null,
             zdCount: null,
+            ieCount: null,
             dataList: [],
 
         },
@@ -196,27 +198,31 @@
                         var smCount = 0;
                         var apiCount = 0;
                         var tmCount = 0;
-                        var aeCount = 0;
+                        var ipsCount = 0;
                         var zdCount = 0;
+                        var ieCount = 0;
                         for(var i=0;i<response.data.length;i++){
                             if (response.data[i].bugs[0].type == "shape mismatch"){
                                 smCount++;
                             }
-                            else if(response.data[i].bugs[0].type == "API"){
+                            else if(response.data[i].bugs[0].type == "API misuse"){
                                 apiCount++;
                             }else if (response.data[i].bugs[0].type == "type mismatch"){
                                 tmCount++;
-                            }else if(response.data[i].bugs[0].type == "Argument Error"){
-                                aeCount++;
+                            }else if(response.data[i].bugs[0].type == "IPS"){
+                                ipsCount++;
                             }else if(response.data[i].bugs[0].type == "zero division"){
                                 zdCount++;
+                            }else if(response.data[i].bugs[0].type == "IndexError"){
+                                ieCount++;
                             }
                         }
                         vm.smCount = smCount;
                         vm.apiCount = apiCount;
                         vm.tmCount = tmCount;
-                        vm.aeCount = aeCount;
+                        vm.ipsCount = ipsCount;
                         vm.zdCount = zdCount;
+                        vm.ieCount = ieCount;
                     })
             },
             selectByType: function (){

@@ -34,9 +34,6 @@ public class DefectsAction {
         return res.toArray(new String[res.size()]);
     }
 
-//    public String pullBug(String bugID) throws Exception {
-//        return dockerServer.pullBug(bugID);
-//    }
 
     public String info(String bugId) throws Exception {
         Bug bug = DefectsDB.getBug(bugId);
@@ -73,6 +70,11 @@ public class DefectsAction {
 
         //String diffCount = dockerServer.run(cdCmd+";git rev-list " + buggycommit + ".." + fixcommit + " --count");
         //sb.append("Commits count between BuggyVersion and FixVersion:").append(diffCount);
+
+        String localMark = localMark(bugId);
+        sb.append("Positioning score:").append(localMark).append("\n");
+        String stringLength = stringLength(bugId);
+        sb.append("Fix string length:").append(stringLength).append("\n");
         return sb.toString();
 
     }
@@ -161,7 +163,6 @@ public class DefectsAction {
         dockerServer.runPrintln(cdCmd+";git diff " + buggyCommit + " " + fixCommit + " --stat",bugId);
         System.out.println("CHANGE DETAILS:");
 
-        List<String> causeSet = null;
         dockerServer.runPrintln(cdCmd+";git diff " + buggyCommit + " " + fixCommit,bugId);
         return "";
     }
@@ -179,6 +180,40 @@ public class DefectsAction {
         String cdCmd="cd "+"/"+"home"+"/"+"metadata"+"/"+SIRName;
         String diffInfo = dockerServer.diffRunPrintln(cdCmd+";git diff " + buggyCommit + " " + fixCommit,bugId);
         return diffInfo;
+    }
+
+    // 计算定位分数
+    public String localMark(String bugId) throws Exception {
+        String str = diffInfo(bugId);
+        int localDistance = 0;
+        String[] strs = str.split("@@");
+        String weWant = strs[strs.length-1].toString();
+        // 定位分数
+        int localMark = 0;
+
+        int minus = weWant.indexOf('-');
+        int plus = weWant.indexOf('+');
+        String distance = weWant.substring(minus,plus);
+
+        // 计算distance中有多少换行符
+        for(int i = 0;i<distance.length();i++){
+            if(distance.charAt(i)=='\n'){
+                localDistance++;
+            }
+        }
+        localMark = 10 - localDistance + 1;
+
+        return String.valueOf(localMark);
+    }
+
+    // 计算修复字符串长度
+    public String stringLength(String bugId) throws Exception {
+        String str = diffInfo(bugId);
+        String[] strs = str.split("@@");
+        String weWant = strs[strs.length-1].toString();
+        // 修改字符串长度
+        int stringLength = weWant.length();
+        return String.valueOf(stringLength);
     }
 
     public void setEnviroment() {

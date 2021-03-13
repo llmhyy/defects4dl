@@ -403,9 +403,9 @@
 
     <sir>
         <name>TensorFlow-Examples</name>
-        <source></source>
+        <source>https://github.com/Liang813/TensorFlow-Examples</source>
         <bug>
-            <id>TensorFlow-Examples10</id>
+            <id>tensorflow-examples10</id>
             <errormessage>None</errormessage>
             <describe>Author forgot to compute the mean loss over a batch. It is not a problem with small batch size, but it could lead to issues with large batch size, as it leads to unrepresentative cost (NaN) ...</describe>
             <rootCause>1</rootCause>
@@ -423,9 +423,9 @@
 
     <sir>
         <name>Deep-Learning-TensorFlow</name>
-        <source></source>
+        <source>https://github.com/Liang813/Deep-Learning-TensorFlow</source>
         <bug>
-            <id>Deep-Learning-TensorFlow1</id>
+            <id>deep-learning-tensorflow1</id>
             <errormessage>None</errormessage>
             <describe>The learning_rate is not small enough to cause the parameter to explode</describe>
             <rootCause>1</rootCause>
@@ -443,9 +443,9 @@
 
     <sir>
         <name>Deep-Learning-TensorFlow</name>
-        <source></source>
+        <source>https://github.com/Liang813/Deep-Learning-TensorFlow</source>
         <bug>
-            <id>Deep-Learning-TensorFlow5</id>
+            <id>deep-learning-tensorflow5</id>
             <errormessage>None</errormessage>
             <describe>missing tf.nn.softmax() in create_softmax_layer</describe>
             <rootCause>1</rootCause>
@@ -463,9 +463,9 @@
 
     <sir>
         <name>Deep-Learning-TensorFlow</name>
-        <source></source>
+        <source>https://github.com/Liang813/Deep-Learning-TensorFlow</source>
         <bug>
-            <id>Deep-Learning-TensorFlow0</id>
+            <id>deep-learning-tensorflow0</id>
             <errormessage>None</errormessage>
             <describe>Use tf.nn.softmax() only in the case of cross entropy loss</describe>
             <rootCause>1</rootCause>
@@ -483,9 +483,9 @@
 
     <sir>
         <name>Deep-Learning-TensorFlow</name>
-        <source></source>
+        <source>https://github.com/Liang813/Deep-Learning-TensorFlow</source>
         <bug>
-            <id>Deep-Learning-TensorFlow</id>
+            <id>deep-learning-tensorflow</id>
             <errormessage>None</errormessage>
             <describe>NaN may occur when calculating the cross entropy loss</describe>
             <rootCause>1</rootCause>
@@ -505,7 +505,7 @@
         <name>DCGAN-tensorflow</name>
         <source>https://github.com/Liang813/DCGAN-tensorflow</source>
         <bug>
-            <id>DCGAN-tensorflow108</id>
+            <id>dcgan-tensorflow108</id>
             <errormessage>TypeError</errormessage>
             <describe>A result of type int is required, but a result of type float is returned</describe>
             <rootCause>1</rootCause>
@@ -525,7 +525,7 @@
         <name>DCGAN-tensorflow</name>
         <source>https://github.com/Liang813/DCGAN-tensorflow</source>
         <bug>
-            <id>DCGAN-tensorflow17</id>
+            <id>dcgan-tensorflow17</id>
             <errormessage>ModuleNotFoundError</errormessage>
             <describe>Failing to load data during Training on CelebA</describe>
             <rootCause>1</rootCause>
@@ -601,7 +601,7 @@
         </bug>
     </sir>
     <sir>
-        <name>Keras</name>
+        <name>keras</name>
         <source>https://github.com/Liang813/keras</source>
         <bug>
             <id>keras6387</id>
@@ -620,7 +620,7 @@
         </bug>
     </sir>
     <sir>
-        <name>Keras</name>
+        <name>keras</name>
         <source>https://github.com/Liang813/keras</source>
         <bug>
             <id>keras5975</id>
@@ -639,7 +639,7 @@
         </bug>
     </sir>
     <sir>
-        <name>Keras</name>
+        <name>keras</name>
         <source>https://github.com/Liang813/keras</source>
         <bug>
             <id>keras5840</id>
@@ -658,7 +658,7 @@
         </bug>
     </sir>
     <sir>
-        <name>Keras</name>
+        <name>keras</name>
         <source>https://github.com/Liang813/keras</source>
         <bug>
             <id>keras5108</id>
@@ -677,7 +677,7 @@
         </bug>
     </sir>
     <sir>
-        <name>Keras</name>
+        <name>keras</name>
         <source>https://github.com/Liang813/keras</source>
         <bug>
             <id>keras9883</id>
@@ -696,7 +696,7 @@
         </bug>
     </sir>
     <sir>
-        <name>Keras</name>
+        <name>keras</name>
         <source>https://github.com/Liang813/keras</source>
         <bug>
             <id>keras13073</id>
@@ -715,7 +715,7 @@
         </bug>
     </sir>
     <sir>
-        <name>Keras</name>
+        <name>keras</name>
         <source>https://github.com/Liang813/keras</source>
         <bug>
             <id>keras2672</id>
@@ -737,7 +737,7 @@
         <name>CapsNet-Tensorflow</name>
         <source>https://github.com/Liang813/CapsNet-Tensorflow</source>
         <bug>
-            <id>CapsNet-Tensorflow4</id>
+            <id>capsnet-tensorflow4</id>
             <errormessage>ValueError</errormessage>
             <describe>The reconstruction part has to take the label as input.TODO: before reconstruction the input caps2 should do masking to pick. Out the activity vector of the correct digit capsule. </describe>
             <rootCause>1</rootCause>
@@ -757,7 +757,7 @@
         <name>TensorFlow.NET</name>
         <source>https://github.com/Liang813/TensorFlow.NET</source>
         <bug>
-            <id>TensorFlow.NET377</id>
+            <id>tensorflow.net377</id>
             <errormessage>None</errormessage>
             <describe>Currently TensorShape only support int/long dimensions.
                 We sometimes need to use an unknown dimension that represents a varying batch size that changes from run to run. </describe>

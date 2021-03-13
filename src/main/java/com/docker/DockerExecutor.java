@@ -92,7 +92,7 @@ public class DockerExecutor extends Executor {
             BufferedReader bufferReader = new BufferedReader(inputStr);
             String line;
             while ((line = bufferReader.readLine()) != null) {
-                //sb.append(line + '\n');
+
                 sb.append(line).append("\n");
             }
         } catch (Exception ex) {

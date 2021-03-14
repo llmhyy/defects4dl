@@ -19,8 +19,8 @@ public class Constant {
     //public final static String XML_VRESION_LABEL = "version";
     public final static String XML_BUGGY_TEST_CMD_LABEL = "buggytestCmd";
     public final static String XML_FIX_TEST_CMD_LABEL = "fixtestCmd";
-    //public final static String XML_ORIGN_COMMIT_LABEL="orignCommit";
-    //public final static String XML_BUILD_CMD_LABEL = "buildCmd";
+    public final static String XML_BUG_FIX_LENGTH="fixLength";
+    public final static String XML_BUG_LOCAL_SCORE = "localScore";
     public final static String XML_BUGGY_COMMIT_LABEL = "buggycommit";
     public final static String XML_FIX_COMMIT_LABEL = "fixcommit";
 

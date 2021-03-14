@@ -6,14 +6,16 @@ import com.vo.FixVersion;
 public class Bug {
 
     private String bugID;
-    private String errorMessage;  //报错信息
-    private String describe;    //错误描述
-    private String rootCause;  //核心修复代码段
-    private String type;   //General Bug类别
+    private String errorMessage;  // 报错信息
+    private String describe;    // 错误描述
+    private String rootCause;  // 核心修复代码段
+    private String type;   // General Bug类别
     private BuggyVersion BuggyVersion;
     private FixVersion FixVersion;
+    private String localScore;   // 定位分数
+    private String fixLength;  // 修复字符串长度
 
-    public Bug(String bugID, String errorMessage, String describe, String rootCause, String type , BuggyVersion buggyVersion, FixVersion fixVersion) {
+    public Bug(String bugID, String errorMessage, String describe, String rootCause, String type, BuggyVersion buggyVersion, FixVersion fixVersion, String localScore, String fixLength) {
         this.bugID = bugID;
         this.errorMessage = errorMessage;
         this.describe = describe;
@@ -21,7 +23,10 @@ public class Bug {
         this.type = type;
         this.BuggyVersion = buggyVersion;
         this.FixVersion = fixVersion;
+        this.localScore = localScore;
+        this.fixLength = fixLength;
     }
+
 
     public String getType() {
         return type;
@@ -77,5 +82,21 @@ public class Bug {
 
     public void setFixVersion(FixVersion fixVersion) {
         this.FixVersion = fixVersion;
+    }
+
+    public String getLocalScore() {
+        return localScore;
+    }
+
+    public String getFixLength() {
+        return fixLength;
+    }
+
+    public void setLocalScore(String localScore) {
+        this.localScore = localScore;
+    }
+
+    public void setFixLength(String fixLength) {
+        this.fixLength = fixLength;
     }
 }

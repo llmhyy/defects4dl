@@ -37,6 +37,8 @@ public class DefectsDB {
                 String describe =bugItem.getElementsByTagName(Constant.XML_BUG_DESCRIBE).item(0).getTextContent();
                 String type = bugItem.getElementsByTagName(Constant.XML_BUG_TYPE).item(0).getTextContent();
                 String rootCause=getContentText(bugItem, Constant.XML_BUG_ROOT_CAUSE_LABEL);
+                String localScore = bugItem.getElementsByTagName(Constant.XML_BUG_LOCAL_SCORE).item(0).getTextContent();
+                String fixLength = bugItem.getElementsByTagName(Constant.XML_BUG_FIX_LENGTH).item(0).getTextContent();
 
                 //buggyVersion和fixVersion为对象类型
                 NodeList buggyVersion = bugItem.getElementsByTagName(Constant.XML_BUGGY_VERSION);
@@ -48,13 +50,11 @@ public class DefectsDB {
                 //buggyVersions.add(new BuggyVersion(buggytestCmd, buggycommit));
 
                 NodeList fixVersion = bugItem.getElementsByTagName(Constant.XML_FIX_VERSION);
-                //List<FixVersion> fixVersions = new ArrayList<FixVersion>();
                 Element fVersion = (Element) fixVersion.item(0);
                 String fixtestCmd = fVersion.getElementsByTagName(Constant.XML_FIX_TEST_CMD_LABEL).item(0).getTextContent();
                 String fixcommit = fVersion.getElementsByTagName(Constant.XML_FIX_COMMIT_LABEL).item(0).getTextContent();
-                //fixVersions.add(new FixVersion(fixtestCmd, fixcommit));
                 FixVersion FixVersion = new FixVersion(fixtestCmd,fixcommit);
-                sir.addBug(new Bug(bugID, errorMessage,describe,rootCause,type,BuggyVersion,FixVersion));
+                sir.addBug(new Bug(bugID, errorMessage,describe,rootCause,type,BuggyVersion,FixVersion,localScore,fixLength));
 
             }
             sirs.add(sir);

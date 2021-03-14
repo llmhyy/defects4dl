@@ -96,7 +96,11 @@ public class DefectsAction {
         String fixcommit = fixVersion.getFixcommit();
         FixVersion FixVersion = new FixVersion(fixtestCmd,fixcommit);
 
-        Bug Bug = new Bug(bugId, errorMessage,describe,rootCause,type,BuggyVersion,FixVersion);
+        // 获取location分数与修复字符串长度
+        String localScore = localMark(bugId);
+        String fixLength = stringLength(bugId);
+
+        Bug Bug = new Bug(bugId, errorMessage,describe,rootCause,type,BuggyVersion,FixVersion,localScore,fixLength);
 
         return Bug;
 
@@ -190,18 +194,30 @@ public class DefectsAction {
         String weWant = strs[strs.length-1].toString();
         // 定位分数
         int localMark = 0;
+        int minus = 0;
+        int plus = 0;
+        String distance = "";
+        minus = weWant.indexOf('-');
+        plus = weWant.indexOf('+');
 
-        int minus = weWant.indexOf('-');
-        int plus = weWant.indexOf('+');
-        String distance = weWant.substring(minus,plus);
-
-        // 计算distance中有多少换行符
-        for(int i = 0;i<distance.length();i++){
-            if(distance.charAt(i)=='\n'){
-                localDistance++;
+        if(minus == 0 || plus == 0){
+            localMark = 5;
+        }else {
+            if(minus > plus){
+                distance = weWant.substring(plus,minus);
+            }else {
+                distance = weWant.substring(minus,plus);
             }
+
+            // 计算distance中有多少换行符
+            for(int i = 0;i<distance.length();i++){
+                if(distance.charAt(i)=='\n'){
+                    localDistance++;
+                }
+            }
+
+            localMark = 10 - localDistance ;
         }
-        localMark = 10 - localDistance + 1;
 
         return String.valueOf(localMark);
     }

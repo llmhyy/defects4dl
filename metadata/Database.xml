@@ -10,6 +10,8 @@
             <describe>TFBertModel ValueError: Tried to convert 'dims' to a tensor and failed. Error: Cannot convert a partially known TensorShape to a Tensor</describe>
             <rootCause>1</rootCause>
             <type>shape mismatch</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
             <buggyVersion>
                 <buggytestCmd>transformers1962-buggy.sh</buggytestCmd>
                 <buggycommit>adb5c79ff2ffcd2e4a43a12f082cca55f7630a96</buggycommit>
@@ -30,6 +32,8 @@
             <describe>The issue is due to implementation difference between Tensorflow and Pytorch DistillBERT. Tensorflow implementation doesn't have loss calculation inside call, but We do in forward for Pytorch. </describe>
             <rootCause>1</rootCause>
             <type>API misuse</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
             <buggyVersion>
                 <buggytestCmd>transformers1418-buggy.sh</buggytestCmd>
                 <buggycommit>c1689ac30164d190f366d95d1f5153af53e66355</buggycommit>
@@ -50,6 +54,8 @@
             <describe>List does not match tuple</describe>
             <rootCause>1</rootCause>
             <type>type mismatch</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
             <buggyVersion>
                 <buggytestCmd>transformers1152-buggy.sh</buggytestCmd>
                 <buggycommit>caf1d116a62a324a2b0ccfd92ca6c095d5368dde</buggycommit>
@@ -70,6 +76,8 @@
             <describe>ListField and MultilabelField are used incorrectly for sequence prediction using multi-label data.</describe>
             <rootCause>1</rootCause>
             <type>API misuse</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
             <buggyVersion>
                 <buggytestCmd>allennlp3721-buggy.sh</buggytestCmd>
                 <buggycommit>bae0c55e8c447811d9fa13f1c48f3e2576ab0dcc</buggycommit>
@@ -90,6 +98,8 @@
             <describe>NaN grads appear when an empty string is given</describe>
             <rootCause>1</rootCause>
             <type>zero division</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
             <buggyVersion>
                 <buggytestCmd>allennlp4612-buggy.sh</buggytestCmd>
                 <buggycommit>e840a589afc4bfdac0165a8650145259a7603807</buggycommit>
@@ -110,6 +120,8 @@
             <describe>The class does not choose to use the position parameter, but passes it the position parameter</describe>
             <rootCause>1</rootCause>
             <type>API misuse</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
             <buggyVersion>
                 <buggytestCmd>pytorch-lightning2386-buggy.sh</buggytestCmd>
                 <buggycommit>861a73be12ef17214bb0ed49aabc9f48a80fde16</buggycommit>
@@ -130,6 +142,8 @@
             <describe>inv_transform was crapping out when drawing a large number of samples because the base sample was exactly 1.0( see issue #161). While we were previously subtracting off a small number (1e-10), this number wasn't sufficient. I found that (1-e6) was the smallest base 10 number we could subtract off to get rid of the -inf.</describe>
             <rootCause>1</rootCause>
             <type>IPS</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
             <buggyVersion>
                 <buggytestCmd>botorch162-buggy.sh</buggytestCmd>
                 <buggycommit>8b17815b736cf0b95cc6a8c0ad9d8867a2d541bc</buggycommit>
@@ -150,6 +164,8 @@
             <describe>Indexing 0-dim tensor error</describe>
             <rootCause>1</rootCause>
             <type>IndexError</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
             <buggyVersion>
                 <buggytestCmd>ggnn.pytorch9-buggy.sh</buggytestCmd>
                 <buggycommit>0c7897fe9b05e9b4f9a963ff55bd3ad917ea734e</buggycommit>
@@ -170,6 +186,8 @@
             <describe>Speech recognition fails due to NaN if there is an input of size 1</describe>
             <rootCause>1</rootCause>
             <type>IPS</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
             <buggyVersion>
                 <buggytestCmd>fairseq1863-buggy.sh</buggytestCmd>
                 <buggycommit>95294bfbb627c7ba140e73ac27c8e98012045916</buggycommit>
@@ -190,6 +208,8 @@
             <describe>Fix attention scores shape definition</describe>
             <rootCause>1</rootCause>
             <type>shape mismatch</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
             <buggyVersion>
                 <buggytestCmd>seq2seq95-buggy.sh</buggytestCmd>
                 <buggycommit>61bd9f7a46577fabc9f98cad6f3ec23cf4034814</buggycommit>
@@ -210,6 +230,8 @@
             <describe>Fix bug in residual connection dimensions</describe>
             <rootCause>1</rootCause>
             <type>shape mismatch</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
             <buggyVersion>
                 <buggytestCmd>seq2seq-buggy.sh</buggytestCmd>
                 <buggycommit>c54a7aba00433743cf960dcc98be6057204179f1</buggycommit>
@@ -230,6 +252,8 @@
             <describe>Arguments to one function are taken into another function</describe>
             <rootCause>1</rootCause>
             <type>API misuse</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
             <buggyVersion>
                 <buggytestCmd>dcgan-completion.tensorflow-buggy.sh</buggytestCmd>
                 <buggycommit>bba1b1592bc928c787aa9dc953bcf2cf540b4eb9</buggycommit>
@@ -250,6 +274,8 @@
             <describe>Function using error, parameter using parameter sequence using error.</describe>
             <rootCause>1</rootCause>
             <type>API misuse</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
             <buggyVersion>
                 <buggytestCmd>models857-buggy.sh</buggytestCmd>
                 <buggycommit>4b53df3cf4f8e15816d5e2d5093ec855fb4e410c</buggycommit>
@@ -270,6 +296,8 @@
             <describe>Function using error, parameter using parameter sequence using error.</describe>
             <rootCause>1</rootCause>
             <type>API misuse</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
             <buggyVersion>
                 <buggytestCmd>sact1-buggy.sh</buggytestCmd>
                 <buggycommit>10e09ab327ab57f2520ef260b5c57fb523eb2980</buggycommit>
@@ -290,6 +318,8 @@
             <describe>The assignment of two arguments to the function is reversed</describe>
             <rootCause>1</rootCause>
             <type>API misuse</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
             <buggyVersion>
                 <buggytestCmd>models1063-buggy.sh</buggytestCmd>
                 <buggycommit>fdc0c4ab1b039b6085478b36b5cd3cad038941ec</buggycommit>
@@ -310,6 +340,8 @@
             <describe>This works around a bug in earlier proto versions that automatically infer these values to be integer instead of float.</describe>
             <rootCause>1</rootCause>
             <type>type mismatch</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
             <buggyVersion>
                 <buggytestCmd>models1707-buggy.sh</buggytestCmd>
                 <buggycommit>434c277677ba973ae6acc21fcc3d616e1bb7f1df</buggycommit>
@@ -330,6 +362,8 @@
             <describe>The normalization function was used incorrectly, causing NaN to appear when calculating the loss</describe>
             <rootCause>1</rootCause>
             <type>IPS</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
             <buggyVersion>
                 <buggytestCmd>models23-buggy.sh</buggytestCmd>
                 <buggycommit>38079f01d0cdbeb8e3aa6c4ef0a8d5b5c1e4d9a0</buggycommit>
@@ -350,6 +384,8 @@
             <describe>Error using resnet_v1 feature extractor</describe>
             <rootCause>1</rootCause>
             <type>API misuse</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
             <buggyVersion>
                 <buggytestCmd>models1585-buggy.sh</buggytestCmd>
                 <buggycommit>daf4bf93e3ae6276137a904fb56a32809296df29</buggycommit>
@@ -370,6 +406,8 @@
             <describe>Use the tensorflow cross entropy function to prevent nan losses.</describe>
             <rootCause>1</rootCause>
             <type>IPS</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
             <buggyVersion>
                 <buggytestCmd>models166-buggy.sh</buggytestCmd>
                 <buggycommit>05630a7578b25390f469b2f91f2c2326e5ed539b</buggycommit>
@@ -390,6 +428,8 @@
             <describe>Adding to the function inputs in order to match the function distorted_inputs.</describe>
             <rootCause>1</rootCause>
             <type>shape mismatch</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
             <buggyVersion>
                 <buggytestCmd>models893-buggy.sh</buggytestCmd>
                 <buggycommit>2cd62f6c6d3cfc95f022b9e04e2c2ef15f538b75</buggycommit>
@@ -410,6 +450,8 @@
             <describe>Author forgot to compute the mean loss over a batch. It is not a problem with small batch size, but it could lead to issues with large batch size, as it leads to unrepresentative cost (NaN) ...</describe>
             <rootCause>1</rootCause>
             <type>IPS</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
             <buggyVersion>
                 <buggytestCmd>TensorFlow-Examples10-buggy.sh</buggytestCmd>
                 <buggycommit>844bbfce6d5a872e547fa27c601c5816d4b39f91</buggycommit>
@@ -430,6 +472,8 @@
             <describe>The learning_rate is not small enough to cause the parameter to explode</describe>
             <rootCause>1</rootCause>
             <type>IPS</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
             <buggyVersion>
                 <buggytestCmd>Deep-Learning-TensorFlow1-buggy.sh</buggytestCmd>
                 <buggycommit>907833ab90e27af156484e1aa140ed656e4b4a15</buggycommit>
@@ -450,6 +494,8 @@
             <describe>missing tf.nn.softmax() in create_softmax_layer</describe>
             <rootCause>1</rootCause>
             <type>IPS</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
             <buggyVersion>
                 <buggytestCmd>Deep-Learning-TensorFlow5-buggy.sh</buggytestCmd>
                 <buggycommit>ded661243a7bf86975e4f29fdf192d7dc4a72770</buggycommit>
@@ -470,6 +516,8 @@
             <describe>Use tf.nn.softmax() only in the case of cross entropy loss</describe>
             <rootCause>1</rootCause>
             <type>IPS</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
             <buggyVersion>
                 <buggytestCmd>Deep-Learning-TensorFlow0-buggy.sh</buggytestCmd>
                 <buggycommit>1bcc1efcce5772af15c8e787f21ae60a923e6731</buggycommit>
@@ -490,6 +538,8 @@
             <describe>NaN may occur when calculating the cross entropy loss</describe>
             <rootCause>1</rootCause>
             <type>IPS</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
             <buggyVersion>
                 <buggytestCmd>Deep-Learning-TensorFlow-buggy.sh</buggytestCmd>
                 <buggycommit>53c69ce3e6af6213e73cff84c675c93c9a2a47f7</buggycommit>
@@ -510,6 +560,8 @@
             <describe>A result of type int is required, but a result of type float is returned</describe>
             <rootCause>1</rootCause>
             <type>type mismatch</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
             <buggyVersion>
                 <buggytestCmd>DCGAN-tensorflow108-buggy.sh</buggytestCmd>
                 <buggycommit>9166ef99bf9fcd1d0bf641ae752428bb06903b00</buggycommit>
@@ -530,6 +582,8 @@
             <describe>Failing to load data during Training on CelebA</describe>
             <rootCause>1</rootCause>
             <type>shape mismatch</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
             <buggyVersion>
                 <buggytestCmd>DCGAN-tensorflow17-buggy.sh</buggytestCmd>
                 <buggycommit>eb2ffe490f61e478227bf539f75ed0b6f9bb1d6b</buggycommit>
@@ -550,6 +604,8 @@
             <describe>KerasRegressor.predict does not squeeze batch dims,If the input to KerasRegressor.predict() is an array with one example, then the output should be a 1D array with one example, not a 0D array.</describe>
             <rootCause>1</rootCause>
             <type>shape mismatch</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
             <buggyVersion>
                 <buggytestCmd>keras11657-buggy.sh</buggytestCmd>
                 <buggycommit>7cd6c59789c8e469c0d3cab6bca7ae3d2d028002</buggycommit>
@@ -570,6 +626,8 @@
             <describe>Use NASNetLarge，get Error  It only works with shape (331,331,3) but for larger inputs like (640,640,3) does not work again.     But In docs NASNetLarge: 'It should have exactly 3 inputs channels, and width and height should be no smaller than 32. E.g. (200, 200, 3) would be one valid value.'</describe>
             <rootCause>1</rootCause>
             <type>shape mismatch</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
             <buggyVersion>
                 <buggytestCmd>keras9812-buggy.sh</buggytestCmd>
                 <buggycommit>736b7a705db802d63ddcee1cd0687f806ef2d495</buggycommit>
@@ -590,6 +648,8 @@
             <describe>The current implementation of ndiag_mc didn't handle multi-dimensional kwargs Ys .</describe>
             <rootCause>1</rootCause>
             <type>shape mismatch</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
             <buggyVersion>
                 <buggytestCmd>GPflow813-buggy.sh</buggytestCmd>
                 <buggycommit>1db48f3a735eb0fba06a7d503f080a7ead512604</buggycommit>
@@ -609,6 +669,8 @@
             <describe>It seems that the TimeDistributed layer has a similar issue as the Bidirectional layer when passed a layer that requires the learning phase. Seems like wrapper is not taking good care of learning phase.</describe>
             <rootCause>1</rootCause>
             <type>IPS</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
             <buggyVersion>
                 <buggytestCmd>keras6387-buggy.sh</buggytestCmd>
                 <buggycommit>7d52af64c03e71bcd23112a7086dc8aab1b37ed2</buggycommit>
@@ -628,6 +690,8 @@
             <describe>Bidirectional wrapper produces error with any Recurrent layer with dropout or recurrent_dropout argument.Seems like wrapper is not taking good care of learning phase.</describe>
             <rootCause>1</rootCause>
             <type>IPS</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
             <buggyVersion>
                 <buggytestCmd>keras5975-buggy.sh</buggytestCmd>
                 <buggycommit>9217effdb445d9fd55853f716065579e2ffb9283</buggycommit>
@@ -647,6 +711,8 @@
             <describe>Simple merge layers that just extend _Merge and implement _merge_function report that they have multiple outputs (as many as inputs) with the same shape.</describe>
             <rootCause>1</rootCause>
             <type>shape mismatch</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
             <buggyVersion>
                 <buggytestCmd>keras5840-buggy.sh</buggytestCmd>
                 <buggycommit>9cf7f816f28a6ac7d7a4264ae015addd72e57321</buggycommit>
@@ -666,6 +732,8 @@
             <describe>Running the equivalent code in Convolution2D  for Convolution3D results in a ValueError because the input shape expected by the layer seems to be fixed to the first shape it saw.,Convolution3D fixes the input shape when the layer is built, which happens during the first call. This input shape is useful for some optimisations. Convolution2D does not fix the input shape.</describe>
             <rootCause>1</rootCause>
             <type>shape mismatch</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
             <buggyVersion>
                 <buggytestCmd>keras5108-buggy.sh</buggytestCmd>
                 <buggycommit>a5a775b79f46f3a198f71d613ccee899bec8e8ae</buggycommit>
@@ -685,6 +753,8 @@
             <describe>Conv2DTranspose infers the shape of the output using deconv_length but because the output shape of a transposed convolution is ambigous it can infer an undesired shape.</describe>
             <rootCause>1</rootCause>
             <type>shape mismatch</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
             <buggyVersion>
                 <buggytestCmd>Keras9883-buggy.sh</buggytestCmd>
                 <buggycommit>8a5d4bcc62f49d79839de9ddf8c72d97056ee522</buggycommit>
@@ -704,6 +774,8 @@
             <describe>People set embedding with MAX_NUM_WORDS=3，but tokenizer return n-1 words i.e 2. </describe>
             <rootCause>1</rootCause>
             <type>shape mismatch</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
             <buggyVersion>
                 <buggytestCmd>Keras13073-buggy.sh</buggytestCmd>
                 <buggycommit>0fc33feb5f4efe3bb823c57a8390f52932a966ab</buggycommit>
@@ -723,6 +795,8 @@
             <describe>cos mode does not carefully deal with division by zero, might be the cause of NaN. output = K.batch_dot(l1, l2, self.dot_axes) / denominator  </describe>
             <rootCause>1</rootCause>
             <type>zero division</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
             <buggyVersion>
                 <buggytestCmd>Keras2672-buggy.sh</buggytestCmd>
                 <buggycommit>973b5570aa4aea71323d6c08614d5e2a8f50a6ec</buggycommit>
@@ -742,6 +816,8 @@
             <describe>The reconstruction part has to take the label as input.TODO: before reconstruction the input caps2 should do masking to pick. Out the activity vector of the correct digit capsule. </describe>
             <rootCause>1</rootCause>
             <type>shape mismatch</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
             <buggyVersion>
                 <buggytestCmd>CapsNet-Tensorflow4-buggy.sh</buggytestCmd>
                 <buggycommit>abbc810771d94bbd25a071a8aa57aabd6c4aa056</buggycommit>
@@ -763,6 +839,8 @@
                 We sometimes need to use an unknown dimension that represents a varying batch size that changes from run to run. </describe>
             <rootCause>1</rootCause>
             <type>shape mismatch</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
             <buggyVersion>
                 <buggytestCmd>TensorFlow.NET377-buggy.sh</buggytestCmd>
                 <buggycommit>269611bf8652bfb031cbc84ca4bd8b995dd903e4</buggycommit>
@@ -782,6 +860,8 @@
             <describe>Trying the random distribution ops with default arguments gave  the  error.</describe>
             <rootCause>1</rootCause>
             <type>shape mismatch</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
             <buggyVersion>
                 <buggytestCmd>tensorflow_scala18-buggy.sh</buggytestCmd>
                 <buggycommit>dd021285d9ed87377b9956d8b08ac74ddecb4602</buggycommit>
@@ -802,6 +882,8 @@
             <describe>LinearGaussianStateSpaceModel sample doesn't work with num_timesteps=1.It is because tf.scan in the line below gives empty tensors for latents and observations if num_timesteps=1 as self.initial_step+1 and self.final_step are equal. (because self.final_step = self.initial_step+num_timesteps)</describe>
             <rootCause>1</rootCause>
             <type>shape mismatch</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
             <buggyVersion>
                 <buggytestCmd>probability417-buggy.sh</buggytestCmd>
                 <buggycommit>499827efa11b55f44fa0d5ef0432f3e1eebeff01</buggycommit>
@@ -821,6 +903,8 @@
             <describe>This Bug is due to the fact that the divisor is not the same type as the dividend, resulting in the final result being 0</describe>
             <rootCause>1</rootCause>
             <type>type mismatch</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
             <buggyVersion>
                 <buggytestCmd>segmentation_models.pytorch186-buggy.sh</buggytestCmd>
                 <buggycommit>ecc848f7b600d0e5cc3a7bbe2a139e97de22da49</buggycommit>
@@ -840,6 +924,8 @@
             <describe>CrossEntropy's size does not match that needed by the mask</describe>
             <rootCause>1</rootCause>
             <type>shape mismatch</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
             <buggyVersion>
                 <buggytestCmd>tutorials382-buggy.sh</buggytestCmd>
                 <buggycommit>a46b6437b74c30b9683631942b3157788b5cb78f</buggycommit>
@@ -859,6 +945,8 @@
             <describe>Input image width and height position reversed</describe>
             <rootCause>1</rootCause>
             <type>shape mismatch</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
             <buggyVersion>
                 <buggytestCmd>pytorch-pose116-buggy.sh</buggytestCmd>
                 <buggycommit>e09fb262c473e705075d20e8981368e94cdfc4a3</buggycommit>

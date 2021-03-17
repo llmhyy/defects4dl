@@ -76,6 +76,14 @@
                     <button class="btn btn-primary btn-sm" type="button" v-on:click="showDiff">Diff</button>
                 </td>
             </tr>
+            <!-- 定位分数与修复字符串长度 -->
+            <tr>
+                <td class="item-title">localScore</td>
+                <td>{{ dataInfoDetail.localScore }}</td>
+                <td class="item-title">stringLength</td>
+                <td>{{ dataInfoDetail.fixLength }}</td>
+            </tr>
+
             <tr>
                 <td class="item-title">If you would like to run the Buggy version of the test case, please click</td>
                 <td >

@@ -189,46 +189,57 @@ public class DefectsAction {
     // 计算定位分数
     public String localMark(String bugId) throws Exception {
         String str = diffInfo(bugId);
+        // 总的换行符个数
         int localDistance = 0;
-        String[] strs = str.split("@@");
-        String weWant = strs[strs.length-1].toString();
         // 定位分数
         int localMark = 0;
-        int minus = 0;
-        int plus = 0;
+        // 减去的分数
+        int mScore = 0;
         String distance = "";
-        minus = weWant.indexOf('-');
-        plus = weWant.indexOf('+');
+        String[] strs = str.split("@@");
+        for(int i = 1;i< strs.length;i++){
+            String weWant = strs[i].toString();
+            int minus = weWant.indexOf('-');
+            int plus = weWant.indexOf('+');
 
-        if(minus == 0 || plus == 0){
-            localMark = 5;
-        }else {
-            if(minus > plus){
-                distance = weWant.substring(plus,minus);
+            if(minus <= 0 || plus <= 0){
+                mScore += 2;
             }else {
-                distance = weWant.substring(minus,plus);
-            }
-
-            // 计算distance中有多少换行符
-            for(int i = 0;i<distance.length();i++){
-                if(distance.charAt(i)=='\n'){
-                    localDistance++;
+                if(minus > plus){
+                    distance = weWant.substring(plus,minus);
+                }else {
+                    distance = weWant.substring(minus,plus);
                 }
+                // 计算distance中有多少换行符
+                int hhf = 0;
+                for(int j = 0;j<distance.length();j++){
+                    if(distance.charAt(j)=='\n'){
+                        hhf++;
+                    }
+                }
+                if(hhf == 0){
+                    continue;
+                }
+                localDistance = localDistance + hhf - 1;
             }
-
-            localMark = 10 - localDistance ;
         }
-
+        localMark = 10 - mScore - localDistance;
+        if (localMark <= 0){
+            localMark = 0;
+        }
         return String.valueOf(localMark);
     }
 
     // 计算修复字符串长度
     public String stringLength(String bugId) throws Exception {
         String str = diffInfo(bugId);
+        int stringLength = 0;
         String[] strs = str.split("@@");
-        String weWant = strs[strs.length-1].toString();
-        // 修改字符串长度
-        int stringLength = weWant.length();
+        for(int i=1;i< strs.length;i++){
+            String weWant = strs[i].toString();
+            // 修改字符串长度
+            stringLength = stringLength + weWant.length();
+        }
         return String.valueOf(stringLength);
     }
 

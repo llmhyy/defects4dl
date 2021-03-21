@@ -186,7 +186,7 @@ public class DefectsAction {
         return diffInfo;
     }
 
-    // 计算定位分数
+    // 计算定位分数与修复字符串长度
     public String localMark(String bugId) throws Exception {
         String str = diffInfo(bugId);
         // 总的换行符个数
@@ -235,10 +235,30 @@ public class DefectsAction {
         String str = diffInfo(bugId);
         int stringLength = 0;
         String[] strs = str.split("@@");
-        for(int i=1;i< strs.length;i++){
+        // 修改的chunk数
+        for(int i=2;i< strs.length;i=i+2){
             String weWant = strs[i].toString();
-            // 修改字符串长度
-            stringLength = stringLength + weWant.length();
+            int lengths = 0;
+            int length = 0;
+            int porm = 0;   // +或-
+            int lineBreak = 0;  // 换行符
+            // 遍历每个chunk,找+或-，然后换行符，计算它们之间的距离
+            for(int j=0;j<weWant.length();j++){
+
+                if(weWant.charAt(j)=='+' || weWant.charAt(j)=='-'){
+                    porm = j;
+                }
+                if(weWant.charAt(j)=='\n'){
+                    lineBreak = j;
+                }
+                if(porm !=0 && lineBreak !=0 && lineBreak>porm){
+                    length = lineBreak - porm;
+                    lineBreak = 0;
+                    porm = 0;
+                    lengths += length;
+                }
+            }
+            stringLength += lengths;
         }
         return String.valueOf(stringLength);
     }

@@ -196,11 +196,37 @@ public class DefectsAction {
         // 减去的分数
         int mScore = 0;
         String distance = "";
+        // 每个chunk中'-'和'+'的数量
+        int minusC = 0;
+        int plusC = 0;
         String[] strs = str.split("@@");
-        for(int i = 1;i< strs.length;i++){
+        // 遍历chunk
+        for(int i = 2;i< strs.length;i=i+2){
             String weWant = strs[i].toString();
-            int minus = weWant.indexOf('-');
-            int plus = weWant.indexOf('+');
+            // int minus = weWant.indexOf('-');
+            // int plus = weWant.indexOf('+');
+            int minus = 0;
+            int plus = 0;
+            for(int j =0;j<weWant.length();j++){
+                if(weWant.charAt(j)=='-' && weWant.charAt(j-1)=='\n' && weWant.charAt(j+1)!='-'){
+                    minus = j;
+                    break;
+                }
+            }
+            for(int j =0;j<weWant.length();j++){
+                if(weWant.charAt(j)=='+' && weWant.charAt(j-1)=='\n' && weWant.charAt(j+1)!='+'){
+                    plus = j;
+                    break;
+                }
+            }
+            for(int j = 0;j<weWant.length();j++){
+                if(weWant.charAt(j)=='+' && weWant.charAt(j-1)=='\n' && weWant.charAt(j+1)!='+'){
+                    plusC++;
+                }
+                if(weWant.charAt(j)=='-' && weWant.charAt(j-1)=='\n' && weWant.charAt(j+1)!='-'){
+                    minusC++;
+                }
+            }
 
             if(minus <= 0 || plus <= 0){
                 mScore += 2;
@@ -220,8 +246,12 @@ public class DefectsAction {
                 if(hhf == 0){
                     continue;
                 }
-                localDistance = localDistance + hhf - 1;
+                if(minusC == plusC){
+                    localDistance = 0;
+                }
+                localDistance = localDistance + hhf/(hhf+1) - 1/2;
             }
+
         }
         localMark = 10 - mScore - localDistance;
         if (localMark <= 0){
@@ -245,7 +275,7 @@ public class DefectsAction {
             // 遍历每个chunk,找+或-，然后换行符，计算它们之间的距离
             for(int j=0;j<weWant.length();j++){
 
-                if(weWant.charAt(j)=='+' || weWant.charAt(j)=='-'){
+                if((weWant.charAt(j)=='+' && weWant.charAt(j-1)=='\n' && weWant.charAt(j+1)!='+') || (weWant.charAt(j)=='-' && weWant.charAt(j-1)=='\n' && weWant.charAt(j+1)!='-')){
                     porm = j;
                 }
                 if(weWant.charAt(j)=='\n'){

@@ -957,4 +957,26 @@
             </fixVersion>
         </bug>
     </sir>
+    <sir>
+        <name>fastai</name>
+        <source>https://github.com/Liang813/fastai</source>
+        <bug>
+            <id>fastai1678</id>
+            <errormessage>TypeError</errormessage>
+            <describe>Losses out of order in RNNLearner.get_preds(..., with_loss=True, ordered=True)</describe>
+            <rootCause>1</rootCause>
+            <type>IPS</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
+            <buggyVersion>
+                <buggytestCmd>fastai1678-buggy.sh</buggytestCmd>
+                <buggycommit>1f0dae64160db7e5bd13d31abc1359c58e63a4a7</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>fastai1678-fix.sh</fixtestCmd>
+                <fixcommit>7c79371929bca523705b738b02749c008e20e191</fixcommit>
+            </fixVersion>
+        </bug>
+    </sir>
+
 </root>

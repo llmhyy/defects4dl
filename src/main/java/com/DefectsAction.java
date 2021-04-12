@@ -3,19 +3,20 @@ package com;
 import JavaBasedConfig.Configs;
 import com.docker.DockerExecutor;
 import com.executor.Execute;
-import com.utils.CodeUtils;
 import com.vo.Bug;
 import com.vo.BuggyVersion;
+import com.vo.Distance;
 import com.vo.FixVersion;
-
-import java.math.BigDecimal;
+import com.docker.DockerExecutor;
 import java.text.NumberFormat;
 import java.util.List;
-import java.io.File;
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class DefectsAction {
     public static Execute exec = new Execute();
+    private static DockerExecutor dockerExecutor =new DockerExecutor();
     DockerServer dockerServer =new DockerServer();
 
     public String[] ls() {
@@ -183,16 +184,33 @@ public class DefectsAction {
         String SIRName = DefectsDB.getSirName(bugId);
         String cdCmd="cd "+"/"+"home"+"/"+"metadata"+"/"+SIRName;
         String diffInfo = dockerServer.diffRunPrintln(cdCmd+";git diff " + buggyCommit + " " + fixCommit,bugId);
+        System.out.println(diffInfo);
         return diffInfo;
     }
 
-    // 计算定位分数与修复字符串长度
+    public String diffInfoStat(String bugId) throws Exception {
+
+        Bug bug = DefectsDB.getBug(bugId);
+        String rootCause = bug.getRootCause();
+        BuggyVersion buggyVersion = bug.getBuggyVersion();
+        String buggyCommit = buggyVersion.getBuggycommit();
+        FixVersion fixVersion = bug.getFixVersion();
+        String fixCommit = fixVersion.getFixcommit();
+        // String SIRName = DefectsDB.getSirName(bugId).toLowerCase();
+        String SIRName = DefectsDB.getSirName(bugId);
+        String cdCmd="cd "+"/"+"home"+"/"+"metadata"+"/"+SIRName;
+        String diffInfoStat = dockerServer.diffRunPrintln(cdCmd+";git diff " + buggyCommit + " " + fixCommit + " --stat",bugId);
+        return diffInfoStat;
+    }
+
+    // ================计算定位分数================
+    /*
     public String localMark(String bugId) throws Exception {
         String str = diffInfo(bugId);
         // 总的换行符个数
-        int localDistance = 0;
+        float localDistance = 0;
         // 定位分数
-        int localMark = 0;
+        float localMark = 0;
         // 减去的分数
         int mScore = 0;
         String distance = "";
@@ -249,18 +267,121 @@ public class DefectsAction {
                 if(minusC == plusC){
                     localDistance = 0;
                 }
-                localDistance = localDistance + hhf/(hhf+1) - 1/2;
+                localDistance = localDistance + (float)hhf/(hhf+1) - 1/2;
+
             }
 
         }
-        localMark = 10 - mScore - localDistance;
+        localMark = (float) (10.5 - mScore - localDistance);
         if (localMark <= 0){
             localMark = 0;
         }
         return String.valueOf(localMark);
     }
+    */
+    public String localMark(String bugId) throws Exception {
+        double localScore = 0;
+        // 读取buggy分支运行结果，获取异常运行轨迹
+        String bugTrace = dockerExecutor.readTxtW(bugId,"buggy");
+        // 判断里面有没有Traceback关键字
+        int include_trace = bugTrace.indexOf("Traceback");
+        if(include_trace != -1){
+            List fileNames = new ArrayList();
+            List errorLines = new ArrayList();
+            List diffFileNames = new ArrayList();
+            List diffLines = new ArrayList();
+            // 包含关键字，有报错，获取报错信息
+            fileNames = getFileName(bugTrace);
+            errorLines = getErrorLine(bugTrace);
+            // 获取diff中的信息
+            String diffInfoStat = diffInfoStat(bugId);
+            diffFileNames = getFileName(diffInfoStat);
+            String diffInfo = diffInfo(bugId);
+            diffLines = getDiffLine(diffInfo);
 
-    // 计算修复字符串长度
+            // 匹配报错文件与diff中修改的文件,取其中最小的行数差
+            int distance = 1000;
+            for(int i = 0;i< fileNames.size();i++){
+                for(int j = 0;j< diffFileNames.size();j++){
+                    if(fileNames.get(i) == diffFileNames.get(j)){
+                        int distance1 = (int)errorLines.get(i)-(int)diffLines.get(j);
+                        if(Math.abs(distance1) < distance){
+                            distance = distance1;
+                        }
+                    }
+                }
+            }
+            if(distance == 1000){
+                // 没有匹配到，获取文件结构,计算文件距离
+                // 人为查看文件距离，或者具体获取报错路径，然后查看diff修改的路径，计算距离
+                //localScore = Distance.selectDis(bugId);
+                localScore = 3.5;
+            }else {
+                // 匹配到，计算定位难度
+                localScore = distance/(distance+1);
+            }
+
+        }else {
+            // 不包含关键字，测试用例没有报错
+            localScore = 10;
+        }
+
+        return String.valueOf(localScore);
+    }
+
+    // 正则表达式 捕获报错文件名
+    public List<String> getFileName(String str){
+        List fileNames = new ArrayList();
+        String patternFile = "[\\w]+(\\.py)";
+        Pattern rf = Pattern.compile(patternFile);
+        Matcher mf = rf.matcher(str);
+        while(mf.find()){
+            fileNames.add(mf.group());
+        }
+        return fileNames;
+    }
+
+    // 正则表达式，捕获报错行数
+    public List<String> getErrorLine(String str){
+        List errorLines = new ArrayList();
+        String patternLine = "line\\s\\d+";
+        Pattern rl = Pattern.compile(patternLine);
+        Matcher ml = rl.matcher(str);
+        while(ml.find()){
+            String a = getNumber(ml.group());
+            errorLines.add(a);
+        }
+        return errorLines;
+    }
+
+    // 正则表达式，获取diff中的修改行数
+    public List<String> getDiffLine(String str){
+        List diffLines = new ArrayList();
+        String pattern = "[@][@][\\s][+-]\\d+";
+        Pattern dl = Pattern.compile(pattern);
+        Matcher m = dl.matcher(str);
+        while(m.find()){
+            String a = getNumber(m.group());
+            diffLines.add(a);
+        }
+        return diffLines;
+    }
+
+    // 正则表达式，取数字
+    public String getNumber(String str){
+        String num = null;
+        String pattern = "\\d+";
+        Pattern r = Pattern.compile(pattern);
+        Matcher m = r.matcher(str);
+        while(m.find()){
+            num = m.group();
+        }
+        return num;
+    }
+
+
+
+    // ================计算修复字符串长度================
     public String stringLength(String bugId) throws Exception {
         String str = diffInfo(bugId);
         int stringLength = 0;

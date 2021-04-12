@@ -28,4 +28,5 @@ public class Constant {
     public final static String BUG_NOTHAVEN_INFO_EXCEPTION = "Bug not haven ";
     public  final  static  String DOCKER="docker";
     public final  static String LOCAL="local";
+
 }

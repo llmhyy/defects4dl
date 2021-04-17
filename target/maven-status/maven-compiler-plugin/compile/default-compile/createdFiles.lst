@@ -14,6 +14,7 @@ com\executor\Adminexec.class
 com\DefectsAction.class
 com\diogonunes\jcdp\color\api\Ansi$FColor.class
 com\diogonunes\jcdp\color\ColoredPrinter$Builder.class
+com\vo\Distance.class
 com\servlet\GetBug.class
 com\executor\Executor.class
 com\diogonunes\jcdp\bw\api\IPrinter.class

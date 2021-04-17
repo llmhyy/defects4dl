@@ -86,10 +86,11 @@
                 <select class="form-control" id="selectType" v-on:change="initBug">
                     <option value="All">All</option>
                     <option value="shapeMismatch">shape mismatch</option>
-                    <option value="API">API</option>
+                    <option value="API">API misuse</option>
                     <option value="typeMismatch">type mismatch</option>
-                    <option value="argumentError">Argument Error</option>
+                    <option value="argumentError">IPS</option>
                     <option value="zeroDivision">zero division</option>
+                    <option value="IndexError">IndexError</option>
                 </select>
             </div>&nbsp;&nbsp;
             <div class="form-group query-form-group">
@@ -102,6 +103,9 @@
                     <option value="">All</option>
                     <option value="ValueError">ValueError</option>
                     <option value="TypeError">TypeError</option>
+                    <option value="InvalidArgumentError">InvalidArgumentError</option>
+                    <option value="AssertionError">AssertionError</option>
+                    <option value="IndexError">IndexError</option>
                     <option value="None">None</option>
                 </select>
             </div>&nbsp;&nbsp;

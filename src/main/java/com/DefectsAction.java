@@ -184,7 +184,7 @@ public class DefectsAction {
         String SIRName = DefectsDB.getSirName(bugId);
         String cdCmd="cd "+"/"+"home"+"/"+"metadata"+"/"+SIRName;
         String diffInfo = dockerServer.diffRunPrintln(cdCmd+";git diff " + buggyCommit + " " + fixCommit,bugId);
-        System.out.println(diffInfo);
+        // System.out.println(diffInfo);
         return diffInfo;
     }
 
@@ -280,7 +280,7 @@ public class DefectsAction {
     }
     */
     public String localMark(String bugId) throws Exception {
-        double localScore = 0;
+        float localScore = 0;
         // 读取buggy分支运行结果，获取异常运行轨迹
         String bugTrace = dockerExecutor.readTxtW(bugId,"buggy");
         // 判断里面有没有Traceback关键字
@@ -300,25 +300,25 @@ public class DefectsAction {
             diffLines = getDiffLine(diffInfo);
 
             // 匹配报错文件与diff中修改的文件,取其中最小的行数差
-            int distance = 1000;
+            int distance = 5000;
             for(int i = 0;i< fileNames.size();i++){
                 for(int j = 0;j< diffFileNames.size();j++){
-                    if(fileNames.get(i) == diffFileNames.get(j)){
-                        int distance1 = (int)errorLines.get(i)-(int)diffLines.get(j);
+                    if(fileNames.get(i).equals(diffFileNames.get(j))){
+                        int distance1 = Integer.parseInt(errorLines.get(i).toString()) - Integer.parseInt(diffLines.get(j).toString());
                         if(Math.abs(distance1) < distance){
-                            distance = distance1;
+                            distance = Math.abs(distance1);
                         }
                     }
                 }
             }
-            if(distance == 1000){
+            if(distance == 5000){
                 // 没有匹配到，获取文件结构,计算文件距离
                 // 人为查看文件距离，或者具体获取报错路径，然后查看diff修改的路径，计算距离
-                //localScore = Distance.selectDis(bugId);
-                localScore = 3.5;
+                localScore = Distance.selectDis(bugId);
+
             }else {
                 // 匹配到，计算定位难度
-                localScore = distance/(distance+1);
+                localScore = (float)distance/(float)(distance+1);
             }
 
         }else {
@@ -329,6 +329,17 @@ public class DefectsAction {
         return String.valueOf(localScore);
     }
 
+    // 正则表达式 捕获报错地址
+    public List<String> getErrorLocation(String str){
+        List fileNames = new ArrayList();
+        String patternFile = "[\\w]+(\\.py)";
+        Pattern rf = Pattern.compile(patternFile);
+        Matcher mf = rf.matcher(str);
+        while(mf.find()){
+            fileNames.add(mf.group());
+        }
+        return fileNames;
+    }
     // 正则表达式 捕获报错文件名
     public List<String> getFileName(String str){
         List fileNames = new ArrayList();

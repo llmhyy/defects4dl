@@ -10,6 +10,8 @@ Defects4dl is available in two ways，the Command line and Websites.
 
 -  Docker>=19.03.8
 
+-  Maven
+
 ## Steps to set up Defects4dl
 
 ### Set up from source code
@@ -33,6 +35,7 @@ git clone https://github.com/llmhyy/defects4dl.git
 
 ## Using Defects4dl
 
+    Important!!!
 Before using it, you need to pull down our Docker Images from the command line using the `pullBug` command (this process is a bit slow).
 If you've already downloaded these Docker Images, you can use `runBug` to start Containers
 
@@ -85,6 +88,12 @@ diff <bugId>
 
 ```
 test <bugId> <version>
+```
+
+9.Exit the program
+
+```
+exit
 ```
 
 ### Web sites:

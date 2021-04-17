@@ -19,7 +19,7 @@ public class Distance {
         }else if (str.equals("fastai1678")){
             dis = 2;
         }else {
-            dis = (float) (2+(int) (Math.random()*((5-2)+1)));
+            dis = (float) (1+(int) (Math.random()*4));
         }
         return dis;
     }

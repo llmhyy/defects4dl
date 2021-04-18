@@ -299,6 +299,8 @@ public class DefectsAction {
             String diffInfo = diffInfo(bugId);
             diffLines = getDiffLine(diffInfo);
 
+
+
             // 匹配报错文件与diff中修改的文件,取其中最小的行数差
             int distance = 5000;
             for(int i = 0;i< fileNames.size();i++){
@@ -329,17 +331,7 @@ public class DefectsAction {
         return String.valueOf(localScore);
     }
 
-    // 正则表达式 捕获报错地址
-    public List<String> getErrorLocation(String str){
-        List fileNames = new ArrayList();
-        String patternFile = "[\\w]+(\\.py)";
-        Pattern rf = Pattern.compile(patternFile);
-        Matcher mf = rf.matcher(str);
-        while(mf.find()){
-            fileNames.add(mf.group());
-        }
-        return fileNames;
-    }
+
     // 正则表达式 捕获报错文件名
     public List<String> getFileName(String str){
         List fileNames = new ArrayList();

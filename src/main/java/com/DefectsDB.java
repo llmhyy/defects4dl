@@ -36,7 +36,8 @@ public class DefectsDB {
                 String errorMessage = bugItem.getElementsByTagName(Constant.XML_BUG_ERRORMESSAGE).item(0).getTextContent();
                 String describe =bugItem.getElementsByTagName(Constant.XML_BUG_DESCRIBE).item(0).getTextContent();
                 String type = bugItem.getElementsByTagName(Constant.XML_BUG_TYPE).item(0).getTextContent();
-                String rootCause=getContentText(bugItem, Constant.XML_BUG_ROOT_CAUSE_LABEL);
+                // String rootCause=getContentText(bugItem, Constant.XML_BUG_ROOT_CAUSE_LABEL);
+                String operateScore = bugItem.getElementsByTagName(Constant.XML_OPERATE_SCORE).item(0).getTextContent();
                 String localScore = bugItem.getElementsByTagName(Constant.XML_BUG_LOCAL_SCORE).item(0).getTextContent();
                 String fixLength = bugItem.getElementsByTagName(Constant.XML_BUG_FIX_LENGTH).item(0).getTextContent();
 
@@ -54,7 +55,7 @@ public class DefectsDB {
                 String fixtestCmd = fVersion.getElementsByTagName(Constant.XML_FIX_TEST_CMD_LABEL).item(0).getTextContent();
                 String fixcommit = fVersion.getElementsByTagName(Constant.XML_FIX_COMMIT_LABEL).item(0).getTextContent();
                 FixVersion FixVersion = new FixVersion(fixtestCmd,fixcommit);
-                sir.addBug(new Bug(bugID, errorMessage,describe,rootCause,type,BuggyVersion,FixVersion,localScore,fixLength));
+                sir.addBug(new Bug(bugID, errorMessage,describe,operateScore,type,BuggyVersion,FixVersion,localScore,fixLength));
 
             }
             sirs.add(sir);

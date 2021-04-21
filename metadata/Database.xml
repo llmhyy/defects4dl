@@ -8,7 +8,7 @@
             <id>transformers1962</id>
             <errormessage>ValueError</errormessage>
             <describe>TFBertModel ValueError: Tried to convert 'dims' to a tensor and failed. Error: Cannot convert a partially known TensorShape to a Tensor</describe>
-            <rootCause>1</rootCause>
+            <operateScore>1</operateScore>
             <type>shape mismatch</type>
             <localScore></localScore>
             <fixLength></fixLength>
@@ -30,7 +30,7 @@
             <id>transformers1418</id>
             <errormessage>TypeError</errormessage>
             <describe>The issue is due to implementation difference between Tensorflow and Pytorch DistillBERT. Tensorflow implementation doesn't have loss calculation inside call, but We do in forward for Pytorch. </describe>
-            <rootCause>1</rootCause>
+            <operateScore>1</operateScore>
             <type>API misuse</type>
             <localScore></localScore>
             <fixLength></fixLength>
@@ -52,7 +52,7 @@
             <id>transformers1152</id>
             <errormessage>TypeError</errormessage>
             <describe>List does not match tuple</describe>
-            <rootCause>1</rootCause>
+            <operateScore>1</operateScore>
             <type>type mismatch</type>
             <localScore></localScore>
             <fixLength></fixLength>
@@ -74,7 +74,7 @@
             <id>allennlp3721</id>
             <errormessage>TypeError</errormessage>
             <describe>ListField and MultilabelField are used incorrectly for sequence prediction using multi-label data.</describe>
-            <rootCause>1</rootCause>
+            <operateScore>1</operateScore>
             <type>API misuse</type>
             <localScore></localScore>
             <fixLength></fixLength>
@@ -96,7 +96,7 @@
             <id>allennlp4612</id>
             <errormessage>None</errormessage>
             <describe>NaN grads appear when an empty string is given</describe>
-            <rootCause>1</rootCause>
+            <operateScore>1</operateScore>
             <type>zero division</type>
             <localScore></localScore>
             <fixLength></fixLength>
@@ -118,7 +118,7 @@
             <id>pytorch-lightning2386</id>
             <errormessage>TypeError</errormessage>
             <describe>The class does not choose to use the position parameter, but passes it the position parameter</describe>
-            <rootCause>1</rootCause>
+            <operateScore>10</operateScore>
             <type>API misuse</type>
             <localScore></localScore>
             <fixLength></fixLength>
@@ -140,7 +140,7 @@
             <id>botorch162</id>
             <errormessage>None</errormessage>
             <describe>inv_transform was crapping out when drawing a large number of samples because the base sample was exactly 1.0( see issue #161). While we were previously subtracting off a small number (1e-10), this number wasn't sufficient. I found that (1-e6) was the smallest base 10 number we could subtract off to get rid of the -inf.</describe>
-            <rootCause>1</rootCause>
+            <operateScore>1</operateScore>
             <type>IPS</type>
             <localScore></localScore>
             <fixLength></fixLength>
@@ -162,7 +162,7 @@
             <id>ggnn.pytorch9</id>
             <errormessage>IndexError</errormessage>
             <describe>Indexing 0-dim tensor error</describe>
-            <rootCause>1</rootCause>
+            <operateScore>1</operateScore>
             <type>IndexError</type>
             <localScore></localScore>
             <fixLength></fixLength>
@@ -184,7 +184,7 @@
             <id>fairseq1863</id>
             <errormessage>None</errormessage>
             <describe>Speech recognition fails due to NaN if there is an input of size 1</describe>
-            <rootCause>1</rootCause>
+            <operateScore>10</operateScore>
             <type>IPS</type>
             <localScore></localScore>
             <fixLength></fixLength>
@@ -206,7 +206,7 @@
             <id>seq2seq95</id>
             <errormessage>ValueError</errormessage>
             <describe>Fix attention scores shape definition</describe>
-            <rootCause>1</rootCause>
+            <operateScore>1</operateScore>
             <type>shape mismatch</type>
             <localScore></localScore>
             <fixLength></fixLength>
@@ -228,7 +228,7 @@
             <id>seq2seq</id>
             <errormessage>AssertionError</errormessage>
             <describe>Fix bug in residual connection dimensions</describe>
-            <rootCause>1</rootCause>
+            <operateScore>1</operateScore>
             <type>shape mismatch</type>
             <localScore></localScore>
             <fixLength></fixLength>
@@ -250,7 +250,7 @@
             <id>dcgan-completion.tensorflow</id>
             <errormessage>TypeError</errormessage>
             <describe>Arguments to one function are taken into another function</describe>
-            <rootCause>1</rootCause>
+            <operateScore>2</operateScore>
             <type>API misuse</type>
             <localScore></localScore>
             <fixLength></fixLength>
@@ -272,7 +272,7 @@
             <id>models857</id>
             <errormessage>ValueError</errormessage>
             <describe>Function using error, parameter using parameter sequence using error.</describe>
-            <rootCause>1</rootCause>
+            <operateScore>1</operateScore>
             <type>API misuse</type>
             <localScore></localScore>
             <fixLength></fixLength>
@@ -294,7 +294,7 @@
             <id>sact1</id>
             <errormessage>ValueError</errormessage>
             <describe>Function using error, parameter using parameter sequence using error.</describe>
-            <rootCause>1</rootCause>
+            <operateScore>1</operateScore>
             <type>API misuse</type>
             <localScore></localScore>
             <fixLength></fixLength>
@@ -316,7 +316,7 @@
             <id>models1063</id>
             <errormessage>TypeError</errormessage>
             <describe>The assignment of two arguments to the function is reversed</describe>
-            <rootCause>1</rootCause>
+            <operateScore>1</operateScore>
             <type>API misuse</type>
             <localScore></localScore>
             <fixLength></fixLength>
@@ -338,7 +338,7 @@
             <id>models1707</id>
             <errormessage>None</errormessage>
             <describe>This works around a bug in earlier proto versions that automatically infer these values to be integer instead of float.</describe>
-            <rootCause>1</rootCause>
+            <operateScore>1</operateScore>
             <type>type mismatch</type>
             <localScore></localScore>
             <fixLength></fixLength>
@@ -360,7 +360,7 @@
             <id>models23</id>
             <errormessage>None</errormessage>
             <describe>The normalization function was used incorrectly, causing NaN to appear when calculating the loss</describe>
-            <rootCause>1</rootCause>
+            <operateScore>3</operateScore>
             <type>IPS</type>
             <localScore></localScore>
             <fixLength></fixLength>
@@ -382,7 +382,7 @@
             <id>models1585</id>
             <errormessage>ValueError</errormessage>
             <describe>Error using resnet_v1 feature extractor</describe>
-            <rootCause>1</rootCause>
+            <operateScore>1</operateScore>
             <type>API misuse</type>
             <localScore></localScore>
             <fixLength></fixLength>
@@ -404,7 +404,7 @@
             <id>models166</id>
             <errormessage>None</errormessage>
             <describe>Use the tensorflow cross entropy function to prevent nan losses.</describe>
-            <rootCause>1</rootCause>
+            <operateScore>3</operateScore>
             <type>IPS</type>
             <localScore></localScore>
             <fixLength></fixLength>
@@ -426,7 +426,7 @@
             <id>models893</id>
             <errormessage>ValueError</errormessage>
             <describe>Adding to the function inputs in order to match the function distorted_inputs.</describe>
-            <rootCause>1</rootCause>
+            <operateScore>5</operateScore>
             <type>shape mismatch</type>
             <localScore></localScore>
             <fixLength></fixLength>
@@ -448,7 +448,7 @@
             <id>tensorflow-examples10</id>
             <errormessage>None</errormessage>
             <describe>Author forgot to compute the mean loss over a batch. It is not a problem with small batch size, but it could lead to issues with large batch size, as it leads to unrepresentative cost (NaN) ...</describe>
-            <rootCause>1</rootCause>
+            <operateScore>1</operateScore>
             <type>IPS</type>
             <localScore></localScore>
             <fixLength></fixLength>
@@ -470,7 +470,7 @@
             <id>deep-learning-tensorflow1</id>
             <errormessage>None</errormessage>
             <describe>The learning_rate is not small enough to cause the parameter to explode</describe>
-            <rootCause>1</rootCause>
+            <operateScore>1</operateScore>
             <type>IPS</type>
             <localScore></localScore>
             <fixLength></fixLength>
@@ -492,7 +492,7 @@
             <id>deep-learning-tensorflow5</id>
             <errormessage>None</errormessage>
             <describe>missing tf.nn.softmax() in create_softmax_layer</describe>
-            <rootCause>1</rootCause>
+            <operateScore>1</operateScore>
             <type>IPS</type>
             <localScore></localScore>
             <fixLength></fixLength>
@@ -514,7 +514,7 @@
             <id>deep-learning-tensorflow0</id>
             <errormessage>None</errormessage>
             <describe>Use tf.nn.softmax() only in the case of cross entropy loss</describe>
-            <rootCause>1</rootCause>
+            <operateScore>2</operateScore>
             <type>IPS</type>
             <localScore></localScore>
             <fixLength></fixLength>
@@ -536,7 +536,7 @@
             <id>deep-learning-tensorflow</id>
             <errormessage>None</errormessage>
             <describe>NaN may occur when calculating the cross entropy loss</describe>
-            <rootCause>1</rootCause>
+            <operateScore>1</operateScore>
             <type>IPS</type>
             <localScore></localScore>
             <fixLength></fixLength>
@@ -558,7 +558,7 @@
             <id>dcgan-tensorflow108</id>
             <errormessage>TypeError</errormessage>
             <describe>A result of type int is required, but a result of type float is returned</describe>
-            <rootCause>1</rootCause>
+            <operateScore>1</operateScore>
             <type>type mismatch</type>
             <localScore></localScore>
             <fixLength></fixLength>
@@ -580,7 +580,7 @@
             <id>dcgan-tensorflow17</id>
             <errormessage>ModuleNotFoundError</errormessage>
             <describe>Failing to load data during Training on CelebA</describe>
-            <rootCause>1</rootCause>
+            <operateScore>5</operateScore>
             <type>shape mismatch</type>
             <localScore></localScore>
             <fixLength></fixLength>
@@ -602,7 +602,7 @@
             <id>keras11657</id>
             <errormessage>TypeError</errormessage>
             <describe>KerasRegressor.predict does not squeeze batch dims,If the input to KerasRegressor.predict() is an array with one example, then the output should be a 1D array with one example, not a 0D array.</describe>
-            <rootCause>1</rootCause>
+            <operateScore>1</operateScore>
             <type>shape mismatch</type>
             <localScore></localScore>
             <fixLength></fixLength>
@@ -624,7 +624,7 @@
             <id>keras9812</id>
             <errormessage>ValueError</errormessage>
             <describe>Use NASNetLarge，get Error  It only works with shape (331,331,3) but for larger inputs like (640,640,3) does not work again.     But In docs NASNetLarge: 'It should have exactly 3 inputs channels, and width and height should be no smaller than 32. E.g. (200, 200, 3) would be one valid value.'</describe>
-            <rootCause>1</rootCause>
+            <operateScore>5</operateScore>
             <type>shape mismatch</type>
             <localScore></localScore>
             <fixLength></fixLength>
@@ -646,7 +646,7 @@
             <id>gpflow813</id>
             <errormessage>ValueError</errormessage>
             <describe>The current implementation of ndiag_mc didn't handle multi-dimensional kwargs Ys .</describe>
-            <rootCause>1</rootCause>
+            <operateScore>5</operateScore>
             <type>shape mismatch</type>
             <localScore></localScore>
             <fixLength></fixLength>
@@ -667,7 +667,7 @@
             <id>keras6387</id>
             <errormessage>InvalidArgumentError</errormessage>
             <describe>It seems that the TimeDistributed layer has a similar issue as the Bidirectional layer when passed a layer that requires the learning phase. Seems like wrapper is not taking good care of learning phase.</describe>
-            <rootCause>1</rootCause>
+            <operateScore>10</operateScore>
             <type>IPS</type>
             <localScore></localScore>
             <fixLength></fixLength>
@@ -688,7 +688,7 @@
             <id>keras5975</id>
             <errormessage>MissingInputError</errormessage>
             <describe>Bidirectional wrapper produces error with any Recurrent layer with dropout or recurrent_dropout argument.Seems like wrapper is not taking good care of learning phase.</describe>
-            <rootCause>1</rootCause>
+            <operateScore>10</operateScore>
             <type>IPS</type>
             <localScore></localScore>
             <fixLength></fixLength>
@@ -709,7 +709,7 @@
             <id>keras5840</id>
             <errormessage>AssertionError</errormessage>
             <describe>Simple merge layers that just extend _Merge and implement _merge_function report that they have multiple outputs (as many as inputs) with the same shape.</describe>
-            <rootCause>1</rootCause>
+            <operateScore>5</operateScore>
             <type>shape mismatch</type>
             <localScore></localScore>
             <fixLength></fixLength>
@@ -730,7 +730,7 @@
             <id>keras5108</id>
             <errormessage>ValueError</errormessage>
             <describe>Running the equivalent code in Convolution2D  for Convolution3D results in a ValueError because the input shape expected by the layer seems to be fixed to the first shape it saw.,Convolution3D fixes the input shape when the layer is built, which happens during the first call. This input shape is useful for some optimisations. Convolution2D does not fix the input shape.</describe>
-            <rootCause>1</rootCause>
+            <operateScore>5</operateScore>
             <type>shape mismatch</type>
             <localScore></localScore>
             <fixLength></fixLength>
@@ -751,7 +751,7 @@
             <id>keras9883</id>
             <errormessage>None</errormessage>
             <describe>Conv2DTranspose infers the shape of the output using deconv_length but because the output shape of a transposed convolution is ambigous it can infer an undesired shape.</describe>
-            <rootCause>1</rootCause>
+            <operateScore>10</operateScore>
             <type>shape mismatch</type>
             <localScore></localScore>
             <fixLength></fixLength>
@@ -772,7 +772,7 @@
             <id>keras13073</id>
             <errormessage>None</errormessage>
             <describe>People set embedding with MAX_NUM_WORDS=3，but tokenizer return n-1 words i.e 2. </describe>
-            <rootCause>1</rootCause>
+            <operateScore>5</operateScore>
             <type>shape mismatch</type>
             <localScore></localScore>
             <fixLength></fixLength>
@@ -793,7 +793,7 @@
             <id>keras2672</id>
             <errormessage>None</errormessage>
             <describe>cos mode does not carefully deal with division by zero, might be the cause of NaN. output = K.batch_dot(l1, l2, self.dot_axes) / denominator  </describe>
-            <rootCause>1</rootCause>
+            <operateScore>1</operateScore>
             <type>zero division</type>
             <localScore></localScore>
             <fixLength></fixLength>
@@ -814,7 +814,7 @@
             <id>capsnet-tensorflow4</id>
             <errormessage>ValueError</errormessage>
             <describe>The reconstruction part has to take the label as input.TODO: before reconstruction the input caps2 should do masking to pick. Out the activity vector of the correct digit capsule. </describe>
-            <rootCause>1</rootCause>
+            <operateScore>10</operateScore>
             <type>shape mismatch</type>
             <localScore></localScore>
             <fixLength></fixLength>
@@ -837,7 +837,7 @@
             <errormessage>None</errormessage>
             <describe>Currently TensorShape only support int/long dimensions.
                 We sometimes need to use an unknown dimension that represents a varying batch size that changes from run to run. </describe>
-            <rootCause>1</rootCause>
+            <operateScore>10</operateScore>
             <type>shape mismatch</type>
             <localScore></localScore>
             <fixLength></fixLength>
@@ -858,7 +858,7 @@
             <id>tensorflow_scala18</id>
             <errormessage>ValueError</errormessage>
             <describe>Trying the random distribution ops with default arguments gave  the  error.</describe>
-            <rootCause>1</rootCause>
+            <operateScore>5</operateScore>
             <type>shape mismatch</type>
             <localScore></localScore>
             <fixLength></fixLength>
@@ -880,7 +880,7 @@
             <id>probability417</id>
             <errormessage>InvalidArgumentError</errormessage>
             <describe>LinearGaussianStateSpaceModel sample doesn't work with num_timesteps=1.It is because tf.scan in the line below gives empty tensors for latents and observations if num_timesteps=1 as self.initial_step+1 and self.final_step are equal. (because self.final_step = self.initial_step+num_timesteps)</describe>
-            <rootCause>1</rootCause>
+            <operateScore>5</operateScore>
             <type>shape mismatch</type>
             <localScore></localScore>
             <fixLength></fixLength>
@@ -901,7 +901,7 @@
             <id>segmentation_models.pytorch186</id>
             <errormessage>None</errormessage>
             <describe>This Bug is due to the fact that the divisor is not the same type as the dividend, resulting in the final result being 0</describe>
-            <rootCause>1</rootCause>
+            <operateScore>1</operateScore>
             <type>type mismatch</type>
             <localScore></localScore>
             <fixLength></fixLength>
@@ -922,7 +922,7 @@
             <id>tutorials382</id>
             <errormessage>None</errormessage>
             <describe>CrossEntropy's size does not match that needed by the mask</describe>
-            <rootCause>1</rootCause>
+            <operateScore>1</operateScore>
             <type>shape mismatch</type>
             <localScore></localScore>
             <fixLength></fixLength>
@@ -943,7 +943,7 @@
             <id>pytorch-pose116</id>
             <errormessage>None</errormessage>
             <describe>Input image width and height position reversed</describe>
-            <rootCause>1</rootCause>
+            <operateScore>1</operateScore>
             <type>shape mismatch</type>
             <localScore></localScore>
             <fixLength></fixLength>
@@ -964,7 +964,7 @@
             <id>fastai1678</id>
             <errormessage>TypeError</errormessage>
             <describe>Losses out of order in RNNLearner.get_preds(..., with_loss=True, ordered=True)</describe>
-            <rootCause>1</rootCause>
+            <operateScore>5</operateScore>
             <type>IPS</type>
             <localScore></localScore>
             <fixLength></fixLength>

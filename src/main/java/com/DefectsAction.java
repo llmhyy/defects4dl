@@ -40,8 +40,7 @@ public class DefectsAction {
         Bug bug = DefectsDB.getBug(bugId);
         String errorMessage = bug.getErrorMessage();
         String describe = bug.getDescribe();
-        String rootCause = bug.getRootCause();
-
+        String operateScore = bug.getOperateScore();
         // String SIRName = DefectsDB.getSirName(bugId).toLowerCase();
         String SIRName = DefectsDB.getSirName(bugId);
 
@@ -50,7 +49,7 @@ public class DefectsAction {
         sb.append("BugID: ").append(bugId).append("\n");
         sb.append("ErrorMessage: ").append(errorMessage).append("\n");
         sb.append("Describe: ").append(describe).append("\n");
-        sb.append("ROOTCAUSE:").append(rootCause).append("\n");
+        // sb.append("ROOTCAUSE:").append(rootCause).append("\n");
 
         sb.append("INFO DETAIL:\n");
         String cdCmd="cd /home/metadata/"+SIRName;
@@ -68,14 +67,13 @@ public class DefectsAction {
         String commitTimeFix = dockerServer.run(cdCmd+";git log --pretty=format:“%cd” " + fixcommit + " -1",bugId);
         sb.append("FixVersion").append(" ").append(fixcommit).append(" ").append(commitTimeFix)
                 .append("\n");
-
         //String diffCount = dockerServer.run(cdCmd+";git rev-list " + buggycommit + ".." + fixcommit + " --count");
         //sb.append("Commits count between BuggyVersion and FixVersion:").append(diffCount);
-
         String localMark = localMark(bugId);
-        sb.append("Positioning score:").append(localMark).append("\n");
+        sb.append("Positioning difficulty:").append(localMark).append("\n");
         String stringLength = stringLength(bugId);
-        sb.append("Fix string length:").append(stringLength).append("\n");
+
+        sb.append("Repair difficulty:").append(stringLength).append("+").append(operateScore).append("\n");
         return sb.toString();
 
     }
@@ -85,7 +83,7 @@ public class DefectsAction {
         Bug bug = DefectsDB.getBug(bugId);
         String errorMessage = bug.getErrorMessage();
         String describe = bug.getDescribe();
-        String rootCause = bug.getRootCause();
+        String operateScore = bug.getOperateScore();
         String type = bug.getType();
         BuggyVersion buggyVersion = bug.getBuggyVersion();
         String buggytestCmd = buggyVersion.getBuggytestCmd();
@@ -101,7 +99,7 @@ public class DefectsAction {
         String localScore = localMark(bugId);
         String fixLength = stringLength(bugId);
 
-        Bug Bug = new Bug(bugId, errorMessage,describe,rootCause,type,BuggyVersion,FixVersion,localScore,fixLength);
+        Bug Bug = new Bug(bugId, errorMessage,describe,operateScore,type,BuggyVersion,FixVersion,localScore,fixLength);
 
         return Bug;
 
@@ -153,14 +151,12 @@ public class DefectsAction {
     public String diff(String bugId) throws Exception {
 
         Bug bug = DefectsDB.getBug(bugId);
-        String rootCause = bug.getRootCause();
         BuggyVersion buggyVersion = bug.getBuggyVersion();
         String buggyCommit = buggyVersion.getBuggycommit();
 
         FixVersion fixVersion = bug.getFixVersion();
         String fixCommit = fixVersion.getFixcommit();
 
-        // String SIRName = DefectsDB.getSirName(bugId).toLowerCase();
         String SIRName = DefectsDB.getSirName(bugId);
         String cdCmd="cd "+"/"+"home"+"/"+"metadata"+"/"+SIRName;
 
@@ -175,7 +171,6 @@ public class DefectsAction {
     public String diffInfo(String bugId) throws Exception {
 
         Bug bug = DefectsDB.getBug(bugId);
-        String rootCause = bug.getRootCause();
         BuggyVersion buggyVersion = bug.getBuggyVersion();
         String buggyCommit = buggyVersion.getBuggycommit();
         FixVersion fixVersion = bug.getFixVersion();
@@ -191,7 +186,6 @@ public class DefectsAction {
     public String diffInfoStat(String bugId) throws Exception {
 
         Bug bug = DefectsDB.getBug(bugId);
-        String rootCause = bug.getRootCause();
         BuggyVersion buggyVersion = bug.getBuggyVersion();
         String buggyCommit = buggyVersion.getBuggycommit();
         FixVersion fixVersion = bug.getFixVersion();
@@ -299,8 +293,6 @@ public class DefectsAction {
             String diffInfo = diffInfo(bugId);
             diffLines = getDiffLine(diffInfo);
 
-
-
             // 匹配报错文件与diff中修改的文件,取其中最小的行数差
             int distance = 5000;
             for(int i = 0;i< fileNames.size();i++){
@@ -387,7 +379,10 @@ public class DefectsAction {
     // ================计算修复字符串长度================
     public String stringLength(String bugId) throws Exception {
         String str = diffInfo(bugId);
+        // 修改字符数
         int stringLength = 0;
+        // 修改行数
+        int changeLines = 0;
         String[] strs = str.split("@@");
         // 修改的chunk数
         for(int i=2;i< strs.length;i=i+2){
@@ -401,6 +396,7 @@ public class DefectsAction {
 
                 if((weWant.charAt(j)=='+' && weWant.charAt(j-1)=='\n' && weWant.charAt(j+1)!='+') || (weWant.charAt(j)=='-' && weWant.charAt(j-1)=='\n' && weWant.charAt(j+1)!='-')){
                     porm = j;
+                    changeLines++;
                 }
                 if(weWant.charAt(j)=='\n'){
                     lineBreak = j;
@@ -414,7 +410,8 @@ public class DefectsAction {
             }
             stringLength += lengths;
         }
-        return String.valueOf(stringLength);
+        float repairScore = (float)changeLines/(float)(changeLines+1)+ (float)(stringLength)/(float)(stringLength+1);
+        return String.valueOf(repairScore);
     }
 
     public void setEnviroment() {

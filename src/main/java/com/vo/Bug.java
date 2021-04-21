@@ -8,18 +8,20 @@ public class Bug {
     private String bugID;
     private String errorMessage;  // 报错信息
     private String describe;    // 错误描述
-    private String rootCause;  // 核心修复代码段
+    // private String rootCause;  // 核心修复代码段
+    private String operateScore; //operate操作符分数
     private String type;   // General Bug类别
     private BuggyVersion BuggyVersion;
     private FixVersion FixVersion;
-    private String localScore;   // 定位分数
-    private String fixLength;  // 修复字符串长度
+    private String localScore;   // 定位难度
+    private String fixLength;  // 通过修改字符的长度与修改的行数计算的修复难度
 
-    public Bug(String bugID, String errorMessage, String describe, String rootCause, String type, BuggyVersion buggyVersion, FixVersion fixVersion, String localScore, String fixLength) {
+
+    public Bug(String bugID, String errorMessage, String describe, String operateScore, String type, BuggyVersion buggyVersion, FixVersion fixVersion, String localScore, String fixLength) {
         this.bugID = bugID;
         this.errorMessage = errorMessage;
         this.describe = describe;
-        this.rootCause = rootCause;
+        this.operateScore = operateScore;
         this.type = type;
         this.BuggyVersion = buggyVersion;
         this.FixVersion = fixVersion;
@@ -48,8 +50,8 @@ public class Bug {
         return describe;
     }
 
-    public String getRootCause() {
-        return rootCause;
+    public String getOperateScore() {
+        return operateScore;
     }
 
     public void setBugID(String bugID) {
@@ -64,8 +66,8 @@ public class Bug {
         this.describe = describe;
     }
 
-    public void setRootCause(String rootCause) {
-        this.rootCause = rootCause;
+    public void setOperateScore(String operateScore) {
+        this.operateScore = operateScore;
     }
 
     public com.vo.BuggyVersion getBuggyVersion() {

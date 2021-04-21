@@ -59,29 +59,28 @@
                 <td>{{ dataInfoDetail.errorMessage }}</td>
             </tr>
             <tr>
-                <td class="item-title">RootCause</td>
-                <td >{{ dataInfoDetail.rootCause }}</td>
+<!--                <td class="item-title">RootCause</td>-->
+<!--                <td >{{ dataInfoDetail.rootCause }}</td>-->
                 <td class="item-title">BuggyCommit</td>
                 <td >{{ dataInfoDetail.buggyVersion.buggycommit }}</td>
+                <td class="item-title">FixCommit</td>
+                <td >{{ dataInfoDetail.fixVersion.fixcommit }}</td>
             </tr>
             <tr>
                 <td class="item-title">Describe</td>
                 <td colspan="3">{{ dataInfoDetail.describe }}</td>
             </tr>
             <tr>
-                <td class="item-title">FixCommit</td>
-                <td >{{ dataInfoDetail.fixVersion.fixcommit }}</td>
-                <td class="item-title">If you want to view both versions of the modification record, please click the corresponding button on the right</td>
+                <td class="item-title" colspan="3">If you want to view both versions of the modification record, please click the corresponding button on the right</td>
                 <td >
                     <button class="btn btn-primary btn-sm" type="button" v-on:click="showDiff">Diff</button>
                 </td>
             </tr>
-            <!-- 定位分数与修复字符串长度 -->
             <tr>
-                <td class="item-title">localScore</td>
+                <td class="item-title">Positioning difficulty</td>
                 <td>{{ dataInfoDetail.localScore }}</td>
-                <td class="item-title">stringLength</td>
-                <td>{{ dataInfoDetail.fixLength }}</td>
+                <td class="item-title">Repair difficulty</td>
+                <td>{{ dataInfoDetail.fixLength }} + {{ dataInfoDetail.operateScore }}</td>
             </tr>
 
             <tr>

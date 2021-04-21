@@ -9,6 +9,7 @@ public class Constant {
     public final static String XML_BUG_LABEL = "bug";
     public final static String XML_BUG_ID_LABEL = "id";
     public final static String XML_BUG_ROOT_CAUSE_LABEL = "rootCause";
+    public final static String XML_OPERATE_SCORE = "operateScore";
     public final static String XML_BUG_TYPE = "type";
     public final static String XML_BUG_DESCRIBE = "describe";
     public final static String XML_BUG_ERRORMESSAGE = "errormessage";

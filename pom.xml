@@ -44,6 +44,13 @@
             <version>1.2.73</version>
         </dependency>
 
+        <dependency>
+            <groupId>me.tongfei</groupId>
+            <artifactId>progressbar</artifactId>
+            <version>0.9.1</version>
+        </dependency>
+
+
     </dependencies>
 
 

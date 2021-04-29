@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
+import me.tongfei.progressbar.*;
 public class DefectsAction {
     public static Execute exec = new Execute();
     private static DockerExecutor dockerExecutor =new DockerExecutor();
@@ -198,81 +198,6 @@ public class DefectsAction {
     }
 
     // ================计算定位分数================
-    /*
-    public String localMark(String bugId) throws Exception {
-        String str = diffInfo(bugId);
-        // 总的换行符个数
-        float localDistance = 0;
-        // 定位分数
-        float localMark = 0;
-        // 减去的分数
-        int mScore = 0;
-        String distance = "";
-        // 每个chunk中'-'和'+'的数量
-        int minusC = 0;
-        int plusC = 0;
-        String[] strs = str.split("@@");
-        // 遍历chunk
-        for(int i = 2;i< strs.length;i=i+2){
-            String weWant = strs[i].toString();
-            // int minus = weWant.indexOf('-');
-            // int plus = weWant.indexOf('+');
-            int minus = 0;
-            int plus = 0;
-            for(int j =0;j<weWant.length();j++){
-                if(weWant.charAt(j)=='-' && weWant.charAt(j-1)=='\n' && weWant.charAt(j+1)!='-'){
-                    minus = j;
-                    break;
-                }
-            }
-            for(int j =0;j<weWant.length();j++){
-                if(weWant.charAt(j)=='+' && weWant.charAt(j-1)=='\n' && weWant.charAt(j+1)!='+'){
-                    plus = j;
-                    break;
-                }
-            }
-            for(int j = 0;j<weWant.length();j++){
-                if(weWant.charAt(j)=='+' && weWant.charAt(j-1)=='\n' && weWant.charAt(j+1)!='+'){
-                    plusC++;
-                }
-                if(weWant.charAt(j)=='-' && weWant.charAt(j-1)=='\n' && weWant.charAt(j+1)!='-'){
-                    minusC++;
-                }
-            }
-
-            if(minus <= 0 || plus <= 0){
-                mScore += 2;
-            }else {
-                if(minus > plus){
-                    distance = weWant.substring(plus,minus);
-                }else {
-                    distance = weWant.substring(minus,plus);
-                }
-                // 计算distance中有多少换行符
-                int hhf = 0;
-                for(int j = 0;j<distance.length();j++){
-                    if(distance.charAt(j)=='\n'){
-                        hhf++;
-                    }
-                }
-                if(hhf == 0){
-                    continue;
-                }
-                if(minusC == plusC){
-                    localDistance = 0;
-                }
-                localDistance = localDistance + (float)hhf/(hhf+1) - 1/2;
-
-            }
-
-        }
-        localMark = (float) (10.5 - mScore - localDistance);
-        if (localMark <= 0){
-            localMark = 0;
-        }
-        return String.valueOf(localMark);
-    }
-    */
     public String localMark(String bugId) throws Exception {
         float localScore = 0;
         // 读取buggy分支运行结果，获取异常运行轨迹
@@ -459,9 +384,22 @@ public class DefectsAction {
             numberFormat.setMaximumFractionDigits(2);
             String result = numberFormat.format((float) i / (float) bugList.length * 100);
             System.out.println("Starting the container "+ bugId + "  completed  "+ result +"%");
-            startDocker(bugId);
+            startOneBug(bugId);
         }
         System.out.println("All Started");
+    }
+    // Via bugId pull Bug
+    public String PullOneBug(String bugId){
+        try (ProgressBar pb = new ProgressBar("Pull", 100)) {
+            pb.step();
+            pb.stepTo(30);
+            pullBug(bugId);
+            pb.stepTo(80);
+            reNameBug(bugId);
+            pb.stepTo(100);
+            pb.setExtraMessage("Pulling...");
+        }
+        return "Pull Success!";
     }
 
     public String pullBug(String bugId){
@@ -472,7 +410,7 @@ public class DefectsAction {
         return  exec.exec("docker run --name "+bugId+" -it -d defects4dl/"+bugId);
     }
 
-    public  String  startDocker(String bugId) {
+    public  String  startOneBug(String bugId) {
 
         return exec.exec("docker start "+ bugId);
     }

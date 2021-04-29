@@ -231,8 +231,6 @@
             },
             selectByType: function (){
                 var options = $("#selectType option:selected"); // 获取选中的项
-                //alert(options.val());  //获取选中的项的值
-                //alert(options.text());  //拿到选中项的文本
                 var typeName = options.text();
                 if (options.text() == "All"){
                     this.initBug();

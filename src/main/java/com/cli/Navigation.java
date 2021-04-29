@@ -14,20 +14,21 @@ public class Navigation {
     private final static String TEST = "test";
     private final static String DIFF = "diff";
     private final static String ADD = "add";
-    private final static String PULL = "pull";
+    private final static String PULL_ONE_BUG = "pullOneBug";
+    private final static String START_ONE_BUG = "startOneBug";
     private final static String REFRESH = "refresh";
-    private final static String PULLBUG = "pullBug";
-    private final static String RUNBUG = "runBug";
+    private final static String PULL_BUGS = "pullBug";
+    private final static String RUN_BUGS = "runBug";
     private final static String FEATURES = LIST + "    --show all bug lise\n" + LIST
             + " grep <Key*>           --filter by keyword\n" + INFO
-            + "<bugID>                  --show bug Info,such as testcase,\n"
-            + "                                diff in buggy version and fix version,datediff\n" + TEST
-            + "<bugId> <version>               --test a case.\n" + PULLBUG
-            + "    --pull and run all the bug in the Docker Repo.\n" + RUNBUG
+            + "<bugID>                  --show bug Info,such as testcase,\n" + TEST
+            + "<bugId> <version>               --test a case.\n" + PULL_BUGS
+            + "    --pull and run all the bug in the Docker Repo.\n" + RUN_BUGS
             + "    --run all the bug in the Docker Repo.\n" + DIFF
-            + "<bugId>                    --diff two version\n" + ADD
-            + "<script file path>     --add a script to docker\n" + PULL
-            + "<bugID> <version>      --get a version source code\n" + REFRESH + "    --refresh Configs and DB\n" + HELP
+            + "<bugId>                    --diff two version\n" + PULL_ONE_BUG
+            + "<bugId>      --Pull a Docker mirror based on bugId\n" + START_ONE_BUG
+            + "<bugId>      --Start one Docker mirror based on bugId\n" + REFRESH
+            + "    --refresh the library\n" + HELP
             + "    --get all features\n" + EXIT + "    --exit system";
     static DefectsAction jctbe = new DefectsAction();
 
@@ -37,15 +38,10 @@ public class Navigation {
         jctbe.setEnviroment();
 
         System.out.println("Starting docker...");
-
-//        String result = jctbe.startDocker();
-//        boolean flag = result.contains(DockerExecutor.DOCKER_JAVA_PLAIN_CONTAINER_ID);
-//        result = flag == true ? "Docker start successful" : "Something wrong in docker starting";
-//        System.out.println(result);
-
         System.out.println("DataSet start successful ");
         System.out.println("When you first use our library, you need to pull the Docker Images down using the 'pullBug' command!!! ");
-        System.out.println("If you have already downloaded our Images, you can start the Containers through ‘runBug’!!! ");
+        System.out.println("You can also pull a single image through the `pullOneBug <bugId>` command!!!");
+        System.out.println("If you've already downloaded these Docker Images, you can use `runBug` to start all Containers or `startOneBug <bugId>` command to start a single container!!! ");
 
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
         System.out.print("defects4dl#:");
@@ -92,7 +88,7 @@ public class Navigation {
             } else if (params[0].equalsIgnoreCase(INFO)) {
                 String bugID = params[1];
                 if (params.length > 2) {
-                    System.out.println("Input is wrong");
+                    System.out.println("Input is wrong,Please enter the 'help' command to view the command");
                 } else {
                     System.out.println(jctbe.info(bugID));
                 }
@@ -100,22 +96,30 @@ public class Navigation {
                 String budID = params[1];
                 String version = params[2];
                 if (params.length != 3 ) {
-                    System.out.println("Input is wrong");
+                    System.out.println("Input is wrong,Please enter the 'help' command to view the command");
                 }
                 jctbe.test(budID, version);
 
-            } else if (params[0].equalsIgnoreCase(PULL)) {
+            } else if (params[0].equalsIgnoreCase(PULL_ONE_BUG)) {
                 String budID = params[1];
-                if (params.length < 3) {
-                    System.out.println(jctbe.pullBug(budID));
+                if (params.length > 2) {
+                    System.out.println("Input is wrong,Please enter the 'help' command to view the command");
                 } else {
-                    System.err.println("This feature is removed");
+                    System.err.println(jctbe.PullOneBug(budID));
+                }
+            }else if (params[0].equalsIgnoreCase(START_ONE_BUG)) {
+                String budID = params[1];
+                if (params.length > 2) {
+                    System.out.println("Input is wrong,Please enter the 'help' command to view the command");
+                } else {
+                    System.err.println(jctbe.startOneBug(budID));
+                    System.out.println("Start Success!");
                 }
             } else if (params[0].equalsIgnoreCase(REFRESH)) {
                 jctbe.refresh();
-            }else if (params[0].equalsIgnoreCase(PULLBUG)) {
+            }else if (params[0].equalsIgnoreCase(PULL_BUGS)) {
                 jctbe.pullAllBug();
-            }else if(params[0].equalsIgnoreCase(RUNBUG)){
+            }else if(params[0].equalsIgnoreCase(RUN_BUGS)){
                 jctbe.runAllBug();
             } else {
                 System.err.println("Unrecognized commands");

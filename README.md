@@ -8,7 +8,7 @@ Defects4dl is available in two ways，the Command line and Websites.
 
 -  Java>=1.8
 
--  Docker>=19.03.8
+-  Docker
 
 -  Maven
 
@@ -35,9 +35,10 @@ git clone https://github.com/llmhyy/defects4dl.git
 
 ## Using Defects4dl
 
-    Important!!!
+Important!!!
 Before using it, you need to pull down our Docker Images from the command line using the `pullBug` command (this process is a bit slow).
-If you've already downloaded these Docker Images, you can use `runBug` to start Containers
+You can also pull a single image through the `pullOneBug <bugId>` command.
+If you've already downloaded these Docker Images, you can use `runBug` to start all Containers or `startOneBug <bugId>` command to start a single container.
 
 
 ### Command line:
@@ -54,43 +55,56 @@ help
 pullBug
 ```
 
-3.Start all Containers
+3.Pull down one Docker Image
+
+```
+pullOneBug <bugId>
+```
+
+
+4.Start all Containers
 
 ```
 runBug
 ```
 
-4.Query all bugs
+5.Start one Container
+
+```
+startOneBug <bugId>
+```
+
+6.Query all bugs
 
 ```
 ls
 ```
 
-5.Keyword query
+7.Keyword query
 
 ```
 ls grep <Keyword>
 ```
 
-6.View bug details
+8.View bug details
 
 ```
 info <bugId>
 ```
 
-7.See Diff for Buggy Version and Fix Version
+9.See Diff for Buggy Version and Fix Version
 
 ```
 diff <bugId>
 ```
 
-8.Run the buggy Version or Fix Version test case
+10.Run the buggy Version or Fix Version test case
 
 ```
 test <bugId> <version>
 ```
 
-9.Exit the program
+11.Exit the program
 
 ```
 exit

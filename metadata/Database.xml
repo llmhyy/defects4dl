@@ -978,5 +978,26 @@
             </fixVersion>
         </bug>
     </sir>
+    <sir>
+        <name>transformers</name>
+        <source>https://github.com/Liang813/transformers</source>
+        <bug>
+            <id>transformers6560</id>
+            <errormessage>ValueError</errormessage>
+            <describe>Huggingface create_ The optimizer method is missing a parameter</describe>
+            <operateScore>1</operateScore>
+            <type>API misuse</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
+            <buggyVersion>
+                <buggytestCmd>transformers6560-buggy.sh</buggytestCmd>
+                <buggycommit>841f07156948a28f8cc9182bb14c911f9e63b0e7</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>transformers6560-fix.sh</fixtestCmd>
+                <fixcommit>5281631a04e60f397ec5742056ec1dec235de425</fixcommit>
+            </fixVersion>
+        </bug>
+    </sir>
 
 </root>

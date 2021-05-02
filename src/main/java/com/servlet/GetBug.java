@@ -49,7 +49,6 @@ public class GetBug{
         DefectsAction da = new DefectsAction();
         global = 20;
         String testBuggy = da.testBuggy(bugId);
-        //global = 0;
         return testBuggy;
     }
 
@@ -63,6 +62,15 @@ public class GetBug{
         return testFix;
     }
 
+    @RequestMapping("/pullProgress")
+    @CrossOrigin
+    public void pullProgress(String bugId) throws Exception{
+        global = 0;
+        DefectsAction da = new DefectsAction();
+        global = 6;
+        da.PullOneBug(bugId);
+    }
+
     @RequestMapping("/hello")
     public String hello(){
         return "hello 1";
@@ -71,7 +79,7 @@ public class GetBug{
     @RequestMapping("/testProgress")
     @CrossOrigin
     public String progress() throws IOException {
-        if (global>=20&&global<95){
+        if (global>=5&&global<95){
             global = global + 5;
         }
         return String.valueOf(global);

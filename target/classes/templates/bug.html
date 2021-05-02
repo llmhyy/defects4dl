@@ -39,6 +39,7 @@
 
 </head>
 <body>
+<div class="container-fluid" id="progress"></div>
 <div class="container-fluid">
     <div class="row-fluid" id="BugList" >
         <div class="span12 text-center">
@@ -83,7 +84,8 @@
 
             <div class="form-group query-form-group">
                 <label>General Bug Type&nbsp;&nbsp;</label>
-                <select class="form-control" id="selectType" v-on:change="initBug">
+<!--                <select class="form-control" id="selectType" v-on:change="initBug">-->
+                <select class="form-control" id="selectType" v-on:change="refreshBug">
                     <option value="All">All</option>
                     <option value="shapeMismatch">shape mismatch</option>
                     <option value="API">API misuse</option>
@@ -99,7 +101,8 @@
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <div class="form-group query-form-group">
                 <label>ErrorMessage&nbsp;&nbsp;</label>
-                <select class="form-control" id="selectErrorM" v-on:change="initBug">
+<!--                <select class="form-control" id="selectErrorM" v-on:change="initBug">-->
+                <select class="form-control" id="selectErrorM" v-on:change="refreshBug">
                     <option value="">All</option>
                     <option value="ValueError">ValueError</option>
                     <option value="TypeError">TypeError</option>
@@ -131,7 +134,7 @@
                     <th style="width: 30px">
                         Describe
                     </th>
-                    <th style="width: 30px">
+                    <th style="width: 10%">
                         Operate
                     </th>
                 </tr>
@@ -150,8 +153,13 @@
                     <td>
                         {{ item.bugs[0].describe }}
                     </td>
-                    <td>
-                        <button type="button" class="btn btn-info btn-sm" v-on:click="getInfoD(item.bugs[0].bugID)">Detail</button>
+                    <td width="10%">
+                        <div align="left" style="float:left">
+                            <button type="button" class="btn btn-info btn-sm" v-on:click="getInfoD(item.bugs[0].bugID)">Detail</button>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-warning btn-sm" v-on:click="pullOneBug(item.bugs[0].bugID)">Pull</button>
+                        </div>
                     </td>
                 </tr>
 
@@ -165,13 +173,13 @@
 </body>
 
 
-
 <!-- js -->
 <script src="/static/vue.min.js"></script>
+<script src="/static/nanobar.js"></script>
 <script>
     var vm = new Vue({
         el: '#BugList',
-        data:{
+        data: {
             bugID: null,
             errorMessage: null,
             type: null,
@@ -189,10 +197,9 @@
         mounted: function () {
             //调用在method属性中定义的方法
             this.initBug();
-
         },
         methods: {
-            initBug: function() {
+            initBug: function () {
                 axios.get("getBug")
                     .then(response => {
 
@@ -205,19 +212,18 @@
                         var ipsCount = 0;
                         var zdCount = 0;
                         var ieCount = 0;
-                        for(var i=0;i<response.data.length;i++){
-                            if (response.data[i].bugs[0].type == "shape mismatch"){
+                        for (var i = 0; i < response.data.length; i++) {
+                            if (response.data[i].bugs[0].type == "shape mismatch") {
                                 smCount++;
-                            }
-                            else if(response.data[i].bugs[0].type == "API misuse"){
+                            } else if (response.data[i].bugs[0].type == "API misuse") {
                                 apiCount++;
-                            }else if (response.data[i].bugs[0].type == "type mismatch"){
+                            } else if (response.data[i].bugs[0].type == "type mismatch") {
                                 tmCount++;
-                            }else if(response.data[i].bugs[0].type == "IPS"){
+                            } else if (response.data[i].bugs[0].type == "IPS") {
                                 ipsCount++;
-                            }else if(response.data[i].bugs[0].type == "zero division"){
+                            } else if (response.data[i].bugs[0].type == "zero division") {
                                 zdCount++;
-                            }else if(response.data[i].bugs[0].type == "IndexError"){
+                            } else if (response.data[i].bugs[0].type == "IndexError") {
                                 ieCount++;
                             }
                         }
@@ -229,16 +235,20 @@
                         vm.ieCount = ieCount;
                     })
             },
-            selectByType: function (){
+            refreshBug: function () {
+                axios.get("getBug")
+                    .then(response => {
+                        vm.dataList = response.data;
+                    })
+            },
+            selectByType: function () {
                 var options = $("#selectType option:selected"); // 获取选中的项
-                //alert(options.val());  //获取选中的项的值
-                //alert(options.text());  //拿到选中项的文本
                 var typeName = options.text();
-                if (options.text() == "All"){
-                    this.initBug();
-                }else {
+                if (options.text() == "All") {
+                    this.refreshBug();
+                } else {
                     var SelectTypeList = [];
-                    for(var i=0;i<vm.dataList.length;i++) {
+                    for (var i = 0; i < vm.dataList.length; i++) {
                         if (vm.dataList[i].bugs[0].type == typeName) {
                             SelectTypeList.push(vm.dataList[i])
                         }
@@ -246,14 +256,14 @@
                 }
                 vm.dataList = SelectTypeList;
             },
-            selectByErrorM: function (){
+            selectByErrorM: function () {
                 var options = $("#selectErrorM option:selected");
                 var errorName = options.text();
-                if (options.text() == "All"){
-                    this.initBug();
-                }else {
+                if (options.text() == "All") {
+                    this.refreshBug();
+                } else {
                     var SelectErrorMList = [];
-                    for(var i=0;i<vm.dataList.length;i++) {
+                    for (var i = 0; i < vm.dataList.length; i++) {
                         if (vm.dataList[i].bugs[0].errorMessage == errorName) {
                             SelectErrorMList.push(vm.dataList[i])
                         }
@@ -262,17 +272,47 @@
                 vm.dataList = SelectErrorMList;
 
             },
-            getInfoD: function(bugID) {
+            getInfoD: function (bugID) {
                 //将localStorage传递到哪个页面
                 location.href = 'bugDetail'
                 //设置localStorage
-                window.localStorage.setItem('bugID',bugID);
+                window.localStorage.setItem('bugID', bugID);
+            },
+            pullOneBug: function (bugId) {
+                var options = {
+                    classname: 'my-class',
+                    id: 'my-id',
+                    target: document.getElementById('progress')
+                };
+                var nanobar = new Nanobar(options);
+                //新加的
+                var intelval = setInterval(function () {
 
+                    //执行ajax
+                    $.ajax({
+                        url: "testProgress",
+                        dataType: "text",
+                        type: "post",
+                        success: function (data) {
+                            $(".nanobar").fadeIn();
+                            //显示进度
+                            nanobar.go(data);
+                        }
+                    })
+                }, 1000);
+
+                axios.get("pullProgress?bugId=" + bugId)
+                    .then(response => {
+                        //结束后台进度查询
+                        clearInterval(intelval);
+                        nanobar.go(100);
+                        $(".nanobar").fadeOut();
+                        alert("Pull Success");
+                    })
 
             },
+        },
 
-
-        }
 
     })
 

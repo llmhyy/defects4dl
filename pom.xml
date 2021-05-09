@@ -19,6 +19,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
+
     </build>
     <dependencies>
         <dependency>
@@ -52,7 +53,5 @@
 
 
     </dependencies>
-
-
 
 </project>

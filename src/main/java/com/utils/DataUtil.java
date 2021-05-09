@@ -2,9 +2,11 @@ package com.utils;
 
 import com.vo.Bug;
 import com.vo.Constant;
-import com.vo.BuggyVersion;
-import com.vo.FixVersion;
+
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.xml.parsers.DocumentBuilder;
@@ -14,22 +16,28 @@ import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
+
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.util.ResourceUtils;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
 public class DataUtil {
-//    public final static String DBFILEPATH = "D:"+File.separator+
-//            "zWork" + File.separator +
-//            "Project" + File.separator +
-//            "defects4dl" + File.separator +
-//            "Metadata" + File.separator + "Database.xml";
-    public final static String DBFILEPATH = "Metadata" + File.separator + "Database.xml";
 
+    //public final static String DBFILEPATH = "Metadata" + File.separator + "Database.xml";
+    public final static String DBFILEPATH = "resources/Database.xml";
     static Document doc = null;
     public static Document getDocument() {
 
-        File bug_report = new File(DBFILEPATH);
+        //File bug_report = new File(DBFILEPATH);
+        InputStream bug_report = null;
+        ClassPathResource resource = new ClassPathResource(DBFILEPATH);
+        try {
+            bug_report = resource.getInputStream();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder documentBuilder;
         try {
@@ -90,7 +98,8 @@ public class DataUtil {
             transformer.setOutputProperty(OutputKeys.ENCODING, "ISO-8859-1");
             transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
             transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-            File file = new File(DBFILEPATH);
+            // File file = new File(DBFILEPATH);
+            File file = ResourceUtils.getFile(DBFILEPATH);
 
             if (!file.exists()) {
                 file.createNewFile();

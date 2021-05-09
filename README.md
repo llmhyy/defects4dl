@@ -35,10 +35,10 @@ git clone https://github.com/llmhyy/defects4dl.git
 
 ## Using Defects4dl
 
-Important!!!
-Before using it, you need to pull down our Docker Images from the command line using the `pullBug` command (this process is a bit slow).
-You can also pull a single image through the `pullOneBug <bugId>` command.
-If you've already downloaded these Docker Images, you can use `runBug` to start all Containers or `startOneBug <bugId>` command to start a single container.
+Important!
+* Before using it, you need to pull down our Docker Images from the command line using the `pullBug` command (this process is a bit slow).
+* You can also pull a single image through the `pullOneBug <bugId>` command.
+* If you've already downloaded these Docker Images, you can use `runBug` to start all Containers or `startOneBug <bugId>` command to start a single container.
 
 
 ### Command line:
@@ -118,4 +118,4 @@ You need to configure Maven and it will automatically download dependencies for 
 
 The entry to the program is: AppEnter
 
-When the project starts,you can use a browser to access `http://127.0.0.1:9000/bugList` ,then you will see the home page of our library.
+When the project starts,you can use a browser to access *[http://127.0.0.1:9000/bugList](http://127.0.0.1:9000/bugList) ,then you will see the home page of our library.

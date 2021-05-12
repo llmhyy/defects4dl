@@ -79,6 +79,10 @@
                     <td class="item-title">Count of IndexError</td>
                     <td>{{ ieCount }}</td>
                 </tr>
+                <tr>
+                    <td class="item-title">Count of variable initialization</td>
+                    <td>{{ viCount }}</td>
+                </tr>
             </table>
 
 
@@ -93,6 +97,7 @@
                     <option value="argumentError">IPS</option>
                     <option value="zeroDivision">zero division</option>
                     <option value="IndexError">IndexError</option>
+                    <option value="variableInitialization">variable initialization</option>
                 </select>
             </div>&nbsp;&nbsp;
             <div class="form-group query-form-group">
@@ -108,6 +113,8 @@
                     <option value="InvalidArgumentError">InvalidArgumentError</option>
                     <option value="AssertionError">AssertionError</option>
                     <option value="IndexError">IndexError</option>
+                    <option value="ZeroDivisionError">ZeroDivisionError</option>
+                    <option value="FailedPreconditionError">FailedPreconditionError</option>
                     <option value="None">None</option>
                 </select>
             </div>&nbsp;&nbsp;
@@ -190,6 +197,7 @@
             ipsCount: null,
             zdCount: null,
             ieCount: null,
+            viCount: null,
             dataList: [],
             dataList1: [],
         },
@@ -212,6 +220,7 @@
                         var ipsCount = 0;
                         var zdCount = 0;
                         var ieCount = 0;
+                        var viCount = 0;
                         for (var i = 0; i < response.data.length; i++) {
                             if (response.data[i].bugs[0].type == "shape mismatch") {
                                 smCount++;
@@ -225,6 +234,8 @@
                                 zdCount++;
                             } else if (response.data[i].bugs[0].type == "IndexError") {
                                 ieCount++;
+                            } else if (response.data[i].bugs[0].type == "variable initialization") {
+                                viCount++;
                             }
                         }
                         vm.smCount = smCount;
@@ -233,6 +244,7 @@
                         vm.ipsCount = ipsCount;
                         vm.zdCount = zdCount;
                         vm.ieCount = ieCount;
+                        vm.viCount = viCount;
                     })
             },
             refreshBug: function () {

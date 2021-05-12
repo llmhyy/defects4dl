@@ -1000,7 +1000,7 @@
         </bug>
     </sir>
     <sir>
-        <name>Gpflow</name>
+        <name>GPflow</name>
         <source>https://github.com/Liang813/GPflow</source>
         <bug>
             <id>gpflow99</id>

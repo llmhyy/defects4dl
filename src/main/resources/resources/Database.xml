@@ -999,5 +999,47 @@
             </fixVersion>
         </bug>
     </sir>
+    <sir>
+        <name>Gpflow</name>
+        <source>https://github.com/Liang813/GPflow</source>
+        <bug>
+            <id>gpflow99</id>
+            <errormessage>FailedPreconditionError</errormessage>
+            <describe>Not all variables in AF session are initialized</describe>
+            <operateScore>1</operateScore>
+            <type>variable initialization</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
+            <buggyVersion>
+                <buggytestCmd>Gpflow99-buggy.sh</buggytestCmd>
+                <buggycommit>4ea1fa8b74861d599e749b20d1ab11edced8039a</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>Gpflow99-fix.sh</fixtestCmd>
+                <fixcommit>dad657e0be26732596c1c8c92c2f253de48513e9</fixcommit>
+            </fixVersion>
+        </bug>
+    </sir>
+    <sir>
+        <name>pytorch-lightning</name>
+        <source>https://github.com/Liang813/pytorch-lightning</source>
+        <bug>
+            <id>pytorch-lightning139</id>
+            <errormessage>ZeroDivisionError</errormessage>
+            <describe>If dataset size = 1 batch, a zero division error will be reported</describe>
+            <operateScore>1</operateScore>
+            <type>zero division</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
+            <buggyVersion>
+                <buggytestCmd>pytorch-lightning139-buggy.sh</buggytestCmd>
+                <buggycommit>e646d745da3973398455a6b2abd7005edd2103d2</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>pytorch-lightning139-fix.sh</fixtestCmd>
+                <fixcommit>26d3f0dbea3ebb4d0db58f0f382fc633f275d067</fixcommit>
+            </fixVersion>
+        </bug>
+    </sir>
 
 </root>

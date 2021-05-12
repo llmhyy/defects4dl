@@ -118,4 +118,4 @@ You need to configure Maven and it will automatically download dependencies for 
 
 The entry to the program is: AppEnter
 
-When the project starts,you can use a browser to access *[http://127.0.0.1:9000/bugList](http://127.0.0.1:9000/bugList) ,then you will see the home page of our library.
+When the project starts,you can use a browser to access [http://127.0.0.1:9000/bugList](http://127.0.0.1:9000/bugList) ,then you will see the home page of our library.

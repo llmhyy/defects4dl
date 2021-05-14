@@ -1,19 +1,18 @@
 package com.docker;
 
 import com.executor.Executor;
-import com.utils.ColorConsole;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.InputStreamReader;
-import java.sql.SQLOutput;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
+
 
 public class DockerExecutor extends Executor {
+    public final static String OS_WINDOWS = "windows 10";
+    public final static String OS_MAC = "mac";
+    public final static String OS_UNIX = "unix";
+    private static String OS = System.getProperty("os.name").toLowerCase();
     private static ProcessBuilder pb = new ProcessBuilder();
     // .sh file is stored in this folder
     private final static String SCRIPTS_FOLDER = "script";
@@ -57,7 +56,11 @@ public class DockerExecutor extends Executor {
     public String execPrintln(String cmd, ProcessBuilder pb) {
         StringBuffer sb = new StringBuffer();
         try {
-            pb.command("cmd.exe", "/c", cmd);
+            if (OS.equals(OS_WINDOWS)) {
+                pb.command("cmd.exe", "/c", cmd);
+            } else {
+                pb.command("bash", "-c", cmd);
+            }
             Process process = pb.start();
             InputStreamReader inputStr = new InputStreamReader(process.getInputStream());
             BufferedReader bufferReader = new BufferedReader(inputStr);
@@ -74,7 +77,11 @@ public class DockerExecutor extends Executor {
     public String execPrintlnTest(String cmd, ProcessBuilder pb) {
         StringBuffer sb = new StringBuffer();
         try {
-            pb.command("cmd.exe", "/c", cmd);
+            if (OS.equals(OS_WINDOWS)) {
+                pb.command("cmd.exe", "/c", cmd);
+            } else {
+                pb.command("bash", "-c", cmd);
+            }
             Process process = pb.start();
             InputStreamReader inputStr = new InputStreamReader(process.getInputStream());
             BufferedReader bufferReader = new BufferedReader(inputStr);
@@ -86,7 +93,11 @@ public class DockerExecutor extends Executor {
     public String execPrintlnW(String cmd, ProcessBuilder pb) {
         StringBuffer sb = new StringBuffer();
         try {
-            pb.command("cmd.exe", "/c", cmd);
+            if (OS.equals(OS_WINDOWS)) {
+                pb.command("cmd.exe", "/c", cmd);
+            } else {
+                pb.command("bash", "-c", cmd);
+            }
             Process process = pb.start();
             InputStreamReader inputStr = new InputStreamReader(process.getInputStream());
             BufferedReader bufferReader = new BufferedReader(inputStr);
@@ -110,7 +121,11 @@ public class DockerExecutor extends Executor {
     public String exec(String cmd, ProcessBuilder pb) {
         StringBuffer sb = new StringBuffer();
         try {
-            pb.command("cmd.exe", "/c", cmd);
+            if (OS.equals(OS_WINDOWS)) {
+                pb.command("cmd.exe", "/c", cmd);
+            } else {
+                pb.command("bash", "-c", cmd);
+            }
             Process process = pb.start();
             InputStreamReader inputStr = new InputStreamReader(process.getInputStream());
             BufferedReader bufferReader = new BufferedReader(inputStr);
@@ -126,22 +141,17 @@ public class DockerExecutor extends Executor {
     public void setEnviroment(String args[]) {
 
         Map<String, String> map = pb.environment();
-        StringBuilder PATH = new StringBuilder(map.get("Path"));
+        StringBuilder PATH = null;
+        if (OS.equals(OS_WINDOWS)) {
+            PATH = new StringBuilder(map.get("Path"));
+        } else {
+            PATH = new StringBuilder(map.get("PATH"));
+        }
         for (int i = 1; i < args.length; i++) {
             PATH.append(File.pathSeparator).append(args[i]);
         }
         map.put("PATH", PATH.toString());
     }
 
-    private boolean checkRootCause(String line, List<String> causeList) {
-        String tmp = line.replace('+', ' ').replace('-', ' ').replace(" ", "");
-        for (String s : causeList) {
-            s = s.replace(" ", "");
-            if (tmp.contains(s) && s.toCharArray().length > 3 && !tmp.contains("/**")) {
-                return true;
-            }
-        }
-        return false;
-    }
 
 }

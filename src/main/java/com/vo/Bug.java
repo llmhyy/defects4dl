@@ -1,14 +1,10 @@
 package com.vo;
 
-import com.vo.BuggyVersion;
-import com.vo.FixVersion;
-
 public class Bug {
 
     private String bugID;
     private String errorMessage;  // 报错信息
     private String describe;    // 错误描述
-    // private String rootCause;  // 核心修复代码段
     private String operateScore; //operate操作符分数
     private String type;   // General Bug类别
     private BuggyVersion BuggyVersion;

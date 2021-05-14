@@ -5,28 +5,6 @@
         <name>transformers</name>
         <source>https://github.com/Liang813/transformers</source>
         <bug>
-            <id>transformers1962</id>
-            <errormessage>ValueError</errormessage>
-            <describe>TFBertModel ValueError: Tried to convert 'dims' to a tensor and failed. Error: Cannot convert a partially known TensorShape to a Tensor</describe>
-            <operateScore>1</operateScore>
-            <type>shape mismatch</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
-            <buggyVersion>
-                <buggytestCmd>transformers1962-buggy.sh</buggytestCmd>
-                <buggycommit>adb5c79ff2ffcd2e4a43a12f082cca55f7630a96</buggycommit>
-            </buggyVersion>
-            <fixVersion>
-                <fixtestCmd>transformers1962-fix.sh</fixtestCmd>
-                <fixcommit>4a666885b501ed6bfd344ec2c4c16d80da8aab79</fixcommit>
-            </fixVersion>
-        </bug>
-    </sir>
-
-    <sir>
-        <name>transformers</name>
-        <source>https://github.com/Liang813/transformers</source>
-        <bug>
             <id>transformers1418</id>
             <errormessage>TypeError</errormessage>
             <describe>The issue is due to implementation difference between Tensorflow and Pytorch DistillBERT. Tensorflow implementation doesn't have loss calculation inside call, but We do in forward for Pytorch. </describe>
@@ -63,6 +41,28 @@
             <fixVersion>
                 <fixtestCmd>transformers1152-fix.sh</fixtestCmd>
                 <fixcommit>07e21307b6b16350425ea08790c7e20c081a3b3f</fixcommit>
+            </fixVersion>
+        </bug>
+    </sir>
+
+    <sir>
+        <name>transformers</name>
+        <source>https://github.com/Liang813/transformers</source>
+        <bug>
+            <id>transformers1962</id>
+            <errormessage>ValueError</errormessage>
+            <describe>TFBertModel ValueError: Tried to convert 'dims' to a tensor and failed. Error: Cannot convert a partially known TensorShape to a Tensor</describe>
+            <operateScore>1</operateScore>
+            <type>shape mismatch</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
+            <buggyVersion>
+                <buggytestCmd>transformers1962-buggy.sh</buggytestCmd>
+                <buggycommit>adb5c79ff2ffcd2e4a43a12f082cca55f7630a96</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>transformers1962-fix.sh</fixtestCmd>
+                <fixcommit>4a666885b501ed6bfd344ec2c4c16d80da8aab79</fixcommit>
             </fixVersion>
         </bug>
     </sir>

@@ -7,7 +7,6 @@ import com.vo.Bug;
 import com.vo.BuggyVersion;
 import com.vo.Distance;
 import com.vo.FixVersion;
-import com.docker.DockerExecutor;
 import java.text.NumberFormat;
 import java.util.List;
 import java.util.ArrayList;
@@ -112,18 +111,14 @@ public class DefectsAction {
             String buggytestCmd = buggyVersion.getBuggytestCmd();
             String buggycommit = buggyVersion.getBuggycommit();
             String sirName=DefectsDB.getSirName(bugId);
-            //System.out.println(dockerServer.checkout(sirName, buggycommit,bugId));
             dockerServer.runTest(buggytestCmd,bugId,version);
-            //dockerServer.endTest();
         }
         else if (version.equals("fix")){
             FixVersion fixVersion = bug.getFixVersion();
             String fixtestCmd = fixVersion.getFixtestCmd();
             String fixcommit = fixVersion.getFixcommit();
             String sirName=DefectsDB.getSirName(bugId);
-            //System.out.println(dockerServer.checkout(sirName, fixcommit,bugId));
             dockerServer.runTest(fixtestCmd,bugId,version);
-            //dockerServer.endTest();
         }else {
             System.out.println("Input is wrong!");
         }
@@ -175,11 +170,9 @@ public class DefectsAction {
         String buggyCommit = buggyVersion.getBuggycommit();
         FixVersion fixVersion = bug.getFixVersion();
         String fixCommit = fixVersion.getFixcommit();
-        // String SIRName = DefectsDB.getSirName(bugId).toLowerCase();
         String SIRName = DefectsDB.getSirName(bugId);
         String cdCmd="cd "+"/"+"home"+"/"+"metadata"+"/"+SIRName;
         String diffInfo = dockerServer.diffRunPrintln(cdCmd+";git diff " + buggyCommit + " " + fixCommit,bugId);
-        // System.out.println(diffInfo);
         return diffInfo;
     }
 

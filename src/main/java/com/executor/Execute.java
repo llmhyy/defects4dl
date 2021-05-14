@@ -12,13 +12,19 @@ public class Execute extends Executor{
     public final static String OS_WINDOWS = "windows 10";
     public final static String OS_MAC = "mac";
     public final static String OS_UNIX = "unix";
-
+    private static String OS = System.getProperty("os.name").toLowerCase();
     ProcessBuilder pb = new ProcessBuilder();
 
     public void setEnviroment(String args[]) {
 
         Map<String, String> map = pb.environment();
-        StringBuilder PATH = new StringBuilder(map.get("Path"));
+        StringBuilder PATH = null;
+        if(OS.equals(OS_WINDOWS)){
+            PATH = new StringBuilder(map.get("Path"));
+        }else {
+            PATH = new StringBuilder(map.get("PATH"));
+        }
+        //StringBuilder PATH = new StringBuilder(map.get("Path"));
         for (int i = 1; i < args.length; i++) {
             PATH.append(File.pathSeparator).append(args[i]);
         }
@@ -32,7 +38,7 @@ public class Execute extends Executor{
     public String exec(String cmd) {
         StringBuilder builder = new StringBuilder();
         try {
-            String OS = System.getProperty("os.name").toLowerCase();
+            //String OS = System.getProperty("os.name").toLowerCase();
             if (OS.equals(OS_WINDOWS)) {
                 pb.command("cmd.exe", "/c", cmd);
             } else {

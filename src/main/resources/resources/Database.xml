@@ -756,11 +756,11 @@
             <localScore></localScore>
             <fixLength></fixLength>
             <buggyVersion>
-                <buggytestCmd>Keras9883-buggy.sh</buggytestCmd>
+                <buggytestCmd>keras9883-buggy.sh</buggytestCmd>
                 <buggycommit>8a5d4bcc62f49d79839de9ddf8c72d97056ee522</buggycommit>
             </buggyVersion>
             <fixVersion>
-                <fixtestCmd>Keras9883-fix.sh</fixtestCmd>
+                <fixtestCmd>keras9883-fix.sh</fixtestCmd>
                 <fixcommit>6b99d2382e53c0f6f8124ed76db399741ad64fa4</fixcommit>
             </fixVersion>
         </bug>
@@ -777,11 +777,11 @@
             <localScore></localScore>
             <fixLength></fixLength>
             <buggyVersion>
-                <buggytestCmd>Keras13073-buggy.sh</buggytestCmd>
+                <buggytestCmd>keras13073-buggy.sh</buggytestCmd>
                 <buggycommit>0fc33feb5f4efe3bb823c57a8390f52932a966ab</buggycommit>
             </buggyVersion>
             <fixVersion>
-                <fixtestCmd>Keras13073-fix.sh</fixtestCmd>
+                <fixtestCmd>keras13073-fix.sh</fixtestCmd>
                 <fixcommit>09521c9804c3ce218b44efa6d9b4af8b2c8cdd56</fixcommit>
             </fixVersion>
         </bug>
@@ -798,11 +798,11 @@
             <localScore></localScore>
             <fixLength></fixLength>
             <buggyVersion>
-                <buggytestCmd>Keras2672-buggy.sh</buggytestCmd>
+                <buggytestCmd>keras2672-buggy.sh</buggytestCmd>
                 <buggycommit>973b5570aa4aea71323d6c08614d5e2a8f50a6ec</buggycommit>
             </buggyVersion>
             <fixVersion>
-                <fixtestCmd>Keras2672-fix.sh</fixtestCmd>
+                <fixtestCmd>keras2672-fix.sh</fixtestCmd>
                 <fixcommit>58cbb4bf425fc80771ebfe8053cbfe928a081b61</fixcommit>
             </fixVersion>
         </bug>
@@ -1041,5 +1041,466 @@
             </fixVersion>
         </bug>
     </sir>
-
+    <sir>
+        <name>keras</name>
+        <source>https://github.com/Liang813/keras</source>
+        <bug>
+            <id>keras1141</id>
+            <errormessage>ValueError</errormessage>
+            <describe>Setting an array element with a sequence.</describe>
+            <operateScore>1</operateScore>
+            <type>type mismatch</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
+            <buggyVersion>
+                <buggytestCmd>keras1141-buggy.sh</buggytestCmd>
+                <buggycommit>d400fc45129fbd4d3fe83345a69ec5973bb29a37</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>keras1141-fix.sh</fixtestCmd>
+                <fixcommit>07ffc76b9318ab1197ce61838992960e9abb3c22</fixcommit>
+            </fixVersion>
+        </bug>
+    </sir>
+    <sir>
+        <name>edward</name>
+        <source>https://github.com/Liang813/edward</source>
+        <bug>
+            <id>edward46</id>
+            <errormessage>None</errormessage>
+            <describe>Match outputs of distribution methods to SciPy convention</describe>
+            <operateScore>1</operateScore>
+            <type>shape mismatch</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
+            <buggyVersion>
+                <buggytestCmd>edward46-buggy.sh</buggytestCmd>
+                <buggycommit>42ac6587b6f7d4ae7593b5b8ffa8cc3942d95958</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>edward46-fix.sh</fixtestCmd>
+                <fixcommit>14ec644e08af346e9004a8ee3a27c0a94aad698c</fixcommit>
+            </fixVersion>
+        </bug>
+    </sir>
+    <sir>
+        <name>PILCO</name>
+        <source>https://github.com/Liang813/PILCO</source>
+        <bug>
+            <id>pilco25</id>
+            <errormessage>None</errormessage>
+            <describe>Function usage error during Initialisation of ExponentialReward</describe>
+            <operateScore>1</operateScore>
+            <type>API misuse</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
+            <buggyVersion>
+                <buggytestCmd>PILCO25-buggy.sh</buggytestCmd>
+                <buggycommit>6ebcc7df9a8190c542445f0c82d835c94b745c8e</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>PILCO25-fix.sh</fixtestCmd>
+                <fixcommit>c9230408b92276e1d9054e98d67bb6386e00bb9e</fixcommit>
+            </fixVersion>
+        </bug>
+    </sir>
+    <sir>
+        <name>tf-encrypted</name>
+        <source>https://github.com/Liang813/tf-encrypted</source>
+        <bug>
+            <id>tf-encrypted692</id>
+            <errormessage>None</errormessage>
+            <describe>The conditions of minval and maxval in sample_uniform are wrong</describe>
+            <operateScore>5</operateScore>
+            <type>shape mismatch</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
+            <buggyVersion>
+                <buggytestCmd>tf-encrypted692-buggy.sh</buggytestCmd>
+                <buggycommit>28ab6344c0eee69fdfe0babad839a8262656a394</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>tf-encrypted692-fix.sh</fixtestCmd>
+                <fixcommit>fb3184b6218c68244758eb360963b452157ad2c8</fixcommit>
+            </fixVersion>
+        </bug>
+    </sir>
+    <sir>
+        <name>probability</name>
+        <source>https://github.com/Liang813/probability</source>
+        <bug>
+            <id>probability233</id>
+            <errormessage>None</errormessage>
+            <describe>Getting nan as a probability in high-dimensional spaces</describe>
+            <operateScore>5</operateScore>
+            <type>IPS</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
+            <buggyVersion>
+                <buggytestCmd>probability233-buggy.sh</buggytestCmd>
+                <buggycommit>0564b963eb5e2d4a0b32f027dc171fc047229098</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>probability233-fix.sh</fixtestCmd>
+                <fixcommit>34e969a81a7bb96791104d8503b253e4f937c353</fixcommit>
+            </fixVersion>
+        </bug>
+    </sir>
+    <sir>
+        <name>tensorflow</name>
+        <source>https://github.com/Liang813/tensorflow</source>
+        <bug>
+            <id>tensorflow3168</id>
+            <errormessage>FailedPreconditionError</errormessage>
+            <describe>Initialize local variables in fully_connected_preloaded</describe>
+            <operateScore>1</operateScore>
+            <type>variable initialization</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
+            <buggyVersion>
+                <buggytestCmd>tensorflow3168-buggy.sh</buggytestCmd>
+                <buggycommit>aedd2173deef51661ab0cabcb9009d249e744e31</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>tensorflow3168-fix.sh</fixtestCmd>
+                <fixcommit>11f92de8c8c9cd35106c0f4dd3b0bfaac7581a2f</fixcommit>
+            </fixVersion>
+        </bug>
+    </sir>
+    <sir>
+        <name>graphics</name>
+        <source>https://github.com/Liang813/graphics</source>
+        <bug>
+            <id>graphics283</id>
+            <errormessage>None</errormessage>
+            <describe>when using cartesian_to_spherical_coordinates function there appears to be some numerical instability has been introduced. </describe>
+            <operateScore>1</operateScore>
+            <type>IPS</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
+            <buggyVersion>
+                <buggytestCmd>graphics283-buggy.sh</buggytestCmd>
+                <buggycommit>d4426ff89fe2de198f4dbe758536cb66560120ec</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>graphics283-fix.sh</fixtestCmd>
+                <fixcommit>d265f7a02cc6247f5d0bbacd516533b2117c9bac</fixcommit>
+            </fixVersion>
+        </bug>
+    </sir>
+    <sir>
+        <name>GPflow</name>
+        <source>https://github.com/Liang813/GPflow</source>
+        <bug>
+            <id>gpflow1407</id>
+            <errormessage>InvalidArgumentError</errormessage>
+            <describe>Small noise_variance value leads to weird InvalidArgumentError exception.</describe>
+            <operateScore>5</operateScore>
+            <type>IPS</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
+            <buggyVersion>
+                <buggytestCmd>GPflow1407-buggy.sh</buggytestCmd>
+                <buggycommit>92f914dc9a7fadf5c9313ab7accfe09154aa29c7</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>GPflow1407-fix.sh</fixtestCmd>
+                <fixcommit>6388133f7bf8f290661bc1a5db917f2a71762bab</fixcommit>
+            </fixVersion>
+        </bug>
+    </sir>
+    <sir>
+        <name>DCGAN-tensorflow</name>
+        <source>https://github.com/Liang813/DCGAN-tensorflow</source>
+        <bug>
+            <id>dcgan-tensorflow99</id>
+            <errormessage>TypeError</errormessage>
+            <describe>Use a custom function to replace the function provided by tensorflow</describe>
+            <operateScore>1</operateScore>
+            <type>API misuse</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
+            <buggyVersion>
+                <buggytestCmd>DCGAN-tensorflow99-buggy.sh</buggytestCmd>
+                <buggycommit>66884d3dbbde4033ffe5305bb0053fc4625d0624</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>DCGAN-tensorflow99-fix.sh</fixtestCmd>
+                <fixcommit>9166ef99bf9fcd1d0bf641ae752428bb06903b00</fixcommit>
+            </fixVersion>
+        </bug>
+    </sir>
+    <sir>
+        <name>DCGAN-tensorflow</name>
+        <source>https://github.com/Liang813/DCGAN-tensorflow</source>
+        <bug>
+            <id>dcgan-tensorflow158</id>
+            <errormessage>error</errormessage>
+            <describe>Data set download error</describe>
+            <operateScore>5</operateScore>
+            <type>IPS</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
+            <buggyVersion>
+                <buggytestCmd>DCGAN-tensorflow158-buggy.sh</buggytestCmd>
+                <buggycommit>9f8f6a6e0065bdc5e33080d1f1df28a41eaacd02</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>DCGAN-tensorflow158-fix.sh</fixtestCmd>
+                <fixcommit>07abd2b58638a2bc4595d79c6dcba58052afa79c</fixcommit>
+            </fixVersion>
+        </bug>
+    </sir>
+    <sir>
+        <name>keras</name>
+        <source>https://github.com/Liang813/keras</source>
+        <bug>
+            <id>keras4441</id>
+            <errormessage>MissingInputError</errormessage>
+            <describe>K.rnn() is ignoring theano.scan() updates</describe>
+            <operateScore>10</operateScore>
+            <type>IPS</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
+            <buggyVersion>
+                <buggytestCmd>keras4441-buggy.sh</buggytestCmd>
+                <buggycommit>06cc6d7fea7527e99e36c9fc766390c51e73ebba</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>keras4441-fix.sh</fixtestCmd>
+                <fixcommit>f31d40e43395e90ea13a1a7d0a308a7c2c20cdb4</fixcommit>
+            </fixVersion>
+        </bug>
+    </sir>
+    <sir>
+        <name>GPflow</name>
+        <source>https://github.com/Liang813/GPflow</source>
+        <bug>
+            <id>gpflow409</id>
+            <errormessage>None</errormessage>
+            <describe>Adding a jitter to the tf.acos-operation fixes the gradient problem</describe>
+            <operateScore>5</operateScore>
+            <type>IPS</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
+            <buggyVersion>
+                <buggytestCmd>GPflow409-buggy.sh</buggytestCmd>
+                <buggycommit>ca4d3ebe1594d6950a975bcac00784ea2e693be4</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>GPflow409-fix.sh</fixtestCmd>
+                <fixcommit>bf8f9a10a466c9d8bb88e85abd2c0ecc4420dc95</fixcommit>
+            </fixVersion>
+        </bug>
+    </sir>
+    <sir>
+        <name>probability</name>
+        <source>https://github.com/Liang813/probability</source>
+        <bug>
+            <id>probability1010</id>
+            <errormessage>InvalidArgumentError</errormessage>
+            <describe>tensorflow_probability.distributions.MixtureSameFamily only works with float32</describe>
+            <operateScore>1</operateScore>
+            <type>type mismatch</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
+            <buggyVersion>
+                <buggytestCmd>probability1010-buggy.sh</buggytestCmd>
+                <buggycommit>1c8d5ad855f855625404abe77f1e3b45337ffb46</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>probability1010-fix.sh</fixtestCmd>
+                <fixcommit>77229bd921c1508ca11f9068d1133a88449d6760</fixcommit>
+            </fixVersion>
+        </bug>
+    </sir>
+    <sir>
+        <name>probability</name>
+        <source>https://github.com/Liang813/probability</source>
+        <bug>
+            <id>probability867</id>
+            <errormessage>None</errormessage>
+            <describe>tfd.Multinomial.log_prob returns nan if an entry of probs is 0</describe>
+            <operateScore>5</operateScore>
+            <type>IPS</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
+            <buggyVersion>
+                <buggytestCmd>probability867-buggy.sh</buggytestCmd>
+                <buggycommit>5f4088a6df93293e73cca92e9de8e3a0573e1843</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>probability867-fix.sh</fixtestCmd>
+                <fixcommit>6254da601c28558581ad61291062467e19276e54</fixcommit>
+            </fixVersion>
+        </bug>
+    </sir>
+    <sir>
+        <name>probability</name>
+        <source>https://github.com/Liang813/probability</source>
+        <bug>
+            <id>probability705</id>
+            <errormessage>None</errormessage>
+            <describe>RelaxedBernoulli with > 0 dimensions and sufficiently small temperature produces nan when log_prob is invoked on sampled values.</describe>
+            <operateScore>10</operateScore>
+            <type>IPS</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
+            <buggyVersion>
+                <buggytestCmd>probability705-buggy.sh</buggytestCmd>
+                <buggycommit>eea693ad2480fcf9c3508db31dce91c282d79802</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>probability705-fix.sh</fixtestCmd>
+                <fixcommit>242731a9b2b42d4eb676539658a8d5e8267c0720</fixcommit>
+            </fixVersion>
+        </bug>
+    </sir>
+    <sir>
+        <name>keras</name>
+        <source>https://github.com/Liang813/keras</source>
+        <bug>
+            <id>keras9479</id>
+            <errormessage>AssertionError</errormessage>
+            <describe>Fix pool_2d of Theano for backend compatibility</describe>
+            <operateScore>3</operateScore>
+            <type>IPS</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
+            <buggyVersion>
+                <buggytestCmd>keras9479-buggy.sh</buggytestCmd>
+                <buggycommit>5e797436c3defd2d863ac1ffab11c48dbd42588e</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>keras9479-fix.sh</fixtestCmd>
+                <fixcommit>07c77c65b5ea9c246690d2eb116c7c8570dc5a7e</fixcommit>
+            </fixVersion>
+        </bug>
+    </sir>
+    <sir>
+        <name>keras</name>
+        <source>https://github.com/Liang813/keras</source>
+        <bug>
+            <id>keras3475</id>
+            <errormessage>None</errormessage>
+            <describe>Batchnormalization results in NaN (keras 1.0.7)</describe>
+            <operateScore>1</operateScore>
+            <type>IPS</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
+            <buggyVersion>
+                <buggytestCmd>keras3475-buggy.sh</buggytestCmd>
+                <buggycommit>c6daa24e3cac10e3488d5a2eadfd6134de55e677</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>keras3475-fix.sh</fixtestCmd>
+                <fixcommit>50f159fdb2e0737d8a0fe0147608f49553c6f591</fixcommit>
+            </fixVersion>
+        </bug>
+    </sir>
+    <sir>
+        <name>keras</name>
+        <source>https://github.com/Liang813/keras</source>
+        <bug>
+            <id>keras4916</id>
+            <errormessage></errormessage>
+            <describe>when using the Reshape layer it is not clear if one can use an unknown dimension (-1) like in numpy. Using it results in an error.</describe>
+            <operateScore>1</operateScore>
+            <type>shape mismatch</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
+            <buggyVersion>
+                <buggytestCmd>keras4916-buggy.sh</buggytestCmd>
+                <buggycommit>45ad5096114300443859644148ab0b69ec6f65c0</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>keras4916-fix.sh</fixtestCmd>
+                <fixcommit>150e0fa8a6571233ed107c4dded52387a9d3739c</fixcommit>
+            </fixVersion>
+        </bug>
+    </sir>
+    <sir>
+        <name>keras</name>
+        <source>https://github.com/Liang813/keras</source>
+        <bug>
+            <id>keras449</id>
+            <errormessage>None</errormessage>
+            <describe>In all recurrent layers, the input value is multiplied with some matrix (usually W) before the time dimension is evaluated (Theano scan). The mask is currently only applied within the Theano scan loop, whereas the first multiplication is unmasked. This works fine as long as 0 is chosen as a mask_value. For other values this however results in unwanted behavior, as shown here for the extreme case of mask_value=1e+30.</describe>
+            <operateScore>3</operateScore>
+            <type>IPS</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
+            <buggyVersion>
+                <buggytestCmd>keras449-buggy.sh</buggytestCmd>
+                <buggycommit>15a3a1f1ce2a7babf62c61f73709c074249ed840</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>keras449-fix.sh</fixtestCmd>
+                <fixcommit>3bf5340f18b62e33fb022aa04dbd49e8191983b6</fixcommit>
+            </fixVersion>
+        </bug>
+    </sir>
+    <sir>
+        <name>seq2seq</name>
+        <source>https://github.com/Liang813/seq2seq</source>
+        <bug>
+            <id>seq2seq52</id>
+            <errormessage></errormessage>
+            <describe>During evaluation metric_fn is called epoch_size/batch_size times with the same data</describe>
+            <operateScore>3</operateScore>
+            <type>IPS</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
+            <buggyVersion>
+                <buggytestCmd>seq2seq52-buggy.sh</buggytestCmd>
+                <buggycommit>e72415a02084d20a5f18fe1467b1c6622fafea09</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>seq2seq52-fix.sh</fixtestCmd>
+                <fixcommit>4880ed14eb87daa56ddfb7761c3a06b95278cb0b</fixcommit>
+            </fixVersion>
+        </bug>
+    </sir>
+    <sir>
+        <name>DCGAN-tensorflow</name>
+        <source>https://github.com/Liang813/DCGAN-tensorflow</source>
+        <bug>
+            <id>dcgan-tensorflow135</id>
+            <errormessage>ValueError</errormessage>
+            <describe>There was an error saving training images with batch_size other than 64</describe>
+            <operateScore>1</operateScore>
+            <type>shape mismatch</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
+            <buggyVersion>
+                <buggytestCmd>DCGAN-tensorflow135-buggy.sh</buggytestCmd>
+                <buggycommit>3faddba43f4e1174f400c8a26eddfd309f920faa</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>DCGAN-tensorflow135-fix.sh</fixtestCmd>
+                <fixcommit>158b77d132c60a37f6e1c0059d8de199cb078442</fixcommit>
+            </fixVersion>
+        </bug>
+    </sir>
+    <sir>
+        <name>transformers</name>
+        <source>https://github.com/Liang813/transformers</source>
+        <bug>
+            <id>transformers3711</id>
+            <errormessage>None</errormessage>
+            <describe>TransfoXLLMHead doesn't shift labels internally when called for loss</describe>
+            <operateScore>3</operateScore>
+            <type>IPS</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
+            <buggyVersion>
+                <buggytestCmd>transformers3711-buggy.sh</buggytestCmd>
+                <buggycommit>5ebd8989530e874a9666852ef1bc46e0781dc8e8</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>transformers3711-fix.sh</fixtestCmd>
+                <fixcommit>352d5472b0c1dec0f420d606d16747d851b4bda8</fixcommit>
+            </fixVersion>
+        </bug>
+    </sir>
 </root>

@@ -80,7 +80,7 @@ public class GetBug{
     @CrossOrigin
     public String progress() throws IOException {
         if (global>=5&&global<95){
-            global = global + 5;
+            global = global + 1;
         }
         return String.valueOf(global);
     }

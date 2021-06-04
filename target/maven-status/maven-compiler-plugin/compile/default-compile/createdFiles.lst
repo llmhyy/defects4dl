@@ -18,6 +18,5 @@ com\servlet\GetBug.class
 com\executor\Executor.class
 JavaBasedConfig\Configs.class
 com\executor\Execute.class
-com\vo\ConsoleColors.class
 com\cli\Navigation.class
 JavaBasedConfig\DockerConfigs.class

@@ -43,8 +43,8 @@ public class DockerExecutor extends Executor {
     }
     public void readTxt(String bugId,String version){
         // 读取script目录下的txt文件
-        String readTxt = DOCKER_EXEC_BASED_CMD + " " + bugId + " " + CAT + " " + "/" + SCRIPTS_FOLDER + "/"+ bugId + "-" + version + ".txt";
-        execPrintln(readTxt, pb);
+        String cmd = DOCKER_EXEC_BASED_CMD + " " + bugId + " " + CAT + " " + "/" + SCRIPTS_FOLDER + "/"+ bugId + "-" + version + ".txt";
+        execPrintln(cmd, pb);
     }
 
     public String readTxtW(String bugId,String version){
@@ -87,6 +87,7 @@ public class DockerExecutor extends Executor {
             BufferedReader bufferReader = new BufferedReader(inputStr);
         } catch (Exception ex) {
         }
+        // System.out.println("===sb.toString()的值为==="+sb.toString());
         return sb.toString();
     }
 
@@ -103,7 +104,6 @@ public class DockerExecutor extends Executor {
             BufferedReader bufferReader = new BufferedReader(inputStr);
             String line;
             while ((line = bufferReader.readLine()) != null) {
-
                 sb.append(line).append("\n");
             }
         } catch (Exception ex) {

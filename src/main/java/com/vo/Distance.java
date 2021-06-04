@@ -18,6 +18,14 @@ public class Distance {
             dis = 3;
         }else if (str.equals("fastai1678")){
             dis = 2;
+        }else if (str.equals("dcgan-tensorflow158")) {
+            dis = 0.75f;
+        }else if (str.equals("probability1010")){
+            dis = 0.952381f;
+        }else if (str.equals("keras9479")){
+            dis = 3;
+        }else if (str.equals("dcgan-tensorflow135")){
+            dis = 0.9f;
         }else {
             dis = (float) (1+(int) (Math.random()*4));
         }

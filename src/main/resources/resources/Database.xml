@@ -1300,7 +1300,7 @@
             <id>probability1010</id>
             <errormessage>InvalidArgumentError</errormessage>
             <describe>tensorflow_probability.distributions.MixtureSameFamily only works with float32</describe>
-            <operateScore>1</operateScore>
+            <operateScore>2</operateScore>
             <type>type mismatch</type>
             <localScore></localScore>
             <fixLength></fixLength>
@@ -1403,7 +1403,7 @@
         <source>https://github.com/Liang813/keras</source>
         <bug>
             <id>keras4916</id>
-            <errormessage></errormessage>
+            <errormessage>TypeError</errormessage>
             <describe>when using the Reshape layer it is not clear if one can use an unknown dimension (-1) like in numpy. Using it results in an error.</describe>
             <operateScore>1</operateScore>
             <type>shape mismatch</type>
@@ -1445,15 +1445,15 @@
         <source>https://github.com/Liang813/seq2seq</source>
         <bug>
             <id>seq2seq52</id>
-            <errormessage></errormessage>
+            <errormessage>None</errormessage>
             <describe>During evaluation metric_fn is called epoch_size/batch_size times with the same data</describe>
-            <operateScore>3</operateScore>
+            <operateScore>5</operateScore>
             <type>IPS</type>
             <localScore></localScore>
             <fixLength></fixLength>
             <buggyVersion>
                 <buggytestCmd>seq2seq52-buggy.sh</buggytestCmd>
-                <buggycommit>e72415a02084d20a5f18fe1467b1c6622fafea09</buggycommit>
+                <buggycommit>65b2d8beb175326dda59b5f247694290bbf4c22e</buggycommit>
             </buggyVersion>
             <fixVersion>
                 <fixtestCmd>seq2seq52-fix.sh</fixtestCmd>

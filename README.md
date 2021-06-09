@@ -40,8 +40,9 @@ Important!
 * You can also pull a single image through the `pullOneBug <bugId>` command.
 * If you've already downloaded these Docker Images, you can use `runBug` to start all Containers or `startOneBug <bugId>` command to start a single container.
 
+### Local use
 
-### Command line:
+#### Command line:
 
 1.See the help
 
@@ -110,7 +111,7 @@ test <bugId> <version>
 exit
 ```
 
-### Web sites:
+#### Web sites:
 It is a Spring Boot and Maven project.
 
 
@@ -119,3 +120,10 @@ You need to configure Maven and it will automatically download dependencies for 
 The entry to the program is: AppEnter
 
 When the project starts,you can use a browser to access [http://127.0.0.1:9000/bugList](http://127.0.0.1:9000/bugList) ,then you will see the home page of our library.
+
+
+### Access as a web service
+
+url [http://8.140.25.132:9000/bugList](http://8.140.25.132:9000/bugList)
+
+

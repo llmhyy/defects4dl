@@ -27,11 +27,12 @@ public class DockerServer {
     }
 
     public void runTest(String cmd,String bugId,String version) {
-        dockerExecutor.runTest(cmd,bugId);
+        //为了方便演示，我们把运行注掉，只读取运行结果
+        //dockerExecutor.runTest(cmd,bugId);
         dockerExecutor.readTxt(bugId,version);
     }
     public String runTestW(String cmd,String bugId,String version) {
-        dockerExecutor.runTest(cmd,bugId);
+        //dockerExecutor.runTest(cmd,bugId);
         return dockerExecutor.readTxtW(bugId,version);
     }
 

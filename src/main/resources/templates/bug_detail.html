@@ -86,11 +86,11 @@
             <tr>
                 <td class="item-title">If you would like to run the Buggy version of the test case, please click</td>
                 <td >
-                    <button class="btn btn-primary btn-sm" type="button" v-on:click="testBuggy">B_test</button>
+                    <button id="btn_buggy" class="btn btn-primary btn-sm" type="button" v-on:click="testBuggy">B_test</button>
                 </td>
                 <td class="item-title">If you would like to run the Fix version of the test case, please click</td>
                 <td >
-                    <button class="btn btn-primary btn-sm" type="button" v-on:click="testFix">F_test</button>
+                    <button id="btn_fix" class="btn btn-primary btn-sm" type="button" v-on:click="testFix">F_test</button>
                 </td>
             </tr>
 
@@ -146,6 +146,7 @@
                 window.localStorage.setItem('bugID',bugID);
             },
             testBuggy: function (){
+                $("#btn_buggy").attr({"disabled":"disabled"});
                 var options = {
                     classname: 'my-class',
                     id: 'my-id',
@@ -185,7 +186,7 @@
                     })
             },
             testFix:function (){
-
+                $("#btn_fix").attr({"disabled":"disabled"});
                 var options = {
                     classname: 'my-class',
                     id: 'my-id',

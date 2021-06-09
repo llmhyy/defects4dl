@@ -49,8 +49,8 @@ public class DockerExecutor extends Executor {
 
     public String readTxtW(String bugId,String version){
         // 读取script目录下的txt文件
-        String readTxt = DOCKER_EXEC_BASED_CMD + " " + bugId + " " + CAT + " " + "/" + SCRIPTS_FOLDER + "/"+ bugId + "-" + version + ".txt";
-        return execPrintlnW(readTxt, pb);
+        String cmd = DOCKER_EXEC_BASED_CMD + " " + bugId + " " + CAT + " " + "/" + SCRIPTS_FOLDER + "/"+ bugId + "-" + version + ".txt";
+        return execPrintlnW(cmd, pb);
     }
 
     public String execPrintln(String cmd, ProcessBuilder pb) {
@@ -85,9 +85,17 @@ public class DockerExecutor extends Executor {
             Process process = pb.start();
             InputStreamReader inputStr = new InputStreamReader(process.getInputStream());
             BufferedReader bufferReader = new BufferedReader(inputStr);
+
+            //====================
+            String line;
+            while ((line = bufferReader.readLine()) != null) {
+                System.out.println(line);
+            }
+            System.out.println("运行测试用例");
+            //====================
+
         } catch (Exception ex) {
         }
-        // System.out.println("===sb.toString()的值为==="+sb.toString());
         return sb.toString();
     }
 
@@ -106,6 +114,7 @@ public class DockerExecutor extends Executor {
             while ((line = bufferReader.readLine()) != null) {
                 sb.append(line).append("\n");
             }
+            //System.out.println("运行测试用例");
         } catch (Exception ex) {
             System.out.println("===bufferReader.readLine()为空！===");
         }

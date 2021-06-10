@@ -200,6 +200,7 @@
         data: {
             bugID: null,
             errorMessage: null,
+            character: null,
             type: null,
             describe: null,
             bugCount: null,
@@ -300,19 +301,19 @@
             },
             selectByCharacter: function () {
                 var options = $("#selectCharacter option:selected"); // 获取选中的项
-                var typeName = options.value();
-                if (options.value() == "All") {
+                var typeName = options.val();
+                if (options.val() == "All") {
                     this.refreshBug();
                 } else {
                     vm.dataList = vm.dataList1;
                     var SelectCharList = [];
                     for (var i = 0; i < vm.dataList.length; i++) {
-                        if (vm.dataList[i].bugs[0].commit_url == typeName) {
+                        if (vm.dataList[i].bugs[0].character == typeName) {
                             SelectCharList.push(vm.dataList[i])
                         }
                     }
                 }
-                vm.dataList = SelectTypeList;
+                vm.dataList = SelectCharList;
             },
             getInfoD: function (bugID) {
                 //将localStorage传递到哪个页面

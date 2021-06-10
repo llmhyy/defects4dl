@@ -121,6 +121,18 @@
             <div class="form-group query-form-group">
                 <button type="button" class="btn btn-primary btn-sm" id="queryErrorM" v-on:click="selectByErrorM">Select</button>
             </div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <div class="form-group query-form-group">
+                <label>Character&nbsp;&nbsp;</label>
+                <select class="form-control" id="selectCharacter">
+                    <option value="All">All</option>
+                    <option value="0">Static_Bug</option>
+                    <option value="1">Dynamic_Bug</option>
+                </select>
+            </div>&nbsp;&nbsp;
+            <div class="form-group query-form-group">
+                <button type="button" class="btn btn-primary btn-sm" id="queryCharacter" v-on:click="selectByCharacter">Select</button>
+            </div>
 
             <table width="90%" class="table table-hover">
                 <thead>
@@ -285,6 +297,22 @@
                 }
                 vm.dataList = SelectErrorMList;
 
+            },
+            selectByCharacter: function () {
+                var options = $("#selectCharacter option:selected"); // 获取选中的项
+                var typeName = options.value();
+                if (options.value() == "All") {
+                    this.refreshBug();
+                } else {
+                    vm.dataList = vm.dataList1;
+                    var SelectCharList = [];
+                    for (var i = 0; i < vm.dataList.length; i++) {
+                        if (vm.dataList[i].bugs[0].commit_url == typeName) {
+                            SelectCharList.push(vm.dataList[i])
+                        }
+                    }
+                }
+                vm.dataList = SelectTypeList;
             },
             getInfoD: function (bugID) {
                 //将localStorage传递到哪个页面

@@ -127,6 +127,7 @@
             buggyInfo: null,
             fixInfo: null,
             isShow: false,
+            commit_url: null,
         },
         mounted: function () {
             //获取传递过来的localStorage
@@ -134,16 +135,19 @@
             axios.get("getBugInfo?bugID="+ bugID)
                 .then(response => {
                     vm.dataInfoDetail = response.data;
-
+                    vm.commit_url = response.data.commit_url;
                 })
 
         },
         methods: {
             showDiff: function (){
+                var commit_url = vm.commit_url;
                 //将localStorage传递到哪个页面
                 location.href = 'diff'
                 //设置localStorage
+                window.localStorage.setItem("commit_url",commit_url);
                 window.localStorage.setItem('bugID',bugID);
+
             },
             testBuggy: function (){
                 $("#btn_buggy").attr({"disabled":"disabled"});

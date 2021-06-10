@@ -40,15 +40,20 @@ public class DefectsAction {
         String errorMessage = bug.getErrorMessage();
         String describe = bug.getDescribe();
         String operateScore = bug.getOperateScore();
+        String character = bug.getCharacter();
+        String commit_url = bug.getCommit_url();
+        String type = bug.getType();
         // String SIRName = DefectsDB.getSirName(bugId).toLowerCase();
         String SIRName = DefectsDB.getSirName(bugId);
 
         StringBuilder sb = new StringBuilder("---------bugInfo----------- \n");
 
         sb.append("BugID: ").append(bugId).append("\n");
+        sb.append("Type: ").append(type).append("\n");
+        sb.append("Character: ").append(character).append("\n");
+        sb.append("commit_url: ").append(commit_url).append("\n");
         sb.append("ErrorMessage: ").append(errorMessage).append("\n");
         sb.append("Describe: ").append(describe).append("\n");
-        // sb.append("ROOTCAUSE:").append(rootCause).append("\n");
 
         sb.append("INFO DETAIL:\n");
         String cdCmd="cd /home/metadata/"+SIRName;
@@ -98,7 +103,9 @@ public class DefectsAction {
         String localScore = localMark(bugId);
         String fixLength = stringLength(bugId);
 
-        Bug Bug = new Bug(bugId, errorMessage,describe,operateScore,type,BuggyVersion,FixVersion,localScore,fixLength);
+        String character = bug.getCharacter();
+        String commit_url = bug.getCommit_url();
+        Bug Bug = new Bug(bugId, errorMessage,describe,operateScore,type,BuggyVersion,FixVersion,localScore,fixLength,character,commit_url);
 
         return Bug;
 

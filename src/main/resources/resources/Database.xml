@@ -20,6 +20,8 @@
                 <fixtestCmd>transformers1418-fix.sh</fixtestCmd>
                 <fixcommit>a9f6d3f101556f0fd7f07e6ef9c22f1430b68e52</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url>https://github.com/huggingface/transformers/pull/1418/commits/a9f6d3f101556f0fd7f07e6ef9c22f1430b68e52</commit_url>
         </bug>
     </sir>
 
@@ -42,6 +44,8 @@
                 <fixtestCmd>transformers1152-fix.sh</fixtestCmd>
                 <fixcommit>07e21307b6b16350425ea08790c7e20c081a3b3f</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url>https://github.com/huggingface/transformers/pull/1152/commits/07e21307b6b16350425ea08790c7e20c081a3b3f</commit_url>
         </bug>
     </sir>
 
@@ -64,6 +68,8 @@
                 <fixtestCmd>transformers1962-fix.sh</fixtestCmd>
                 <fixcommit>4a666885b501ed6bfd344ec2c4c16d80da8aab79</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url>https://github.com/huggingface/transformers/pull/1966/commits/a1aec9c2a1776832c28d3a9975d2f15999f089ac</commit_url>
         </bug>
     </sir>
 
@@ -86,6 +92,8 @@
                 <fixtestCmd>allennlp3721-fix.sh</fixtestCmd>
                 <fixcommit>beb07be50a8c0267b1ff398793ecde1194a538fe</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url>https://github.com/allenai/allennlp/commit/beb07be50a8c0267b1ff398793ecde1194a538fe</commit_url>
         </bug>
     </sir>
 
@@ -108,6 +116,8 @@
                 <fixtestCmd>allennlp4612-fix.sh</fixtestCmd>
                 <fixcommit>b2bb2a364320142c733e306df1d04e4e8237150d</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url>https://github.com/allenai/allennlp/pull/4615/commits/b2bb2a364320142c733e306df1d04e4e8237150d</commit_url>
         </bug>
     </sir>
 
@@ -130,6 +140,8 @@
                 <fixtestCmd>pytorch-lightning2386-fix.sh</fixtestCmd>
                 <fixcommit>ae8be9efc13a914cbd763f021c5d289ca94bbdcf</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url>https://github.com/PyTorchLightning/pytorch-lightning/pull/2403/commits/ae8be9efc13a914cbd763f021c5d289ca94bbdcf</commit_url>
         </bug>
     </sir>
 
@@ -152,6 +164,8 @@
                 <fixtestCmd>botorch162-fix.sh</fixtestCmd>
                 <fixcommit>c15c8f261571d36a8f6e4947313e4e4f4365c3a3</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
 
@@ -174,6 +188,8 @@
                 <fixtestCmd>ggnn.pytorch9-fix.sh</fixtestCmd>
                 <fixcommit>9c58ca60fd9c389ffd41b7cb4b10cade592344f8</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
 
@@ -196,6 +212,8 @@
                 <fixtestCmd>fairseq1863-fix.sh</fixtestCmd>
                 <fixcommit>5453e4355b274645074d0068f668ac5bcea9905c</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
 
@@ -218,6 +236,8 @@
                 <fixtestCmd>seq2seq95-fix.sh</fixtestCmd>
                 <fixcommit>5a1338603a15848302fb1958ef3c9ef426935654</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
 
@@ -240,6 +260,8 @@
                 <fixtestCmd>seq2seq-fix.sh</fixtestCmd>
                 <fixcommit>69cd7e4cffc2ff26b111ccd1ec563b6888cccedb</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
 
@@ -262,6 +284,8 @@
                 <fixtestCmd>dcgan-completion.tensorflow-fix.sh</fixtestCmd>
                 <fixcommit>e2efc870054836172cbed70dfc08da6fc0ff2e04</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
 
@@ -284,6 +308,8 @@
                 <fixtestCmd>models857-fix.sh</fixtestCmd>
                 <fixcommit>e93ec37201f5f2116933ae96e505f409ddbf344d</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
 
@@ -306,6 +332,8 @@
                 <fixtestCmd>sact1-fix.sh</fixtestCmd>
                 <fixcommit>98a8fd0d623261b32f8b6bcff63c8000a71b1e18</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
 
@@ -328,6 +356,8 @@
                 <fixtestCmd>models1063-fix.sh</fixtestCmd>
                 <fixcommit>5c535343059ceec4b9ca9decdc8c9da8c3e58ced</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
 
@@ -350,6 +380,8 @@
                 <fixtestCmd>models1707-fix.sh</fixtestCmd>
                 <fixcommit>c4ba26b4d36ea8d339200bab6bd6fea6fd4af11b</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
 
@@ -372,6 +404,8 @@
                 <fixtestCmd>models23-fix.sh</fixtestCmd>
                 <fixcommit>55a34ae564f5ab49adaf98bd4552dcd4bf8f85f3</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
 
@@ -394,6 +428,8 @@
                 <fixtestCmd>models1585-fix.sh</fixtestCmd>
                 <fixcommit>e76190e83e773875ddfae38339cd299b64e7eda8</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
 
@@ -416,6 +452,8 @@
                 <fixtestCmd>models166-fix.sh</fixtestCmd>
                 <fixcommit>d8169710322cb6e20be61fef179e66d56d2b1151</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
 
@@ -438,6 +476,8 @@
                 <fixtestCmd>models893-fix.sh</fixtestCmd>
                 <fixcommit>19c23e72a22bb6d3942f85895e5d2a0fd7410e99</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
 
@@ -460,6 +500,8 @@
                 <fixtestCmd>TensorFlow-Examples10-fix.sh</fixtestCmd>
                 <fixcommit>742675db9e3085579b1325b21743fb3a4bc804ab</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
 
@@ -482,6 +524,8 @@
                 <fixtestCmd>Deep-Learning-TensorFlow1-fix.sh</fixtestCmd>
                 <fixcommit>b9bc441fdec5e8a5a1c4285d724dd43b327b4cf8</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
 
@@ -504,6 +548,8 @@
                 <fixtestCmd>Deep-Learning-TensorFlow5-fix.sh</fixtestCmd>
                 <fixcommit>1bcc1efcce5772af15c8e787f21ae60a923e6731</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
 
@@ -526,6 +572,8 @@
                 <fixtestCmd>Deep-Learning-TensorFlow0-fix.sh</fixtestCmd>
                 <fixcommit>20d1b59e69d4ae56ff9bf0c7263d3f2e47d4cdc9</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
 
@@ -548,6 +596,8 @@
                 <fixtestCmd>Deep-Learning-TensorFlow-fix.sh</fixtestCmd>
                 <fixcommit>726b371d42e853e61b4deac06ed064a61a619572</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
 
@@ -570,6 +620,8 @@
                 <fixtestCmd>DCGAN-tensorflow108-fix.sh</fixtestCmd>
                 <fixcommit>3d7395aa4a0663ebb20aa2568ab91f70e555edf0</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
 
@@ -592,6 +644,8 @@
                 <fixtestCmd>DCGAN-tensorflow17-fix.sh</fixtestCmd>
                 <fixcommit>550534e89c93993eadc817af0d68fdb09d82d4c6</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
 
@@ -614,6 +668,8 @@
                 <fixtestCmd>keras11657-fix.sh</fixtestCmd>
                 <fixcommit>c2d01f5ea69170a2365050368dfa534b75592c06</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
 
@@ -636,6 +692,8 @@
                 <fixtestCmd>keras9812-fix.sh</fixtestCmd>
                 <fixcommit>2f1a1780436ee91f44944061e046e43e9719300c</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
 
@@ -658,6 +716,8 @@
                 <fixtestCmd>GPflow813-fix.sh</fixtestCmd>
                 <fixcommit>13dd23362cdb30f6478f48f5a7ca4fcab4108580</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
     <sir>
@@ -679,6 +739,8 @@
                 <fixtestCmd>keras6387-fix.sh</fixtestCmd>
                 <fixcommit>04bf5ac57a6071e32ffd340da0acb059912d922c</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
     <sir>
@@ -700,6 +762,8 @@
                 <fixtestCmd>keras5975-fix.sh</fixtestCmd>
                 <fixcommit>05f82d1534e93361de9181544335f9bcaceb860d</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
     <sir>
@@ -721,6 +785,8 @@
                 <fixtestCmd>keras5840-fix.sh</fixtestCmd>
                 <fixcommit>c328a10b312ca55e949d32a4a896458fad1ebc4b</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
     <sir>
@@ -742,6 +808,8 @@
                 <fixtestCmd>keras5108-fix.sh</fixtestCmd>
                 <fixcommit>a8795957abb2750a1b38cce34e074e6a2644bc43</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
     <sir>
@@ -763,6 +831,8 @@
                 <fixtestCmd>keras9883-fix.sh</fixtestCmd>
                 <fixcommit>6b99d2382e53c0f6f8124ed76db399741ad64fa4</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
     <sir>
@@ -784,6 +854,8 @@
                 <fixtestCmd>keras13073-fix.sh</fixtestCmd>
                 <fixcommit>09521c9804c3ce218b44efa6d9b4af8b2c8cdd56</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
     <sir>
@@ -805,6 +877,8 @@
                 <fixtestCmd>keras2672-fix.sh</fixtestCmd>
                 <fixcommit>58cbb4bf425fc80771ebfe8053cbfe928a081b61</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
     <sir>
@@ -826,6 +900,8 @@
                 <fixtestCmd>CapsNet-Tensorflow4-fix.sh</fixtestCmd>
                 <fixcommit>a614ee5dfb22445e8e165c0dfb64c408984062f9</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
 
@@ -849,6 +925,8 @@
                 <fixtestCmd>TensorFlow.NET377-fix.sh</fixtestCmd>
                 <fixcommit>9e237a67334f00bc59d6dfe7f4ffb2944f95e769</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
     <sir>
@@ -870,6 +948,8 @@
                 <fixtestCmd>tensorflow_scala18-fix.sh</fixtestCmd>
                 <fixcommit>83ddc58321f2e4a353b4d241bcb31ae8b4f375bd</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
 
@@ -892,6 +972,8 @@
                 <fixtestCmd>probability417-fix.sh</fixtestCmd>
                 <fixcommit>e13e623f03a8c700f4281ab43e1bc80dd903fec7</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
     <sir>
@@ -913,6 +995,8 @@
                 <fixtestCmd>segmentation_models.pytorch186-fix.sh</fixtestCmd>
                 <fixcommit>6884ebf7b4a995cd9f53df8fc529e0f74c438851</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
     <sir>
@@ -934,6 +1018,8 @@
                 <fixtestCmd>tutorials382-fix.sh</fixtestCmd>
                 <fixcommit>b93ce6e23042da153d6ee04b067e1f3d827d8189</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
     <sir>
@@ -955,6 +1041,8 @@
                 <fixtestCmd>pytorch-pose116-fix.sh</fixtestCmd>
                 <fixcommit>6d48375fde4d6ff0322775b342d563bcaf3f818a</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
     <sir>
@@ -976,6 +1064,8 @@
                 <fixtestCmd>fastai1678-fix.sh</fixtestCmd>
                 <fixcommit>7c79371929bca523705b738b02749c008e20e191</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
     <sir>
@@ -997,6 +1087,8 @@
                 <fixtestCmd>transformers6560-fix.sh</fixtestCmd>
                 <fixcommit>5281631a04e60f397ec5742056ec1dec235de425</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
     <sir>
@@ -1018,6 +1110,8 @@
                 <fixtestCmd>Gpflow99-fix.sh</fixtestCmd>
                 <fixcommit>dad657e0be26732596c1c8c92c2f253de48513e9</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
     <sir>
@@ -1039,6 +1133,8 @@
                 <fixtestCmd>pytorch-lightning139-fix.sh</fixtestCmd>
                 <fixcommit>26d3f0dbea3ebb4d0db58f0f382fc633f275d067</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
     <sir>
@@ -1060,6 +1156,8 @@
                 <fixtestCmd>keras1141-fix.sh</fixtestCmd>
                 <fixcommit>07ffc76b9318ab1197ce61838992960e9abb3c22</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
     <sir>
@@ -1081,6 +1179,8 @@
                 <fixtestCmd>edward46-fix.sh</fixtestCmd>
                 <fixcommit>14ec644e08af346e9004a8ee3a27c0a94aad698c</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
     <sir>
@@ -1102,6 +1202,8 @@
                 <fixtestCmd>PILCO25-fix.sh</fixtestCmd>
                 <fixcommit>c9230408b92276e1d9054e98d67bb6386e00bb9e</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
     <sir>
@@ -1123,6 +1225,8 @@
                 <fixtestCmd>tf-encrypted692-fix.sh</fixtestCmd>
                 <fixcommit>fb3184b6218c68244758eb360963b452157ad2c8</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
     <sir>
@@ -1144,6 +1248,8 @@
                 <fixtestCmd>probability233-fix.sh</fixtestCmd>
                 <fixcommit>34e969a81a7bb96791104d8503b253e4f937c353</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
     <sir>
@@ -1165,6 +1271,8 @@
                 <fixtestCmd>tensorflow3168-fix.sh</fixtestCmd>
                 <fixcommit>11f92de8c8c9cd35106c0f4dd3b0bfaac7581a2f</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
     <sir>
@@ -1186,6 +1294,8 @@
                 <fixtestCmd>graphics283-fix.sh</fixtestCmd>
                 <fixcommit>d265f7a02cc6247f5d0bbacd516533b2117c9bac</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
     <sir>
@@ -1207,6 +1317,8 @@
                 <fixtestCmd>GPflow1407-fix.sh</fixtestCmd>
                 <fixcommit>6388133f7bf8f290661bc1a5db917f2a71762bab</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
     <sir>
@@ -1228,6 +1340,8 @@
                 <fixtestCmd>DCGAN-tensorflow99-fix.sh</fixtestCmd>
                 <fixcommit>9166ef99bf9fcd1d0bf641ae752428bb06903b00</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
     <sir>
@@ -1249,6 +1363,8 @@
                 <fixtestCmd>DCGAN-tensorflow158-fix.sh</fixtestCmd>
                 <fixcommit>07abd2b58638a2bc4595d79c6dcba58052afa79c</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
     <sir>
@@ -1270,6 +1386,8 @@
                 <fixtestCmd>keras4441-fix.sh</fixtestCmd>
                 <fixcommit>f31d40e43395e90ea13a1a7d0a308a7c2c20cdb4</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
     <sir>
@@ -1291,6 +1409,8 @@
                 <fixtestCmd>GPflow409-fix.sh</fixtestCmd>
                 <fixcommit>bf8f9a10a466c9d8bb88e85abd2c0ecc4420dc95</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
     <sir>
@@ -1312,6 +1432,8 @@
                 <fixtestCmd>probability1010-fix.sh</fixtestCmd>
                 <fixcommit>77229bd921c1508ca11f9068d1133a88449d6760</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
     <sir>
@@ -1333,6 +1455,8 @@
                 <fixtestCmd>probability867-fix.sh</fixtestCmd>
                 <fixcommit>6254da601c28558581ad61291062467e19276e54</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
     <sir>
@@ -1354,6 +1478,8 @@
                 <fixtestCmd>probability705-fix.sh</fixtestCmd>
                 <fixcommit>242731a9b2b42d4eb676539658a8d5e8267c0720</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
     <sir>
@@ -1375,6 +1501,8 @@
                 <fixtestCmd>keras9479-fix.sh</fixtestCmd>
                 <fixcommit>07c77c65b5ea9c246690d2eb116c7c8570dc5a7e</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
     <sir>
@@ -1396,6 +1524,8 @@
                 <fixtestCmd>keras3475-fix.sh</fixtestCmd>
                 <fixcommit>50f159fdb2e0737d8a0fe0147608f49553c6f591</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
     <sir>
@@ -1417,6 +1547,8 @@
                 <fixtestCmd>keras4916-fix.sh</fixtestCmd>
                 <fixcommit>150e0fa8a6571233ed107c4dded52387a9d3739c</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
     <sir>
@@ -1438,6 +1570,8 @@
                 <fixtestCmd>keras449-fix.sh</fixtestCmd>
                 <fixcommit>3bf5340f18b62e33fb022aa04dbd49e8191983b6</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
     <sir>
@@ -1459,6 +1593,8 @@
                 <fixtestCmd>seq2seq52-fix.sh</fixtestCmd>
                 <fixcommit>4880ed14eb87daa56ddfb7761c3a06b95278cb0b</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
     <sir>
@@ -1480,6 +1616,8 @@
                 <fixtestCmd>DCGAN-tensorflow135-fix.sh</fixtestCmd>
                 <fixcommit>158b77d132c60a37f6e1c0059d8de199cb078442</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
     <sir>
@@ -1501,6 +1639,8 @@
                 <fixtestCmd>transformers3711-fix.sh</fixtestCmd>
                 <fixcommit>352d5472b0c1dec0f420d606d16747d851b4bda8</fixcommit>
             </fixVersion>
+            <character>0</character>
+            <commit_url></commit_url>
         </bug>
     </sir>
 </root>

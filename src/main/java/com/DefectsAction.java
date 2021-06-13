@@ -41,6 +41,7 @@ public class DefectsAction {
         String describe = bug.getDescribe();
         String operateScore = bug.getOperateScore();
         String character = bug.getCharacter();
+        String issue_url = bug.getIssue_url();
         String commit_url = bug.getCommit_url();
         String type = bug.getType();
         // String SIRName = DefectsDB.getSirName(bugId).toLowerCase();
@@ -51,7 +52,8 @@ public class DefectsAction {
         sb.append("BugID: ").append(bugId).append("\n");
         sb.append("Type: ").append(type).append("\n");
         sb.append("Character: ").append(character).append("\n");
-        sb.append("commit_url: ").append(commit_url).append("\n");
+        sb.append("Issue_url").append(issue_url).append("\n");
+        sb.append("Commit_url: ").append(commit_url).append("\n");
         sb.append("ErrorMessage: ").append(errorMessage).append("\n");
         sb.append("Describe: ").append(describe).append("\n");
 
@@ -104,8 +106,9 @@ public class DefectsAction {
         String fixLength = stringLength(bugId);
 
         String character = bug.getCharacter();
+        String issue_url = bug.getIssue_url();
         String commit_url = bug.getCommit_url();
-        Bug Bug = new Bug(bugId, errorMessage,describe,operateScore,type,BuggyVersion,FixVersion,localScore,fixLength,character,commit_url);
+        Bug Bug = new Bug(bugId, errorMessage,describe,operateScore,type,BuggyVersion,FixVersion,localScore,fixLength,character,issue_url,commit_url);
 
         return Bug;
 

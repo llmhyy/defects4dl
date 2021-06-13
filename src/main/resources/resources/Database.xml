@@ -21,6 +21,7 @@
                 <fixcommit>a9f6d3f101556f0fd7f07e6ef9c22f1430b68e52</fixcommit>
             </fixVersion>
             <character>0</character>
+            <issue_url>https://github.com/huggingface/transformers/pull/1418</issue_url>
             <commit_url>https://github.com/huggingface/transformers/pull/1418/commits/a9f6d3f101556f0fd7f07e6ef9c22f1430b68e52</commit_url>
         </bug>
     </sir>
@@ -45,6 +46,7 @@
                 <fixcommit>07e21307b6b16350425ea08790c7e20c081a3b3f</fixcommit>
             </fixVersion>
             <character>0</character>
+            <issue_url>https://github.com/huggingface/transformers/pull/1152</issue_url>
             <commit_url>https://github.com/huggingface/transformers/pull/1152/commits/07e21307b6b16350425ea08790c7e20c081a3b3f</commit_url>
         </bug>
     </sir>
@@ -69,6 +71,7 @@
                 <fixcommit>4a666885b501ed6bfd344ec2c4c16d80da8aab79</fixcommit>
             </fixVersion>
             <character>0</character>
+            <issue_url>https://github.com/huggingface/transformers/issues/1962</issue_url>
             <commit_url>https://github.com/huggingface/transformers/pull/1966/commits/a1aec9c2a1776832c28d3a9975d2f15999f089ac</commit_url>
         </bug>
     </sir>
@@ -93,6 +96,7 @@
                 <fixcommit>beb07be50a8c0267b1ff398793ecde1194a538fe</fixcommit>
             </fixVersion>
             <character>0</character>
+            <issue_url>https://github.com/allenai/allennlp/issues/3721</issue_url>
             <commit_url>https://github.com/allenai/allennlp/commit/beb07be50a8c0267b1ff398793ecde1194a538fe</commit_url>
         </bug>
     </sir>
@@ -117,6 +121,7 @@
                 <fixcommit>b2bb2a364320142c733e306df1d04e4e8237150d</fixcommit>
             </fixVersion>
             <character>0</character>
+            <issue_url>https://github.com/allenai/allennlp/issues/4612</issue_url>
             <commit_url>https://github.com/allenai/allennlp/pull/4615/commits/b2bb2a364320142c733e306df1d04e4e8237150d</commit_url>
         </bug>
     </sir>
@@ -141,6 +146,7 @@
                 <fixcommit>ae8be9efc13a914cbd763f021c5d289ca94bbdcf</fixcommit>
             </fixVersion>
             <character>0</character>
+            <issue_url>https://github.com/PyTorchLightning/pytorch-lightning/issues/2386</issue_url>
             <commit_url>https://github.com/PyTorchLightning/pytorch-lightning/pull/2403/commits/ae8be9efc13a914cbd763f021c5d289ca94bbdcf</commit_url>
         </bug>
     </sir>
@@ -165,6 +171,7 @@
                 <fixcommit>c15c8f261571d36a8f6e4947313e4e4f4365c3a3</fixcommit>
             </fixVersion>
             <character>0</character>
+            <issue_url>https://github.com/pytorch/botorch/pull/162</issue_url>
             <commit_url>https://github.com/pytorch/botorch/commit/c15c8f261571d36a8f6e4947313e4e4f4365c3a3</commit_url>
         </bug>
     </sir>
@@ -189,6 +196,7 @@
                 <fixcommit>9c58ca60fd9c389ffd41b7cb4b10cade592344f8</fixcommit>
             </fixVersion>
             <character>0</character>
+            <issue_url>https://github.com/chingyaoc/ggnn.pytorch/pull/9</issue_url>
             <commit_url>https://github.com/chingyaoc/ggnn.pytorch/pull/9/commits/9c58ca60fd9c389ffd41b7cb4b10cade592344f8</commit_url>
         </bug>
     </sir>
@@ -213,6 +221,7 @@
                 <fixcommit>5453e4355b274645074d0068f668ac5bcea9905c</fixcommit>
             </fixVersion>
             <character>0</character>
+            <issue_url>https://github.com/pytorch/fairseq/issues/1863</issue_url>
             <commit_url>https://github.com/pytorch/fairseq/commit/5453e4355b274645074d0068f668ac5bcea9905c</commit_url>
         </bug>
     </sir>
@@ -237,6 +246,7 @@
                 <fixcommit>5a1338603a15848302fb1958ef3c9ef426935654</fixcommit>
             </fixVersion>
             <character>0</character>
+            <issue_url>https://github.com/google/seq2seq/pull/95</issue_url>
             <commit_url>https://github.com/google/seq2seq/pull/95/commits/5a1338603a15848302fb1958ef3c9ef426935654</commit_url>
         </bug>
     </sir>
@@ -261,6 +271,7 @@
                 <fixcommit>69cd7e4cffc2ff26b111ccd1ec563b6888cccedb</fixcommit>
             </fixVersion>
             <character>0</character>
+            <issue_url>https://github.com/google/seq2seq/commit/69cd7e4cffc2ff26b111ccd1ec563b6888cccedb</issue_url>
             <commit_url>https://github.com/google/seq2seq/commit/69cd7e4cffc2ff26b111ccd1ec563b6888cccedb</commit_url>
         </bug>
     </sir>
@@ -285,6 +296,7 @@
                 <fixcommit>e2efc870054836172cbed70dfc08da6fc0ff2e04</fixcommit>
             </fixVersion>
             <character>0</character>
+            <issue_url>https://github.com/bamos/dcgan-completion.tensorflow/commit/e2efc870054836172cbed70dfc08da6fc0ff2e04</issue_url>
             <commit_url>https://github.com/bamos/dcgan-completion.tensorflow/commit/e2efc870054836172cbed70dfc08da6fc0ff2e04</commit_url>
         </bug>
     </sir>
@@ -309,6 +321,7 @@
                 <fixcommit>e93ec37201f5f2116933ae96e505f409ddbf344d</fixcommit>
             </fixVersion>
             <character>0</character>
+            <issue_url>https://github.com/tensorflow/models/issues/857</issue_url>
             <commit_url>https://github.com/tensorflow/models/commit/e93ec37201f5f2116933ae96e505f409ddbf344d</commit_url>
         </bug>
     </sir>
@@ -333,6 +346,7 @@
                 <fixcommit>98a8fd0d623261b32f8b6bcff63c8000a71b1e18</fixcommit>
             </fixVersion>
             <character>0</character>
+            <issue_url>https://github.com/mfigurnov/sact/commit/98a8fd0d623261b32f8b6bcff63c8000a71b1e18</issue_url>
             <commit_url>https://github.com/mfigurnov/sact/commit/98a8fd0d623261b32f8b6bcff63c8000a71b1e18</commit_url>
         </bug>
     </sir>
@@ -357,6 +371,7 @@
                 <fixcommit>5c535343059ceec4b9ca9decdc8c9da8c3e58ced</fixcommit>
             </fixVersion>
             <character>0</character>
+            <issue_url>https://github.com/tensorflow/models/pull/1063</issue_url>
             <commit_url>https://github.com/tensorflow/models/pull/1063/commits/5c535343059ceec4b9ca9decdc8c9da8c3e58ced</commit_url>
         </bug>
     </sir>
@@ -381,6 +396,7 @@
                 <fixcommit>c4ba26b4d36ea8d339200bab6bd6fea6fd4af11b</fixcommit>
             </fixVersion>
             <character>0</character>
+            <issue_url>https://github.com/tensorflow/models/pull/1707</issue_url>
             <commit_url>https://github.com/tensorflow/models/commit/c4ba26b4d36ea8d339200bab6bd6fea6fd4af11b</commit_url>
         </bug>
     </sir>
@@ -405,6 +421,7 @@
                 <fixcommit>55a34ae564f5ab49adaf98bd4552dcd4bf8f85f3</fixcommit>
             </fixVersion>
             <character>1</character>
+            <issue_url>https://github.com/tensorflow/models/issues/23</issue_url>
             <commit_url>https://github.com/tensorflow/models/commit/55a34ae564f5ab49adaf98bd4552dcd4bf8f85f3</commit_url>
         </bug>
     </sir>
@@ -429,6 +446,7 @@
                 <fixcommit>e76190e83e773875ddfae38339cd299b64e7eda8</fixcommit>
             </fixVersion>
             <character>0</character>
+            <issue_url>https://github.com/tensorflow/models/issues/1585</issue_url>
             <commit_url>https://github.com/tensorflow/models/commit/e76190e83e773875ddfae38339cd299b64e7eda8</commit_url>
         </bug>
     </sir>
@@ -453,6 +471,7 @@
                 <fixcommit>d8169710322cb6e20be61fef179e66d56d2b1151</fixcommit>
             </fixVersion>
             <character>1</character>
+            <issue_url>https://github.com/tensorflow/models/issues/166</issue_url>
             <commit_url>https://github.com/tensorflow/models/commit/d8169710322cb6e20be61fef179e66d56d2b1151</commit_url>
         </bug>
     </sir>
@@ -477,6 +496,7 @@
                 <fixcommit>19c23e72a22bb6d3942f85895e5d2a0fd7410e99</fixcommit>
             </fixVersion>
             <character>0</character>
+            <issue_url>https://github.com/tensorflow/models/issues/893</issue_url>
             <commit_url>https://github.com/tensorflow/models/pull/895/commits/19c23e72a22bb6d3942f85895e5d2a0fd7410e99</commit_url>
         </bug>
     </sir>
@@ -501,6 +521,7 @@
                 <fixcommit>742675db9e3085579b1325b21743fb3a4bc804ab</fixcommit>
             </fixVersion>
             <character>1</character>
+            <issue_url>https://github.com/aymericdamien/TensorFlow-Examples/issues/10</issue_url>
             <commit_url>https://github.com/aymericdamien/TensorFlow-Examples/commit/742675db9e3085579b1325b21743fb3a4bc804ab</commit_url>
         </bug>
     </sir>
@@ -525,6 +546,7 @@
                 <fixcommit>b9bc441fdec5e8a5a1c4285d724dd43b327b4cf8</fixcommit>
             </fixVersion>
             <character>1</character>
+            <issue_url>https://github.com/gabrieleangeletti/Deep-Learning-TensorFlow/pull/1</issue_url>
             <commit_url>https://github.com/gabrieleangeletti/Deep-Learning-TensorFlow/pull/1/commits/b9bc441fdec5e8a5a1c4285d724dd43b327b4cf8</commit_url>
         </bug>
     </sir>
@@ -549,6 +571,7 @@
                 <fixcommit>1bcc1efcce5772af15c8e787f21ae60a923e6731</fixcommit>
             </fixVersion>
             <character>1</character>
+            <issue_url>https://github.com/gabrieleangeletti/Deep-Learning-TensorFlow/issues/5</issue_url>
             <commit_url>https://github.com/gabrieleangeletti/Deep-Learning-TensorFlow/commit/1bcc1efcce5772af15c8e787f21ae60a923e6731</commit_url>
         </bug>
     </sir>
@@ -573,6 +596,7 @@
                 <fixcommit>20d1b59e69d4ae56ff9bf0c7263d3f2e47d4cdc9</fixcommit>
             </fixVersion>
             <character>1</character>
+            <issue_url>https://github.com/blackecho/Deep-Learning-TensorFlow/commit/20d1b59e69d4ae56ff9bf0c7263d3f2e47d4cdc9</issue_url>
             <commit_url>https://github.com/blackecho/Deep-Learning-TensorFlow/commit/20d1b59e69d4ae56ff9bf0c7263d3f2e47d4cdc9</commit_url>
         </bug>
     </sir>
@@ -597,6 +621,7 @@
                 <fixcommit>726b371d42e853e61b4deac06ed064a61a619572</fixcommit>
             </fixVersion>
             <character>1</character>
+            <issue_url>https://github.com/blackecho/Deep-Learning-TensorFlow/commit/726b371d42e853e61b4deac06ed064a61a619572</issue_url>
             <commit_url>https://github.com/blackecho/Deep-Learning-TensorFlow/commit/726b371d42e853e61b4deac06ed064a61a619572</commit_url>
         </bug>
     </sir>
@@ -621,6 +646,7 @@
                 <fixcommit>3d7395aa4a0663ebb20aa2568ab91f70e555edf0</fixcommit>
             </fixVersion>
             <character>0</character>
+            <issue_url>https://github.com/carpedm20/DCGAN-tensorflow/issues/108</issue_url>
             <commit_url>https://github.com/carpedm20/DCGAN-tensorflow/commit/3d7395aa4a0663ebb20aa2568ab91f70e555edf0</commit_url>
         </bug>
     </sir>
@@ -645,6 +671,7 @@
                 <fixcommit>550534e89c93993eadc817af0d68fdb09d82d4c6</fixcommit>
             </fixVersion>
             <character>0</character>
+            <issue_url>https://github.com/carpedm20/DCGAN-tensorflow/issues/17</issue_url>
             <commit_url>https://github.com/carpedm20/DCGAN-tensorflow/commit/550534e89c93993eadc817af0d68fdb09d82d4c6</commit_url>
         </bug>
     </sir>
@@ -669,6 +696,7 @@
                 <fixcommit>c2d01f5ea69170a2365050368dfa534b75592c06</fixcommit>
             </fixVersion>
             <character>1</character>
+            <issue_url>https://github.com/keras-team/keras/issues/11657</issue_url>
             <commit_url>https://github.com/keras-team/keras/pull/11658/commits/c2d01f5ea69170a2365050368dfa534b75592c06</commit_url>
         </bug>
     </sir>
@@ -693,6 +721,7 @@
                 <fixcommit>2f1a1780436ee91f44944061e046e43e9719300c</fixcommit>
             </fixVersion>
             <character>0</character>
+            <issue_url>https://github.com/keras-team/keras/issues/9812</issue_url>
             <commit_url>https://github.com/keras-team/keras/pull/9865/commits/2f1a1780436ee91f44944061e046e43e9719300c</commit_url>
         </bug>
     </sir>
@@ -717,6 +746,7 @@
                 <fixcommit>13dd23362cdb30f6478f48f5a7ca4fcab4108580</fixcommit>
             </fixVersion>
             <character>0</character>
+            <issue_url>https://github.com/GPflow/GPflow/pull/813</issue_url>
             <commit_url>https://github.com/GPflow/GPflow/pull/813/commits/13dd23362cdb30f6478f48f5a7ca4fcab4108580</commit_url>
         </bug>
     </sir>
@@ -740,6 +770,7 @@
                 <fixcommit>04bf5ac57a6071e32ffd340da0acb059912d922c</fixcommit>
             </fixVersion>
             <character>0</character>
+            <issue_url>https://github.com/keras-team/keras/pull/6387</issue_url>
             <commit_url>https://github.com/keras-team/keras/pull/6387/commits/04bf5ac57a6071e32ffd340da0acb059912d922c</commit_url>
         </bug>
     </sir>
@@ -763,6 +794,7 @@
                 <fixcommit>05f82d1534e93361de9181544335f9bcaceb860d</fixcommit>
             </fixVersion>
             <character>1</character>
+            <issue_url>https://github.com/keras-team/keras/issues/5975</issue_url>
             <commit_url>https://github.com/keras-team/keras/commit/05f82d1534e93361de9181544335f9bcaceb860d</commit_url>
         </bug>
     </sir>
@@ -786,6 +818,7 @@
                 <fixcommit>c328a10b312ca55e949d32a4a896458fad1ebc4b</fixcommit>
             </fixVersion>
             <character>0</character>
+            <issue_url>https://github.com/keras-team/keras/pull/5840</issue_url>
             <commit_url>https://github.com/keras-team/keras/commit/c328a10b312ca55e949d32a4a896458fad1ebc4b</commit_url>
         </bug>
     </sir>
@@ -809,6 +842,7 @@
                 <fixcommit>a8795957abb2750a1b38cce34e074e6a2644bc43</fixcommit>
             </fixVersion>
             <character>0</character>
+            <issue_url>https://github.com/keras-team/keras/issues/5108</issue_url>
             <commit_url>https://github.com/keras-team/keras/commit/a8795957abb2750a1b38cce34e074e6a2644bc43</commit_url>
         </bug>
     </sir>
@@ -832,6 +866,7 @@
                 <fixcommit>6b99d2382e53c0f6f8124ed76db399741ad64fa4</fixcommit>
             </fixVersion>
             <character>0</character>
+            <issue_url>https://github.com/keras-team/keras/issues/9883</issue_url>
             <commit_url>https://github.com/keras-team/keras/pull/10246/commits/6b99d2382e53c0f6f8124ed76db399741ad64fa4</commit_url>
         </bug>
     </sir>
@@ -855,6 +890,7 @@
                 <fixcommit>09521c9804c3ce218b44efa6d9b4af8b2c8cdd56</fixcommit>
             </fixVersion>
             <character>0</character>
+            <issue_url>https://github.com/keras-team/keras/pull/13073</issue_url>
             <commit_url>https://github.com/keras-team/keras/pull/13073/commits/09521c9804c3ce218b44efa6d9b4af8b2c8cdd56</commit_url>
         </bug>
     </sir>
@@ -878,6 +914,7 @@
                 <fixcommit>58cbb4bf425fc80771ebfe8053cbfe928a081b61</fixcommit>
             </fixVersion>
             <character>0</character>
+            <issue_url>https://github.com/keras-team/keras/issues/2672</issue_url>
             <commit_url>https://github.com/keras-team/keras/pull/2725/commits/58cbb4bf425fc80771ebfe8053cbfe928a081b61</commit_url>
         </bug>
     </sir>
@@ -901,6 +938,7 @@
                 <fixcommit>a614ee5dfb22445e8e165c0dfb64c408984062f9</fixcommit>
             </fixVersion>
             <character>1</character>
+            <issue_url>https://github.com/naturomics/CapsNet-Tensorflow/issues/4</issue_url>
             <commit_url>https://github.com/naturomics/CapsNet-Tensorflow/commit/a614ee5dfb22445e8e165c0dfb64c408984062f9</commit_url>
         </bug>
     </sir>
@@ -926,6 +964,7 @@
                 <fixcommit>9e237a67334f00bc59d6dfe7f4ffb2944f95e769</fixcommit>
             </fixVersion>
             <character>0</character>
+            <issue_url>https://github.com/SciSharp/TensorFlow.NET/issues/377</issue_url>
             <commit_url>https://github.com/SciSharp/TensorFlow.NET/commit/9e237a67334f00bc59d6dfe7f4ffb2944f95e769</commit_url>
         </bug>
     </sir>
@@ -949,6 +988,7 @@
                 <fixcommit>83ddc58321f2e4a353b4d241bcb31ae8b4f375bd</fixcommit>
             </fixVersion>
             <character>0</character>
+            <issue_url>https://github.com/eaplatanios/tensorflow_scala/pull/18</issue_url>
             <commit_url>https://github.com/eaplatanios/tensorflow_scala/pull/18/commits/83ddc58321f2e4a353b4d241bcb31ae8b4f375bd</commit_url>
         </bug>
     </sir>
@@ -973,6 +1013,7 @@
                 <fixcommit>e13e623f03a8c700f4281ab43e1bc80dd903fec7</fixcommit>
             </fixVersion>
             <character>0</character>
+            <issue_url>https://github.com/tensorflow/probability/issues/417</issue_url>
             <commit_url>https://github.com/tensorflow/probability/pull/488/commits/e13e623f03a8c700f4281ab43e1bc80dd903fec7</commit_url>
         </bug>
     </sir>
@@ -996,6 +1037,7 @@
                 <fixcommit>6884ebf7b4a995cd9f53df8fc529e0f74c438851</fixcommit>
             </fixVersion>
             <character>0</character>
+            <issue_url>https://github.com/qubvel/segmentation_models.pytorch/pull/186</issue_url>
             <commit_url>https://github.com/qubvel/segmentation_models.pytorch/pull/186/commits/6884ebf7b4a995cd9f53df8fc529e0f74c438851</commit_url>
         </bug>
     </sir>
@@ -1019,6 +1061,7 @@
                 <fixcommit>b93ce6e23042da153d6ee04b067e1f3d827d8189</fixcommit>
             </fixVersion>
             <character>0</character>
+            <issue_url>https://github.com/pytorch/tutorials/pull/382</issue_url>
             <commit_url>https://github.com/pytorch/tutorials/pull/382/commits/b93ce6e23042da153d6ee04b067e1f3d827d8189</commit_url>
         </bug>
     </sir>
@@ -1042,6 +1085,7 @@
                 <fixcommit>6d48375fde4d6ff0322775b342d563bcaf3f818a</fixcommit>
             </fixVersion>
             <character>0</character>
+            <issue_url>https://github.com/bearpaw/pytorch-pose/pull/116</issue_url>
             <commit_url>https://github.com/bearpaw/pytorch-pose/pull/117/commits/6d48375fde4d6ff0322775b342d563bcaf3f818a</commit_url>
         </bug>
     </sir>
@@ -1065,6 +1109,7 @@
                 <fixcommit>7c79371929bca523705b738b02749c008e20e191</fixcommit>
             </fixVersion>
             <character>0</character>
+            <issue_url>https://github.com/fastai/fastai/issues/1678</issue_url>
             <commit_url>https://github.com/fastai/fastai/commit/7c79371929bca523705b738b02749c008e20e191</commit_url>
         </bug>
     </sir>
@@ -1088,6 +1133,7 @@
                 <fixcommit>5281631a04e60f397ec5742056ec1dec235de425</fixcommit>
             </fixVersion>
             <character>0</character>
+            <issue_url>https://github.com/huggingface/transformers/issues/6560</issue_url>
             <commit_url>https://github.com/huggingface/transformers/pull/6717/commits/5281631a04e60f397ec5742056ec1dec235de425</commit_url>
         </bug>
     </sir>
@@ -1111,6 +1157,7 @@
                 <fixcommit>dad657e0be26732596c1c8c92c2f253de48513e9</fixcommit>
             </fixVersion>
             <character>0</character>
+            <issue_url>https://github.com/GPflow/GPflow/issues/99</issue_url>
             <commit_url>https://github.com/GPflow/GPflow/pull/100/commits/dad657e0be26732596c1c8c92c2f253de48513e9</commit_url>
         </bug>
     </sir>
@@ -1134,6 +1181,7 @@
                 <fixcommit>26d3f0dbea3ebb4d0db58f0f382fc633f275d067</fixcommit>
             </fixVersion>
             <character>1</character>
+            <issue_url>https://github.com/PyTorchLightning/pytorch-lightning/issues/139</issue_url>
             <commit_url>https://github.com/PyTorchLightning/pytorch-lightning/commit/26d3f0dbea3ebb4d0db58f0f382fc633f275d067</commit_url>
         </bug>
     </sir>
@@ -1157,6 +1205,7 @@
                 <fixcommit>07ffc76b9318ab1197ce61838992960e9abb3c22</fixcommit>
             </fixVersion>
             <character>0</character>
+            <issue_url>https://github.com/keras-team/keras/issues/1141</issue_url>
             <commit_url>https://github.com/keras-team/keras/commit/07ffc76b9318ab1197ce61838992960e9abb3c22</commit_url>
         </bug>
     </sir>
@@ -1180,6 +1229,7 @@
                 <fixcommit>14ec644e08af346e9004a8ee3a27c0a94aad698c</fixcommit>
             </fixVersion>
             <character>0</character>
+            <issue_url>https://github.com/blei-lab/edward/issues/46</issue_url>
             <commit_url>https://github.com/blei-lab/edward/pull/89/commits/14ec644e08af346e9004a8ee3a27c0a94aad698c</commit_url>
         </bug>
     </sir>
@@ -1203,6 +1253,7 @@
                 <fixcommit>c9230408b92276e1d9054e98d67bb6386e00bb9e</fixcommit>
             </fixVersion>
             <character>0</character>
+            <issue_url>https://github.com/nrontsis/PILCO/issues/25</issue_url>
             <commit_url>https://github.com/nrontsis/PILCO/commit/c9230408b92276e1d9054e98d67bb6386e00bb9e</commit_url>
         </bug>
     </sir>
@@ -1226,6 +1277,7 @@
                 <fixcommit>fb3184b6218c68244758eb360963b452157ad2c8</fixcommit>
             </fixVersion>
             <character>0</character>
+            <issue_url>https://github.com/tf-encrypted/tf-encrypted/pull/692</issue_url>
             <commit_url>https://github.com/tf-encrypted/tf-encrypted/pull/692/commits/fb3184b6218c68244758eb360963b452157ad2c8</commit_url>
         </bug>
     </sir>
@@ -1249,6 +1301,7 @@
                 <fixcommit>34e969a81a7bb96791104d8503b253e4f937c353</fixcommit>
             </fixVersion>
             <character>0</character>
+            <issue_url>https://github.com/tensorflow/probability/issues/233</issue_url>
             <commit_url>https://github.com/tensorflow/probability/commit/34e969a81a7bb96791104d8503b253e4f937c353</commit_url>
         </bug>
     </sir>
@@ -1272,6 +1325,7 @@
                 <fixcommit>11f92de8c8c9cd35106c0f4dd3b0bfaac7581a2f</fixcommit>
             </fixVersion>
             <character>0</character>
+            <issue_url>https://github.com/tensorflow/tensorflow/issues/3168</issue_url>
             <commit_url>https://github.com/tensorflow/tensorflow/commit/11f92de8c8c9cd35106c0f4dd3b0bfaac7581a2f</commit_url>
         </bug>
     </sir>
@@ -1295,6 +1349,7 @@
                 <fixcommit>d265f7a02cc6247f5d0bbacd516533b2117c9bac</fixcommit>
             </fixVersion>
             <character>0</character>
+            <issue_url>https://github.com/tensorflow/graphics/issues/283</issue_url>
             <commit_url>https://github.com/tensorflow/graphics/pull/284/commits/d265f7a02cc6247f5d0bbacd516533b2117c9bac</commit_url>
         </bug>
     </sir>
@@ -1318,6 +1373,7 @@
                 <fixcommit>6388133f7bf8f290661bc1a5db917f2a71762bab</fixcommit>
             </fixVersion>
             <character>0</character>
+            <issue_url>https://github.com/GPflow/GPflow/issues/1407</issue_url>
             <commit_url>https://github.com/GPflow/GPflow/commit/6388133f7bf8f290661bc1a5db917f2a71762bab</commit_url>
         </bug>
     </sir>
@@ -1341,6 +1397,7 @@
                 <fixcommit>9166ef99bf9fcd1d0bf641ae752428bb06903b00</fixcommit>
             </fixVersion>
             <character>0</character>
+            <issue_url>https://github.com/carpedm20/DCGAN-tensorflow/issues/99</issue_url>
             <commit_url>https://github.com/carpedm20/DCGAN-tensorflow/commit/9166ef99bf9fcd1d0bf641ae752428bb06903b00</commit_url>
         </bug>
     </sir>
@@ -1364,6 +1421,7 @@
                 <fixcommit>07abd2b58638a2bc4595d79c6dcba58052afa79c</fixcommit>
             </fixVersion>
             <character>0</character>
+            <issue_url>https://github.com/carpedm20/DCGAN-tensorflow/pull/158</issue_url>
             <commit_url>https://github.com/carpedm20/DCGAN-tensorflow/commit/07abd2b58638a2bc4595d79c6dcba58052afa79c</commit_url>
         </bug>
     </sir>
@@ -1387,6 +1445,7 @@
                 <fixcommit>f31d40e43395e90ea13a1a7d0a308a7c2c20cdb4</fixcommit>
             </fixVersion>
             <character>1</character>
+            <issue_url>https://github.com/keras-team/keras/pull/4441</issue_url>
             <commit_url>https://github.com/keras-team/keras/pull/4441/commits/f31d40e43395e90ea13a1a7d0a308a7c2c20cdb4</commit_url>
         </bug>
     </sir>
@@ -1410,6 +1469,7 @@
                 <fixcommit>bf8f9a10a466c9d8bb88e85abd2c0ecc4420dc95</fixcommit>
             </fixVersion>
             <character>0</character>
+            <issue_url>https://github.com/GPflow/GPflow/issues/409</issue_url>
             <commit_url>https://github.com/GPflow/GPflow/pull/411/commits/bf8f9a10a466c9d8bb88e85abd2c0ecc4420dc95</commit_url>
         </bug>
     </sir>
@@ -1433,6 +1493,7 @@
                 <fixcommit>77229bd921c1508ca11f9068d1133a88449d6760</fixcommit>
             </fixVersion>
             <character>0</character>
+            <issue_url>https://github.com/tensorflow/probability/issues/1010</issue_url>
             <commit_url>https://github.com/tensorflow/probability/commit/77229bd921c1508ca11f9068d1133a88449d6760</commit_url>
         </bug>
     </sir>
@@ -1456,6 +1517,7 @@
                 <fixcommit>6254da601c28558581ad61291062467e19276e54</fixcommit>
             </fixVersion>
             <character>0</character>
+            <issue_url>https://github.com/tensorflow/probability/issues/867</issue_url>
             <commit_url>https://github.com/tensorflow/probability/commit/6254da601c28558581ad61291062467e19276e54</commit_url>
         </bug>
     </sir>
@@ -1479,6 +1541,7 @@
                 <fixcommit>242731a9b2b42d4eb676539658a8d5e8267c0720</fixcommit>
             </fixVersion>
             <character>0</character>
+            <issue_url>https://github.com/tensorflow/probability/issues/705</issue_url>
             <commit_url>https://github.com/tensorflow/probability/commit/242731a9b2b42d4eb676539658a8d5e8267c0720</commit_url>
         </bug>
     </sir>
@@ -1502,6 +1565,7 @@
                 <fixcommit>07c77c65b5ea9c246690d2eb116c7c8570dc5a7e</fixcommit>
             </fixVersion>
             <character>0</character>
+            <issue_url>https://github.com/keras-team/keras/pull/9479</issue_url>
             <commit_url>https://github.com/keras-team/keras/commit/07c77c65b5ea9c246690d2eb116c7c8570dc5a7e</commit_url>
         </bug>
     </sir>
@@ -1525,6 +1589,7 @@
                 <fixcommit>50f159fdb2e0737d8a0fe0147608f49553c6f591</fixcommit>
             </fixVersion>
             <character>1</character>
+            <issue_url>https://github.com/keras-team/keras/issues/3475</issue_url>
             <commit_url>https://github.com/keras-team/keras/pull/3532/commits/50f159fdb2e0737d8a0fe0147608f49553c6f591</commit_url>
         </bug>
     </sir>
@@ -1548,6 +1613,7 @@
                 <fixcommit>150e0fa8a6571233ed107c4dded52387a9d3739c</fixcommit>
             </fixVersion>
             <character>1</character>
+            <issue_url>https://github.com/keras-team/keras/issues/4916</issue_url>
             <commit_url>https://github.com/keras-team/keras/commit/150e0fa8a6571233ed107c4dded52387a9d3739c</commit_url>
         </bug>
     </sir>
@@ -1571,6 +1637,7 @@
                 <fixcommit>3bf5340f18b62e33fb022aa04dbd49e8191983b6</fixcommit>
             </fixVersion>
             <character>1</character>
+            <issue_url>https://github.com/keras-team/keras/pull/449</issue_url>
             <commit_url>https://github.com/keras-team/keras/commit/3bf5340f18b62e33fb022aa04dbd49e8191983b6</commit_url>
         </bug>
     </sir>
@@ -1594,6 +1661,7 @@
                 <fixcommit>4880ed14eb87daa56ddfb7761c3a06b95278cb0b</fixcommit>
             </fixVersion>
             <character>1</character>
+            <issue_url>https://github.com/google/seq2seq/issues/52</issue_url>
             <commit_url>https://github.com/google/seq2seq/commit/4880ed14eb87daa56ddfb7761c3a06b95278cb0b</commit_url>
         </bug>
     </sir>
@@ -1617,6 +1685,7 @@
                 <fixcommit>158b77d132c60a37f6e1c0059d8de199cb078442</fixcommit>
             </fixVersion>
             <character>1</character>
+            <issue_url>https://github.com/carpedm20/DCGAN-tensorflow/issues/135</issue_url>
             <commit_url>https://github.com/carpedm20/DCGAN-tensorflow/commit/158b77d132c60a37f6e1c0059d8de199cb078442</commit_url>
         </bug>
     </sir>
@@ -1640,6 +1709,7 @@
                 <fixcommit>352d5472b0c1dec0f420d606d16747d851b4bda8</fixcommit>
             </fixVersion>
             <character>0</character>
+            <issue_url>https://github.com/huggingface/transformers/issues/3711</issue_url>
             <commit_url>https://github.com/huggingface/transformers/commit/352d5472b0c1dec0f420d606d16747d851b4bda8</commit_url>
         </bug>
     </sir>

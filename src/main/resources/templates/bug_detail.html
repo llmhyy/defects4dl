@@ -73,6 +73,8 @@
             <tr>
                 <td class="item-title" colspan="3">If you want to view both versions of the modification record, please click the corresponding button on the right</td>
                 <td >
+                    <button class="btn btn-primary btn-sm" type="button" v-on:click="seeIssue">GitHub_Issue</button>
+                    <button class="btn btn-primary btn-sm" type="button" v-on:click="seeCommit">GitHub_commit</button>
                     <button class="btn btn-primary btn-sm" type="button" v-on:click="showDiff">Diff</button>
                 </td>
             </tr>
@@ -127,6 +129,7 @@
             buggyInfo: null,
             fixInfo: null,
             isShow: false,
+            issue_url: null,
             commit_url: null,
         },
         mounted: function () {
@@ -135,19 +138,24 @@
             axios.get("getBugInfo?bugID="+ bugID)
                 .then(response => {
                     vm.dataInfoDetail = response.data;
+                    vm.issue_url = response.data.issue_url;
                     vm.commit_url = response.data.commit_url;
                 })
 
         },
         methods: {
             showDiff: function (){
-                var commit_url = vm.commit_url;
                 //将localStorage传递到哪个页面
                 location.href = 'diff'
                 //设置localStorage
-                window.localStorage.setItem("commit_url",commit_url);
                 window.localStorage.setItem('bugID',bugID);
 
+            },
+            seeIssue: function (){
+                window.location.href=vm.issue_url;
+            },
+            seeCommit: function (){
+                window.location.href=vm.commit_url;
             },
             testBuggy: function (){
                 $("#btn_buggy").attr({"disabled":"disabled"});

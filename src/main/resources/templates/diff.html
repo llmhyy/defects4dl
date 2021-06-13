@@ -24,23 +24,19 @@
 
 <script>
     var bugID = window.localStorage.getItem('bugID');
-    var commit_url = window.localStorage.getItem("commit_url");
     $.ajax({
         type: "POST",
         url: "getDiffInfo?bugId="+bugID,
         success: function(data){
             //diffInfo = data;
             //document.addEventListener('DOMContentLoaded', () => {
-            if (data != ""){
-                var diffHtml = window.Diff2Html.html(data, {
-                    drawFileList: true,
-                    matching: 'lines',
-                    outputFormat: 'side-by-side',
-                });
-                document.getElementById('destination-elem-id').innerHTML = diffHtml;
-            }else {
-                window.location.href=commit_url;
-            }
+            var diffHtml = window.Diff2Html.html(data, {
+                drawFileList: true,
+                matching: 'lines',
+                outputFormat: 'side-by-side',
+            });
+            document.getElementById('destination-elem-id').innerHTML = diffHtml;
+
 
         }
     })

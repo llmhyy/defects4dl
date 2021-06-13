@@ -23,6 +23,7 @@ public class Constant {
     public final static String XML_BUG_FIX_LENGTH="fixLength";
     public final static String XML_BUG_LOCAL_SCORE = "localScore";
     public final static String XML_BUG_CHARACTER = "character";
+    public final static String XML_ISSUE_URL = "issue_url";
     public final static String XML_COMMIT_URL = "commit_url";
     public final static String XML_BUGGY_COMMIT_LABEL = "buggycommit";
     public final static String XML_FIX_COMMIT_LABEL = "fixcommit";

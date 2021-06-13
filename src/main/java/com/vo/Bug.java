@@ -12,10 +12,11 @@ public class Bug {
     private String localScore;   // 定位难度
     private String fixLength;  // 通过修改字符的长度与修改的行数计算的修复难度
     private String character;   // 动态或静态Bug，1代表动态，0代表静态
+    private String issue_url;
     private String commit_url;  //github中commit的url，主要是为了给没有pull docker镜像的用户看
 
 
-    public Bug(String bugID, String errorMessage, String describe, String operateScore, String type, BuggyVersion buggyVersion, FixVersion fixVersion, String localScore, String fixLength, String character, String commit_url) {
+    public Bug(String bugID, String errorMessage, String describe, String operateScore, String type, BuggyVersion buggyVersion, FixVersion fixVersion, String localScore, String fixLength, String character,String issue_url, String commit_url) {
         this.bugID = bugID;
         this.errorMessage = errorMessage;
         this.describe = describe;
@@ -26,6 +27,7 @@ public class Bug {
         this.localScore = localScore;
         this.fixLength = fixLength;
         this.character = character;
+        this.issue_url = issue_url;
         this.commit_url = commit_url;
     }
 
@@ -116,5 +118,13 @@ public class Bug {
 
     public void setCommit_url(String commit_url) {
         this.commit_url = commit_url;
+    }
+
+    public String getIssue_url() {
+        return issue_url;
+    }
+
+    public void setIssue_url(String issue_url) {
+        this.issue_url = issue_url;
     }
 }

@@ -151,31 +151,6 @@
     </sir>
 
     <sir>
-        <name>Deep-Learning-TensorFlow</name>
-        <source>https://github.com/Liang813/Deep-Learning-TensorFlow</source>
-        <bug>
-            <id>deep-learning-tensorflow5</id>
-            <errormessage>None</errormessage>
-            <describe>missing tf.nn.softmax() in create_softmax_layer</describe>
-            <operateScore>1</operateScore>
-            <type>IPS</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
-            <buggyVersion>
-                <buggytestCmd>Deep-Learning-TensorFlow5-buggy.sh</buggytestCmd>
-                <buggycommit>ded661243a7bf86975e4f29fdf192d7dc4a72770</buggycommit>
-            </buggyVersion>
-            <fixVersion>
-                <fixtestCmd>Deep-Learning-TensorFlow5-fix.sh</fixtestCmd>
-                <fixcommit>1bcc1efcce5772af15c8e787f21ae60a923e6731</fixcommit>
-            </fixVersion>
-            <character>1</character>
-            <issue_url>https://github.com/gabrieleangeletti/Deep-Learning-TensorFlow/issues/5</issue_url>
-            <commit_url>https://github.com/gabrieleangeletti/Deep-Learning-TensorFlow/commit/1bcc1efcce5772af15c8e787f21ae60a923e6731</commit_url>
-        </bug>
-    </sir>
-
-    <sir>
         <name>models</name>
         <source>https://github.com/Liang813/models</source>
         <bug>
@@ -251,6 +226,31 @@
     </sir>
 
     <sir>
+        <name>transformers</name>
+        <source>https://github.com/Liang813/transformers</source>
+        <bug>
+            <id>transformers1152</id>
+            <errormessage>TypeError</errormessage>
+            <describe>List does not match tuple</describe>
+            <operateScore>1</operateScore>
+            <type>type mismatch</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
+            <buggyVersion>
+                <buggytestCmd>transformers1152-buggy.sh</buggytestCmd>
+                <buggycommit>caf1d116a62a324a2b0ccfd92ca6c095d5368dde</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>transformers1152-fix.sh</fixtestCmd>
+                <fixcommit>07e21307b6b16350425ea08790c7e20c081a3b3f</fixcommit>
+            </fixVersion>
+            <character>0</character>
+            <issue_url>https://github.com/huggingface/transformers/pull/1152</issue_url>
+            <commit_url>https://github.com/huggingface/transformers/pull/1152/commits/07e21307b6b16350425ea08790c7e20c081a3b3f</commit_url>
+        </bug>
+    </sir>
+
+    <sir>
         <name>tensorflow</name>
         <source>https://github.com/Liang813/tensorflow</source>
         <bug>
@@ -297,31 +297,6 @@
             <character>0</character>
             <issue_url>https://github.com/huggingface/transformers/pull/1418</issue_url>
             <commit_url>https://github.com/huggingface/transformers/pull/1418/commits/a9f6d3f101556f0fd7f07e6ef9c22f1430b68e52</commit_url>
-        </bug>
-    </sir>
-
-    <sir>
-        <name>transformers</name>
-        <source>https://github.com/Liang813/transformers</source>
-        <bug>
-            <id>transformers1152</id>
-            <errormessage>TypeError</errormessage>
-            <describe>List does not match tuple</describe>
-            <operateScore>1</operateScore>
-            <type>type mismatch</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
-            <buggyVersion>
-                <buggytestCmd>transformers1152-buggy.sh</buggytestCmd>
-                <buggycommit>caf1d116a62a324a2b0ccfd92ca6c095d5368dde</buggycommit>
-            </buggyVersion>
-            <fixVersion>
-                <fixtestCmd>transformers1152-fix.sh</fixtestCmd>
-                <fixcommit>07e21307b6b16350425ea08790c7e20c081a3b3f</fixcommit>
-            </fixVersion>
-            <character>0</character>
-            <issue_url>https://github.com/huggingface/transformers/pull/1152</issue_url>
-            <commit_url>https://github.com/huggingface/transformers/pull/1152/commits/07e21307b6b16350425ea08790c7e20c081a3b3f</commit_url>
         </bug>
     </sir>
 
@@ -1245,30 +1220,30 @@
 <!--        </bug>-->
 <!--    </sir>-->
 
-    <sir>
-        <name>transformers</name>
-        <source>https://github.com/Liang813/transformers</source>
-        <bug>
-            <id>transformers6560</id>
-            <errormessage>ValueError</errormessage>
-            <describe>Huggingface create_ The optimizer method is missing a parameter</describe>
-            <operateScore>1</operateScore>
-            <type>API misuse</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
-            <buggyVersion>
-                <buggytestCmd>transformers6560-buggy.sh</buggytestCmd>
-                <buggycommit>841f07156948a28f8cc9182bb14c911f9e63b0e7</buggycommit>
-            </buggyVersion>
-            <fixVersion>
-                <fixtestCmd>transformers6560-fix.sh</fixtestCmd>
-                <fixcommit>5281631a04e60f397ec5742056ec1dec235de425</fixcommit>
-            </fixVersion>
-            <character>0</character>
-            <issue_url>https://github.com/huggingface/transformers/issues/6560</issue_url>
-            <commit_url>https://github.com/huggingface/transformers/pull/6717/commits/5281631a04e60f397ec5742056ec1dec235de425</commit_url>
-        </bug>
-    </sir>
+<!--    <sir>-->
+<!--        <name>transformers</name>-->
+<!--        <source>https://github.com/Liang813/transformers</source>-->
+<!--        <bug>-->
+<!--            <id>transformers6560</id>-->
+<!--            <errormessage>ValueError</errormessage>-->
+<!--            <describe>Huggingface create_ The optimizer method is missing a parameter</describe>-->
+<!--            <operateScore>1</operateScore>-->
+<!--            <type>API misuse</type>-->
+<!--            <localScore></localScore>-->
+<!--            <fixLength></fixLength>-->
+<!--            <buggyVersion>-->
+<!--                <buggytestCmd>transformers6560-buggy.sh</buggytestCmd>-->
+<!--                <buggycommit>841f07156948a28f8cc9182bb14c911f9e63b0e7</buggycommit>-->
+<!--            </buggyVersion>-->
+<!--            <fixVersion>-->
+<!--                <fixtestCmd>transformers6560-fix.sh</fixtestCmd>-->
+<!--                <fixcommit>5281631a04e60f397ec5742056ec1dec235de425</fixcommit>-->
+<!--            </fixVersion>-->
+<!--            <character>0</character>-->
+<!--            <issue_url>https://github.com/huggingface/transformers/issues/6560</issue_url>-->
+<!--            <commit_url>https://github.com/huggingface/transformers/pull/6717/commits/5281631a04e60f397ec5742056ec1dec235de425</commit_url>-->
+<!--        </bug>-->
+<!--    </sir>-->
 
     <sir>
         <name>keras</name>
@@ -1817,6 +1792,81 @@
             <character>0</character>
             <issue_url>https://github.com/facebookresearch/pytorch3d/issues/551</issue_url>
             <commit_url>https://github.com/facebookresearch/pytorch3d/commit/e13e63a811438c250c1760cbcbcbe6c034a8570d</commit_url>
+        </bug>
+    </sir>
+
+    <sir>
+        <name>pytorch-ts</name>
+        <source>https://github.com/Liang813/pytorch-ts</source>
+        <bug>
+            <id>pytorch-ts1</id>
+            <errormessage>RuntimeError</errormessage>
+            <describe>Operating system dependent errors</describe>
+            <operateScore>1</operateScore>
+            <type>type mismatch</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
+            <buggyVersion>
+                <buggytestCmd>pytorch-ts1-buggy.sh</buggytestCmd>
+                <buggycommit>4bc2d247c70c59479d359d13d2db5739227307e8</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>pytorch-ts1-fix.sh</fixtestCmd>
+                <fixcommit>87fab61761bb0b11b2c760a9e3d22538268e15a7</fixcommit>
+            </fixVersion>
+            <character>1</character>
+            <issue_url>https://github.com/zalandoresearch/pytorch-ts/issues/1</issue_url>
+            <commit_url>https://github.com/zalandoresearch/pytorch-ts/commit/87fab61761bb0b11b2c760a9e3d22538268e15a7</commit_url>
+        </bug>
+    </sir>
+
+    <sir>
+        <name>rlpyt</name>
+        <source>https://github.com/Liang813/rlpyt</source>
+        <bug>
+            <id>rlpyt27</id>
+            <errormessage>RuntimeError</errormessage>
+            <describe>MujocoLstmModel does not reshape lstm outputs similarly to AtariLstmModel. </describe>
+            <operateScore>2</operateScore>
+            <type>shape mismatch</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
+            <buggyVersion>
+                <buggytestCmd>rlpyt27-buggy.sh</buggytestCmd>
+                <buggycommit>02963ce9b733ae9d7e24b7756daa9ec38d51098f</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>rlpyt27-fix.sh</fixtestCmd>
+                <fixcommit>4e54e7af6013647d50a3068894417c4c199ea77b</fixcommit>
+            </fixVersion>
+            <character>0</character>
+            <issue_url>https://github.com/astooke/rlpyt/issues/27</issue_url>
+            <commit_url>https://github.com/astooke/rlpyt/commit/4e54e7af6013647d50a3068894417c4c199ea77b</commit_url>
+        </bug>
+    </sir>
+
+    <sir>
+        <name>FlowNetPytorch</name>
+        <source>https://github.com/Liang813/FlowNetPytorch</source>
+        <bug>
+            <id>FlowNetPytorch51</id>
+            <errormessage>RuntimeError</errormessage>
+            <describe>Use torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu") </describe>
+            <operateScore>2</operateScore>
+            <type>API misuse</type>
+            <localScore></localScore>
+            <fixLength></fixLength>
+            <buggyVersion>
+                <buggytestCmd>FlowNetPytorch51-buggy.sh</buggytestCmd>
+                <buggycommit>4e44aa63d151fe8833dcb6b60acdfe4850857bdb</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>FlowNetPytorch51-fix.sh</fixtestCmd>
+                <fixcommit>678ac413ce55cb3db09d1f24532920582af54f43</fixcommit>
+            </fixVersion>
+            <character>0</character>
+            <issue_url>https://github.com/ClementPinard/FlowNetPytorch/issues/51</issue_url>
+            <commit_url>https://github.com/ClementPinard/FlowNetPytorch/commit/678ac413ce55cb3db09d1f24532920582af54f43</commit_url>
         </bug>
     </sir>
 

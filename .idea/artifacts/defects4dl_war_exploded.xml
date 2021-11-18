@@ -4,11 +4,11 @@
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="defects4dl" />
+          <element id="module-output" name="gDefects4dl" />
         </element>
       </element>
       <element id="library" level="project" name="Maven: org.mortbay.jetty:servlet-api:8.5.16" />
-      <element id="javaee-facet-resources" facet="defects4dl/web/Web" />
+      <element id="javaee-facet-resources" facet="gDefects4dl/web/Web" />
     </root>
   </artifact>
 </component>

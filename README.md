@@ -1,9 +1,9 @@
-# Defects4dl
+# gDefects4dl
 A deep learning general bug library.
 
-Defects4dl is available in two ways，the Command line and Websites.
+gDefects4dl is available in two ways，the Command line and Websites.
 
-## Setting up Defects4dl
+## Setting up gDefects4dl
 ### Requirements
 
 -  Java>=1.8
@@ -12,11 +12,11 @@ Defects4dl is available in two ways，the Command line and Websites.
 
 -  Maven
 
-## Steps to set up Defects4dl
+## Steps to set up gDefects4dl
 
 ### Set up from source code
 
-1.Clone Defects4dl:
+1.Clone gDefects4dl:
 
 ```
 git clone https://github.com/llmhyy/defects4dl.git
@@ -33,7 +33,7 @@ git clone https://github.com/llmhyy/defects4dl.git
 
 
 
-## Using Defects4dl
+## Using gDefects4dl
 
 Important!
 * Before using it, you need to pull down our Docker Images from the command line using the `pullBug` command (this process is a bit slow).

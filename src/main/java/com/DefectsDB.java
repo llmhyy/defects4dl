@@ -43,6 +43,7 @@ public class DefectsDB {
                 String character = bugItem.getElementsByTagName(Constant.XML_BUG_CHARACTER).item(0).getTextContent();
                 String issue_url = bugItem.getElementsByTagName(Constant.XML_ISSUE_URL).item(0).getTextContent();
                 String commit_url = bugItem.getElementsByTagName(Constant.XML_COMMIT_URL).item(0).getTextContent();
+                String detection_tools = bugItem.getElementsByTagName(Constant.XML_DETECTION_TOOLS).item(0).getTextContent();
                 //buggyVersion和fixVersion为对象类型
                 NodeList buggyVersion = bugItem.getElementsByTagName(Constant.XML_BUGGY_VERSION);
                 //List<BuggyVersion> buggyVersions = new ArrayList<BuggyVersion>();
@@ -57,7 +58,7 @@ public class DefectsDB {
                 String fixtestCmd = fVersion.getElementsByTagName(Constant.XML_FIX_TEST_CMD_LABEL).item(0).getTextContent();
                 String fixcommit = fVersion.getElementsByTagName(Constant.XML_FIX_COMMIT_LABEL).item(0).getTextContent();
                 FixVersion FixVersion = new FixVersion(fixtestCmd,fixcommit);
-                sir.addBug(new Bug(bugID, errorMessage,describe,operateScore,type,BuggyVersion,FixVersion,localScore,fixLength,character,issue_url,commit_url));
+                sir.addBug(new Bug(bugID, errorMessage, describe, operateScore, type, BuggyVersion, FixVersion, localScore, fixLength, character, issue_url, commit_url, detection_tools));
 
             }
             sirs.add(sir);

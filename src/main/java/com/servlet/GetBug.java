@@ -84,4 +84,45 @@ public class GetBug{
         }
         return String.valueOf(global);
     }
+
+    @RequestMapping("/runShapeFlow")
+    @CrossOrigin
+    public String runShapeFlow(String bugId) throws Exception{
+        global = 0;
+        DefectsAction da = new DefectsAction();
+        global = 20;
+        String res = da.runShapeFlow(bugId);
+        return res;
+    }
+
+    @RequestMapping("/runDEBAR")
+    @CrossOrigin
+    public String runDEBAR(String bugId) throws Exception{
+        global = 0;
+        DefectsAction da = new DefectsAction();
+        global = 20;
+        String res = da.runDEBAR(bugId);
+        return res;
+    }
+
+    @RequestMapping("/runDeepLocalize")
+    @CrossOrigin
+    public String runDeepLocalize(String bugId) throws Exception{
+        global = 0;
+        DefectsAction da = new DefectsAction();
+        global = 20;
+        String res = da.runDeepLocalize(bugId);
+        return res;
+    }
+
+    @RequestMapping("/runGRIST")
+    @CrossOrigin
+    public String runGRIST(String bugId) throws Exception{
+        global = 0;
+        DefectsAction da = new DefectsAction();
+        global = 20;
+        String res = da.runGRIST(bugId);
+        return res;
+    }
+
 }

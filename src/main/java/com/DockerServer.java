@@ -36,5 +36,10 @@ public class DockerServer {
         return dockerExecutor.readTxtW(bugId,version);
     }
 
+    // 运行支持的工具
+    public String runTool(String cmd, String bugId){
+        return dockerExecutor.runTool(cmd, bugId);
+    }
+
 
 }

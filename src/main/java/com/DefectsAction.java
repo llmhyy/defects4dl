@@ -44,6 +44,7 @@ public class DefectsAction {
         String issue_url = bug.getIssue_url();
         String commit_url = bug.getCommit_url();
         String type = bug.getType();
+        String detection_tools = bug.getDetection_tools();
         // String SIRName = DefectsDB.getSirName(bugId).toLowerCase();
         String SIRName = DefectsDB.getSirName(bugId);
 
@@ -52,9 +53,10 @@ public class DefectsAction {
         sb.append("BugID: ").append(bugId).append("\n");
         sb.append("Type: ").append(type).append("\n");
         sb.append("Character: ").append(character).append("\n");
-        sb.append("Issue_url").append(issue_url).append("\n");
+        sb.append("Issue_url: ").append(issue_url).append("\n");
         sb.append("Commit_url: ").append(commit_url).append("\n");
         sb.append("ErrorMessage: ").append(errorMessage).append("\n");
+        sb.append("Detection_Tools: ").append(detection_tools).append("\n");
         sb.append("Describe: ").append(describe).append("\n");
 
         sb.append("INFO DETAIL:\n");
@@ -108,7 +110,8 @@ public class DefectsAction {
         String character = bug.getCharacter();
         String issue_url = bug.getIssue_url();
         String commit_url = bug.getCommit_url();
-        Bug Bug = new Bug(bugId, errorMessage,describe,operateScore,type,BuggyVersion,FixVersion,localScore,fixLength,character,issue_url,commit_url);
+        String detection_tools = bug.getDetection_tools();
+        Bug Bug = new Bug(bugId, errorMessage, describe, operateScore, type, BuggyVersion, FixVersion, localScore, fixLength, character, issue_url, commit_url, detection_tools);
 
         return Bug;
 
@@ -152,6 +155,28 @@ public class DefectsAction {
         String sirName=DefectsDB.getSirName(bugId);
         return dockerServer.runTestW(fixtestCmd,bugId,version);
     }
+
+    // 运行ShapeFlow
+    public String runShapeFlow(String bugId) throws Exception {
+        String Cmd = bugId + "-ShapeFlow.sh";
+        return dockerServer.runTool(Cmd, bugId);
+    }
+    // 运行GRIST
+    public String runGRIST(String bugId) throws Exception {
+        String Cmd = bugId + "-GRIST.sh";
+        return dockerServer.runTool(Cmd, bugId);
+    }
+    // 运行DEBAR
+    public String runDEBAR(String bugId) throws Exception {
+        String Cmd = bugId + "-DEBAR.sh";
+        return dockerServer.runTool(Cmd, bugId);
+    }
+    // 运行DeepLocalize
+    public String runDeepLocalize(String bugId) throws Exception {
+        String Cmd = bugId + "-DeepLocalize.sh";
+        return dockerServer.runTool(Cmd, bugId);
+    }
+
 
     public String diff(String bugId) throws Exception {
 

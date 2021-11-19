@@ -22,6 +22,7 @@
             <character>0</character>
             <issue_url>https://github.com/pytorch/tutorials/pull/382</issue_url>
             <commit_url>https://github.com/pytorch/tutorials/pull/382/commits/b93ce6e23042da153d6ee04b067e1f3d827d8189</commit_url>
+            <detection_tools></detection_tools>
         </bug>
     </sir>
 
@@ -47,6 +48,7 @@
             <character>0</character>
             <issue_url>https://github.com/GPflow/GPflow/issues/99</issue_url>
             <commit_url>https://github.com/GPflow/GPflow/pull/100/commits/dad657e0be26732596c1c8c92c2f253de48513e9</commit_url>
+            <detection_tools></detection_tools>
         </bug>
     </sir>
 
@@ -72,6 +74,7 @@
             <character>0</character>
             <issue_url>https://github.com/blei-lab/edward/issues/46</issue_url>
             <commit_url>https://github.com/blei-lab/edward/pull/89/commits/14ec644e08af346e9004a8ee3a27c0a94aad698c</commit_url>
+            <detection_tools></detection_tools>
         </bug>
     </sir>
 
@@ -97,6 +100,7 @@
             <character>1</character>
             <issue_url>https://github.com/tensorflow/models/issues/166</issue_url>
             <commit_url>https://github.com/tensorflow/models/commit/d8169710322cb6e20be61fef179e66d56d2b1151</commit_url>
+            <detection_tools>DEBAR, GRIST</detection_tools>
         </bug>
     </sir>
 
@@ -122,6 +126,7 @@
             <character>1</character>
             <issue_url>https://github.com/gabrieleangeletti/Deep-Learning-TensorFlow/pull/1</issue_url>
             <commit_url>https://github.com/gabrieleangeletti/Deep-Learning-TensorFlow/pull/1/commits/b9bc441fdec5e8a5a1c4285d724dd43b327b4cf8</commit_url>
+            <detection_tools></detection_tools>
         </bug>
     </sir>
 
@@ -147,6 +152,7 @@
             <character>1</character>
             <issue_url>https://github.com/gabrieleangeletti/Deep-Learning-TensorFlow/issues/5</issue_url>
             <commit_url>https://github.com/gabrieleangeletti/Deep-Learning-TensorFlow/commit/1bcc1efcce5772af15c8e787f21ae60a923e6731</commit_url>
+            <detection_tools></detection_tools>
         </bug>
     </sir>
 
@@ -172,6 +178,7 @@
             <character>0</character>
             <issue_url>https://github.com/tensorflow/models/issues/857</issue_url>
             <commit_url>https://github.com/tensorflow/models/commit/e93ec37201f5f2116933ae96e505f409ddbf344d</commit_url>
+            <detection_tools></detection_tools>
         </bug>
     </sir>
 
@@ -197,6 +204,7 @@
             <character>0</character>
             <issue_url>https://github.com/bearpaw/pytorch-pose/pull/116</issue_url>
             <commit_url>https://github.com/bearpaw/pytorch-pose/pull/117/commits/6d48375fde4d6ff0322775b342d563bcaf3f818a</commit_url>
+            <detection_tools></detection_tools>
         </bug>
     </sir>
 
@@ -222,6 +230,7 @@
             <character>1</character>
             <issue_url>https://github.com/PyTorchLightning/pytorch-lightning/issues/139</issue_url>
             <commit_url>https://github.com/PyTorchLightning/pytorch-lightning/commit/26d3f0dbea3ebb4d0db58f0f382fc633f275d067</commit_url>
+            <detection_tools></detection_tools>
         </bug>
     </sir>
 
@@ -247,6 +256,7 @@
             <character>0</character>
             <issue_url>https://github.com/huggingface/transformers/pull/1152</issue_url>
             <commit_url>https://github.com/huggingface/transformers/pull/1152/commits/07e21307b6b16350425ea08790c7e20c081a3b3f</commit_url>
+            <detection_tools></detection_tools>
         </bug>
     </sir>
 
@@ -272,6 +282,7 @@
             <character>0</character>
             <issue_url>https://github.com/tensorflow/tensorflow/issues/3168</issue_url>
             <commit_url>https://github.com/tensorflow/tensorflow/commit/11f92de8c8c9cd35106c0f4dd3b0bfaac7581a2f</commit_url>
+            <detection_tools></detection_tools>
         </bug>
     </sir>
 
@@ -297,6 +308,7 @@
             <character>0</character>
             <issue_url>https://github.com/huggingface/transformers/pull/1418</issue_url>
             <commit_url>https://github.com/huggingface/transformers/pull/1418/commits/a9f6d3f101556f0fd7f07e6ef9c22f1430b68e52</commit_url>
+            <detection_tools></detection_tools>
         </bug>
     </sir>
 
@@ -322,6 +334,7 @@
             <character>0</character>
             <issue_url>https://github.com/huggingface/transformers/issues/1962</issue_url>
             <commit_url>https://github.com/huggingface/transformers/pull/1966/commits/a1aec9c2a1776832c28d3a9975d2f15999f089ac</commit_url>
+            <detection_tools>ShapeFlow</detection_tools>
         </bug>
     </sir>
 
@@ -347,6 +360,7 @@
             <character>0</character>
             <issue_url>https://github.com/allenai/allennlp/issues/3721</issue_url>
             <commit_url>https://github.com/allenai/allennlp/commit/beb07be50a8c0267b1ff398793ecde1194a538fe</commit_url>
+            <detection_tools></detection_tools>
         </bug>
     </sir>
 
@@ -372,6 +386,7 @@
             <character>0</character>
             <issue_url>https://github.com/allenai/allennlp/issues/4612</issue_url>
             <commit_url>https://github.com/allenai/allennlp/pull/4615/commits/b2bb2a364320142c733e306df1d04e4e8237150d</commit_url>
+            <detection_tools></detection_tools>
         </bug>
     </sir>
 
@@ -397,6 +412,7 @@
             <character>0</character>
             <issue_url>https://github.com/PyTorchLightning/pytorch-lightning/issues/2386</issue_url>
             <commit_url>https://github.com/PyTorchLightning/pytorch-lightning/pull/2403/commits/ae8be9efc13a914cbd763f021c5d289ca94bbdcf</commit_url>
+            <detection_tools></detection_tools>
         </bug>
     </sir>
 
@@ -422,6 +438,7 @@
             <character>0</character>
             <issue_url>https://github.com/pytorch/botorch/pull/162</issue_url>
             <commit_url>https://github.com/pytorch/botorch/commit/c15c8f261571d36a8f6e4947313e4e4f4365c3a3</commit_url>
+            <detection_tools></detection_tools>
         </bug>
     </sir>
 
@@ -447,6 +464,7 @@
             <character>0</character>
             <issue_url>https://github.com/chingyaoc/ggnn.pytorch/pull/9</issue_url>
             <commit_url>https://github.com/chingyaoc/ggnn.pytorch/pull/9/commits/9c58ca60fd9c389ffd41b7cb4b10cade592344f8</commit_url>
+            <detection_tools></detection_tools>
         </bug>
     </sir>
 
@@ -497,6 +515,7 @@
             <character>0</character>
             <issue_url>https://github.com/google/seq2seq/pull/95</issue_url>
             <commit_url>https://github.com/google/seq2seq/pull/95/commits/5a1338603a15848302fb1958ef3c9ef426935654</commit_url>
+            <detection_tools></detection_tools>
         </bug>
     </sir>
 
@@ -522,6 +541,7 @@
             <character>0</character>
             <issue_url>https://github.com/google/seq2seq/commit/69cd7e4cffc2ff26b111ccd1ec563b6888cccedb</issue_url>
             <commit_url>https://github.com/google/seq2seq/commit/69cd7e4cffc2ff26b111ccd1ec563b6888cccedb</commit_url>
+            <detection_tools></detection_tools>
         </bug>
     </sir>
 
@@ -547,6 +567,7 @@
             <character>0</character>
             <issue_url>https://github.com/bamos/dcgan-completion.tensorflow/commit/e2efc870054836172cbed70dfc08da6fc0ff2e04</issue_url>
             <commit_url>https://github.com/bamos/dcgan-completion.tensorflow/commit/e2efc870054836172cbed70dfc08da6fc0ff2e04</commit_url>
+            <detection_tools></detection_tools>
         </bug>
     </sir>
 
@@ -572,6 +593,7 @@
             <character>0</character>
             <issue_url>https://github.com/mfigurnov/sact/commit/98a8fd0d623261b32f8b6bcff63c8000a71b1e18</issue_url>
             <commit_url>https://github.com/mfigurnov/sact/commit/98a8fd0d623261b32f8b6bcff63c8000a71b1e18</commit_url>
+            <detection_tools></detection_tools>
         </bug>
     </sir>
 
@@ -597,6 +619,7 @@
             <character>0</character>
             <issue_url>https://github.com/tensorflow/models/pull/1063</issue_url>
             <commit_url>https://github.com/tensorflow/models/pull/1063/commits/5c535343059ceec4b9ca9decdc8c9da8c3e58ced</commit_url>
+            <detection_tools></detection_tools>
         </bug>
     </sir>
 
@@ -622,6 +645,7 @@
             <character>0</character>
             <issue_url>https://github.com/tensorflow/models/pull/1707</issue_url>
             <commit_url>https://github.com/tensorflow/models/commit/c4ba26b4d36ea8d339200bab6bd6fea6fd4af11b</commit_url>
+            <detection_tools></detection_tools>
         </bug>
     </sir>
 
@@ -647,6 +671,7 @@
             <character>1</character>
             <issue_url>https://github.com/tensorflow/models/issues/23</issue_url>
             <commit_url>https://github.com/tensorflow/models/commit/55a34ae564f5ab49adaf98bd4552dcd4bf8f85f3</commit_url>
+            <detection_tools></detection_tools>
         </bug>
     </sir>
 
@@ -672,6 +697,7 @@
             <character>0</character>
             <issue_url>https://github.com/tensorflow/models/issues/1585</issue_url>
             <commit_url>https://github.com/tensorflow/models/commit/e76190e83e773875ddfae38339cd299b64e7eda8</commit_url>
+            <detection_tools></detection_tools>
         </bug>
     </sir>
 
@@ -722,6 +748,7 @@
             <character>1</character>
             <issue_url>https://github.com/aymericdamien/TensorFlow-Examples/issues/10</issue_url>
             <commit_url>https://github.com/aymericdamien/TensorFlow-Examples/commit/742675db9e3085579b1325b21743fb3a4bc804ab</commit_url>
+            <detection_tools>DEBAR, GRIST</detection_tools>
         </bug>
     </sir>
 
@@ -747,6 +774,7 @@
             <character>1</character>
             <issue_url>https://github.com/blackecho/Deep-Learning-TensorFlow/commit/20d1b59e69d4ae56ff9bf0c7263d3f2e47d4cdc9</issue_url>
             <commit_url>https://github.com/blackecho/Deep-Learning-TensorFlow/commit/20d1b59e69d4ae56ff9bf0c7263d3f2e47d4cdc9</commit_url>
+            <detection_tools></detection_tools>
         </bug>
     </sir>
 
@@ -772,6 +800,7 @@
             <character>1</character>
             <issue_url>https://github.com/blackecho/Deep-Learning-TensorFlow/commit/726b371d42e853e61b4deac06ed064a61a619572</issue_url>
             <commit_url>https://github.com/blackecho/Deep-Learning-TensorFlow/commit/726b371d42e853e61b4deac06ed064a61a619572</commit_url>
+            <detection_tools>GRIST</detection_tools>
         </bug>
     </sir>
 
@@ -797,6 +826,7 @@
             <character>0</character>
             <issue_url>https://github.com/carpedm20/DCGAN-tensorflow/issues/108</issue_url>
             <commit_url>https://github.com/carpedm20/DCGAN-tensorflow/commit/3d7395aa4a0663ebb20aa2568ab91f70e555edf0</commit_url>
+            <detection_tools></detection_tools>
         </bug>
     </sir>
 
@@ -822,6 +852,7 @@
             <character>0</character>
             <issue_url>https://github.com/carpedm20/DCGAN-tensorflow/issues/17</issue_url>
             <commit_url>https://github.com/carpedm20/DCGAN-tensorflow/commit/550534e89c93993eadc817af0d68fdb09d82d4c6</commit_url>
+            <detection_tools></detection_tools>
         </bug>
     </sir>
 
@@ -847,6 +878,7 @@
             <character>1</character>
             <issue_url>https://github.com/keras-team/keras/issues/11657</issue_url>
             <commit_url>https://github.com/keras-team/keras/pull/11658/commits/c2d01f5ea69170a2365050368dfa534b75592c06</commit_url>
+            <detection_tools>ShapeFlow</detection_tools>
         </bug>
     </sir>
 
@@ -1066,6 +1098,7 @@
             <character>0</character>
             <issue_url>https://github.com/keras-team/keras/issues/2672</issue_url>
             <commit_url>https://github.com/keras-team/keras/pull/2725/commits/58cbb4bf425fc80771ebfe8053cbfe928a081b61</commit_url>
+            <detection_tools></detection_tools>
         </bug>
     </sir>
 
@@ -1167,6 +1200,7 @@
             <character>0</character>
             <issue_url>https://github.com/tensorflow/probability/issues/417</issue_url>
             <commit_url>https://github.com/tensorflow/probability/pull/488/commits/e13e623f03a8c700f4281ab43e1bc80dd903fec7</commit_url>
+            <detection_tools></detection_tools>
         </bug>
     </sir>
 
@@ -1192,6 +1226,7 @@
             <character>0</character>
             <issue_url>https://github.com/qubvel/segmentation_models.pytorch/pull/186</issue_url>
             <commit_url>https://github.com/qubvel/segmentation_models.pytorch/pull/186/commits/6884ebf7b4a995cd9f53df8fc529e0f74c438851</commit_url>
+            <detection_tools></detection_tools>
         </bug>
     </sir>
 
@@ -1267,6 +1302,7 @@
             <character>0</character>
             <issue_url>https://github.com/keras-team/keras/issues/1141</issue_url>
             <commit_url>https://github.com/keras-team/keras/commit/07ffc76b9318ab1197ce61838992960e9abb3c22</commit_url>
+            <detection_tools></detection_tools>
         </bug>
     </sir>
 
@@ -1292,6 +1328,7 @@
             <character>0</character>
             <issue_url>https://github.com/nrontsis/PILCO/issues/25</issue_url>
             <commit_url>https://github.com/nrontsis/PILCO/commit/c9230408b92276e1d9054e98d67bb6386e00bb9e</commit_url>
+            <detection_tools></detection_tools>
         </bug>
     </sir>
 
@@ -1317,6 +1354,7 @@
             <character>0</character>
             <issue_url>https://github.com/tf-encrypted/tf-encrypted/pull/692</issue_url>
             <commit_url>https://github.com/tf-encrypted/tf-encrypted/pull/692/commits/fb3184b6218c68244758eb360963b452157ad2c8</commit_url>
+            <detection_tools></detection_tools>
         </bug>
     </sir>
 
@@ -1367,6 +1405,7 @@
             <character>0</character>
             <issue_url>https://github.com/tensorflow/graphics/issues/283</issue_url>
             <commit_url>https://github.com/tensorflow/graphics/pull/284/commits/d265f7a02cc6247f5d0bbacd516533b2117c9bac</commit_url>
+            <detection_tools></detection_tools>
         </bug>
     </sir>
 
@@ -1417,6 +1456,7 @@
             <character>0</character>
             <issue_url>https://github.com/carpedm20/DCGAN-tensorflow/issues/99</issue_url>
             <commit_url>https://github.com/carpedm20/DCGAN-tensorflow/commit/9166ef99bf9fcd1d0bf641ae752428bb06903b00</commit_url>
+            <detection_tools></detection_tools>
         </bug>
     </sir>
 
@@ -1492,6 +1532,7 @@
             <character>0</character>
             <issue_url>https://github.com/GPflow/GPflow/issues/409</issue_url>
             <commit_url>https://github.com/GPflow/GPflow/pull/411/commits/bf8f9a10a466c9d8bb88e85abd2c0ecc4420dc95</commit_url>
+            <detection_tools></detection_tools>
         </bug>
     </sir>
 
@@ -1517,6 +1558,7 @@
             <character>0</character>
             <issue_url>https://github.com/tensorflow/probability/issues/1010</issue_url>
             <commit_url>https://github.com/tensorflow/probability/commit/77229bd921c1508ca11f9068d1133a88449d6760</commit_url>
+            <detection_tools></detection_tools>
         </bug>
     </sir>
 
@@ -1592,6 +1634,7 @@
             <character>0</character>
             <issue_url>https://github.com/keras-team/keras/pull/9479</issue_url>
             <commit_url>https://github.com/keras-team/keras/commit/07c77c65b5ea9c246690d2eb116c7c8570dc5a7e</commit_url>
+            <detection_tools></detection_tools>
         </bug>
     </sir>
 
@@ -1642,6 +1685,7 @@
             <character>1</character>
             <issue_url>https://github.com/keras-team/keras/issues/4916</issue_url>
             <commit_url>https://github.com/keras-team/keras/commit/150e0fa8a6571233ed107c4dded52387a9d3739c</commit_url>
+            <detection_tools></detection_tools>
         </bug>
     </sir>
 
@@ -1717,6 +1761,7 @@
             <character>1</character>
             <issue_url>https://github.com/carpedm20/DCGAN-tensorflow/issues/135</issue_url>
             <commit_url>https://github.com/carpedm20/DCGAN-tensorflow/commit/158b77d132c60a37f6e1c0059d8de199cb078442</commit_url>
+            <detection_tools></detection_tools>
         </bug>
     </sir>
 
@@ -1742,6 +1787,7 @@
             <character>0</character>
             <issue_url>https://github.com/huggingface/transformers/issues/3711</issue_url>
             <commit_url>https://github.com/huggingface/transformers/commit/352d5472b0c1dec0f420d606d16747d851b4bda8</commit_url>
+            <detection_tools></detection_tools>
         </bug>
     </sir>
 
@@ -1767,6 +1813,7 @@
             <character>0</character>
             <issue_url>https://github.com/asyml/texar-pytorch/issues/94</issue_url>
             <commit_url>https://github.com/asyml/texar-pytorch/commit/908daa2650fad706f69d0c5b7bc07d5fad25d922</commit_url>
+            <detection_tools></detection_tools>
         </bug>
     </sir>
 
@@ -1792,6 +1839,7 @@
             <character>0</character>
             <issue_url>https://github.com/facebookresearch/pytorch3d/issues/551</issue_url>
             <commit_url>https://github.com/facebookresearch/pytorch3d/commit/e13e63a811438c250c1760cbcbcbe6c034a8570d</commit_url>
+            <detection_tools></detection_tools>
         </bug>
     </sir>
 
@@ -1817,6 +1865,7 @@
             <character>1</character>
             <issue_url>https://github.com/zalandoresearch/pytorch-ts/issues/1</issue_url>
             <commit_url>https://github.com/zalandoresearch/pytorch-ts/commit/87fab61761bb0b11b2c760a9e3d22538268e15a7</commit_url>
+            <detection_tools></detection_tools>
         </bug>
     </sir>
 
@@ -1842,6 +1891,7 @@
             <character>0</character>
             <issue_url>https://github.com/astooke/rlpyt/issues/27</issue_url>
             <commit_url>https://github.com/astooke/rlpyt/commit/4e54e7af6013647d50a3068894417c4c199ea77b</commit_url>
+            <detection_tools></detection_tools>
         </bug>
     </sir>
 
@@ -1867,6 +1917,7 @@
             <character>0</character>
             <issue_url>https://github.com/ClementPinard/FlowNetPytorch/issues/51</issue_url>
             <commit_url>https://github.com/ClementPinard/FlowNetPytorch/commit/678ac413ce55cb3db09d1f24532920582af54f43</commit_url>
+            <detection_tools></detection_tools>
         </bug>
     </sir>
 

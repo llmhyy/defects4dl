@@ -124,6 +124,6 @@ When the project starts,you can use a browser to access [http://127.0.0.1:9000/b
 
 ### Access as a web service
 
-url [http://8.140.25.132:9000/bugList](http://8.140.25.132:9000/bugList)
+url [http://47.93.14.147:9000/bugList](http://47.93.14.147:9000/bugList)
 
 

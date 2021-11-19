@@ -79,6 +79,17 @@
                 </td>
             </tr>
             <tr>
+                <td class="item-title">Detection Tools</td>
+                <td>{{ dataInfoDetail.detection_tools }}</td>
+                <td class="item-title">Run detection tools</td>
+                <td>
+                    <button id="btn_shapeFlow" class="btn btn-dark btn-sm" type="button" v-on:click="runShapeFlow">ShapeFlow</button>
+                    <button id="btn_DeepLocalize" class="btn btn-dark btn-sm" type="button" v-on:click="runDeepLocalize">DeepLocalize</button>
+                    <button id="btn_DEBAR" class="btn btn-dark btn-sm" type="button" v-on:click="runDEBAR">DEBAR</button>
+                    <button id="btn_GRIST" class="btn btn-dark btn-sm" type="button" v-on:click="runGRIST">GRIST</button>
+                </td>
+            </tr>
+            <tr>
                 <td class="item-title">Positioning difficulty</td>
                 <td>{{ dataInfoDetail.localScore }}</td>
                 <td class="item-title">Repair difficulty</td>
@@ -184,6 +195,7 @@
                 },1000);
 
                 var bugId = window.localStorage.getItem('bugID');
+                document.getElementById("bt").innerHTML = "";
                 document.getElementById("ft").innerHTML = "";
                 //vm.isShow = true;
                 axios.get("getTestBuggy?bugId="+ bugId)
@@ -225,6 +237,7 @@
 
                 var bugId = window.localStorage.getItem('bugID');
                 document.getElementById("bt").innerHTML = "";
+                document.getElementById("ft").innerHTML = "";
                 //vm.isShow = true;
                 axios.get("getTestFix?bugId="+ bugId)
                     .then(response => {
@@ -236,6 +249,170 @@
                         //显示test结果
                         vm.fixInfo = response.data;
 
+                    })
+            },
+            runShapeFlow: function (){
+                $("#btn_shapeFlow").attr({"disabled":"disabled"});
+                var options = {
+                    classname: 'my-class',
+                    id: 'my-id',
+                    target: document.getElementById('progress')
+                };
+                var nanobar = new Nanobar( options );
+                //新加的
+                var intelval=setInterval(function () {
+
+                    //执行ajax
+                    $.ajax({
+                        url:"testProgress",
+                        dataType:"text",
+                        type:"post",
+                        success:function (data) {
+
+                            $("#tips").html("正在运行...");
+                            $(".nanobar").fadeIn();
+                            //显示进度
+                            nanobar.go(data);
+                        }
+                    })
+                },1000);
+
+                var bugId = window.localStorage.getItem('bugID');
+                document.getElementById("bt").innerHTML = "";
+                document.getElementById("ft").innerHTML = "";
+                //vm.isShow = true;
+                axios.get("runShapeFlow?bugId="+ bugId)
+                    .then(response => {
+                        //结束后台进度查询
+                        clearInterval(intelval);
+                        nanobar.go(100);
+                        $("#tips").html("");
+                        $(".nanobar").fadeOut();
+                        //显示结果
+                        vm.buggyInfo = response.data;
+                    })
+            },
+            runGRIST: function (){
+                $("#btn_GRIST").attr({"disabled":"disabled"});
+                var options = {
+                    classname: 'my-class',
+                    id: 'my-id',
+                    target: document.getElementById('progress')
+                };
+                var nanobar = new Nanobar( options );
+                //新加的
+                var intelval=setInterval(function () {
+
+                    //执行ajax
+                    $.ajax({
+                        url:"testProgress",
+                        dataType:"text",
+                        type:"post",
+                        success:function (data) {
+
+                            $("#tips").html("正在运行...");
+                            $(".nanobar").fadeIn();
+                            //显示进度
+                            nanobar.go(data);
+                        }
+                    })
+                },1000);
+
+                var bugId = window.localStorage.getItem('bugID');
+                document.getElementById("bt").innerHTML = "";
+                document.getElementById("ft").innerHTML = "";
+                //vm.isShow = true;
+                axios.get("runGRIST?bugId="+ bugId)
+                    .then(response => {
+                        //结束后台进度查询
+                        clearInterval(intelval);
+                        nanobar.go(100);
+                        $("#tips").html("");
+                        $(".nanobar").fadeOut();
+                        //显示结果
+                        vm.buggyInfo = response.data;
+                    })
+            },
+            runDEBAR: function (){
+                $("#btn_DEBAR").attr({"disabled":"disabled"});
+                var options = {
+                    classname: 'my-class',
+                    id: 'my-id',
+                    target: document.getElementById('progress')
+                };
+                var nanobar = new Nanobar( options );
+                //新加的
+                var intelval=setInterval(function () {
+
+                    //执行ajax
+                    $.ajax({
+                        url:"testProgress",
+                        dataType:"text",
+                        type:"post",
+                        success:function (data) {
+
+                            $("#tips").html("正在运行...");
+                            $(".nanobar").fadeIn();
+                            //显示进度
+                            nanobar.go(data);
+                        }
+                    })
+                },1000);
+
+                var bugId = window.localStorage.getItem('bugID');
+                document.getElementById("bt").innerHTML = "";
+                document.getElementById("ft").innerHTML = "";
+                //vm.isShow = true;
+                axios.get("runDEBAR?bugId="+ bugId)
+                    .then(response => {
+                        //结束后台进度查询
+                        clearInterval(intelval);
+                        nanobar.go(100);
+                        $("#tips").html("");
+                        $(".nanobar").fadeOut();
+                        //显示结果
+                        vm.buggyInfo = response.data;
+                    })
+            },
+            runDeepLocalize: function (){
+                $("#btn_DeepLocalize").attr({"disabled":"disabled"});
+                var options = {
+                    classname: 'my-class',
+                    id: 'my-id',
+                    target: document.getElementById('progress')
+                };
+                var nanobar = new Nanobar( options );
+                //新加的
+                var intelval=setInterval(function () {
+
+                    //执行ajax
+                    $.ajax({
+                        url:"testProgress",
+                        dataType:"text",
+                        type:"post",
+                        success:function (data) {
+
+                            $("#tips").html("正在运行...");
+                            $(".nanobar").fadeIn();
+                            //显示进度
+                            nanobar.go(data);
+                        }
+                    })
+                },1000);
+
+                var bugId = window.localStorage.getItem('bugID');
+                document.getElementById("bt").innerHTML = "";
+                document.getElementById("ft").innerHTML = "";
+                //vm.isShow = true;
+                axios.get("runDeepLocalize?bugId="+ bugId)
+                    .then(response => {
+                        //结束后台进度查询
+                        clearInterval(intelval);
+                        nanobar.go(100);
+                        $("#tips").html("");
+                        $(".nanobar").fadeOut();
+                        //显示结果
+                        vm.buggyInfo = response.data;
                     })
             },
 

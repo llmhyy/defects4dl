@@ -57,7 +57,7 @@
         <source>https://github.com/Liang813/edward</source>
         <bug>
             <id>edward46</id>
-            <errormessage>None</errormessage>
+            <errormessage>AssertionError</errormessage>
             <describe>Match outputs of distribution methods to SciPy convention</describe>
             <operateScore>1</operateScore>
             <type>shape mismatch</type>
@@ -369,7 +369,7 @@
         <source>https://github.com/Liang813/allennlp</source>
         <bug>
             <id>allennlp4612</id>
-            <errormessage>None</errormessage>
+            <errormessage>nan</errormessage>
             <describe>NaN grads appear when an empty string is given</describe>
             <operateScore>1</operateScore>
             <type>zero division</type>
@@ -628,7 +628,7 @@
         <source>https://github.com/Liang813/models</source>
         <bug>
             <id>models1707</id>
-            <errormessage>None</errormessage>
+            <errormessage>AssertionError</errormessage>
             <describe>This works around a bug in earlier proto versions that automatically infer these values to be integer instead of float.</describe>
             <operateScore>1</operateScore>
             <type>type mismatch</type>
@@ -1081,7 +1081,7 @@
         <source>https://github.com/Liang813/keras</source>
         <bug>
             <id>keras2672</id>
-            <errormessage>None</errormessage>
+            <errormessage>nan</errormessage>
             <describe>cos mode does not carefully deal with division by zero, might be the cause of NaN. output = K.batch_dot(l1, l2, self.dot_axes) / denominator  </describe>
             <operateScore>1</operateScore>
             <type>zero division</type>
@@ -1209,7 +1209,7 @@
         <source>https://github.com/Liang813/segmentation_models.pytorch</source>
         <bug>
             <id>segmentation_models.pytorch186</id>
-            <errormessage>None</errormessage>
+            <errormessage>AssertionError</errormessage>
             <describe>This Bug is due to the fact that the divisor is not the same type as the dividend, resulting in the final result being 0</describe>
             <operateScore>1</operateScore>
             <type>type mismatch</type>
@@ -1770,7 +1770,7 @@
         <source>https://github.com/Liang813/transformers</source>
         <bug>
             <id>transformers3711</id>
-            <errormessage>None</errormessage>
+            <errormessage>AssertionError</errormessage>
             <describe>TransfoXLLMHead doesn't shift labels internally when called for loss</describe>
             <operateScore>3</operateScore>
             <type>IPS</type>

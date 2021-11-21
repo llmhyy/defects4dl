@@ -39,12 +39,14 @@ public class DefectsAction {
         Bug bug = DefectsDB.getBug(bugId);
         String errorMessage = bug.getErrorMessage();
         String describe = bug.getDescribe();
-        String operateScore = bug.getOperateScore();
+        // String operateScore = bug.getOperateScore();
         String character = bug.getCharacter();
         String issue_url = bug.getIssue_url();
         String commit_url = bug.getCommit_url();
         String type = bug.getType();
         String detection_tools = bug.getDetection_tools();
+        String support_level = bug.getSupport_level();
+        String similar_bugs = bug.getSimilar_bugs();
         // String SIRName = DefectsDB.getSirName(bugId).toLowerCase();
         String SIRName = DefectsDB.getSirName(bugId);
 
@@ -56,6 +58,8 @@ public class DefectsAction {
         sb.append("Issue_url: ").append(issue_url).append("\n");
         sb.append("Commit_url: ").append(commit_url).append("\n");
         sb.append("ErrorMessage: ").append(errorMessage).append("\n");
+        sb.append("Support_Level: ").append(support_level).append("\n");
+        sb.append("Similar_Bugs: ").append(similar_bugs).append("\n");
         sb.append("Detection_Tools: ").append(detection_tools).append("\n");
         sb.append("Describe: ").append(describe).append("\n");
 
@@ -77,11 +81,11 @@ public class DefectsAction {
                 .append("\n");
         //String diffCount = dockerServer.run(cdCmd+";git rev-list " + buggycommit + ".." + fixcommit + " --count");
         //sb.append("Commits count between BuggyVersion and FixVersion:").append(diffCount);
-        String localMark = localMark(bugId);
-        sb.append("Positioning difficulty:").append(localMark).append("\n");
-        String stringLength = stringLength(bugId);
-
-        sb.append("Repair difficulty:").append(stringLength).append("+").append(operateScore).append("\n");
+//        String localMark = localMark(bugId);
+//        sb.append("Positioning difficulty:").append(localMark).append("\n");
+//        String stringLength = stringLength(bugId);
+//
+//        sb.append("Repair difficulty:").append(stringLength).append("+").append(operateScore).append("\n");
         return sb.toString();
 
     }
@@ -91,7 +95,7 @@ public class DefectsAction {
         Bug bug = DefectsDB.getBug(bugId);
         String errorMessage = bug.getErrorMessage();
         String describe = bug.getDescribe();
-        String operateScore = bug.getOperateScore();
+        // String operateScore = bug.getOperateScore();
         String type = bug.getType();
         BuggyVersion buggyVersion = bug.getBuggyVersion();
         String buggytestCmd = buggyVersion.getBuggytestCmd();
@@ -104,15 +108,16 @@ public class DefectsAction {
         FixVersion FixVersion = new FixVersion(fixtestCmd,fixcommit);
 
         // 获取location分数与修复字符串长度
-        String localScore = localMark(bugId);
-        String fixLength = stringLength(bugId);
-
+        // String localScore = localMark(bugId);
+        // String fixLength = stringLength(bugId);
+        String support_level = bug.getSupport_level();
         String character = bug.getCharacter();
         String issue_url = bug.getIssue_url();
         String commit_url = bug.getCommit_url();
         String detection_tools = bug.getDetection_tools();
-        Bug Bug = new Bug(bugId, errorMessage, describe, operateScore, type, BuggyVersion, FixVersion, localScore, fixLength, character, issue_url, commit_url, detection_tools);
-
+        String similar_bugs = bug.getSimilar_bugs();
+        // Bug Bug = new Bug(bugId, errorMessage, describe, operateScore, type, BuggyVersion, FixVersion, localScore, fixLength, support_level, character, issue_url, commit_url, detection_tools);
+        Bug Bug = new Bug(bugId, errorMessage, describe, type, BuggyVersion, FixVersion, support_level, character, issue_url, commit_url, detection_tools, similar_bugs);
         return Bug;
 
     }
@@ -226,146 +231,146 @@ public class DefectsAction {
     }
 
     // ================计算定位分数================
-    public String localMark(String bugId) throws Exception {
-        float localScore = 0;
-        // 读取buggy分支运行结果，获取异常运行轨迹
-        String bugTrace = dockerExecutor.readTxtW(bugId,"buggy");
-        // 判断里面有没有Traceback关键字
-        int include_trace = bugTrace.indexOf("Traceback");
-        if(include_trace != -1){
-            List fileNames = new ArrayList();
-            List errorLines = new ArrayList();
-            List diffFileNames = new ArrayList();
-            List diffLines = new ArrayList();
-            // 包含关键字，有报错，获取报错信息
-            fileNames = getFileName(bugTrace);
-            errorLines = getErrorLine(bugTrace);
-            // 获取diff中的信息
-            String diffInfoStat = diffInfoStat(bugId);
-            diffFileNames = getFileName(diffInfoStat);
-            String diffInfo = diffInfo(bugId);
-            diffLines = getDiffLine(diffInfo);
-
-            // 匹配报错文件与diff中修改的文件,取其中最小的行数差
-            int distance = 5000;
-            for(int i = 0;i< fileNames.size();i++){
-                for(int j = 0;j< diffFileNames.size();j++){
-                    if(fileNames.get(i).equals(diffFileNames.get(j))){
-                        int distance1 = Integer.parseInt(errorLines.get(i).toString()) - Integer.parseInt(diffLines.get(j).toString());
-                        if(Math.abs(distance1) < distance){
-                            distance = Math.abs(distance1);
-                        }
-                    }
-                }
-            }
-            if(distance == 5000){
-                // 没有匹配到，获取文件结构,计算文件距离
-                // 人为查看文件距离，或者具体获取报错路径，然后查看diff修改的路径，计算距离
-                localScore = Distance.selectDis(bugId);
-
-            }else {
-                // 匹配到，计算定位难度
-                localScore = (float)distance/(float)(distance+1);
-            }
-
-        }else {
-            // 不包含关键字，测试用例没有报错
-            localScore = 10;
-        }
-
-        return String.valueOf(localScore);
-    }
+//    public String localMark(String bugId) throws Exception {
+//        float localScore = 0;
+//        // 读取buggy分支运行结果，获取异常运行轨迹
+//        String bugTrace = dockerExecutor.readTxtW(bugId,"buggy");
+//        // 判断里面有没有Traceback关键字
+//        int include_trace = bugTrace.indexOf("Traceback");
+//        if(include_trace != -1){
+//            List fileNames = new ArrayList();
+//            List errorLines = new ArrayList();
+//            List diffFileNames = new ArrayList();
+//            List diffLines = new ArrayList();
+//            // 包含关键字，有报错，获取报错信息
+//            fileNames = getFileName(bugTrace);
+//            errorLines = getErrorLine(bugTrace);
+//            // 获取diff中的信息
+//            String diffInfoStat = diffInfoStat(bugId);
+//            diffFileNames = getFileName(diffInfoStat);
+//            String diffInfo = diffInfo(bugId);
+//            diffLines = getDiffLine(diffInfo);
+//
+//            // 匹配报错文件与diff中修改的文件,取其中最小的行数差
+//            int distance = 5000;
+//            for(int i = 0;i< fileNames.size();i++){
+//                for(int j = 0;j< diffFileNames.size();j++){
+//                    if(fileNames.get(i).equals(diffFileNames.get(j))){
+//                        int distance1 = Integer.parseInt(errorLines.get(i).toString()) - Integer.parseInt(diffLines.get(j).toString());
+//                        if(Math.abs(distance1) < distance){
+//                            distance = Math.abs(distance1);
+//                        }
+//                    }
+//                }
+//            }
+//            if(distance == 5000){
+//                // 没有匹配到，获取文件结构,计算文件距离
+//                // 人为查看文件距离，或者具体获取报错路径，然后查看diff修改的路径，计算距离
+//                localScore = Distance.selectDis(bugId);
+//
+//            }else {
+//                // 匹配到，计算定位难度
+//                localScore = (float)distance/(float)(distance+1);
+//            }
+//
+//        }else {
+//            // 不包含关键字，测试用例没有报错
+//            localScore = 10;
+//        }
+//
+//        return String.valueOf(localScore);
+//    }
 
 
     // 正则表达式 捕获报错文件名
-    public List<String> getFileName(String str){
-        List fileNames = new ArrayList();
-        String patternFile = "[\\w]+(\\.py)";
-        Pattern rf = Pattern.compile(patternFile);
-        Matcher mf = rf.matcher(str);
-        while(mf.find()){
-            fileNames.add(mf.group());
-        }
-        return fileNames;
-    }
+//    public List<String> getFileName(String str){
+//        List fileNames = new ArrayList();
+//        String patternFile = "[\\w]+(\\.py)";
+//        Pattern rf = Pattern.compile(patternFile);
+//        Matcher mf = rf.matcher(str);
+//        while(mf.find()){
+//            fileNames.add(mf.group());
+//        }
+//        return fileNames;
+//    }
 
     // 正则表达式，捕获报错行数
-    public List<String> getErrorLine(String str){
-        List errorLines = new ArrayList();
-        String patternLine = "line\\s\\d+";
-        Pattern rl = Pattern.compile(patternLine);
-        Matcher ml = rl.matcher(str);
-        while(ml.find()){
-            String a = getNumber(ml.group());
-            errorLines.add(a);
-        }
-        return errorLines;
-    }
+//    public List<String> getErrorLine(String str){
+//        List errorLines = new ArrayList();
+//        String patternLine = "line\\s\\d+";
+//        Pattern rl = Pattern.compile(patternLine);
+//        Matcher ml = rl.matcher(str);
+//        while(ml.find()){
+//            String a = getNumber(ml.group());
+//            errorLines.add(a);
+//        }
+//        return errorLines;
+//    }
 
     // 正则表达式，获取diff中的修改行数
-    public List<String> getDiffLine(String str){
-        List diffLines = new ArrayList();
-        String pattern = "[@][@][\\s][+-]\\d+";
-        Pattern dl = Pattern.compile(pattern);
-        Matcher m = dl.matcher(str);
-        while(m.find()){
-            String a = getNumber(m.group());
-            diffLines.add(a);
-        }
-        return diffLines;
-    }
+//    public List<String> getDiffLine(String str){
+//        List diffLines = new ArrayList();
+//        String pattern = "[@][@][\\s][+-]\\d+";
+//        Pattern dl = Pattern.compile(pattern);
+//        Matcher m = dl.matcher(str);
+//        while(m.find()){
+//            String a = getNumber(m.group());
+//            diffLines.add(a);
+//        }
+//        return diffLines;
+//    }
 
     // 正则表达式，取数字
-    public String getNumber(String str){
-        String num = null;
-        String pattern = "\\d+";
-        Pattern r = Pattern.compile(pattern);
-        Matcher m = r.matcher(str);
-        while(m.find()){
-            num = m.group();
-        }
-        return num;
-    }
+//    public String getNumber(String str){
+//        String num = null;
+//        String pattern = "\\d+";
+//        Pattern r = Pattern.compile(pattern);
+//        Matcher m = r.matcher(str);
+//        while(m.find()){
+//            num = m.group();
+//        }
+//        return num;
+//    }
 
 
 
     // ================计算修复字符串长度================
-    public String stringLength(String bugId) throws Exception {
-        String str = diffInfo(bugId);
-        // 修改字符数
-        int stringLength = 0;
-        // 修改行数
-        int changeLines = 0;
-        String[] strs = str.split("@@");
-        // 修改的chunk数
-        for(int i=2;i< strs.length;i=i+2){
-            String weWant = strs[i].toString();
-            int lengths = 0;
-            int length = 0;
-            int porm = 0;   // +或-
-            int lineBreak = 0;  // 换行符
-            // 遍历每个chunk,找+或-，然后换行符，计算它们之间的距离
-            for(int j=0;j<weWant.length();j++){
-
-                if((weWant.charAt(j)=='+' && weWant.charAt(j-1)=='\n' && weWant.charAt(j+1)!='+') || (weWant.charAt(j)=='-' && weWant.charAt(j-1)=='\n' && weWant.charAt(j+1)!='-')){
-                    porm = j;
-                    changeLines++;
-                }
-                if(weWant.charAt(j)=='\n'){
-                    lineBreak = j;
-                }
-                if(porm !=0 && lineBreak !=0 && lineBreak>porm){
-                    length = lineBreak - porm;
-                    lineBreak = 0;
-                    porm = 0;
-                    lengths += length;
-                }
-            }
-            stringLength += lengths;
-        }
-        float repairScore = (float)changeLines/(float)(changeLines+1)+ (float)(stringLength)/(float)(stringLength+1);
-        return String.valueOf(repairScore);
-    }
+//    public String stringLength(String bugId) throws Exception {
+//        String str = diffInfo(bugId);
+//        // 修改字符数
+//        int stringLength = 0;
+//        // 修改行数
+//        int changeLines = 0;
+//        String[] strs = str.split("@@");
+//        // 修改的chunk数
+//        for(int i=2;i< strs.length;i=i+2){
+//            String weWant = strs[i].toString();
+//            int lengths = 0;
+//            int length = 0;
+//            int porm = 0;   // +或-
+//            int lineBreak = 0;  // 换行符
+//            // 遍历每个chunk,找+或-，然后换行符，计算它们之间的距离
+//            for(int j=0;j<weWant.length();j++){
+//
+//                if((weWant.charAt(j)=='+' && weWant.charAt(j-1)=='\n' && weWant.charAt(j+1)!='+') || (weWant.charAt(j)=='-' && weWant.charAt(j-1)=='\n' && weWant.charAt(j+1)!='-')){
+//                    porm = j;
+//                    changeLines++;
+//                }
+//                if(weWant.charAt(j)=='\n'){
+//                    lineBreak = j;
+//                }
+//                if(porm !=0 && lineBreak !=0 && lineBreak>porm){
+//                    length = lineBreak - porm;
+//                    lineBreak = 0;
+//                    porm = 0;
+//                    lengths += length;
+//                }
+//            }
+//            stringLength += lengths;
+//        }
+//        float repairScore = (float)changeLines/(float)(changeLines+1)+ (float)(stringLength)/(float)(stringLength+1);
+//        return String.valueOf(repairScore);
+//    }
 
     public void setEnviroment() {
         Configs.refresh();

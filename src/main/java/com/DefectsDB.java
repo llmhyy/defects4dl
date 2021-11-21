@@ -37,9 +37,11 @@ public class DefectsDB {
                 String describe =bugItem.getElementsByTagName(Constant.XML_BUG_DESCRIBE).item(0).getTextContent();
                 String type = bugItem.getElementsByTagName(Constant.XML_BUG_TYPE).item(0).getTextContent();
 
-                String operateScore = bugItem.getElementsByTagName(Constant.XML_OPERATE_SCORE).item(0).getTextContent();
-                String localScore = bugItem.getElementsByTagName(Constant.XML_BUG_LOCAL_SCORE).item(0).getTextContent();
-                String fixLength = bugItem.getElementsByTagName(Constant.XML_BUG_FIX_LENGTH).item(0).getTextContent();
+                // String operateScore = bugItem.getElementsByTagName(Constant.XML_OPERATE_SCORE).item(0).getTextContent();
+                // String localScore = bugItem.getElementsByTagName(Constant.XML_BUG_LOCAL_SCORE).item(0).getTextContent();
+                // String fixLength = bugItem.getElementsByTagName(Constant.XML_BUG_FIX_LENGTH).item(0).getTextContent();
+                String support_level = bugItem.getElementsByTagName(Constant.XML_SUPPORT_LEVEL).item(0).getTextContent();
+                String similar_bugs = bugItem.getElementsByTagName(Constant.XAL_SIMILAR_BUGS).item(0).getTextContent();
                 String character = bugItem.getElementsByTagName(Constant.XML_BUG_CHARACTER).item(0).getTextContent();
                 String issue_url = bugItem.getElementsByTagName(Constant.XML_ISSUE_URL).item(0).getTextContent();
                 String commit_url = bugItem.getElementsByTagName(Constant.XML_COMMIT_URL).item(0).getTextContent();
@@ -58,7 +60,7 @@ public class DefectsDB {
                 String fixtestCmd = fVersion.getElementsByTagName(Constant.XML_FIX_TEST_CMD_LABEL).item(0).getTextContent();
                 String fixcommit = fVersion.getElementsByTagName(Constant.XML_FIX_COMMIT_LABEL).item(0).getTextContent();
                 FixVersion FixVersion = new FixVersion(fixtestCmd,fixcommit);
-                sir.addBug(new Bug(bugID, errorMessage, describe, operateScore, type, BuggyVersion, FixVersion, localScore, fixLength, character, issue_url, commit_url, detection_tools));
+                sir.addBug(new Bug(bugID, errorMessage, describe, type, BuggyVersion, FixVersion, support_level, character, issue_url, commit_url, detection_tools, similar_bugs));
 
             }
             sirs.add(sir);

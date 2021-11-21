@@ -9,8 +9,10 @@
             <describe>CrossEntropy's size does not match that needed by the mask</describe>
             <operateScore>1</operateScore>
             <type>shape mismatch</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
+<!--            <localScore></localScore>-->
+<!--            <fixLength></fixLength>-->
+            <support_level>5</support_level>
+            <similar_bugs>keras11657, edward46, rlpyt27, ciphergan4</similar_bugs>
             <buggyVersion>
                 <buggytestCmd>tutorials382-buggy.sh</buggytestCmd>
                 <buggycommit>a46b6437b74c30b9683631942b3157788b5cb78f</buggycommit>
@@ -35,8 +37,10 @@
             <describe>Not all variables in AF session are initialized</describe>
             <operateScore>1</operateScore>
             <type>variable initialization</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
+<!--            <localScore></localScore>-->
+<!--            <fixLength></fixLength>-->
+            <support_level>3</support_level>
+            <similar_bugs>tensorflow3168, tensorpack1008</similar_bugs>
             <buggyVersion>
                 <buggytestCmd>Gpflow99-buggy.sh</buggytestCmd>
                 <buggycommit>4ea1fa8b74861d599e749b20d1ab11edced8039a</buggycommit>
@@ -61,8 +65,10 @@
             <describe>Match outputs of distribution methods to SciPy convention</describe>
             <operateScore>1</operateScore>
             <type>shape mismatch</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
+<!--            <localScore></localScore>-->
+<!--            <fixLength></fixLength>-->
+            <support_level>5</support_level>
+            <similar_bugs>keras11657, tutorials382, ciphergan4, rlpyt27</similar_bugs>
             <buggyVersion>
                 <buggytestCmd>edward46-buggy.sh</buggytestCmd>
                 <buggycommit>42ac6587b6f7d4ae7593b5b8ffa8cc3942d95958</buggycommit>
@@ -87,8 +93,10 @@
             <describe>Use the tensorflow cross entropy function to prevent nan losses.</describe>
             <operateScore>3</operateScore>
             <type>IPS</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
+<!--            <localScore></localScore>-->
+<!--            <fixLength></fixLength>-->
+            <support_level>2</support_level>
+            <similar_bugs>deep-learning-tensorflow</similar_bugs>
             <buggyVersion>
                 <buggytestCmd>models166-buggy.sh</buggytestCmd>
                 <buggycommit>05630a7578b25390f469b2f91f2c2326e5ed539b</buggycommit>
@@ -113,8 +121,10 @@
             <describe>The learning_rate is not small enough to cause the parameter to explode</describe>
             <operateScore>1</operateScore>
             <type>IPS</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
+<!--            <localScore></localScore>-->
+<!--            <fixLength></fixLength>-->
+            <support_level>2</support_level>
+            <similar_bugs>gail_ppo_tf20</similar_bugs>
             <buggyVersion>
                 <buggytestCmd>Deep-Learning-TensorFlow1-buggy.sh</buggytestCmd>
                 <buggycommit>907833ab90e27af156484e1aa140ed656e4b4a15</buggycommit>
@@ -139,8 +149,10 @@
             <describe>missing tf.nn.softmax() in create_softmax_layer</describe>
             <operateScore>1</operateScore>
             <type>IPS</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
+<!--            <localScore></localScore>-->
+<!--            <fixLength></fixLength>-->
+            <support_level>2</support_level>
+            <similar_bugs>deep-learning-tensorflow0</similar_bugs>
             <buggyVersion>
                 <buggytestCmd>Deep-Learning-TensorFlow5-buggy.sh</buggytestCmd>
                 <buggycommit>ded661243a7bf86975e4f29fdf192d7dc4a72770</buggycommit>
@@ -165,8 +177,10 @@
             <describe>Function using error, parameter using parameter sequence using error.</describe>
             <operateScore>1</operateScore>
             <type>API misuse</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
+<!--            <localScore></localScore>-->
+<!--            <fixLength></fixLength>-->
+            <support_level>4</support_level>
+            <similar_bugs>sact1, models1040, seq2seq130</similar_bugs>
             <buggyVersion>
                 <buggytestCmd>models857-buggy.sh</buggytestCmd>
                 <buggycommit>4b53df3cf4f8e15816d5e2d5093ec855fb4e410c</buggycommit>
@@ -182,31 +196,32 @@
         </bug>
     </sir>
 
-    <sir>
-        <name>pytorch-pose</name>
-        <source>https://github.com/Liang813/pytorch-pose</source>
-        <bug>
-            <id>pytorch-pose116</id>
-            <errormessage>None</errormessage>
-            <describe>Input image width and height position reversed</describe>
-            <operateScore>1</operateScore>
-            <type>shape mismatch</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
-            <buggyVersion>
-                <buggytestCmd>pytorch-pose116-buggy.sh</buggytestCmd>
-                <buggycommit>e09fb262c473e705075d20e8981368e94cdfc4a3</buggycommit>
-            </buggyVersion>
-            <fixVersion>
-                <fixtestCmd>pytorch-pose116-fix.sh</fixtestCmd>
-                <fixcommit>6d48375fde4d6ff0322775b342d563bcaf3f818a</fixcommit>
-            </fixVersion>
-            <character>0</character>
-            <issue_url>https://github.com/bearpaw/pytorch-pose/pull/116</issue_url>
-            <commit_url>https://github.com/bearpaw/pytorch-pose/pull/117/commits/6d48375fde4d6ff0322775b342d563bcaf3f818a</commit_url>
-            <detection_tools></detection_tools>
-        </bug>
-    </sir>
+<!--    <sir>-->
+<!--        <name>pytorch-pose</name>-->
+<!--        <source>https://github.com/Liang813/pytorch-pose</source>-->
+<!--        <bug>-->
+<!--            <id>pytorch-pose116</id>-->
+<!--            <errormessage>None</errormessage>-->
+<!--            <describe>Input image width and height position reversed</describe>-->
+<!--            <operateScore>1</operateScore>-->
+<!--            <type>shape mismatch</type>-->
+<!--            <localScore></localScore>-->
+<!--            <fixLength></fixLength>-->
+<!--            <support_level>5</support_level>-->
+<!--            <buggyVersion>-->
+<!--                <buggytestCmd>pytorch-pose116-buggy.sh</buggytestCmd>-->
+<!--                <buggycommit>e09fb262c473e705075d20e8981368e94cdfc4a3</buggycommit>-->
+<!--            </buggyVersion>-->
+<!--            <fixVersion>-->
+<!--                <fixtestCmd>pytorch-pose116-fix.sh</fixtestCmd>-->
+<!--                <fixcommit>6d48375fde4d6ff0322775b342d563bcaf3f818a</fixcommit>-->
+<!--            </fixVersion>-->
+<!--            <character>0</character>-->
+<!--            <issue_url>https://github.com/bearpaw/pytorch-pose/pull/116</issue_url>-->
+<!--            <commit_url>https://github.com/bearpaw/pytorch-pose/pull/117/commits/6d48375fde4d6ff0322775b342d563bcaf3f818a</commit_url>-->
+<!--            <detection_tools></detection_tools>-->
+<!--        </bug>-->
+<!--    </sir>-->
 
     <sir>
         <name>pytorch-lightning</name>
@@ -217,8 +232,10 @@
             <describe>If dataset size = 1 batch, a zero division error will be reported</describe>
             <operateScore>1</operateScore>
             <type>zero division</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
+<!--            <localScore></localScore>-->
+<!--            <fixLength></fixLength>-->
+            <support_level>3</support_level>
+            <similar_bugs>keras2672, allennlp4612</similar_bugs>
             <buggyVersion>
                 <buggytestCmd>pytorch-lightning139-buggy.sh</buggytestCmd>
                 <buggycommit>e646d745da3973398455a6b2abd7005edd2103d2</buggycommit>
@@ -243,8 +260,10 @@
             <describe>List does not match tuple</describe>
             <operateScore>1</operateScore>
             <type>type mismatch</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
+<!--            <localScore></localScore>-->
+<!--            <fixLength></fixLength>-->
+            <support_level>4</support_level>
+            <similar_bugs>dcgan-tensorflow108, models1707, probability1010</similar_bugs>
             <buggyVersion>
                 <buggytestCmd>transformers1152-buggy.sh</buggytestCmd>
                 <buggycommit>caf1d116a62a324a2b0ccfd92ca6c095d5368dde</buggycommit>
@@ -269,8 +288,10 @@
             <describe>Initialize local variables in fully_connected_preloaded</describe>
             <operateScore>1</operateScore>
             <type>variable initialization</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
+<!--            <localScore></localScore>-->
+<!--            <fixLength></fixLength>-->
+            <support_level>3</support_level>
+            <similar_bugs>gpflow99, tensorpack1008</similar_bugs>
             <buggyVersion>
                 <buggytestCmd>tensorflow3168-buggy.sh</buggytestCmd>
                 <buggycommit>aedd2173deef51661ab0cabcb9009d249e744e31</buggycommit>
@@ -290,39 +311,15 @@
         <name>transformers</name>
         <source>https://github.com/Liang813/transformers</source>
         <bug>
-            <id>transformers1418</id>
-            <errormessage>TypeError</errormessage>
-            <describe>The issue is due to implementation difference between Tensorflow and Pytorch DistillBERT. Tensorflow implementation doesn't have loss calculation inside call, but We do in forward for Pytorch. </describe>
-            <operateScore>1</operateScore>
-            <type>API misuse</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
-            <buggyVersion>
-                <buggytestCmd>transformers1418-buggy.sh</buggytestCmd>
-                <buggycommit>c1689ac30164d190f366d95d1f5153af53e66355</buggycommit>
-            </buggyVersion>
-            <fixVersion>
-                <fixtestCmd>transformers1418-fix.sh</fixtestCmd>
-                <fixcommit>a9f6d3f101556f0fd7f07e6ef9c22f1430b68e52</fixcommit>
-            </fixVersion>
-            <character>0</character>
-            <issue_url>https://github.com/huggingface/transformers/pull/1418</issue_url>
-            <commit_url>https://github.com/huggingface/transformers/pull/1418/commits/a9f6d3f101556f0fd7f07e6ef9c22f1430b68e52</commit_url>
-            <detection_tools></detection_tools>
-        </bug>
-    </sir>
-
-    <sir>
-        <name>transformers</name>
-        <source>https://github.com/Liang813/transformers</source>
-        <bug>
             <id>transformers1962</id>
             <errormessage>ValueError</errormessage>
             <describe>TFBertModel ValueError: Tried to convert 'dims' to a tensor and failed. Error: Cannot convert a partially known TensorShape to a Tensor</describe>
             <operateScore>1</operateScore>
             <type>shape mismatch</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
+<!--            <localScore></localScore>-->
+<!--            <fixLength></fixLength>-->
+            <support_level>2</support_level>
+            <similar_bugs>zhusuan2</similar_bugs>
             <buggyVersion>
                 <buggytestCmd>transformers1962-buggy.sh</buggytestCmd>
                 <buggycommit>adb5c79ff2ffcd2e4a43a12f082cca55f7630a96</buggycommit>
@@ -342,39 +339,15 @@
         <name>allennlp</name>
         <source>https://github.com/Liang813/allennlp</source>
         <bug>
-            <id>allennlp3721</id>
-            <errormessage>TypeError</errormessage>
-            <describe>ListField and MultilabelField are used incorrectly for sequence prediction using multi-label data.</describe>
-            <operateScore>1</operateScore>
-            <type>API misuse</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
-            <buggyVersion>
-                <buggytestCmd>allennlp3721-buggy.sh</buggytestCmd>
-                <buggycommit>bae0c55e8c447811d9fa13f1c48f3e2576ab0dcc</buggycommit>
-            </buggyVersion>
-            <fixVersion>
-                <fixtestCmd>allennlp3721-fix.sh</fixtestCmd>
-                <fixcommit>beb07be50a8c0267b1ff398793ecde1194a538fe</fixcommit>
-            </fixVersion>
-            <character>0</character>
-            <issue_url>https://github.com/allenai/allennlp/issues/3721</issue_url>
-            <commit_url>https://github.com/allenai/allennlp/commit/beb07be50a8c0267b1ff398793ecde1194a538fe</commit_url>
-            <detection_tools></detection_tools>
-        </bug>
-    </sir>
-
-    <sir>
-        <name>allennlp</name>
-        <source>https://github.com/Liang813/allennlp</source>
-        <bug>
             <id>allennlp4612</id>
             <errormessage>nan</errormessage>
             <describe>NaN grads appear when an empty string is given</describe>
             <operateScore>1</operateScore>
             <type>zero division</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
+<!--            <localScore></localScore>-->
+<!--            <fixLength></fixLength>-->
+            <support_level>3</support_level>
+            <similar_bugs>keras2672, pytorch-lightning139</similar_bugs>
             <buggyVersion>
                 <buggytestCmd>allennlp4612-buggy.sh</buggytestCmd>
                 <buggycommit>e840a589afc4bfdac0165a8650145259a7603807</buggycommit>
@@ -391,32 +364,6 @@
     </sir>
 
     <sir>
-        <name>pytorch-lightning</name>
-        <source>https://github.com/Liang813/pytorch-lightning</source>
-        <bug>
-            <id>pytorch-lightning2386</id>
-            <errormessage>TypeError</errormessage>
-            <describe>The class does not choose to use the position parameter, but passes it the position parameter</describe>
-            <operateScore>10</operateScore>
-            <type>API misuse</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
-            <buggyVersion>
-                <buggytestCmd>pytorch-lightning2386-buggy.sh</buggytestCmd>
-                <buggycommit>861a73be12ef17214bb0ed49aabc9f48a80fde16</buggycommit>
-            </buggyVersion>
-            <fixVersion>
-                <fixtestCmd>pytorch-lightning2386-fix.sh</fixtestCmd>
-                <fixcommit>ae8be9efc13a914cbd763f021c5d289ca94bbdcf</fixcommit>
-            </fixVersion>
-            <character>0</character>
-            <issue_url>https://github.com/PyTorchLightning/pytorch-lightning/issues/2386</issue_url>
-            <commit_url>https://github.com/PyTorchLightning/pytorch-lightning/pull/2403/commits/ae8be9efc13a914cbd763f021c5d289ca94bbdcf</commit_url>
-            <detection_tools></detection_tools>
-        </bug>
-    </sir>
-
-    <sir>
         <name>botorch</name>
         <source>https://github.com/Liang813/botorch</source>
         <bug>
@@ -425,8 +372,10 @@
             <describe>inv_transform was crapping out when drawing a large number of samples because the base sample was exactly 1.0( see issue #161). While we were previously subtracting off a small number (1e-10), this number wasn't sufficient. I found that (1-e6) was the smallest base 10 number we could subtract off to get rid of the -inf.</describe>
             <operateScore>1</operateScore>
             <type>IPS</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
+<!--            <localScore></localScore>-->
+<!--            <fixLength></fixLength>-->
+            <support_level>1</support_level>
+            <similar_bugs></similar_bugs>
             <buggyVersion>
                 <buggytestCmd>botorch162-buggy.sh</buggytestCmd>
                 <buggycommit>8b17815b736cf0b95cc6a8c0ad9d8867a2d541bc</buggycommit>
@@ -451,8 +400,10 @@
             <describe>Indexing 0-dim tensor error</describe>
             <operateScore>1</operateScore>
             <type>IndexError</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
+<!--            <localScore></localScore>-->
+<!--            <fixLength></fixLength>-->
+            <support_level>1</support_level>
+            <similar_bugs></similar_bugs>
             <buggyVersion>
                 <buggytestCmd>ggnn.pytorch9-buggy.sh</buggytestCmd>
                 <buggycommit>0c7897fe9b05e9b4f9a963ff55bd3ad917ea734e</buggycommit>
@@ -468,83 +419,6 @@
         </bug>
     </sir>
 
-<!--    <sir>-->
-<!--        <name>fairseq</name>-->
-<!--        <source>https://github.com/Liang813/fairseq</source>-->
-<!--        <bug>-->
-<!--            <id>fairseq1863</id>-->
-<!--            <errormessage>None</errormessage>-->
-<!--            <describe>Speech recognition fails due to NaN if there is an input of size 1</describe>-->
-<!--            <operateScore>10</operateScore>-->
-<!--            <type>IPS</type>-->
-<!--            <localScore></localScore>-->
-<!--            <fixLength></fixLength>-->
-<!--            <buggyVersion>-->
-<!--                <buggytestCmd>fairseq1863-buggy.sh</buggytestCmd>-->
-<!--                <buggycommit>95294bfbb627c7ba140e73ac27c8e98012045916</buggycommit>-->
-<!--            </buggyVersion>-->
-<!--            <fixVersion>-->
-<!--                <fixtestCmd>fairseq1863-fix.sh</fixtestCmd>-->
-<!--                <fixcommit>5453e4355b274645074d0068f668ac5bcea9905c</fixcommit>-->
-<!--            </fixVersion>-->
-<!--            <character>0</character>-->
-<!--            <issue_url>https://github.com/pytorch/fairseq/issues/1863</issue_url>-->
-<!--            <commit_url>https://github.com/pytorch/fairseq/commit/5453e4355b274645074d0068f668ac5bcea9905c</commit_url>-->
-<!--        </bug>-->
-<!--    </sir>-->
-
-    <sir>
-        <name>seq2seq</name>
-        <source>https://github.com/Liang813/seq2seq</source>
-        <bug>
-            <id>seq2seq95</id>
-            <errormessage>ValueError</errormessage>
-            <describe>Fix attention scores shape definition</describe>
-            <operateScore>1</operateScore>
-            <type>shape mismatch</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
-            <buggyVersion>
-                <buggytestCmd>seq2seq95-buggy.sh</buggytestCmd>
-                <buggycommit>61bd9f7a46577fabc9f98cad6f3ec23cf4034814</buggycommit>
-            </buggyVersion>
-            <fixVersion>
-                <fixtestCmd>seq2seq95-fix.sh</fixtestCmd>
-                <fixcommit>5a1338603a15848302fb1958ef3c9ef426935654</fixcommit>
-            </fixVersion>
-            <character>0</character>
-            <issue_url>https://github.com/google/seq2seq/pull/95</issue_url>
-            <commit_url>https://github.com/google/seq2seq/pull/95/commits/5a1338603a15848302fb1958ef3c9ef426935654</commit_url>
-            <detection_tools></detection_tools>
-        </bug>
-    </sir>
-
-    <sir>
-        <name>seq2seq</name>
-        <source>https://github.com/Liang813/seq2seq</source>
-        <bug>
-            <id>seq2seq</id>
-            <errormessage>AssertionError</errormessage>
-            <describe>Fix bug in residual connection dimensions</describe>
-            <operateScore>1</operateScore>
-            <type>shape mismatch</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
-            <buggyVersion>
-                <buggytestCmd>seq2seq-buggy.sh</buggytestCmd>
-                <buggycommit>c54a7aba00433743cf960dcc98be6057204179f1</buggycommit>
-            </buggyVersion>
-            <fixVersion>
-                <fixtestCmd>seq2seq-fix.sh</fixtestCmd>
-                <fixcommit>69cd7e4cffc2ff26b111ccd1ec563b6888cccedb</fixcommit>
-            </fixVersion>
-            <character>0</character>
-            <issue_url>https://github.com/google/seq2seq/commit/69cd7e4cffc2ff26b111ccd1ec563b6888cccedb</issue_url>
-            <commit_url>https://github.com/google/seq2seq/commit/69cd7e4cffc2ff26b111ccd1ec563b6888cccedb</commit_url>
-            <detection_tools></detection_tools>
-        </bug>
-    </sir>
-
     <sir>
         <name>dcgan-completion.tensorflow</name>
         <source>https://github.com/Liang813/seq2seq</source>
@@ -554,8 +428,10 @@
             <describe>Arguments to one function are taken into another function</describe>
             <operateScore>2</operateScore>
             <type>API misuse</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
+<!--            <localScore></localScore>-->
+<!--            <fixLength></fixLength>-->
+            <support_level>1</support_level>
+            <similar_bugs></similar_bugs>
             <buggyVersion>
                 <buggytestCmd>dcgan-completion.tensorflow-buggy.sh</buggytestCmd>
                 <buggycommit>bba1b1592bc928c787aa9dc953bcf2cf540b4eb9</buggycommit>
@@ -580,8 +456,10 @@
             <describe>Function using error, parameter using parameter sequence using error.</describe>
             <operateScore>1</operateScore>
             <type>API misuse</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
+<!--            <localScore></localScore>-->
+<!--            <fixLength></fixLength>-->
+            <support_level>4</support_level>
+            <similar_bugs>models857, models1040, seq2seq130</similar_bugs>
             <buggyVersion>
                 <buggytestCmd>sact1-buggy.sh</buggytestCmd>
                 <buggycommit>10e09ab327ab57f2520ef260b5c57fb523eb2980</buggycommit>
@@ -606,8 +484,10 @@
             <describe>The assignment of two arguments to the function is reversed</describe>
             <operateScore>1</operateScore>
             <type>API misuse</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
+<!--            <localScore></localScore>-->
+<!--            <fixLength></fixLength>-->
+            <support_level>2</support_level>
+            <similar_bugs>models1220</similar_bugs>
             <buggyVersion>
                 <buggytestCmd>models1063-buggy.sh</buggytestCmd>
                 <buggycommit>fdc0c4ab1b039b6085478b36b5cd3cad038941ec</buggycommit>
@@ -632,8 +512,10 @@
             <describe>This works around a bug in earlier proto versions that automatically infer these values to be integer instead of float.</describe>
             <operateScore>1</operateScore>
             <type>type mismatch</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
+<!--            <localScore></localScore>-->
+<!--            <fixLength></fixLength>-->
+            <support_level>4</support_level>
+            <similar_bugs>dcgan-tensorflow108, transformers1152, probability1010</similar_bugs>
             <buggyVersion>
                 <buggytestCmd>models1707-buggy.sh</buggytestCmd>
                 <buggycommit>434c277677ba973ae6acc21fcc3d616e1bb7f1df</buggycommit>
@@ -649,80 +531,29 @@
         </bug>
     </sir>
 
-    <sir>
-        <name>models</name>
-        <source>https://github.com/Liang813/models</source>
-        <bug>
-            <id>models23</id>
-            <errormessage>None</errormessage>
-            <describe>The normalization function was used incorrectly, causing NaN to appear when calculating the loss</describe>
-            <operateScore>3</operateScore>
-            <type>IPS</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
-            <buggyVersion>
-                <buggytestCmd>models23-buggy.sh</buggytestCmd>
-                <buggycommit>38079f01d0cdbeb8e3aa6c4ef0a8d5b5c1e4d9a0</buggycommit>
-            </buggyVersion>
-            <fixVersion>
-                <fixtestCmd>models23-fix.sh</fixtestCmd>
-                <fixcommit>55a34ae564f5ab49adaf98bd4552dcd4bf8f85f3</fixcommit>
-            </fixVersion>
-            <character>1</character>
-            <issue_url>https://github.com/tensorflow/models/issues/23</issue_url>
-            <commit_url>https://github.com/tensorflow/models/commit/55a34ae564f5ab49adaf98bd4552dcd4bf8f85f3</commit_url>
-            <detection_tools></detection_tools>
-        </bug>
-    </sir>
-
-    <sir>
-        <name>models</name>
-        <source>https://github.com/Liang813/models</source>
-        <bug>
-            <id>models1585</id>
-            <errormessage>ValueError</errormessage>
-            <describe>Error using resnet_v1 feature extractor</describe>
-            <operateScore>1</operateScore>
-            <type>API misuse</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
-            <buggyVersion>
-                <buggytestCmd>models1585-buggy.sh</buggytestCmd>
-                <buggycommit>daf4bf93e3ae6276137a904fb56a32809296df29</buggycommit>
-            </buggyVersion>
-            <fixVersion>
-                <fixtestCmd>models1585-fix.sh</fixtestCmd>
-                <fixcommit>e76190e83e773875ddfae38339cd299b64e7eda8</fixcommit>
-            </fixVersion>
-            <character>0</character>
-            <issue_url>https://github.com/tensorflow/models/issues/1585</issue_url>
-            <commit_url>https://github.com/tensorflow/models/commit/e76190e83e773875ddfae38339cd299b64e7eda8</commit_url>
-            <detection_tools></detection_tools>
-        </bug>
-    </sir>
-
 <!--    <sir>-->
 <!--        <name>models</name>-->
 <!--        <source>https://github.com/Liang813/models</source>-->
 <!--        <bug>-->
-<!--            <id>models893</id>-->
-<!--            <errormessage>ValueError</errormessage>-->
-<!--            <describe>Adding to the function inputs in order to match the function distorted_inputs.</describe>-->
-<!--            <operateScore>5</operateScore>-->
-<!--            <type>shape mismatch</type>-->
+<!--            <id>models23</id>-->
+<!--            <errormessage>None</errormessage>-->
+<!--            <describe>The normalization function was used incorrectly, causing NaN to appear when calculating the loss</describe>-->
+<!--            <operateScore>3</operateScore>-->
+<!--            <type>IPS</type>-->
 <!--            <localScore></localScore>-->
 <!--            <fixLength></fixLength>-->
 <!--            <buggyVersion>-->
-<!--                <buggytestCmd>models893-buggy.sh</buggytestCmd>-->
-<!--                <buggycommit>2cd62f6c6d3cfc95f022b9e04e2c2ef15f538b75</buggycommit>-->
+<!--                <buggytestCmd>models23-buggy.sh</buggytestCmd>-->
+<!--                <buggycommit>38079f01d0cdbeb8e3aa6c4ef0a8d5b5c1e4d9a0</buggycommit>-->
 <!--            </buggyVersion>-->
 <!--            <fixVersion>-->
-<!--                <fixtestCmd>models893-fix.sh</fixtestCmd>-->
-<!--                <fixcommit>19c23e72a22bb6d3942f85895e5d2a0fd7410e99</fixcommit>-->
+<!--                <fixtestCmd>models23-fix.sh</fixtestCmd>-->
+<!--                <fixcommit>55a34ae564f5ab49adaf98bd4552dcd4bf8f85f3</fixcommit>-->
 <!--            </fixVersion>-->
-<!--            <character>0</character>-->
-<!--            <issue_url>https://github.com/tensorflow/models/issues/893</issue_url>-->
-<!--            <commit_url>https://github.com/tensorflow/models/pull/895/commits/19c23e72a22bb6d3942f85895e5d2a0fd7410e99</commit_url>-->
+<!--            <character>1</character>-->
+<!--            <issue_url>https://github.com/tensorflow/models/issues/23</issue_url>-->
+<!--            <commit_url>https://github.com/tensorflow/models/commit/55a34ae564f5ab49adaf98bd4552dcd4bf8f85f3</commit_url>-->
+<!--            <detection_tools></detection_tools>-->
 <!--        </bug>-->
 <!--    </sir>-->
 
@@ -735,8 +566,10 @@
             <describe>Author forgot to compute the mean loss over a batch. It is not a problem with small batch size, but it could lead to issues with large batch size, as it leads to unrepresentative cost (NaN) ...</describe>
             <operateScore>1</operateScore>
             <type>IPS</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
+<!--            <localScore></localScore>-->
+<!--            <fixLength></fixLength>-->
+            <support_level>2</support_level>
+            <similar_bugs>dcgan-tensorflow17</similar_bugs>
             <buggyVersion>
                 <buggytestCmd>TensorFlow-Examples10-buggy.sh</buggytestCmd>
                 <buggycommit>844bbfce6d5a872e547fa27c601c5816d4b39f91</buggycommit>
@@ -761,8 +594,10 @@
             <describe>Use tf.nn.softmax() only in the case of cross entropy loss</describe>
             <operateScore>2</operateScore>
             <type>IPS</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
+<!--            <localScore></localScore>-->
+<!--            <fixLength></fixLength>-->
+            <support_level>2</support_level>
+            <similar_bugs>deep-learning-tensorflow5</similar_bugs>
             <buggyVersion>
                 <buggytestCmd>Deep-Learning-TensorFlow0-buggy.sh</buggytestCmd>
                 <buggycommit>1bcc1efcce5772af15c8e787f21ae60a923e6731</buggycommit>
@@ -787,8 +622,10 @@
             <describe>NaN may occur when calculating the cross entropy loss</describe>
             <operateScore>1</operateScore>
             <type>IPS</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
+<!--            <localScore></localScore>-->
+<!--            <fixLength></fixLength>-->
+            <support_level>2</support_level>
+            <similar_bugs>models166, gpflow409</similar_bugs>
             <buggyVersion>
                 <buggytestCmd>Deep-Learning-TensorFlow-buggy.sh</buggytestCmd>
                 <buggycommit>53c69ce3e6af6213e73cff84c675c93c9a2a47f7</buggycommit>
@@ -813,8 +650,10 @@
             <describe>A result of type int is required, but a result of type float is returned</describe>
             <operateScore>1</operateScore>
             <type>type mismatch</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
+<!--            <localScore></localScore>-->
+<!--            <fixLength></fixLength>-->
+            <support_level>4</support_level>
+            <similar_bugs>models1707, transformers1152, probability1010</similar_bugs>
             <buggyVersion>
                 <buggytestCmd>DCGAN-tensorflow108-buggy.sh</buggytestCmd>
                 <buggycommit>9166ef99bf9fcd1d0bf641ae752428bb06903b00</buggycommit>
@@ -839,8 +678,10 @@
             <describe>Failing to load data during Training on CelebA</describe>
             <operateScore>5</operateScore>
             <type>shape mismatch</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
+<!--            <localScore></localScore>-->
+<!--            <fixLength></fixLength>-->
+            <support_level>2</support_level>
+            <similar_bugs>tensorflow-examples10</similar_bugs>
             <buggyVersion>
                 <buggytestCmd>DCGAN-tensorflow17-buggy.sh</buggytestCmd>
                 <buggycommit>eb2ffe490f61e478227bf539f75ed0b6f9bb1d6b</buggycommit>
@@ -865,8 +706,10 @@
             <describe>KerasRegressor.predict does not squeeze batch dims,If the input to KerasRegressor.predict() is an array with one example, then the output should be a 1D array with one example, not a 0D array.</describe>
             <operateScore>1</operateScore>
             <type>shape mismatch</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
+<!--            <localScore></localScore>-->
+<!--            <fixLength></fixLength>-->
+            <support_level>5</support_level>
+            <similar_bugs>tutorials382, edward46, ciphergan4, rlpyt27</similar_bugs>
             <buggyVersion>
                 <buggytestCmd>keras11657-buggy.sh</buggytestCmd>
                 <buggycommit>7cd6c59789c8e469c0d3cab6bca7ae3d2d028002</buggycommit>
@@ -882,200 +725,6 @@
         </bug>
     </sir>
 
-<!--    <sir>-->
-<!--        <name>keras</name>-->
-<!--        <source>https://github.com/Liang813/keras</source>-->
-<!--        <bug>-->
-<!--            <id>keras9812</id>-->
-<!--            <errormessage>ValueError</errormessage>-->
-<!--            <describe>Use NASNetLarge，get Error  It only works with shape (331,331,3) but for larger inputs like (640,640,3) does not work again.     But In docs NASNetLarge: 'It should have exactly 3 inputs channels, and width and height should be no smaller than 32. E.g. (200, 200, 3) would be one valid value.'</describe>-->
-<!--            <operateScore>5</operateScore>-->
-<!--            <type>shape mismatch</type>-->
-<!--            <localScore></localScore>-->
-<!--            <fixLength></fixLength>-->
-<!--            <buggyVersion>-->
-<!--                <buggytestCmd>keras9812-buggy.sh</buggytestCmd>-->
-<!--                <buggycommit>736b7a705db802d63ddcee1cd0687f806ef2d495</buggycommit>-->
-<!--            </buggyVersion>-->
-<!--            <fixVersion>-->
-<!--                <fixtestCmd>keras9812-fix.sh</fixtestCmd>-->
-<!--                <fixcommit>2f1a1780436ee91f44944061e046e43e9719300c</fixcommit>-->
-<!--            </fixVersion>-->
-<!--            <character>0</character>-->
-<!--            <issue_url>https://github.com/keras-team/keras/issues/9812</issue_url>-->
-<!--            <commit_url>https://github.com/keras-team/keras/pull/9865/commits/2f1a1780436ee91f44944061e046e43e9719300c</commit_url>-->
-<!--        </bug>-->
-<!--    </sir>-->
-
-<!--    <sir>-->
-<!--        <name>GPflow</name>-->
-<!--        <source>https://github.com/Liang813/GPflow</source>-->
-<!--        <bug>-->
-<!--            <id>gpflow813</id>-->
-<!--            <errormessage>ValueError</errormessage>-->
-<!--            <describe>The current implementation of ndiag_mc didn't handle multi-dimensional kwargs Ys .</describe>-->
-<!--            <operateScore>5</operateScore>-->
-<!--            <type>shape mismatch</type>-->
-<!--            <localScore></localScore>-->
-<!--            <fixLength></fixLength>-->
-<!--            <buggyVersion>-->
-<!--                <buggytestCmd>GPflow813-buggy.sh</buggytestCmd>-->
-<!--                <buggycommit>1db48f3a735eb0fba06a7d503f080a7ead512604</buggycommit>-->
-<!--            </buggyVersion>-->
-<!--            <fixVersion>-->
-<!--                <fixtestCmd>GPflow813-fix.sh</fixtestCmd>-->
-<!--                <fixcommit>13dd23362cdb30f6478f48f5a7ca4fcab4108580</fixcommit>-->
-<!--            </fixVersion>-->
-<!--            <character>0</character>-->
-<!--            <issue_url>https://github.com/GPflow/GPflow/pull/813</issue_url>-->
-<!--            <commit_url>https://github.com/GPflow/GPflow/pull/813/commits/13dd23362cdb30f6478f48f5a7ca4fcab4108580</commit_url>-->
-<!--        </bug>-->
-<!--    </sir>-->
-<!--    <sir>-->
-<!--        <name>keras</name>-->
-<!--        <source>https://github.com/Liang813/keras</source>-->
-<!--        <bug>-->
-<!--            <id>keras6387</id>-->
-<!--            <errormessage>InvalidArgumentError</errormessage>-->
-<!--            <describe>It seems that the TimeDistributed layer has a similar issue as the Bidirectional layer when passed a layer that requires the learning phase. Seems like wrapper is not taking good care of learning phase.</describe>-->
-<!--            <operateScore>10</operateScore>-->
-<!--            <type>IPS</type>-->
-<!--            <localScore></localScore>-->
-<!--            <fixLength></fixLength>-->
-<!--            <buggyVersion>-->
-<!--                <buggytestCmd>keras6387-buggy.sh</buggytestCmd>-->
-<!--                <buggycommit>7d52af64c03e71bcd23112a7086dc8aab1b37ed2</buggycommit>-->
-<!--            </buggyVersion>-->
-<!--            <fixVersion>-->
-<!--                <fixtestCmd>keras6387-fix.sh</fixtestCmd>-->
-<!--                <fixcommit>04bf5ac57a6071e32ffd340da0acb059912d922c</fixcommit>-->
-<!--            </fixVersion>-->
-<!--            <character>0</character>-->
-<!--            <issue_url>https://github.com/keras-team/keras/pull/6387</issue_url>-->
-<!--            <commit_url>https://github.com/keras-team/keras/pull/6387/commits/04bf5ac57a6071e32ffd340da0acb059912d922c</commit_url>-->
-<!--        </bug>-->
-<!--    </sir>-->
-<!--    <sir>-->
-<!--        <name>keras</name>-->
-<!--        <source>https://github.com/Liang813/keras</source>-->
-<!--        <bug>-->
-<!--            <id>keras5975</id>-->
-<!--            <errormessage>MissingInputError</errormessage>-->
-<!--            <describe>Bidirectional wrapper produces error with any Recurrent layer with dropout or recurrent_dropout argument.Seems like wrapper is not taking good care of learning phase.</describe>-->
-<!--            <operateScore>10</operateScore>-->
-<!--            <type>IPS</type>-->
-<!--            <localScore></localScore>-->
-<!--            <fixLength></fixLength>-->
-<!--            <buggyVersion>-->
-<!--                <buggytestCmd>keras5975-buggy.sh</buggytestCmd>-->
-<!--                <buggycommit>9217effdb445d9fd55853f716065579e2ffb9283</buggycommit>-->
-<!--            </buggyVersion>-->
-<!--            <fixVersion>-->
-<!--                <fixtestCmd>keras5975-fix.sh</fixtestCmd>-->
-<!--                <fixcommit>05f82d1534e93361de9181544335f9bcaceb860d</fixcommit>-->
-<!--            </fixVersion>-->
-<!--            <character>1</character>-->
-<!--            <issue_url>https://github.com/keras-team/keras/issues/5975</issue_url>-->
-<!--            <commit_url>https://github.com/keras-team/keras/commit/05f82d1534e93361de9181544335f9bcaceb860d</commit_url>-->
-<!--        </bug>-->
-<!--    </sir>-->
-<!--    <sir>-->
-<!--        <name>keras</name>-->
-<!--        <source>https://github.com/Liang813/keras</source>-->
-<!--        <bug>-->
-<!--            <id>keras5840</id>-->
-<!--            <errormessage>AssertionError</errormessage>-->
-<!--            <describe>Simple merge layers that just extend _Merge and implement _merge_function report that they have multiple outputs (as many as inputs) with the same shape.</describe>-->
-<!--            <operateScore>5</operateScore>-->
-<!--            <type>shape mismatch</type>-->
-<!--            <localScore></localScore>-->
-<!--            <fixLength></fixLength>-->
-<!--            <buggyVersion>-->
-<!--                <buggytestCmd>keras5840-buggy.sh</buggytestCmd>-->
-<!--                <buggycommit>9cf7f816f28a6ac7d7a4264ae015addd72e57321</buggycommit>-->
-<!--            </buggyVersion>-->
-<!--            <fixVersion>-->
-<!--                <fixtestCmd>keras5840-fix.sh</fixtestCmd>-->
-<!--                <fixcommit>c328a10b312ca55e949d32a4a896458fad1ebc4b</fixcommit>-->
-<!--            </fixVersion>-->
-<!--            <character>0</character>-->
-<!--            <issue_url>https://github.com/keras-team/keras/pull/5840</issue_url>-->
-<!--            <commit_url>https://github.com/keras-team/keras/commit/c328a10b312ca55e949d32a4a896458fad1ebc4b</commit_url>-->
-<!--        </bug>-->
-<!--    </sir>-->
-<!--    <sir>-->
-<!--        <name>keras</name>-->
-<!--        <source>https://github.com/Liang813/keras</source>-->
-<!--        <bug>-->
-<!--            <id>keras5108</id>-->
-<!--            <errormessage>ValueError</errormessage>-->
-<!--            <describe>Running the equivalent code in Convolution2D  for Convolution3D results in a ValueError because the input shape expected by the layer seems to be fixed to the first shape it saw.,Convolution3D fixes the input shape when the layer is built, which happens during the first call. This input shape is useful for some optimisations. Convolution2D does not fix the input shape.</describe>-->
-<!--            <operateScore>5</operateScore>-->
-<!--            <type>shape mismatch</type>-->
-<!--            <localScore></localScore>-->
-<!--            <fixLength></fixLength>-->
-<!--            <buggyVersion>-->
-<!--                <buggytestCmd>keras5108-buggy.sh</buggytestCmd>-->
-<!--                <buggycommit>a5a775b79f46f3a198f71d613ccee899bec8e8ae</buggycommit>-->
-<!--            </buggyVersion>-->
-<!--            <fixVersion>-->
-<!--                <fixtestCmd>keras5108-fix.sh</fixtestCmd>-->
-<!--                <fixcommit>a8795957abb2750a1b38cce34e074e6a2644bc43</fixcommit>-->
-<!--            </fixVersion>-->
-<!--            <character>0</character>-->
-<!--            <issue_url>https://github.com/keras-team/keras/issues/5108</issue_url>-->
-<!--            <commit_url>https://github.com/keras-team/keras/commit/a8795957abb2750a1b38cce34e074e6a2644bc43</commit_url>-->
-<!--        </bug>-->
-<!--    </sir>-->
-<!--    <sir>-->
-<!--        <name>keras</name>-->
-<!--        <source>https://github.com/Liang813/keras</source>-->
-<!--        <bug>-->
-<!--            <id>keras9883</id>-->
-<!--            <errormessage>None</errormessage>-->
-<!--            <describe>Conv2DTranspose infers the shape of the output using deconv_length but because the output shape of a transposed convolution is ambigous it can infer an undesired shape.</describe>-->
-<!--            <operateScore>10</operateScore>-->
-<!--            <type>shape mismatch</type>-->
-<!--            <localScore></localScore>-->
-<!--            <fixLength></fixLength>-->
-<!--            <buggyVersion>-->
-<!--                <buggytestCmd>keras9883-buggy.sh</buggytestCmd>-->
-<!--                <buggycommit>8a5d4bcc62f49d79839de9ddf8c72d97056ee522</buggycommit>-->
-<!--            </buggyVersion>-->
-<!--            <fixVersion>-->
-<!--                <fixtestCmd>keras9883-fix.sh</fixtestCmd>-->
-<!--                <fixcommit>6b99d2382e53c0f6f8124ed76db399741ad64fa4</fixcommit>-->
-<!--            </fixVersion>-->
-<!--            <character>0</character>-->
-<!--            <issue_url>https://github.com/keras-team/keras/issues/9883</issue_url>-->
-<!--            <commit_url>https://github.com/keras-team/keras/pull/10246/commits/6b99d2382e53c0f6f8124ed76db399741ad64fa4</commit_url>-->
-<!--        </bug>-->
-<!--    </sir>-->
-<!--    <sir>-->
-<!--        <name>keras</name>-->
-<!--        <source>https://github.com/Liang813/keras</source>-->
-<!--        <bug>-->
-<!--            <id>keras13073</id>-->
-<!--            <errormessage>None</errormessage>-->
-<!--            <describe>People set embedding with MAX_NUM_WORDS=3，but tokenizer return n-1 words i.e 2. </describe>-->
-<!--            <operateScore>5</operateScore>-->
-<!--            <type>shape mismatch</type>-->
-<!--            <localScore></localScore>-->
-<!--            <fixLength></fixLength>-->
-<!--            <buggyVersion>-->
-<!--                <buggytestCmd>keras13073-buggy.sh</buggytestCmd>-->
-<!--                <buggycommit>0fc33feb5f4efe3bb823c57a8390f52932a966ab</buggycommit>-->
-<!--            </buggyVersion>-->
-<!--            <fixVersion>-->
-<!--                <fixtestCmd>keras13073-fix.sh</fixtestCmd>-->
-<!--                <fixcommit>09521c9804c3ce218b44efa6d9b4af8b2c8cdd56</fixcommit>-->
-<!--            </fixVersion>-->
-<!--            <character>0</character>-->
-<!--            <issue_url>https://github.com/keras-team/keras/pull/13073</issue_url>-->
-<!--            <commit_url>https://github.com/keras-team/keras/pull/13073/commits/09521c9804c3ce218b44efa6d9b4af8b2c8cdd56</commit_url>-->
-<!--        </bug>-->
-<!--    </sir>-->
-
     <sir>
         <name>keras</name>
         <source>https://github.com/Liang813/keras</source>
@@ -1085,8 +734,10 @@
             <describe>cos mode does not carefully deal with division by zero, might be the cause of NaN. output = K.batch_dot(l1, l2, self.dot_axes) / denominator  </describe>
             <operateScore>1</operateScore>
             <type>zero division</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
+<!--            <localScore></localScore>-->
+<!--            <fixLength></fixLength>-->
+            <support_level>3</support_level>
+            <similar_bugs>allennlp4612, pytorch-lightning139</similar_bugs>
             <buggyVersion>
                 <buggytestCmd>keras2672-buggy.sh</buggytestCmd>
                 <buggycommit>973b5570aa4aea71323d6c08614d5e2a8f50a6ec</buggycommit>
@@ -1102,108 +753,6 @@
         </bug>
     </sir>
 
-<!--    <sir>-->
-<!--        <name>CapsNet-Tensorflow</name>-->
-<!--        <source>https://github.com/Liang813/CapsNet-Tensorflow</source>-->
-<!--        <bug>-->
-<!--            <id>capsnet-tensorflow4</id>-->
-<!--            <errormessage>ValueError</errormessage>-->
-<!--            <describe>The reconstruction part has to take the label as input.TODO: before reconstruction the input caps2 should do masking to pick. Out the activity vector of the correct digit capsule. </describe>-->
-<!--            <operateScore>10</operateScore>-->
-<!--            <type>shape mismatch</type>-->
-<!--            <localScore></localScore>-->
-<!--            <fixLength></fixLength>-->
-<!--            <buggyVersion>-->
-<!--                <buggytestCmd>CapsNet-Tensorflow4-buggy.sh</buggytestCmd>-->
-<!--                <buggycommit>abbc810771d94bbd25a071a8aa57aabd6c4aa056</buggycommit>-->
-<!--            </buggyVersion>-->
-<!--            <fixVersion>-->
-<!--                <fixtestCmd>CapsNet-Tensorflow4-fix.sh</fixtestCmd>-->
-<!--                <fixcommit>a614ee5dfb22445e8e165c0dfb64c408984062f9</fixcommit>-->
-<!--            </fixVersion>-->
-<!--            <character>1</character>-->
-<!--            <issue_url>https://github.com/naturomics/CapsNet-Tensorflow/issues/4</issue_url>-->
-<!--            <commit_url>https://github.com/naturomics/CapsNet-Tensorflow/commit/a614ee5dfb22445e8e165c0dfb64c408984062f9</commit_url>-->
-<!--        </bug>-->
-<!--    </sir>-->
-
-<!--    <sir>-->
-<!--        <name>TensorFlow.NET</name>-->
-<!--        <source>https://github.com/Liang813/TensorFlow.NET</source>-->
-<!--        <bug>-->
-<!--            <id>tensorflow.net377</id>-->
-<!--            <errormessage>None</errormessage>-->
-<!--            <describe>Currently TensorShape only support int/long dimensions.-->
-<!--                We sometimes need to use an unknown dimension that represents a varying batch size that changes from run to run. </describe>-->
-<!--            <operateScore>10</operateScore>-->
-<!--            <type>shape mismatch</type>-->
-<!--            <localScore></localScore>-->
-<!--            <fixLength></fixLength>-->
-<!--            <buggyVersion>-->
-<!--                <buggytestCmd>TensorFlow.NET377-buggy.sh</buggytestCmd>-->
-<!--                <buggycommit>269611bf8652bfb031cbc84ca4bd8b995dd903e4</buggycommit>-->
-<!--            </buggyVersion>-->
-<!--            <fixVersion>-->
-<!--                <fixtestCmd>TensorFlow.NET377-fix.sh</fixtestCmd>-->
-<!--                <fixcommit>9e237a67334f00bc59d6dfe7f4ffb2944f95e769</fixcommit>-->
-<!--            </fixVersion>-->
-<!--            <character>0</character>-->
-<!--            <issue_url>https://github.com/SciSharp/TensorFlow.NET/issues/377</issue_url>-->
-<!--            <commit_url>https://github.com/SciSharp/TensorFlow.NET/commit/9e237a67334f00bc59d6dfe7f4ffb2944f95e769</commit_url>-->
-<!--        </bug>-->
-<!--    </sir>-->
-
-<!--    <sir>-->
-<!--        <name>tensorflow_scala</name>-->
-<!--        <source>https://github.com/Liang813/tensorflow_scala</source>-->
-<!--        <bug>-->
-<!--            <id>tensorflow_scala18</id>-->
-<!--            <errormessage>ValueError</errormessage>-->
-<!--            <describe>Trying the random distribution ops with default arguments gave  the  error.</describe>-->
-<!--            <operateScore>5</operateScore>-->
-<!--            <type>shape mismatch</type>-->
-<!--            <localScore></localScore>-->
-<!--            <fixLength></fixLength>-->
-<!--            <buggyVersion>-->
-<!--                <buggytestCmd>tensorflow_scala18-buggy.sh</buggytestCmd>-->
-<!--                <buggycommit>dd021285d9ed87377b9956d8b08ac74ddecb4602</buggycommit>-->
-<!--            </buggyVersion>-->
-<!--            <fixVersion>-->
-<!--                <fixtestCmd>tensorflow_scala18-fix.sh</fixtestCmd>-->
-<!--                <fixcommit>83ddc58321f2e4a353b4d241bcb31ae8b4f375bd</fixcommit>-->
-<!--            </fixVersion>-->
-<!--            <character>0</character>-->
-<!--            <issue_url>https://github.com/eaplatanios/tensorflow_scala/pull/18</issue_url>-->
-<!--            <commit_url>https://github.com/eaplatanios/tensorflow_scala/pull/18/commits/83ddc58321f2e4a353b4d241bcb31ae8b4f375bd</commit_url>-->
-<!--        </bug>-->
-<!--    </sir>-->
-
-    <sir>
-        <name>probability</name>
-        <source>https://github.com/Liang813/probability</source>
-        <bug>
-            <id>probability417</id>
-            <errormessage>InvalidArgumentError</errormessage>
-            <describe>LinearGaussianStateSpaceModel sample doesn't work with num_timesteps=1.It is because tf.scan in the line below gives empty tensors for latents and observations if num_timesteps=1 as self.initial_step+1 and self.final_step are equal. (because self.final_step = self.initial_step+num_timesteps)</describe>
-            <operateScore>5</operateScore>
-            <type>shape mismatch</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
-            <buggyVersion>
-                <buggytestCmd>probability417-buggy.sh</buggytestCmd>
-                <buggycommit>499827efa11b55f44fa0d5ef0432f3e1eebeff01</buggycommit>
-            </buggyVersion>
-            <fixVersion>
-                <fixtestCmd>probability417-fix.sh</fixtestCmd>
-                <fixcommit>e13e623f03a8c700f4281ab43e1bc80dd903fec7</fixcommit>
-            </fixVersion>
-            <character>0</character>
-            <issue_url>https://github.com/tensorflow/probability/issues/417</issue_url>
-            <commit_url>https://github.com/tensorflow/probability/pull/488/commits/e13e623f03a8c700f4281ab43e1bc80dd903fec7</commit_url>
-            <detection_tools></detection_tools>
-        </bug>
-    </sir>
-
     <sir>
         <name>segmentation_models.pytorch</name>
         <source>https://github.com/Liang813/segmentation_models.pytorch</source>
@@ -1213,8 +762,10 @@
             <describe>This Bug is due to the fact that the divisor is not the same type as the dividend, resulting in the final result being 0</describe>
             <operateScore>1</operateScore>
             <type>type mismatch</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
+<!--            <localScore></localScore>-->
+<!--            <fixLength></fixLength>-->
+            <support_level>7</support_level>
+            <similar_bugs>texar-pytorch94, pytorch-ts1, tensorpack408, tensorflowtts70, openkiwi38, tensorflowtts50</similar_bugs>
             <buggyVersion>
                 <buggytestCmd>segmentation_models.pytorch186-buggy.sh</buggytestCmd>
                 <buggycommit>ecc848f7b600d0e5cc3a7bbe2a139e97de22da49</buggycommit>
@@ -1230,56 +781,6 @@
         </bug>
     </sir>
 
-<!--    <sir>-->
-<!--        <name>fastai</name>-->
-<!--        <source>https://github.com/Liang813/fastai</source>-->
-<!--        <bug>-->
-<!--            <id>fastai1678</id>-->
-<!--            <errormessage>TypeError</errormessage>-->
-<!--            <describe>Losses out of order in RNNLearner.get_preds(..., with_loss=True, ordered=True)</describe>-->
-<!--            <operateScore>5</operateScore>-->
-<!--            <type>IPS</type>-->
-<!--            <localScore></localScore>-->
-<!--            <fixLength></fixLength>-->
-<!--            <buggyVersion>-->
-<!--                <buggytestCmd>fastai1678-buggy.sh</buggytestCmd>-->
-<!--                <buggycommit>1f0dae64160db7e5bd13d31abc1359c58e63a4a7</buggycommit>-->
-<!--            </buggyVersion>-->
-<!--            <fixVersion>-->
-<!--                <fixtestCmd>fastai1678-fix.sh</fixtestCmd>-->
-<!--                <fixcommit>7c79371929bca523705b738b02749c008e20e191</fixcommit>-->
-<!--            </fixVersion>-->
-<!--            <character>0</character>-->
-<!--            <issue_url>https://github.com/fastai/fastai/issues/1678</issue_url>-->
-<!--            <commit_url>https://github.com/fastai/fastai/commit/7c79371929bca523705b738b02749c008e20e191</commit_url>-->
-<!--        </bug>-->
-<!--    </sir>-->
-
-<!--    <sir>-->
-<!--        <name>transformers</name>-->
-<!--        <source>https://github.com/Liang813/transformers</source>-->
-<!--        <bug>-->
-<!--            <id>transformers6560</id>-->
-<!--            <errormessage>ValueError</errormessage>-->
-<!--            <describe>Huggingface create_ The optimizer method is missing a parameter</describe>-->
-<!--            <operateScore>1</operateScore>-->
-<!--            <type>API misuse</type>-->
-<!--            <localScore></localScore>-->
-<!--            <fixLength></fixLength>-->
-<!--            <buggyVersion>-->
-<!--                <buggytestCmd>transformers6560-buggy.sh</buggytestCmd>-->
-<!--                <buggycommit>841f07156948a28f8cc9182bb14c911f9e63b0e7</buggycommit>-->
-<!--            </buggyVersion>-->
-<!--            <fixVersion>-->
-<!--                <fixtestCmd>transformers6560-fix.sh</fixtestCmd>-->
-<!--                <fixcommit>5281631a04e60f397ec5742056ec1dec235de425</fixcommit>-->
-<!--            </fixVersion>-->
-<!--            <character>0</character>-->
-<!--            <issue_url>https://github.com/huggingface/transformers/issues/6560</issue_url>-->
-<!--            <commit_url>https://github.com/huggingface/transformers/pull/6717/commits/5281631a04e60f397ec5742056ec1dec235de425</commit_url>-->
-<!--        </bug>-->
-<!--    </sir>-->
-
     <sir>
         <name>keras</name>
         <source>https://github.com/Liang813/keras</source>
@@ -1289,8 +790,10 @@
             <describe>Setting an array element with a sequence.</describe>
             <operateScore>1</operateScore>
             <type>type mismatch</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
+<!--            <localScore></localScore>-->
+<!--            <fixLength></fixLength>-->
+            <support_level>2</support_level>
+            <similar_bugs>mnemonicreader3</similar_bugs>
             <buggyVersion>
                 <buggytestCmd>keras1141-buggy.sh</buggytestCmd>
                 <buggycommit>d400fc45129fbd4d3fe83345a69ec5973bb29a37</buggycommit>
@@ -1315,8 +818,10 @@
             <describe>Function usage error during Initialisation of ExponentialReward</describe>
             <operateScore>1</operateScore>
             <type>API misuse</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
+<!--            <localScore></localScore>-->
+<!--            <fixLength></fixLength>-->
+            <support_level>1</support_level>
+            <similar_bugs></similar_bugs>
             <buggyVersion>
                 <buggytestCmd>PILCO25-buggy.sh</buggytestCmd>
                 <buggycommit>6ebcc7df9a8190c542445f0c82d835c94b745c8e</buggycommit>
@@ -1333,184 +838,6 @@
     </sir>
 
     <sir>
-        <name>tf-encrypted</name>
-        <source>https://github.com/Liang813/tf-encrypted</source>
-        <bug>
-            <id>tf-encrypted692</id>
-            <errormessage>None</errormessage>
-            <describe>The conditions of minval and maxval in sample_uniform are wrong</describe>
-            <operateScore>5</operateScore>
-            <type>shape mismatch</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
-            <buggyVersion>
-                <buggytestCmd>tf-encrypted692-buggy.sh</buggytestCmd>
-                <buggycommit>28ab6344c0eee69fdfe0babad839a8262656a394</buggycommit>
-            </buggyVersion>
-            <fixVersion>
-                <fixtestCmd>tf-encrypted692-fix.sh</fixtestCmd>
-                <fixcommit>fb3184b6218c68244758eb360963b452157ad2c8</fixcommit>
-            </fixVersion>
-            <character>0</character>
-            <issue_url>https://github.com/tf-encrypted/tf-encrypted/pull/692</issue_url>
-            <commit_url>https://github.com/tf-encrypted/tf-encrypted/pull/692/commits/fb3184b6218c68244758eb360963b452157ad2c8</commit_url>
-            <detection_tools></detection_tools>
-        </bug>
-    </sir>
-
-<!--    <sir>-->
-<!--        <name>probability</name>-->
-<!--        <source>https://github.com/Liang813/probability</source>-->
-<!--        <bug>-->
-<!--            <id>probability233</id>-->
-<!--            <errormessage>None</errormessage>-->
-<!--            <describe>Getting nan as a probability in high-dimensional spaces</describe>-->
-<!--            <operateScore>5</operateScore>-->
-<!--            <type>IPS</type>-->
-<!--            <localScore></localScore>-->
-<!--            <fixLength></fixLength>-->
-<!--            <buggyVersion>-->
-<!--                <buggytestCmd>probability233-buggy.sh</buggytestCmd>-->
-<!--                <buggycommit>0564b963eb5e2d4a0b32f027dc171fc047229098</buggycommit>-->
-<!--            </buggyVersion>-->
-<!--            <fixVersion>-->
-<!--                <fixtestCmd>probability233-fix.sh</fixtestCmd>-->
-<!--                <fixcommit>34e969a81a7bb96791104d8503b253e4f937c353</fixcommit>-->
-<!--            </fixVersion>-->
-<!--            <character>0</character>-->
-<!--            <issue_url>https://github.com/tensorflow/probability/issues/233</issue_url>-->
-<!--            <commit_url>https://github.com/tensorflow/probability/commit/34e969a81a7bb96791104d8503b253e4f937c353</commit_url>-->
-<!--        </bug>-->
-<!--    </sir>-->
-
-    <sir>
-        <name>graphics</name>
-        <source>https://github.com/Liang813/graphics</source>
-        <bug>
-            <id>graphics283</id>
-            <errormessage>None</errormessage>
-            <describe>when using cartesian_to_spherical_coordinates function there appears to be some numerical instability has been introduced. </describe>
-            <operateScore>1</operateScore>
-            <type>IPS</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
-            <buggyVersion>
-                <buggytestCmd>graphics283-buggy.sh</buggytestCmd>
-                <buggycommit>d4426ff89fe2de198f4dbe758536cb66560120ec</buggycommit>
-            </buggyVersion>
-            <fixVersion>
-                <fixtestCmd>graphics283-fix.sh</fixtestCmd>
-                <fixcommit>d265f7a02cc6247f5d0bbacd516533b2117c9bac</fixcommit>
-            </fixVersion>
-            <character>0</character>
-            <issue_url>https://github.com/tensorflow/graphics/issues/283</issue_url>
-            <commit_url>https://github.com/tensorflow/graphics/pull/284/commits/d265f7a02cc6247f5d0bbacd516533b2117c9bac</commit_url>
-            <detection_tools></detection_tools>
-        </bug>
-    </sir>
-
-<!--    <sir>-->
-<!--        <name>GPflow</name>-->
-<!--        <source>https://github.com/Liang813/GPflow</source>-->
-<!--        <bug>-->
-<!--            <id>gpflow1407</id>-->
-<!--            <errormessage>InvalidArgumentError</errormessage>-->
-<!--            <describe>Small noise_variance value leads to weird InvalidArgumentError exception.</describe>-->
-<!--            <operateScore>5</operateScore>-->
-<!--            <type>IPS</type>-->
-<!--            <localScore></localScore>-->
-<!--            <fixLength></fixLength>-->
-<!--            <buggyVersion>-->
-<!--                <buggytestCmd>GPflow1407-buggy.sh</buggytestCmd>-->
-<!--                <buggycommit>92f914dc9a7fadf5c9313ab7accfe09154aa29c7</buggycommit>-->
-<!--            </buggyVersion>-->
-<!--            <fixVersion>-->
-<!--                <fixtestCmd>GPflow1407-fix.sh</fixtestCmd>-->
-<!--                <fixcommit>6388133f7bf8f290661bc1a5db917f2a71762bab</fixcommit>-->
-<!--            </fixVersion>-->
-<!--            <character>0</character>-->
-<!--            <issue_url>https://github.com/GPflow/GPflow/issues/1407</issue_url>-->
-<!--            <commit_url>https://github.com/GPflow/GPflow/commit/6388133f7bf8f290661bc1a5db917f2a71762bab</commit_url>-->
-<!--        </bug>-->
-<!--    </sir>-->
-
-    <sir>
-        <name>DCGAN-tensorflow</name>
-        <source>https://github.com/Liang813/DCGAN-tensorflow</source>
-        <bug>
-            <id>dcgan-tensorflow99</id>
-            <errormessage>TypeError</errormessage>
-            <describe>Use a custom function to replace the function provided by tensorflow</describe>
-            <operateScore>1</operateScore>
-            <type>API misuse</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
-            <buggyVersion>
-                <buggytestCmd>DCGAN-tensorflow99-buggy.sh</buggytestCmd>
-                <buggycommit>66884d3dbbde4033ffe5305bb0053fc4625d0624</buggycommit>
-            </buggyVersion>
-            <fixVersion>
-                <fixtestCmd>DCGAN-tensorflow99-fix.sh</fixtestCmd>
-                <fixcommit>9166ef99bf9fcd1d0bf641ae752428bb06903b00</fixcommit>
-            </fixVersion>
-            <character>0</character>
-            <issue_url>https://github.com/carpedm20/DCGAN-tensorflow/issues/99</issue_url>
-            <commit_url>https://github.com/carpedm20/DCGAN-tensorflow/commit/9166ef99bf9fcd1d0bf641ae752428bb06903b00</commit_url>
-            <detection_tools></detection_tools>
-        </bug>
-    </sir>
-
-<!--    <sir>-->
-<!--        <name>DCGAN-tensorflow</name>-->
-<!--        <source>https://github.com/Liang813/DCGAN-tensorflow</source>-->
-<!--        <bug>-->
-<!--            <id>dcgan-tensorflow158</id>-->
-<!--            <errormessage>error</errormessage>-->
-<!--            <describe>Data set download error</describe>-->
-<!--            <operateScore>5</operateScore>-->
-<!--            <type>IPS</type>-->
-<!--            <localScore></localScore>-->
-<!--            <fixLength></fixLength>-->
-<!--            <buggyVersion>-->
-<!--                <buggytestCmd>DCGAN-tensorflow158-buggy.sh</buggytestCmd>-->
-<!--                <buggycommit>9f8f6a6e0065bdc5e33080d1f1df28a41eaacd02</buggycommit>-->
-<!--            </buggyVersion>-->
-<!--            <fixVersion>-->
-<!--                <fixtestCmd>DCGAN-tensorflow158-fix.sh</fixtestCmd>-->
-<!--                <fixcommit>07abd2b58638a2bc4595d79c6dcba58052afa79c</fixcommit>-->
-<!--            </fixVersion>-->
-<!--            <character>0</character>-->
-<!--            <issue_url>https://github.com/carpedm20/DCGAN-tensorflow/pull/158</issue_url>-->
-<!--            <commit_url>https://github.com/carpedm20/DCGAN-tensorflow/commit/07abd2b58638a2bc4595d79c6dcba58052afa79c</commit_url>-->
-<!--        </bug>-->
-<!--    </sir>-->
-
-<!--    <sir>-->
-<!--        <name>keras</name>-->
-<!--        <source>https://github.com/Liang813/keras</source>-->
-<!--        <bug>-->
-<!--            <id>keras4441</id>-->
-<!--            <errormessage>MissingInputError</errormessage>-->
-<!--            <describe>K.rnn() is ignoring theano.scan() updates</describe>-->
-<!--            <operateScore>10</operateScore>-->
-<!--            <type>IPS</type>-->
-<!--            <localScore></localScore>-->
-<!--            <fixLength></fixLength>-->
-<!--            <buggyVersion>-->
-<!--                <buggytestCmd>keras4441-buggy.sh</buggytestCmd>-->
-<!--                <buggycommit>06cc6d7fea7527e99e36c9fc766390c51e73ebba</buggycommit>-->
-<!--            </buggyVersion>-->
-<!--            <fixVersion>-->
-<!--                <fixtestCmd>keras4441-fix.sh</fixtestCmd>-->
-<!--                <fixcommit>f31d40e43395e90ea13a1a7d0a308a7c2c20cdb4</fixcommit>-->
-<!--            </fixVersion>-->
-<!--            <character>1</character>-->
-<!--            <issue_url>https://github.com/keras-team/keras/pull/4441</issue_url>-->
-<!--            <commit_url>https://github.com/keras-team/keras/pull/4441/commits/f31d40e43395e90ea13a1a7d0a308a7c2c20cdb4</commit_url>-->
-<!--        </bug>-->
-<!--    </sir>-->
-
-    <sir>
         <name>GPflow</name>
         <source>https://github.com/Liang813/GPflow</source>
         <bug>
@@ -1519,8 +846,10 @@
             <describe>Adding a jitter to the tf.acos-operation fixes the gradient problem</describe>
             <operateScore>5</operateScore>
             <type>IPS</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
+<!--            <localScore></localScore>-->
+<!--            <fixLength></fixLength>-->
+            <support_level>2</support_level>
+            <similar_bugs>deep-learning-tensorflow</similar_bugs>
             <buggyVersion>
                 <buggytestCmd>GPflow409-buggy.sh</buggytestCmd>
                 <buggycommit>ca4d3ebe1594d6950a975bcac00784ea2e693be4</buggycommit>
@@ -1545,8 +874,10 @@
             <describe>tensorflow_probability.distributions.MixtureSameFamily only works with float32</describe>
             <operateScore>2</operateScore>
             <type>type mismatch</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
+<!--            <localScore></localScore>-->
+<!--            <fixLength></fixLength>-->
+            <support_level>4</support_level>
+            <similar_bugs>dcgan-tensorflow108, models1707, transformers1152</similar_bugs>
             <buggyVersion>
                 <buggytestCmd>probability1010-buggy.sh</buggytestCmd>
                 <buggycommit>1c8d5ad855f855625404abe77f1e3b45337ffb46</buggycommit>
@@ -1562,209 +893,6 @@
         </bug>
     </sir>
 
-<!--    <sir>-->
-<!--        <name>probability</name>-->
-<!--        <source>https://github.com/Liang813/probability</source>-->
-<!--        <bug>-->
-<!--            <id>probability867</id>-->
-<!--            <errormessage>None</errormessage>-->
-<!--            <describe>tfd.Multinomial.log_prob returns nan if an entry of probs is 0</describe>-->
-<!--            <operateScore>5</operateScore>-->
-<!--            <type>IPS</type>-->
-<!--            <localScore></localScore>-->
-<!--            <fixLength></fixLength>-->
-<!--            <buggyVersion>-->
-<!--                <buggytestCmd>probability867-buggy.sh</buggytestCmd>-->
-<!--                <buggycommit>5f4088a6df93293e73cca92e9de8e3a0573e1843</buggycommit>-->
-<!--            </buggyVersion>-->
-<!--            <fixVersion>-->
-<!--                <fixtestCmd>probability867-fix.sh</fixtestCmd>-->
-<!--                <fixcommit>6254da601c28558581ad61291062467e19276e54</fixcommit>-->
-<!--            </fixVersion>-->
-<!--            <character>0</character>-->
-<!--            <issue_url>https://github.com/tensorflow/probability/issues/867</issue_url>-->
-<!--            <commit_url>https://github.com/tensorflow/probability/commit/6254da601c28558581ad61291062467e19276e54</commit_url>-->
-<!--        </bug>-->
-<!--    </sir>-->
-
-<!--    <sir>-->
-<!--        <name>probability</name>-->
-<!--        <source>https://github.com/Liang813/probability</source>-->
-<!--        <bug>-->
-<!--            <id>probability705</id>-->
-<!--            <errormessage>None</errormessage>-->
-<!--            <describe>RelaxedBernoulli with > 0 dimensions and sufficiently small temperature produces nan when log_prob is invoked on sampled values.</describe>-->
-<!--            <operateScore>10</operateScore>-->
-<!--            <type>IPS</type>-->
-<!--            <localScore></localScore>-->
-<!--            <fixLength></fixLength>-->
-<!--            <buggyVersion>-->
-<!--                <buggytestCmd>probability705-buggy.sh</buggytestCmd>-->
-<!--                <buggycommit>eea693ad2480fcf9c3508db31dce91c282d79802</buggycommit>-->
-<!--            </buggyVersion>-->
-<!--            <fixVersion>-->
-<!--                <fixtestCmd>probability705-fix.sh</fixtestCmd>-->
-<!--                <fixcommit>242731a9b2b42d4eb676539658a8d5e8267c0720</fixcommit>-->
-<!--            </fixVersion>-->
-<!--            <character>0</character>-->
-<!--            <issue_url>https://github.com/tensorflow/probability/issues/705</issue_url>-->
-<!--            <commit_url>https://github.com/tensorflow/probability/commit/242731a9b2b42d4eb676539658a8d5e8267c0720</commit_url>-->
-<!--        </bug>-->
-<!--    </sir>-->
-
-    <sir>
-        <name>keras</name>
-        <source>https://github.com/Liang813/keras</source>
-        <bug>
-            <id>keras9479</id>
-            <errormessage>AssertionError</errormessage>
-            <describe>Fix pool_2d of Theano for backend compatibility</describe>
-            <operateScore>3</operateScore>
-            <type>IPS</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
-            <buggyVersion>
-                <buggytestCmd>keras9479-buggy.sh</buggytestCmd>
-                <buggycommit>5e797436c3defd2d863ac1ffab11c48dbd42588e</buggycommit>
-            </buggyVersion>
-            <fixVersion>
-                <fixtestCmd>keras9479-fix.sh</fixtestCmd>
-                <fixcommit>07c77c65b5ea9c246690d2eb116c7c8570dc5a7e</fixcommit>
-            </fixVersion>
-            <character>0</character>
-            <issue_url>https://github.com/keras-team/keras/pull/9479</issue_url>
-            <commit_url>https://github.com/keras-team/keras/commit/07c77c65b5ea9c246690d2eb116c7c8570dc5a7e</commit_url>
-            <detection_tools></detection_tools>
-        </bug>
-    </sir>
-
-<!--    <sir>-->
-<!--        <name>keras</name>-->
-<!--        <source>https://github.com/Liang813/keras</source>-->
-<!--        <bug>-->
-<!--            <id>keras3475</id>-->
-<!--            <errormessage>None</errormessage>-->
-<!--            <describe>Batchnormalization results in NaN (keras 1.0.7)</describe>-->
-<!--            <operateScore>1</operateScore>-->
-<!--            <type>IPS</type>-->
-<!--            <localScore></localScore>-->
-<!--            <fixLength></fixLength>-->
-<!--            <buggyVersion>-->
-<!--                <buggytestCmd>keras3475-buggy.sh</buggytestCmd>-->
-<!--                <buggycommit>c6daa24e3cac10e3488d5a2eadfd6134de55e677</buggycommit>-->
-<!--            </buggyVersion>-->
-<!--            <fixVersion>-->
-<!--                <fixtestCmd>keras3475-fix.sh</fixtestCmd>-->
-<!--                <fixcommit>50f159fdb2e0737d8a0fe0147608f49553c6f591</fixcommit>-->
-<!--            </fixVersion>-->
-<!--            <character>1</character>-->
-<!--            <issue_url>https://github.com/keras-team/keras/issues/3475</issue_url>-->
-<!--            <commit_url>https://github.com/keras-team/keras/pull/3532/commits/50f159fdb2e0737d8a0fe0147608f49553c6f591</commit_url>-->
-<!--        </bug>-->
-<!--    </sir>-->
-
-    <sir>
-        <name>keras</name>
-        <source>https://github.com/Liang813/keras</source>
-        <bug>
-            <id>keras4916</id>
-            <errormessage>TypeError</errormessage>
-            <describe>when using the Reshape layer it is not clear if one can use an unknown dimension (-1) like in numpy. Using it results in an error.</describe>
-            <operateScore>1</operateScore>
-            <type>shape mismatch</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
-            <buggyVersion>
-                <buggytestCmd>keras4916-buggy.sh</buggytestCmd>
-                <buggycommit>45ad5096114300443859644148ab0b69ec6f65c0</buggycommit>
-            </buggyVersion>
-            <fixVersion>
-                <fixtestCmd>keras4916-fix.sh</fixtestCmd>
-                <fixcommit>150e0fa8a6571233ed107c4dded52387a9d3739c</fixcommit>
-            </fixVersion>
-            <character>1</character>
-            <issue_url>https://github.com/keras-team/keras/issues/4916</issue_url>
-            <commit_url>https://github.com/keras-team/keras/commit/150e0fa8a6571233ed107c4dded52387a9d3739c</commit_url>
-            <detection_tools></detection_tools>
-        </bug>
-    </sir>
-
-<!--    <sir>-->
-<!--        <name>keras</name>-->
-<!--        <source>https://github.com/Liang813/keras</source>-->
-<!--        <bug>-->
-<!--            <id>keras449</id>-->
-<!--            <errormessage>None</errormessage>-->
-<!--            <describe>In all recurrent layers, the input value is multiplied with some matrix (usually W) before the time dimension is evaluated (Theano scan). The mask is currently only applied within the Theano scan loop, whereas the first multiplication is unmasked. This works fine as long as 0 is chosen as a mask_value. For other values this however results in unwanted behavior, as shown here for the extreme case of mask_value=1e+30.</describe>-->
-<!--            <operateScore>3</operateScore>-->
-<!--            <type>IPS</type>-->
-<!--            <localScore></localScore>-->
-<!--            <fixLength></fixLength>-->
-<!--            <buggyVersion>-->
-<!--                <buggytestCmd>keras449-buggy.sh</buggytestCmd>-->
-<!--                <buggycommit>15a3a1f1ce2a7babf62c61f73709c074249ed840</buggycommit>-->
-<!--            </buggyVersion>-->
-<!--            <fixVersion>-->
-<!--                <fixtestCmd>keras449-fix.sh</fixtestCmd>-->
-<!--                <fixcommit>3bf5340f18b62e33fb022aa04dbd49e8191983b6</fixcommit>-->
-<!--            </fixVersion>-->
-<!--            <character>1</character>-->
-<!--            <issue_url>https://github.com/keras-team/keras/pull/449</issue_url>-->
-<!--            <commit_url>https://github.com/keras-team/keras/commit/3bf5340f18b62e33fb022aa04dbd49e8191983b6</commit_url>-->
-<!--        </bug>-->
-<!--    </sir>-->
-
-<!--    <sir>-->
-<!--        <name>seq2seq</name>-->
-<!--        <source>https://github.com/Liang813/seq2seq</source>-->
-<!--        <bug>-->
-<!--            <id>seq2seq52</id>-->
-<!--            <errormessage>None</errormessage>-->
-<!--            <describe>During evaluation metric_fn is called epoch_size/batch_size times with the same data</describe>-->
-<!--            <operateScore>5</operateScore>-->
-<!--            <type>IPS</type>-->
-<!--            <localScore></localScore>-->
-<!--            <fixLength></fixLength>-->
-<!--            <buggyVersion>-->
-<!--                <buggytestCmd>seq2seq52-buggy.sh</buggytestCmd>-->
-<!--                <buggycommit>65b2d8beb175326dda59b5f247694290bbf4c22e</buggycommit>-->
-<!--            </buggyVersion>-->
-<!--            <fixVersion>-->
-<!--                <fixtestCmd>seq2seq52-fix.sh</fixtestCmd>-->
-<!--                <fixcommit>4880ed14eb87daa56ddfb7761c3a06b95278cb0b</fixcommit>-->
-<!--            </fixVersion>-->
-<!--            <character>1</character>-->
-<!--            <issue_url>https://github.com/google/seq2seq/issues/52</issue_url>-->
-<!--            <commit_url>https://github.com/google/seq2seq/commit/4880ed14eb87daa56ddfb7761c3a06b95278cb0b</commit_url>-->
-<!--        </bug>-->
-<!--    </sir>-->
-
-    <sir>
-        <name>DCGAN-tensorflow</name>
-        <source>https://github.com/Liang813/DCGAN-tensorflow</source>
-        <bug>
-            <id>dcgan-tensorflow135</id>
-            <errormessage>ValueError</errormessage>
-            <describe>There was an error saving training images with batch_size other than 64</describe>
-            <operateScore>1</operateScore>
-            <type>shape mismatch</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
-            <buggyVersion>
-                <buggytestCmd>DCGAN-tensorflow135-buggy.sh</buggytestCmd>
-                <buggycommit>3faddba43f4e1174f400c8a26eddfd309f920faa</buggycommit>
-            </buggyVersion>
-            <fixVersion>
-                <fixtestCmd>DCGAN-tensorflow135-fix.sh</fixtestCmd>
-                <fixcommit>158b77d132c60a37f6e1c0059d8de199cb078442</fixcommit>
-            </fixVersion>
-            <character>1</character>
-            <issue_url>https://github.com/carpedm20/DCGAN-tensorflow/issues/135</issue_url>
-            <commit_url>https://github.com/carpedm20/DCGAN-tensorflow/commit/158b77d132c60a37f6e1c0059d8de199cb078442</commit_url>
-            <detection_tools></detection_tools>
-        </bug>
-    </sir>
-
     <sir>
         <name>transformers</name>
         <source>https://github.com/Liang813/transformers</source>
@@ -1774,8 +902,10 @@
             <describe>TransfoXLLMHead doesn't shift labels internally when called for loss</describe>
             <operateScore>3</operateScore>
             <type>IPS</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
+<!--            <localScore></localScore>-->
+<!--            <fixLength></fixLength>-->
+            <support_level>2</support_level>
+            <similar_bugs>rlpyt27</similar_bugs>
             <buggyVersion>
                 <buggytestCmd>transformers3711-buggy.sh</buggytestCmd>
                 <buggycommit>5ebd8989530e874a9666852ef1bc46e0781dc8e8</buggycommit>
@@ -1800,8 +930,10 @@
             <describe>`np.long` is a platform-dependent type, which is equivalent to `int32` under Windows.</describe>
             <operateScore>1</operateScore>
             <type>type mismatch</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
+<!--            <localScore></localScore>-->
+<!--            <fixLength></fixLength>-->
+            <support_level>7</support_level>
+            <similar_bugs>segmentation_models.pytorch186, pytorch-ts1, tensorpack408, tensorflowtts70, openkiwi38, tensorflowtts50</similar_bugs>
             <buggyVersion>
                 <buggytestCmd>texar-pytorch94-buggy.sh</buggytestCmd>
                 <buggycommit>5e899bf359829dec1e08de90bb337d0dd239d3fc</buggycommit>
@@ -1818,32 +950,6 @@
     </sir>
 
     <sir>
-        <name>pytorch3d</name>
-        <source>https://github.com/Liang813/pytorch3d</source>
-        <bug>
-            <id>pytorch3d551</id>
-            <errormessage>None</errormessage>
-            <describe>Bug in 'cotcurv' mesh_laplacian_smoothing.</describe>
-            <operateScore>2</operateScore>
-            <type>API misuse</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
-            <buggyVersion>
-                <buggytestCmd>pytorch3d551-buggy.sh</buggytestCmd>
-                <buggycommit>17468e2862a13a8cd962b5b6aafb30414e8ddf85</buggycommit>
-            </buggyVersion>
-            <fixVersion>
-                <fixtestCmd>pytorch3d551-fix.sh</fixtestCmd>
-                <fixcommit>e13e63a811438c250c1760cbcbcbe6c034a8570d</fixcommit>
-            </fixVersion>
-            <character>0</character>
-            <issue_url>https://github.com/facebookresearch/pytorch3d/issues/551</issue_url>
-            <commit_url>https://github.com/facebookresearch/pytorch3d/commit/e13e63a811438c250c1760cbcbcbe6c034a8570d</commit_url>
-            <detection_tools></detection_tools>
-        </bug>
-    </sir>
-
-    <sir>
         <name>pytorch-ts</name>
         <source>https://github.com/Liang813/pytorch-ts</source>
         <bug>
@@ -1852,8 +958,10 @@
             <describe>Operating system dependent errors</describe>
             <operateScore>1</operateScore>
             <type>type mismatch</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
+<!--            <localScore></localScore>-->
+<!--            <fixLength></fixLength>-->
+            <support_level>7</support_level>
+            <similar_bugs>segmentation_models.pytorch186, texar-pytorch94, tensorpack408, tensorflowtts70, openkiwi38, tensorflowtts50</similar_bugs>
             <buggyVersion>
                 <buggytestCmd>pytorch-ts1-buggy.sh</buggytestCmd>
                 <buggycommit>4bc2d247c70c59479d359d13d2db5739227307e8</buggycommit>
@@ -1878,8 +986,10 @@
             <describe>MujocoLstmModel does not reshape lstm outputs similarly to AtariLstmModel. </describe>
             <operateScore>2</operateScore>
             <type>shape mismatch</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
+<!--            <localScore></localScore>-->
+<!--            <fixLength></fixLength>-->
+            <support_level>5</support_level>
+            <similar_bugs>keras11657, tutorials382, edward46, ciphergan4, transformers3711</similar_bugs>
             <buggyVersion>
                 <buggytestCmd>rlpyt27-buggy.sh</buggytestCmd>
                 <buggycommit>02963ce9b733ae9d7e24b7756daa9ec38d51098f</buggycommit>
@@ -1899,13 +1009,15 @@
         <name>FlowNetPytorch</name>
         <source>https://github.com/Liang813/FlowNetPytorch</source>
         <bug>
-            <id>FlowNetPytorch51</id>
+            <id>flownetpytorch51</id>
             <errormessage>RuntimeError</errormessage>
             <describe>Use torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu") </describe>
             <operateScore>2</operateScore>
             <type>API misuse</type>
-            <localScore></localScore>
-            <fixLength></fixLength>
+<!--            <localScore></localScore>-->
+<!--            <fixLength></fixLength>-->
+            <support_level>2</support_level>
+            <similar_bugs>pytorch-cnn-finetune5</similar_bugs>
             <buggyVersion>
                 <buggytestCmd>FlowNetPytorch51-buggy.sh</buggytestCmd>
                 <buggycommit>4e44aa63d151fe8833dcb6b60acdfe4850857bdb</buggycommit>
@@ -1917,6 +1029,531 @@
             <character>0</character>
             <issue_url>https://github.com/ClementPinard/FlowNetPytorch/issues/51</issue_url>
             <commit_url>https://github.com/ClementPinard/FlowNetPytorch/commit/678ac413ce55cb3db09d1f24532920582af54f43</commit_url>
+            <detection_tools></detection_tools>
+        </bug>
+    </sir>
+
+    <sir>
+        <name>CipherGAN</name>
+        <source>https://github.com/Liang813/CipherGAN</source>
+        <bug>
+            <id>ciphergan4</id>
+            <errormessage></errormessage>
+            <describe>Mismatch in shape when calculating GP loss.</describe>
+            <type>shape mismatch</type>
+            <support_level>5</support_level>
+            <similar_bugs>keras11657, tutorials382, edward46, rlpyt27</similar_bugs>
+            <buggyVersion>
+                <buggytestCmd>ciphergan4-buggy.sh</buggytestCmd>
+                <buggycommit>85892479b44eb930c9a770368d983feba3fbc51e</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>ciphergan4-fix.sh</fixtestCmd>
+                <fixcommit>e3430b50b61462aaaa5d439551e971fd141c03d6</fixcommit>
+            </fixVersion>
+            <character></character>
+            <issue_url>https://github.com/for-ai/CipherGAN/issues/4</issue_url>
+            <commit_url>https://github.com/for-ai/CipherGAN/commit/e3430b50b61462aaaa5d439551e971fd141c03d6</commit_url>
+            <detection_tools></detection_tools>
+        </bug>
+    </sir>
+
+    <sir>
+        <name>zhusuan</name>
+        <source>https://github.com/Liang813/zhusuan</source>
+        <bug>
+            <id>zhusuan2</id>
+            <errormessage></errormessage>
+            <describe>Convolutional VAE batch size not be specified in current version.</describe>
+            <type>shape mismatch</type>
+            <support_level>2</support_level>
+            <similar_bugs>transformers1962</similar_bugs>
+            <buggyVersion>
+                <buggytestCmd>zhusuan2-buggy.sh</buggytestCmd>
+                <buggycommit>b4da9b7c008f2bbd68398686aca1dbce708a1cc9</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>zhusuan2-fix.sh</fixtestCmd>
+                <fixcommit>d244b65bd2ed7e2497a7c8d3acb803ecf3a24b96</fixcommit>
+            </fixVersion>
+            <character></character>
+            <issue_url>https://github.com/thu-ml/zhusuan/issues/2</issue_url>
+            <commit_url>https://github.com/thu-ml/zhusuan/commit/d244b65bd2ed7e2497a7c8d3acb803ecf3a24b96</commit_url>
+            <detection_tools></detection_tools>
+        </bug>
+    </sir>
+
+    <sir>
+        <name>CapsNet-Tensorflow</name>
+        <source>https://github.com/Liang813/CapsNet-Tensorflow</source>
+        <bug>
+            <id>capsnet-tensorflow30</id>
+            <errormessage></errormessage>
+            <describe>The first layer of the decoder is set incorrectly.</describe>
+            <type>shape mismatch</type>
+            <support_level>1</support_level>
+            <similar_bugs></similar_bugs>
+            <buggyVersion>
+                <buggytestCmd>capsnet-tensorflow30-buggy.sh</buggytestCmd>
+                <buggycommit>ae143697f202f4a9e9f70305a74cae2e06028071</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>capsnet-tensorflow30-fix.sh</fixtestCmd>
+                <fixcommit>d8361505f7fbfd0eb21e3cd6d167fcbc717dcf5a</fixcommit>
+            </fixVersion>
+            <character></character>
+            <issue_url>https://github.com/naturomics/CapsNet-Tensorflow/issues/30</issue_url>
+            <commit_url>https://github.com/naturomics/CapsNet-Tensorflow/commit/d8361505f7fbfd0eb21e3cd6d167fcbc717dcf5a</commit_url>
+            <detection_tools></detection_tools>
+        </bug>
+    </sir>
+
+    <sir>
+        <name>tf_mvg</name>
+        <source>https://github.com/Liang813/tf_mvg</source>
+        <bug>
+            <id>tf_mvg1</id>
+            <errormessage></errormessage>
+            <describe>Avoid matrix multiplication in KL divergence.</describe>
+            <type>shape mismatch</type>
+            <support_level>1</support_level>
+            <similar_bugs></similar_bugs>
+            <buggyVersion>
+                <buggytestCmd>tf_mvg1-buggy.sh</buggytestCmd>
+                <buggycommit>415225451cabde773c29655943b5ba8c7d591c4e</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>tf_mvg1-fix.sh</fixtestCmd>
+                <fixcommit>a7b9b2d50401da7dbb72b8fe0aa76e3018e1e0e0</fixcommit>
+            </fixVersion>
+            <character></character>
+            <issue_url>https://github.com/Garoe/tf_mvg/issues/1</issue_url>
+            <commit_url>https://github.com/Garoe/tf_mvg/commit/a7b9b2d50401da7dbb72b8fe0aa76e3018e1e0e0</commit_url>
+            <detection_tools></detection_tools>
+        </bug>
+    </sir>
+
+    <sir>
+        <name>tensorflow-adversarial</name>
+        <source>https://github.com/Liang813/tensorflow-adversarial</source>
+        <bug>
+            <id>tensorflow-adversarial6</id>
+            <errormessage></errormessage>
+            <describe>Dynamic batch volumes should be used instead of static batch volumes, which are not available in most cases.</describe>
+            <type>shape mismatch</type>
+            <support_level>1</support_level>
+            <similar_bugs></similar_bugs>
+            <buggyVersion>
+                <buggytestCmd>tensorflow-adversarial6-buggy.sh</buggytestCmd>
+                <buggycommit>3025b8419a3b74a208498a3ec0f098edaa283342</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>tensorflow-adversarial6-fix.sh</fixtestCmd>
+                <fixcommit>68e2628a83e1fbc8934580fb88787643661b4ea8</fixcommit>
+            </fixVersion>
+            <character></character>
+            <issue_url>https://github.com/gongzhitaao/tensorflow-adversarial/issues/6</issue_url>
+            <commit_url>https://github.com/gongzhitaao/tensorflow-adversarial/commit/68e2628a83e1fbc8934580fb88787643661b4ea8</commit_url>
+            <detection_tools></detection_tools>
+        </bug>
+    </sir>
+
+    <sir>
+        <name>PyTorch-BigGraph</name>
+        <source>https://github.com/Liang813/PyTorch-BigGraph</source>
+        <bug>
+            <id>pytorch-biggraph71</id>
+            <errormessage>IndexError</errormessage>
+            <describe>IndexError: too many indices for array if one dataset is empty.</describe>
+            <type>shape mismatch</type>
+            <support_level>1</support_level>
+            <similar_bugs></similar_bugs>
+            <buggyVersion>
+                <buggytestCmd>pytorch-biggraph71-buggy.sh</buggytestCmd>
+                <buggycommit>77663a6232d9c5391d4120d07d0ddbe68d2424ce</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>pytorch-biggraph71-fix.sh</fixtestCmd>
+                <fixcommit>8a6c5ba6dc58cb65f115c92540be87146b23e74f</fixcommit>
+            </fixVersion>
+            <character></character>
+            <issue_url>https://github.com/facebookresearch/PyTorch-BigGraph/issues/71</issue_url>
+            <commit_url>https://github.com/facebookresearch/PyTorch-BigGraph/commit/8a6c5ba6dc58cb65f115c92540be87146b23e74f</commit_url>
+            <detection_tools></detection_tools>
+        </bug>
+    </sir>
+
+    <sir>
+        <name>tensorpack</name>
+        <source>https://github.com/Liang813/tensorpack</source>
+        <bug>
+            <id>tensorpack408</id>
+            <errormessage></errormessage>
+            <describe>CvtColor will fail after ConstantBackgroundFiller due to wrong type.</describe>
+            <type>type mismatch</type>
+            <support_level>7</support_level>
+            <similar_bugs>segmentation_models.pytorch186, texar-pytorch94, pytorch-ts1, tensorflowtts70, openkiwi38, tensorflowtts50</similar_bugs>
+            <buggyVersion>
+                <buggytestCmd>tensorpack408-buggy.sh</buggytestCmd>
+                <buggycommit>2615205ed2ee47fb1f99ab16e2c79cf35ed31d1a</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>tensorpack408-fix.sh</fixtestCmd>
+                <fixcommit>f0ee73fce425c347c5e3323892fc62803292cbe2</fixcommit>
+            </fixVersion>
+            <character></character>
+            <issue_url>https://github.com/tensorpack/tensorpack/issues/408</issue_url>
+            <commit_url>https://github.com/tensorpack/tensorpack/commit/f0ee73fce425c347c5e3323892fc62803292cbe2</commit_url>
+            <detection_tools></detection_tools>
+        </bug>
+    </sir>
+
+    <sir>
+        <name>TensorFlowTTS</name>
+        <source>https://github.com/Liang813/TensorFlowTTS</source>
+        <bug>
+            <id>tensorflowtts70</id>
+            <errormessage>ValueError</errormessage>
+            <describe>Python inputs incompatible with input_signature.</describe>
+            <type>type mismatch</type>
+            <support_level>7</support_level>
+            <similar_bugs>segmentation_models.pytorch186, texar-pytorch94, pytorch-ts1, tensorpack408, openkiwi38, tensorflowtts50</similar_bugs>
+            <buggyVersion>
+                <buggytestCmd>tensorflowtts70-buggy.sh</buggytestCmd>
+                <buggycommit>9738e8dad2e9dde8afffb888c8cff87f7ab907d5</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>tensorflowtts70-fix.sh</fixtestCmd>
+                <fixcommit>7258ba0b313cdf56f7f357fa7a0e289a9cb35de3</fixcommit>
+            </fixVersion>
+            <character></character>
+            <issue_url>https://github.com/TensorSpeech/TensorFlowTTS/issues/70</issue_url>
+            <commit_url>https://github.com/TensorSpeech/TensorFlowTTS/commit/7258ba0b313cdf56f7f357fa7a0e289a9cb35de3</commit_url>
+            <detection_tools></detection_tools>
+        </bug>
+    </sir>
+
+    <sir>
+        <name>OpenKiwi</name>
+        <source>https://github.com/Liang813/OpenKiwi</source>
+        <bug>
+            <id>openkiwi38</id>
+            <errormessage></errormessage>
+            <describe>Type mismatch when using openkiwi in PyTorch 1.2.</describe>
+            <type>type mismatch</type>
+            <support_level>7</support_level>
+            <similar_bugs>segmentation_models.pytorch186, texar-pytorch94, pytorch-ts1, tensorpack408, tensorflowtts70, tensorflowtts50</similar_bugs>
+            <buggyVersion>
+                <buggytestCmd>openkiwi38-buggy.sh</buggytestCmd>
+                <buggycommit>40c8ca80b818b49cc7684dac5c6f49908861a5b4</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>openkiwi38-fix.sh</fixtestCmd>
+                <fixcommit>6066f05ab963f2b8fe9e221cd3b82e9aea187353</fixcommit>
+            </fixVersion>
+            <character></character>
+            <issue_url>https://github.com/Unbabel/OpenKiwi/issues/38</issue_url>
+            <commit_url>https://github.com/Unbabel/OpenKiwi/commit/6066f05ab963f2b8fe9e221cd3b82e9aea187353</commit_url>
+            <detection_tools></detection_tools>
+        </bug>
+    </sir>
+
+    <sir>
+        <name>TensorFlowTTS</name>
+        <source>https://github.com/Liang813/TensorFlowTTS</source>
+        <bug>
+            <id>tensorflowtts50</id>
+            <errormessage>TypeError</errormessage>
+            <describe>Input 'filter' of 'Conv2D' Op has type float32 that does not match type int32 of argument 'input'.</describe>
+            <type>type mismatch</type>
+            <support_level>7</support_level>
+            <similar_bugs>segmentation_models.pytorch186, texar-pytorch94, pytorch-ts1, tensorpack408, openkiwi38, tensorflowtts70</similar_bugs>
+            <buggyVersion>
+                <buggytestCmd>tensorflowtts50-buggy.sh</buggytestCmd>
+                <buggycommit>55e33832a3e1eebbe776be94251d023bf3d2b94f</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>tensorflowtts50-fix.sh</fixtestCmd>
+                <fixcommit>1b3f8e58570589b7f348fbcba5fb7695dd6b003b</fixcommit>
+            </fixVersion>
+            <character></character>
+            <issue_url>https://github.com/TensorSpeech/TensorFlowTTS/issues/70</issue_url>
+            <commit_url>https://github.com/TensorSpeech/TensorFlowTTS/commit/7258ba0b313cdf56f7f357fa7a0e289a9cb35de3</commit_url>
+            <detection_tools></detection_tools>
+        </bug>
+    </sir>
+
+    <sir>
+        <name>tf2rl</name>
+        <source>https://github.com/Liang813/tf2rl</source>
+        <bug>
+            <id>tf2rl94</id>
+            <errormessage></errormessage>
+            <describe>Inconsistency DDPG and SAC.</describe>
+            <type>type mismatch</type>
+            <support_level>1</support_level>
+            <similar_bugs></similar_bugs>
+            <buggyVersion>
+                <buggytestCmd>tf2rl94-buggy.sh</buggytestCmd>
+                <buggycommit>382895515ccf30e7fc010b8e7343e91725bf91af</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>tf2rl94-fix.sh</fixtestCmd>
+                <fixcommit>d156b9b3d8d7af7aa1592a5fecf7e83459f04f83</fixcommit>
+            </fixVersion>
+            <character></character>
+            <issue_url>https://github.com/keiohta/tf2rl/issues/94</issue_url>
+            <commit_url>https://github.com/keiohta/tf2rl/commit/d156b9b3d8d7af7aa1592a5fecf7e83459f04f83</commit_url>
+            <detection_tools></detection_tools>
+        </bug>
+    </sir>
+
+    <sir>
+        <name>torch-dreams</name>
+        <source>https://github.com/Liang813/torch-dreams</source>
+        <bug>
+            <id>torch-dreams29</id>
+            <errormessage></errormessage>
+            <describe>"Your session crashed for an unknown reason" on google colab.</describe>
+            <type>type mismatch</type>
+            <support_level>2</support_level>
+            <similar_bugs>tfmf1</similar_bugs>
+            <buggyVersion>
+                <buggytestCmd>torch-dreams29-buggy.sh</buggytestCmd>
+                <buggycommit>b7b4b2a2ea97139607b635fff384393b16c9165a</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>torch-dreams29-fix.sh</fixtestCmd>
+                <fixcommit>7be527b31dfb2c43de3df1bbade8d017e9f3f533</fixcommit>
+            </fixVersion>
+            <character></character>
+            <issue_url>https://github.com/Mayukhdeb/torch-dreams/issues/29</issue_url>
+            <commit_url>https://github.com/Mayukhdeb/torch-dreams/commit/7be527b31dfb2c43de3df1bbade8d017e9f3f533</commit_url>
+            <detection_tools></detection_tools>
+        </bug>
+    </sir>
+
+    <sir>
+        <name>tfmf</name>
+        <source>https://github.com/Liang813/tfmf</source>
+        <bug>
+            <id>tfmf1</id>
+            <errormessage></errormessage>
+            <describe>Unsupported feed type due to np.int32 dtype.</describe>
+            <type>type mismatch</type>
+            <support_level>2</support_level>
+            <similar_bugs>torch-dreams29</similar_bugs>
+            <buggyVersion>
+                <buggytestCmd>tfmf1-buggy.sh</buggytestCmd>
+                <buggycommit>4058e3698132de5d2708b9918e00d5ceca1e0c2f</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>tfmf1-fix.sh</fixtestCmd>
+                <fixcommit>7b3fcff0b6fb3e40a835d599b4e91892d64c5b2f</fixcommit>
+            </fixVersion>
+            <character></character>
+            <issue_url>https://github.com/twolodzko/tfmf/issues/1</issue_url>
+            <commit_url>https://github.com/twolodzko/tfmf/commit/7b3fcff0b6fb3e40a835d599b4e91892d64c5b2f</commit_url>
+            <detection_tools></detection_tools>
+        </bug>
+    </sir>
+
+    <sir>
+        <name>MnemonicReader</name>
+        <source>https://github.com/Liang813/MnemonicReader</source>
+        <bug>
+            <id>mnemonicreader3</id>
+            <errormessage></errormessage>
+            <describe>Running train.py encounters type mismatch.</describe>
+            <type>type mismatch</type>
+            <support_level>2</support_level>
+            <similar_bugs>keras1141</similar_bugs>
+            <buggyVersion>
+                <buggytestCmd>mnemonicreader3-buggy.sh</buggytestCmd>
+                <buggycommit>eb51eb679a58677a405953c0c579568377c0b0f8</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>mnemonicreader3-fix.sh</fixtestCmd>
+                <fixcommit>660c6f67e1819fd1d930ab972553de489d04c48e</fixcommit>
+            </fixVersion>
+            <character></character>
+            <issue_url>https://github.com/HKUST-KnowComp/MnemonicReader/issues/3</issue_url>
+            <commit_url>https://github.com/HKUST-KnowComp/MnemonicReader/commit/660c6f67e1819fd1d930ab972553de489d04c48e</commit_url>
+            <detection_tools></detection_tools>
+        </bug>
+    </sir>
+
+    <sir>
+        <name>models</name>
+        <source>https://github.com/Liang813/models</source>
+        <bug>
+            <id>models1040</id>
+            <errormessage></errormessage>
+            <describe>Wrong use of parameter form.</describe>
+            <type>API misuse</type>
+            <support_level>4</support_level>
+            <similar_bugs>sact1, models857, seq2seq130</similar_bugs>
+            <buggyVersion>
+                <buggytestCmd>models1040-buggy.sh</buggytestCmd>
+                <buggycommit>afdcf7d4270f91f8b2be38c77f6662c270e8b6ee</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>models1040-fix.sh</fixtestCmd>
+                <fixcommit>862fbfd4cc2f1cd9f2058225999304de45234c46</fixcommit>
+            </fixVersion>
+            <character></character>
+            <issue_url>https://github.com/tensorflow/models/pull/1040</issue_url>
+            <commit_url>https://github.com/tensorflow/models/commit/862fbfd4cc2f1cd9f2058225999304de45234c46</commit_url>
+            <detection_tools></detection_tools>
+        </bug>
+    </sir>
+
+    <sir>
+        <name>seq2seq</name>
+        <source>https://github.com/Liang813/seq2seq</source>
+        <bug>
+            <id>seq2seq130</id>
+            <errormessage></errormessage>
+            <describe>Wrong use of parameter form.</describe>
+            <type>API misuse</type>
+            <support_level>4</support_level>
+            <similar_bugs>sact1, models857, models1040</similar_bugs>
+            <buggyVersion>
+                <buggytestCmd>seq2seq130-buggy.sh</buggytestCmd>
+                <buggycommit>6100ad84ace9bbbc7f5c7bb324382feb15e26f11</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>seq2seq130-fix.sh</fixtestCmd>
+                <fixcommit>e0abe4f0ca7b1547a871b023162a460d8d3a6226</fixcommit>
+            </fixVersion>
+            <character></character>
+            <issue_url>https://github.com/google/seq2seq/pull/130</issue_url>
+            <commit_url>https://github.com/google/seq2seq/commit/e0abe4f0ca7b1547a871b023162a460d8d3a6226</commit_url>
+            <detection_tools></detection_tools>
+        </bug>
+    </sir>
+
+    <sir>
+        <name>models</name>
+        <source>https://github.com/Liang813/models</source>
+        <bug>
+            <id>models1220</id>
+            <errormessage></errormessage>
+            <describe>Wrong order of function parameters.</describe>
+            <type>API misuse</type>
+            <support_level>2</support_level>
+            <similar_bugs>models1063</similar_bugs>
+            <buggyVersion>
+                <buggytestCmd>models1220-buggy.sh</buggytestCmd>
+                <buggycommit>dcb49d91f9ee867730ade3865d07e4dcee88c0b9</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>models1220-fix.sh</fixtestCmd>
+                <fixcommit>e4cbe9ee31995e99dee2d8a4f58e28bb965b633d</fixcommit>
+            </fixVersion>
+            <character></character>
+            <issue_url>https://github.com/tensorflow/models/issues/1220</issue_url>
+            <commit_url>https://github.com/tensorflow/models/commit/e4cbe9ee31995e99dee2d8a4f58e28bb965b633d</commit_url>
+            <detection_tools></detection_tools>
+        </bug>
+    </sir>
+
+    <sir>
+        <name>tensorpack</name>
+        <source>https://github.com/Liang813/tensorpack</source>
+        <bug>
+            <id>tensorpack1008</id>
+            <errormessage>FailedPreconditionError</errormessage>
+            <describe>Uninitialized when using hashtable.</describe>
+            <type>API misuse</type>
+            <support_level>3</support_level>
+            <similar_bugs>gpflow99, tensorflow3168</similar_bugs>
+            <buggyVersion>
+                <buggytestCmd>tensorpack1008-buggy.sh</buggytestCmd>
+                <buggycommit>e68af9aaaf115d1dc669e3390175d44d21759338</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>tensorpack1008-fix.sh</fixtestCmd>
+                <fixcommit>168f729220d5be09d12a5941d1089c10898c5d87</fixcommit>
+            </fixVersion>
+            <character></character>
+            <issue_url>https://github.com/tensorpack/tensorpack/issues/1008</issue_url>
+            <commit_url>https://github.com/tensorpack/tensorpack/commit/168f729220d5be09d12a5941d1089c10898c5d87</commit_url>
+            <detection_tools></detection_tools>
+        </bug>
+    </sir>
+
+    <sir>
+        <name>tf-lstm-char-cnn</name>
+        <source>https://github.com/Liang813/tf-lstm-char-cnn</source>
+        <bug>
+            <id>tf-lstm-char-cnn6</id>
+            <errormessage>FailedPreconditionError</errormessage>
+            <describe>Due to the version update, the initialization function has been change.</describe>
+            <type>API misuse</type>
+            <support_level>3</support_level>
+            <similar_bugs></similar_bugs>
+            <buggyVersion>
+                <buggytestCmd>tf-lstm-char-cnn6-buggy.sh</buggytestCmd>
+                <buggycommit>7e899e6992cbf9a96e6d791e5d364eaaeec339a2</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>tf-lstm-char-cnn6-fix.sh</fixtestCmd>
+                <fixcommit>89bc07e2d8a7c5a17ed8de2fcab45f043877c914</fixcommit>
+            </fixVersion>
+            <character></character>
+            <issue_url>https://github.com/mkroutikov/tf-lstm-char-cnn/issues/6</issue_url>
+            <commit_url>https://github.com/mkroutikov/tf-lstm-char-cnn/commit/89bc07e2d8a7c5a17ed8de2fcab45f043877c914</commit_url>
+            <detection_tools></detection_tools>
+        </bug>
+    </sir>
+
+    <sir>
+        <name>deep-rl-tensorflow</name>
+        <source>https://github.com/Liang813/deep-rl-tensorflow</source>
+        <bug>
+            <id>deep-rl-tensorflow21</id>
+            <errormessage></errormessage>
+            <describe>Initialize_all_variables deprecation warning.</describe>
+            <type>API misuse</type>
+            <support_level>3</support_level>
+            <similar_bugs></similar_bugs>
+            <buggyVersion>
+                <buggytestCmd>deep-rl-tensorflow21-buggy.sh</buggytestCmd>
+                <buggycommit>169af236e8800384d75589fbe78ef262e21b1b3f</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>deep-rl-tensorflow21-fix.sh</fixtestCmd>
+                <fixcommit>7bbb5a359276b37c9fdb58c4f7f2cf01bc8a4009</fixcommit>
+            </fixVersion>
+            <character></character>
+            <issue_url>https://github.com/carpedm20/deep-rl-tensorflow/issues/21</issue_url>
+            <commit_url>https://github.com/carpedm20/deep-rl-tensorflow/commit/7bbb5a359276b37c9fdb58c4f7f2cf01bc8a4009</commit_url>
+            <detection_tools></detection_tools>
+        </bug>
+    </sir>
+
+    <sir>
+        <name>bit-rnn</name>
+        <source>https://github.com/Liang813/bit-rnn</source>
+        <bug>
+            <id>bit-rnn2</id>
+            <errormessage></errormessage>
+            <describe>Due to the version update, the initialization function has been change.</describe>
+            <type>API misuse</type>
+            <support_level>3</support_level>
+            <similar_bugs></similar_bugs>
+            <buggyVersion>
+                <buggytestCmd>bit-rnn2-buggy.sh</buggytestCmd>
+                <buggycommit>99bf7cd4fae00dfdc2befef9f7b245e4e712207c</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>bit-rnn2-fix.sh</fixtestCmd>
+                <fixcommit>65f5a6f9c41be7edee0f77dd391bd394027aebf3</fixcommit>
+            </fixVersion>
+            <character></character>
+            <issue_url>https://github.com/qinyao-he/bit-rnn/issues/2</issue_url>
+            <commit_url>https://github.com/qinyao-he/bit-rnn/commit/65f5a6f9c41be7edee0f77dd391bd394027aebf3</commit_url>
             <detection_tools></detection_tools>
         </bug>
     </sir>

@@ -22,10 +22,12 @@ public class Constant {
     public final static String XML_FIX_TEST_CMD_LABEL = "fixtestCmd";
     public final static String XML_BUG_FIX_LENGTH="fixLength";
     public final static String XML_BUG_LOCAL_SCORE = "localScore";
+    public final static String XML_SUPPORT_LEVEL = "support_level";
     public final static String XML_BUG_CHARACTER = "character";
     public final static String XML_ISSUE_URL = "issue_url";
     public final static String XML_COMMIT_URL = "commit_url";
     public final static String XML_DETECTION_TOOLS = "detection_tools";
+    public final static String XAL_SIMILAR_BUGS = "similar_bugs";
     public final static String XML_BUGGY_COMMIT_LABEL = "buggycommit";
     public final static String XML_FIX_COMMIT_LABEL = "fixcommit";
 

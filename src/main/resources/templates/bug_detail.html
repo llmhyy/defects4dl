@@ -63,15 +63,14 @@
                 <td colspan="1">{{ dataInfoDetail.type }}</td>
             </tr>
             <tr>
-                <td class="item-title">Supported detection tools:</td>
-                <td>{{ dataInfoDetail.detection_tools }}</td>
+<!--                <td class="item-title">Supported detection tools:</td>-->
+<!--                <td>{{ dataInfoDetail.detection_tools }}</td>-->
                 <td class="item-title">Similar Bugs:</td>
-                <td colspan="5">{{ dataInfoDetail.similar_bugs }}</td>
-            </tr>
-            <tr>
+                <td>{{ dataInfoDetail.similar_bugs }}</td>
                 <td class="item-title">Description:</td>
-                <td colspan="7">{{ dataInfoDetail.describe }}</td>
+                <td colspan="5">{{ dataInfoDetail.describe }}</td>
             </tr>
+
             <tr>
                 <td class="item-title" colspan="2">Run Detection Tools:</td>
                 <td colspan="6">
@@ -130,8 +129,19 @@
                     vm.dataInfoDetail = response.data;
                     vm.issue_url = response.data.issue_url;
                     vm.commit_url = response.data.commit_url;
+                    if (vm.dataInfoDetail.detection_tools.search("ShapeFlow") == -1){
+                        $("#btn_shapeFlow").attr({"disabled":"disabled"});
+                    }
+                    if (vm.dataInfoDetail.detection_tools.search("DeepLocalize") == -1){
+                        $("#btn_DeepLocalize").attr({"disabled":"disabled"});
+                    }
+                    if (vm.dataInfoDetail.detection_tools.search("DEBAR") == -1){
+                        $("#btn_DEBAR").attr({"disabled":"disabled"});
+                    }
+                    if (vm.dataInfoDetail.detection_tools.search("GRIST") == -1){
+                        $("#btn_GRIST").attr({"disabled":"disabled"});
+                    }
                 })
-
         },
         methods: {
             showDiff: function (){

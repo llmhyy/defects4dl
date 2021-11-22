@@ -1492,7 +1492,7 @@
             <describe>Due to the version update, the initialization function has been change.</describe>
             <type>API misuse</type>
             <support_level>3</support_level>
-            <similar_bugs></similar_bugs>
+            <similar_bugs>deep-rl-tensorflow21, bit-rnn2</similar_bugs>
             <buggyVersion>
                 <buggytestCmd>tf-lstm-char-cnn6-buggy.sh</buggytestCmd>
                 <buggycommit>7e899e6992cbf9a96e6d791e5d364eaaeec339a2</buggycommit>
@@ -1517,7 +1517,7 @@
             <describe>Initialize_all_variables deprecation warning.</describe>
             <type>API misuse</type>
             <support_level>3</support_level>
-            <similar_bugs></similar_bugs>
+            <similar_bugs>tf-lstm-char-cnn6, bit-rnn2</similar_bugs>
             <buggyVersion>
                 <buggytestCmd>deep-rl-tensorflow21-buggy.sh</buggytestCmd>
                 <buggycommit>169af236e8800384d75589fbe78ef262e21b1b3f</buggycommit>
@@ -1542,7 +1542,7 @@
             <describe>Due to the version update, the initialization function has been change.</describe>
             <type>API misuse</type>
             <support_level>3</support_level>
-            <similar_bugs></similar_bugs>
+            <similar_bugs>tf-lstm-char-cnn6, deep-rl-tensorflow21</similar_bugs>
             <buggyVersion>
                 <buggytestCmd>bit-rnn2-buggy.sh</buggytestCmd>
                 <buggycommit>99bf7cd4fae00dfdc2befef9f7b245e4e712207c</buggycommit>
@@ -1554,6 +1554,231 @@
             <character></character>
             <issue_url>https://github.com/qinyao-he/bit-rnn/issues/2</issue_url>
             <commit_url>https://github.com/qinyao-he/bit-rnn/commit/65f5a6f9c41be7edee0f77dd391bd394027aebf3</commit_url>
+            <detection_tools></detection_tools>
+        </bug>
+    </sir>
+
+    <sir>
+        <name>pytorch-cnn-finetune</name>
+        <source>https://github.com/Liang813/pytorch-cnn-finetune</source>
+        <bug>
+            <id>pytorch-cnn-finetune5</id>
+            <errormessage></errormessage>
+            <describe>Consider the case of a machine without a GPU.</describe>
+            <type>API misuse</type>
+            <support_level>2</support_level>
+            <similar_bugs>flownetpytorch51</similar_bugs>
+            <buggyVersion>
+                <buggytestCmd>pytorch-cnn-finetune5-buggy.sh</buggytestCmd>
+                <buggycommit>4d22c669817ec6c83271d8c480c0fba0fcf75fdb</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>pytorch-cnn-finetune5-fix.sh</fixtestCmd>
+                <fixcommit>73a0b578a80ba48c0a195e4cb946a1fb98a34e2a</fixcommit>
+            </fixVersion>
+            <character></character>
+            <issue_url>https://github.com/creafz/pytorch-cnn-finetune/issues/5</issue_url>
+            <commit_url>https://github.com/creafz/pytorch-cnn-finetune/commit/73a0b578a80ba48c0a195e4cb946a1fb98a34e2a</commit_url>
+            <detection_tools></detection_tools>
+        </bug>
+    </sir>
+
+    <sir>
+        <name>bindsnet</name>
+        <source>https://github.com/Liang813/bindsnet</source>
+        <bug>
+            <id>bindsnet362</id>
+            <errormessage></errormessage>
+            <describe>GPU device miss-match in encoder fix.</describe>
+            <type>API misuse</type>
+            <support_level>2</support_level>
+            <similar_bugs>dalle-pytorch161</similar_bugs>
+            <buggyVersion>
+                <buggytestCmd>bindsnet362-buggy.sh</buggytestCmd>
+                <buggycommit>2b17f617c4c1e586a5896f3ac57b9398f3f1c555</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>bindsnet362-fix.sh</fixtestCmd>
+                <fixcommit>a696fd4c031e25db6edbb19f378d3c26587b077c</fixcommit>
+            </fixVersion>
+            <character></character>
+            <issue_url>https://github.com/BindsNET/bindsnet/issues/362</issue_url>
+            <commit_url>https://github.com/BindsNET/bindsnet/commit/a696fd4c031e25db6edbb19f378d3c26587b077c</commit_url>
+            <detection_tools></detection_tools>
+        </bug>
+    </sir>
+
+    <sir>
+        <name>DALLE-pytorch</name>
+        <source>https://github.com/Liang813/DALLE-pytorch</source>
+        <bug>
+            <id>dalle-pytorch161</id>
+            <errormessage></errormessage>
+            <describe>Set CUDA device earlier to avoid errors.</describe>
+            <type>API misuse</type>
+            <support_level>2</support_level>
+            <similar_bugs>bindsnet362</similar_bugs>
+            <buggyVersion>
+                <buggytestCmd>dalle-pytorch161-buggy.sh</buggytestCmd>
+                <buggycommit>c9d371281e7d6f7e9fdde7cf0248a64e10dc74c0</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>dalle-pytorch161-fix.sh</fixtestCmd>
+                <fixcommit>fdb31e18c931cd137267f47f38b63b70f6d56b91</fixcommit>
+            </fixVersion>
+            <character></character>
+            <issue_url>https://github.com/lucidrains/DALLE-pytorch/issues/161</issue_url>
+            <commit_url>https://github.com/lucidrains/DALLE-pytorch/commit/fdb31e18c931cd137267f47f38b63b70f6d56b91</commit_url>
+            <detection_tools></detection_tools>
+        </bug>
+    </sir>
+
+    <sir>
+        <name>char-rnn-tensorflow</name>
+        <source>https://github.com/Liang813/char-rnn-tensorflow</source>
+        <bug>
+            <id>char-rnn-tensorflow47</id>
+            <errormessage></errormessage>
+            <describe>On GPU machine, there is no such thing as eval() for some reason. sess.run(x) is the way to get the values out of a tensor.</describe>
+            <type>API misuse</type>
+            <support_level>2</support_level>
+            <similar_bugs>word-rnn-tensorflow9</similar_bugs>
+            <buggyVersion>
+                <buggytestCmd>char-rnn-tensorflow47-buggy.sh</buggytestCmd>
+                <buggycommit>c737d4c3867e582a2734d8f5edbcb0948d50438e</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>char-rnn-tensorflow47-fix.sh</fixtestCmd>
+                <fixcommit>b365fac41e477e1d8b81e3e49a710d962fc4f6da</fixcommit>
+            </fixVersion>
+            <character></character>
+            <issue_url>https://github.com/sherjilozair/char-rnn-tensorflow/issues/47</issue_url>
+            <commit_url>https://github.com/sherjilozair/char-rnn-tensorflow/pull/49/commits/b365fac41e477e1d8b81e3e49a710d962fc4f6da</commit_url>
+            <detection_tools></detection_tools>
+        </bug>
+    </sir>
+
+    <sir>
+        <name>word-rnn-tensorflow</name>
+        <source>https://github.com/Liang813/word-rnn-tensorflow</source>
+        <bug>
+            <id>word-rnn-tensorflow9</id>
+            <errormessage></errormessage>
+            <describe>Depending on how TF was installed (GPU for instance), eval() is not available, while sess.run() always is.</describe>
+            <type>API misuse</type>
+            <support_level>2</support_level>
+            <similar_bugs>char-rnn-tensorflow47</similar_bugs>
+            <buggyVersion>
+                <buggytestCmd>word-rnn-tensorflow9-buggy.sh</buggytestCmd>
+                <buggycommit>4b48ed745a41f650738ff5c55aae75b3244e3bf2</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>word-rnn-tensorflow9-fix.sh</fixtestCmd>
+                <fixcommit>786b41b7bb799d9004e11adfedc1881f7c852a7b</fixcommit>
+            </fixVersion>
+            <character></character>
+            <issue_url>https://github.com/hunkim/word-rnn-tensorflow/issues/9</issue_url>
+            <commit_url>https://github.com/hunkim/word-rnn-tensorflow/pull/15/commits/786b41b7bb799d9004e11adfedc1881f7c852a7b</commit_url>
+            <detection_tools></detection_tools>
+        </bug>
+    </sir>
+
+    <sir>
+        <name>GaitGraph</name>
+        <source>https://github.com/Liang813/GaitGraph</source>
+        <bug>
+            <id>gaitgraph3</id>
+            <errormessage></errormessage>
+            <describe>Torch.nn.DataParallel using multiple GPUs.</describe>
+            <type>Performance</type>
+            <support_level>1</support_level>
+            <similar_bugs></similar_bugs>
+            <buggyVersion>
+                <buggytestCmd>gaitgraph3-buggy.sh</buggytestCmd>
+                <buggycommit>e0287414800e84e7364452a62dcc8e44d2295012</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>gaitgraph3-fix.sh</fixtestCmd>
+                <fixcommit>7e655251657bf4ca189e712cf01df39a390eac69</fixcommit>
+            </fixVersion>
+            <character></character>
+            <issue_url>https://github.com/tteepe/GaitGraph/issues/3</issue_url>
+            <commit_url>https://github.com/tteepe/GaitGraph/commit/7e655251657bf4ca189e712cf01df39a390eac69</commit_url>
+            <detection_tools></detection_tools>
+        </bug>
+    </sir>
+
+    <sir>
+        <name>models</name>
+        <source>https://github.com/Liang813/models</source>
+        <bug>
+            <id>models449</id>
+            <errormessage></errormessage>
+            <describe>Mismatch in the number of function parameters.</describe>
+            <type>API misuse</type>
+            <support_level>1</support_level>
+            <similar_bugs></similar_bugs>
+            <buggyVersion>
+                <buggytestCmd>models449-buggy.sh</buggytestCmd>
+                <buggycommit>c5bb05430dcc6a2c377ffed35b00a18b402fcbc3</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>models449-fix.sh</fixtestCmd>
+                <fixcommit>253ca4ab8101dc2c2404530680b4a12e7518572d</fixcommit>
+            </fixVersion>
+            <character></character>
+            <issue_url>https://github.com/tensorflow/models/pull/449</issue_url>
+            <commit_url>https://github.com/tensorflow/models/commit/253ca4ab8101dc2c2404530680b4a12e7518572d</commit_url>
+            <detection_tools></detection_tools>
+        </bug>
+    </sir>
+
+    <sir>
+        <name>PyTorch-Mini-Tutorials</name>
+        <source>https://github.com/Liang813/PyTorch-Mini-Tutorials</source>
+        <bug>
+            <id>pytorch-mini-tutorials1</id>
+            <errormessage></errormessage>
+            <describe>Modified the architecture of the model by removing the softmax layer.</describe>
+            <type>architecture design convention</type>
+            <support_level>2</support_level>
+            <similar_bugs>generative-models20</similar_bugs>
+            <buggyVersion>
+                <buggytestCmd>pytorch-mini-tutorials1-buggy.sh</buggytestCmd>
+                <buggycommit>4ee3ccb0d544488a26272206f23a453e55f83779</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>pytorch-mini-tutorials1-fix.sh</fixtestCmd>
+                <fixcommit>f32192e649d71d49f2ee5169cede28260147026f</fixcommit>
+            </fixVersion>
+            <character></character>
+            <issue_url>https://github.com/vinhkhuc/PyTorch-Mini-Tutorials/issues/1</issue_url>
+            <commit_url>https://github.com/vinhkhuc/PyTorch-Mini-Tutorials/commit/f32192e649d71d49f2ee5169cede28260147026f</commit_url>
+            <detection_tools></detection_tools>
+        </bug>
+    </sir>
+
+    <sir>
+        <name>generative-models</name>
+        <source>https://github.com/Liang813/generative-models</source>
+        <bug>
+            <id>generative-models20</id>
+            <errormessage></errormessage>
+            <describe>Should not apply softmax into nn.cross_entropy.</describe>
+            <type>architecture design convention</type>
+            <support_level>2</support_level>
+            <similar_bugs>pytorch-mini-tutorials1</similar_bugs>
+            <buggyVersion>
+                <buggytestCmd>generative-models20-buggy.sh</buggytestCmd>
+                <buggycommit>eacf31ab4992aa01b45e59af81104f7bda63e264</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>generative-models20-fix.sh</fixtestCmd>
+                <fixcommit>2fe7d030ddd22d4780647ea151f26b0e4621ec78</fixcommit>
+            </fixVersion>
+            <character></character>
+            <issue_url>https://github.com/wiseodd/generative-models/issues/20</issue_url>
+            <commit_url>https://github.com/wiseodd/generative-models/commit/2fe7d030ddd22d4780647ea151f26b0e4621ec78</commit_url>
             <detection_tools></detection_tools>
         </bug>
     </sir>

@@ -36,7 +36,7 @@
             <errormessage>FailedPreconditionError</errormessage>
             <describe>Not all variables in AF session are initialized</describe>
             <operateScore>1</operateScore>
-            <type>variable initialization</type>
+            <type>API misuse</type>
 <!--            <localScore></localScore>-->
 <!--            <fixLength></fixLength>-->
             <support_level>3</support_level>
@@ -92,7 +92,7 @@
             <errormessage>None</errormessage>
             <describe>Use the tensorflow cross entropy function to prevent nan losses.</describe>
             <operateScore>3</operateScore>
-            <type>IPS</type>
+            <type>numeric error</type>
 <!--            <localScore></localScore>-->
 <!--            <fixLength></fixLength>-->
             <support_level>2</support_level>
@@ -112,33 +112,33 @@
         </bug>
     </sir>
 
-    <sir>
-        <name>Deep-Learning-TensorFlow</name>
-        <source>https://github.com/Liang813/Deep-Learning-TensorFlow</source>
-        <bug>
-            <id>deep-learning-tensorflow1</id>
-            <errormessage>None</errormessage>
-            <describe>The learning_rate is not small enough to cause the parameter to explode</describe>
-            <operateScore>1</operateScore>
-            <type>IPS</type>
-<!--            <localScore></localScore>-->
-<!--            <fixLength></fixLength>-->
-            <support_level>2</support_level>
-            <similar_bugs>gail_ppo_tf20</similar_bugs>
-            <buggyVersion>
-                <buggytestCmd>Deep-Learning-TensorFlow1-buggy.sh</buggytestCmd>
-                <buggycommit>907833ab90e27af156484e1aa140ed656e4b4a15</buggycommit>
-            </buggyVersion>
-            <fixVersion>
-                <fixtestCmd>Deep-Learning-TensorFlow1-fix.sh</fixtestCmd>
-                <fixcommit>b9bc441fdec5e8a5a1c4285d724dd43b327b4cf8</fixcommit>
-            </fixVersion>
-            <character>1</character>
-            <issue_url>https://github.com/gabrieleangeletti/Deep-Learning-TensorFlow/pull/1</issue_url>
-            <commit_url>https://github.com/gabrieleangeletti/Deep-Learning-TensorFlow/pull/1/commits/b9bc441fdec5e8a5a1c4285d724dd43b327b4cf8</commit_url>
-            <detection_tools></detection_tools>
-        </bug>
-    </sir>
+<!--    <sir>-->
+<!--        <name>Deep-Learning-TensorFlow</name>-->
+<!--        <source>https://github.com/Liang813/Deep-Learning-TensorFlow</source>-->
+<!--        <bug>-->
+<!--            <id>deep-learning-tensorflow1</id>-->
+<!--            <errormessage>None</errormessage>-->
+<!--            <describe>The learning_rate is not small enough to cause the parameter to explode</describe>-->
+<!--            <operateScore>1</operateScore>-->
+<!--            <type>IPS</type>-->
+<!--&lt;!&ndash;            <localScore></localScore>&ndash;&gt;-->
+<!--&lt;!&ndash;            <fixLength></fixLength>&ndash;&gt;-->
+<!--            <support_level>2</support_level>-->
+<!--            <similar_bugs>gail_ppo_tf20</similar_bugs>-->
+<!--            <buggyVersion>-->
+<!--                <buggytestCmd>Deep-Learning-TensorFlow1-buggy.sh</buggytestCmd>-->
+<!--                <buggycommit>907833ab90e27af156484e1aa140ed656e4b4a15</buggycommit>-->
+<!--            </buggyVersion>-->
+<!--            <fixVersion>-->
+<!--                <fixtestCmd>Deep-Learning-TensorFlow1-fix.sh</fixtestCmd>-->
+<!--                <fixcommit>b9bc441fdec5e8a5a1c4285d724dd43b327b4cf8</fixcommit>-->
+<!--            </fixVersion>-->
+<!--            <character>1</character>-->
+<!--            <issue_url>https://github.com/gabrieleangeletti/Deep-Learning-TensorFlow/pull/1</issue_url>-->
+<!--            <commit_url>https://github.com/gabrieleangeletti/Deep-Learning-TensorFlow/pull/1/commits/b9bc441fdec5e8a5a1c4285d724dd43b327b4cf8</commit_url>-->
+<!--            <detection_tools></detection_tools>-->
+<!--        </bug>-->
+<!--    </sir>-->
 
     <sir>
         <name>Deep-Learning-TensorFlow</name>
@@ -148,7 +148,7 @@
             <errormessage>None</errormessage>
             <describe>missing tf.nn.softmax() in create_softmax_layer</describe>
             <operateScore>1</operateScore>
-            <type>IPS</type>
+            <type>architecture design convention</type>
 <!--            <localScore></localScore>-->
 <!--            <fixLength></fixLength>-->
             <support_level>2</support_level>
@@ -231,7 +231,7 @@
             <errormessage>ZeroDivisionError</errormessage>
             <describe>If dataset size = 1 batch, a zero division error will be reported</describe>
             <operateScore>1</operateScore>
-            <type>zero division</type>
+            <type>numeric error</type>
 <!--            <localScore></localScore>-->
 <!--            <fixLength></fixLength>-->
             <support_level>3</support_level>
@@ -287,7 +287,7 @@
             <errormessage>FailedPreconditionError</errormessage>
             <describe>Initialize local variables in fully_connected_preloaded</describe>
             <operateScore>1</operateScore>
-            <type>variable initialization</type>
+            <type>API misuse</type>
 <!--            <localScore></localScore>-->
 <!--            <fixLength></fixLength>-->
             <support_level>3</support_level>
@@ -343,7 +343,7 @@
             <errormessage>nan</errormessage>
             <describe>NaN grads appear when an empty string is given</describe>
             <operateScore>1</operateScore>
-            <type>zero division</type>
+            <type>numeric error</type>
 <!--            <localScore></localScore>-->
 <!--            <fixLength></fixLength>-->
             <support_level>3</support_level>
@@ -371,7 +371,7 @@
             <errormessage>None</errormessage>
             <describe>inv_transform was crapping out when drawing a large number of samples because the base sample was exactly 1.0( see issue #161). While we were previously subtracting off a small number (1e-10), this number wasn't sufficient. I found that (1-e6) was the smallest base 10 number we could subtract off to get rid of the -inf.</describe>
             <operateScore>1</operateScore>
-            <type>IPS</type>
+            <type>numeric error</type>
 <!--            <localScore></localScore>-->
 <!--            <fixLength></fixLength>-->
             <support_level>1</support_level>
@@ -399,7 +399,7 @@
             <errormessage>IndexError</errormessage>
             <describe>Indexing 0-dim tensor error</describe>
             <operateScore>1</operateScore>
-            <type>IndexError</type>
+            <type>API misuse</type>
 <!--            <localScore></localScore>-->
 <!--            <fixLength></fixLength>-->
             <support_level>1</support_level>
@@ -565,7 +565,7 @@
             <errormessage>None</errormessage>
             <describe>Author forgot to compute the mean loss over a batch. It is not a problem with small batch size, but it could lead to issues with large batch size, as it leads to unrepresentative cost (NaN) ...</describe>
             <operateScore>1</operateScore>
-            <type>IPS</type>
+            <type>numeric error</type>
 <!--            <localScore></localScore>-->
 <!--            <fixLength></fixLength>-->
             <support_level>2</support_level>
@@ -593,7 +593,7 @@
             <errormessage>None</errormessage>
             <describe>Use tf.nn.softmax() only in the case of cross entropy loss</describe>
             <operateScore>2</operateScore>
-            <type>IPS</type>
+            <type>architecture design convention</type>
 <!--            <localScore></localScore>-->
 <!--            <fixLength></fixLength>-->
             <support_level>2</support_level>
@@ -621,7 +621,7 @@
             <errormessage>None</errormessage>
             <describe>NaN may occur when calculating the cross entropy loss</describe>
             <operateScore>1</operateScore>
-            <type>IPS</type>
+            <type>numeric error</type>
 <!--            <localScore></localScore>-->
 <!--            <fixLength></fixLength>-->
             <support_level>2</support_level>
@@ -677,7 +677,7 @@
             <errormessage>InvalidArgumentError</errormessage>
             <describe>Failing to load data during Training on CelebA</describe>
             <operateScore>5</operateScore>
-            <type>shape mismatch</type>
+            <type>API misuse</type>
 <!--            <localScore></localScore>-->
 <!--            <fixLength></fixLength>-->
             <support_level>2</support_level>
@@ -733,7 +733,7 @@
             <errormessage>nan</errormessage>
             <describe>cos mode does not carefully deal with division by zero, might be the cause of NaN. output = K.batch_dot(l1, l2, self.dot_axes) / denominator  </describe>
             <operateScore>1</operateScore>
-            <type>zero division</type>
+            <type>numeric error</type>
 <!--            <localScore></localScore>-->
 <!--            <fixLength></fixLength>-->
             <support_level>3</support_level>
@@ -845,7 +845,7 @@
             <errormessage>None</errormessage>
             <describe>Adding a jitter to the tf.acos-operation fixes the gradient problem</describe>
             <operateScore>5</operateScore>
-            <type>IPS</type>
+            <type>numeric error</type>
 <!--            <localScore></localScore>-->
 <!--            <fixLength></fixLength>-->
             <support_level>2</support_level>
@@ -901,7 +901,7 @@
             <errormessage>AssertionError</errormessage>
             <describe>TransfoXLLMHead doesn't shift labels internally when called for loss</describe>
             <operateScore>3</operateScore>
-            <type>IPS</type>
+            <type>shape mismatch</type>
 <!--            <localScore></localScore>-->
 <!--            <fixLength></fixLength>-->
             <support_level>2</support_level>
@@ -1115,7 +1115,7 @@
             <id>tf_mvg1</id>
             <errormessage></errormessage>
             <describe>Avoid matrix multiplication in KL divergence.</describe>
-            <type>shape mismatch</type>
+            <type>Performance</type>
             <support_level>1</support_level>
             <similar_bugs></similar_bugs>
             <buggyVersion>

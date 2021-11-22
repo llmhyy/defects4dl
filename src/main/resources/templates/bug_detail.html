@@ -35,7 +35,7 @@
         {
             background: #F5FAFA;
         }
-
+        /*span{color:#00F;text-decoration: underline;cursor: pointer}*/
 
     </style>
 </head>
@@ -63,10 +63,8 @@
                 <td colspan="1">{{ dataInfoDetail.type }}</td>
             </tr>
             <tr>
-<!--                <td class="item-title">Supported detection tools:</td>-->
-<!--                <td>{{ dataInfoDetail.detection_tools }}</td>-->
                 <td class="item-title">Similar Bugs:</td>
-                <td>{{ dataInfoDetail.similar_bugs }}</td>
+                <td><a href="" v-for="item in similar_bug_list" @click="jumpSimilarBug(item)">{{ item }}&nbsp;</a></td>
                 <td class="item-title">Description:</td>
                 <td colspan="5">{{ dataInfoDetail.describe }}</td>
             </tr>
@@ -120,6 +118,7 @@
             isShow: false,
             issue_url: null,
             commit_url: null,
+            similar_bug_list: [],
         },
         mounted: function () {
             //获取传递过来的localStorage
@@ -129,6 +128,8 @@
                     vm.dataInfoDetail = response.data;
                     vm.issue_url = response.data.issue_url;
                     vm.commit_url = response.data.commit_url;
+                    vm.similar_bug_list = response.data.similar_bugs.split(',');
+                    // alert(vm.similar_bug_list[0])
                     if (vm.dataInfoDetail.detection_tools.search("ShapeFlow") == -1){
                         $("#btn_shapeFlow").attr({"disabled":"disabled"});
                     }
@@ -409,7 +410,12 @@
                         // $("#btn_DeepLocalize").removeAttr("disabled");
                     })
             },
-
+            jumpSimilarBug: function (bugID) {
+                //将localStorage传递到哪个页面
+                location.href = 'bugDetail'
+                //设置localStorage
+                window.localStorage.setItem('bugID', bugID.trim());
+            },
         }
     })
 

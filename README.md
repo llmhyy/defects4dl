@@ -114,7 +114,6 @@ exit
 #### Web sites:
 It is a Spring Boot and Maven project.
 
-
 You need to configure Maven and it will automatically download dependencies for you.
 
 The entry to the program is: AppEnter
@@ -124,6 +123,6 @@ When the project starts,you can use a browser to access [http://127.0.0.1:9000/b
 
 ### Access as a web service
 
-url [http://47.93.14.147:9000/bugList](http://47.93.14.147:9000/bugList)
+We have now published the project to AliCloud and pulled 10 docker images, which you can use to access directly through [http://47.93.14.147:9000/bugList](http://47.93.14.147:9000/bugList).
 
 

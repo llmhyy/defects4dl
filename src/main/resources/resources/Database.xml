@@ -80,7 +80,7 @@
             <character>0</character>
             <issue_url>https://github.com/blei-lab/edward/issues/46</issue_url>
             <commit_url>https://github.com/blei-lab/edward/pull/89/commits/14ec644e08af346e9004a8ee3a27c0a94aad698c</commit_url>
-            <detection_tools></detection_tools>
+            <detection_tools>ShapeFlow</detection_tools>
         </bug>
     </sir>
 

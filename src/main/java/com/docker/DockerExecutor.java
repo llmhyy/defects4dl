@@ -53,6 +53,11 @@ public class DockerExecutor extends Executor {
         return execPrintlnW(cmd, pb);
     }
 
+    public String readShapeFlow(String bugId){
+        String cmd = DOCKER_EXEC_BASED_CMD + " " + bugId + " " + CAT + " " + "/" + SCRIPTS_FOLDER + "/"+ bugId + "-ShapeFlow"  + ".txt";
+        return execPrintlnW(cmd, pb);
+    }
+
     public String runTool(String arg,String bugId) {
         String cmd = DOCKER_EXEC_BASED_CMD + " " + bugId + " " + "bash "
                 + "/" + SCRIPTS_FOLDER + "/" + arg;

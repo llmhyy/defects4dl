@@ -36,6 +36,10 @@ public class DockerServer {
         return dockerExecutor.readTxtW(bugId,version);
     }
 
+    public String runShapeFlow(String cmd,String bugId) {
+        return dockerExecutor.readShapeFlow(bugId);
+    }
+
     // 运行支持的工具
     public String runTool(String cmd, String bugId){
         return dockerExecutor.runTool(cmd, bugId);

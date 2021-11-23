@@ -1,10 +1,14 @@
 package com.docker;
 
+import com.ConsoleColors.ConsoleColors;
 import com.executor.Executor;
+import com.vo.CoreUpdate;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 
@@ -27,7 +31,7 @@ public class DockerExecutor extends Executor {
     public void runPrintln(String arg,String bugId) {
         String cmd = DOCKER_EXEC_BASED_CMD + " " + "" + bugId + " " + BASH + " -c " + "\""
                 + arg + "\"";
-        execPrintln(cmd, pb);
+        execPrintlnDiff(cmd, pb, bugId);
     }
     public String diffRunPrintln(String arg,String bugId) {
         String cmd = DOCKER_EXEC_BASED_CMD + " " + "" + bugId + " " + BASH + " -c " + "\""
@@ -65,6 +69,39 @@ public class DockerExecutor extends Executor {
     }
 
 
+    public String execPrintlnDiff(String cmd, ProcessBuilder pb, String bugId) {
+        // 核心修改高亮打印思路，通过bugId构建一个数组，数组中存储核心修改
+        StringBuffer sb = new StringBuffer();
+        try {
+            if (OS.equals(OS_WINDOWS)) {
+                pb.command("cmd.exe", "/c", cmd);
+            } else {
+                pb.command("bash", "-c", cmd);
+            }
+            Process process = pb.start();
+            InputStreamReader inputStr = new InputStreamReader(process.getInputStream());
+            BufferedReader bufferReader = new BufferedReader(inputStr);
+            String BugId = bugId;
+            CoreUpdate co = new CoreUpdate();
+            String[] res = co.getCoreFix(bugId);
+            List<String> list = Arrays.asList(res);
+            String line;
+            while ((line = bufferReader.readLine()) != null) {
+                // System.out.println(line);
+                if((line.startsWith("+") && line.charAt(1) != '+') || (line.startsWith("-") && line.charAt(1) != '-')){
+                    if(list.contains(line)){
+                        System.out.println(ConsoleColors.YELLOW_BRIGHT + line);
+                    }else {
+                        System.out.println(ConsoleColors.RED + line);
+                    }
+                }else {
+                    System.out.println(ConsoleColors.RESET + line);
+                }
+            }
+        } catch (Exception ex) {
+        }
+        return sb.toString();
+    }
 
     public String execPrintln(String cmd, ProcessBuilder pb) {
         StringBuffer sb = new StringBuffer();

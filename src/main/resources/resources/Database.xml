@@ -382,11 +382,11 @@
             </buggyVersion>
             <fixVersion>
                 <fixtestCmd>botorch162-fix.sh</fixtestCmd>
-                <fixcommit>c15c8f261571d36a8f6e4947313e4e4f4365c3a3</fixcommit>
+                <fixcommit>ba370e829473a2ab74bfd16bea45c8919a24c438</fixcommit>
             </fixVersion>
             <character>0</character>
             <issue_url>https://github.com/pytorch/botorch/pull/162</issue_url>
-            <commit_url>https://github.com/pytorch/botorch/commit/c15c8f261571d36a8f6e4947313e4e4f4365c3a3</commit_url>
+            <commit_url>https://github.com/pytorch/botorch/commit/ba370e829473a2ab74bfd16bea45c8919a24c438</commit_url>
             <detection_tools></detection_tools>
         </bug>
     </sir>

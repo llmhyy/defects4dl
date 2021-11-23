@@ -96,6 +96,7 @@
             <div id="progress"></div>
             <pre v-html="buggyInfo" id="bt"></pre>
             <pre v-html="fixInfo" id="ft"></pre>
+            <pre v-html="toolInfo" id="ti"></pre>
         </div>
 
     </div>
@@ -115,6 +116,7 @@
             dataInfoDetail: [],
             buggyInfo: null,
             fixInfo: null,
+            toolInfo: null,
             isShow: false,
             issue_url: null,
             commit_url: null,
@@ -185,8 +187,8 @@
                 },1000);
 
                 var bugId = window.localStorage.getItem('bugID');
-                document.getElementById("bt").innerHTML = "";
                 document.getElementById("ft").innerHTML = "";
+                document.getElementById("ti").innerHTML = "";
                 //vm.isShow = true;
                 axios.get("getTestBuggy?bugId="+ bugId)
                     .then(response => {
@@ -228,7 +230,7 @@
 
                 var bugId = window.localStorage.getItem('bugID');
                 document.getElementById("bt").innerHTML = "";
-                document.getElementById("ft").innerHTML = "";
+                document.getElementById("ti").innerHTML = "";
                 //vm.isShow = true;
                 axios.get("getTestFix?bugId="+ bugId)
                     .then(response => {
@@ -280,7 +282,7 @@
                         $("#tips").html("");
                         $(".nanobar").fadeOut();
                         //显示结果
-                        vm.buggyInfo = response.data;
+                        vm.toolInfo = response.data;
                         // $("#btn_shapeFlow").removeAttr("disabled");
                     })
             },
@@ -322,7 +324,7 @@
                         $("#tips").html("");
                         $(".nanobar").fadeOut();
                         //显示结果
-                        vm.buggyInfo = response.data;
+                        vm.toolInfo = response.data;
                         // $("#btn_GRIST").removeAttr("disabled");
                     })
             },
@@ -364,7 +366,7 @@
                         $("#tips").html("");
                         $(".nanobar").fadeOut();
                         //显示结果
-                        vm.buggyInfo = response.data;
+                        vm.toolInfo = response.data;
                         // $("#btn_DEBAR").removeAttr("disabled");
                     })
             },
@@ -406,7 +408,7 @@
                         $("#tips").html("");
                         $(".nanobar").fadeOut();
                         //显示结果
-                        vm.buggyInfo = response.data;
+                        vm.toolInfo = response.data;
                         // $("#btn_DeepLocalize").removeAttr("disabled");
                     })
             },

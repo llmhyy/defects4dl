@@ -122,7 +122,7 @@ public class DockerExecutor extends Executor {
             while ((line = bufferReader.readLine()) != null) {
                 if((line.startsWith("+") && line.charAt(1) != '+') || (line.startsWith("-") && line.charAt(1) != '-')){
                     if(list.contains(line)){
-                        sb.append(line).append("***Core***").append("\n");
+                        sb.append(line).append("  ***Core fix***").append("\n");
                     }else {
                         sb.append(line).append("\n");
                     }

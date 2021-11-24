@@ -20,7 +20,7 @@ public class DockerExecutor extends Executor {
     private static ProcessBuilder pb = new ProcessBuilder();
     // .sh file is stored in this folder
     private final static String SCRIPTS_FOLDER = "script";
-
+    CoreUpdate co = new CoreUpdate();
     private final static String BASH = "bash";
 
     public static String DOCKER_JAVA_PLAIN_CONTAINER_ID = "fc379fe8669b";
@@ -36,7 +36,7 @@ public class DockerExecutor extends Executor {
     public String diffRunPrintln(String arg,String bugId) {
         String cmd = DOCKER_EXEC_BASED_CMD + " " + "" + bugId + " " + BASH + " -c " + "\""
                 + arg + "\"";
-        return execPrintlnW(cmd, pb);
+        return execPrintlnDiffW(cmd, pb, bugId);
     }
 
     // ==================运行测试用例=====================
@@ -68,7 +68,7 @@ public class DockerExecutor extends Executor {
         return execPrintlnW(cmd, pb);
     }
 
-
+    // 命令行高亮输出diff
     public String execPrintlnDiff(String cmd, ProcessBuilder pb, String bugId) {
         // 核心修改高亮打印思路，通过bugId构建一个数组，数组中存储核心修改
         StringBuffer sb = new StringBuffer();
@@ -82,7 +82,7 @@ public class DockerExecutor extends Executor {
             InputStreamReader inputStr = new InputStreamReader(process.getInputStream());
             BufferedReader bufferReader = new BufferedReader(inputStr);
             String BugId = bugId;
-            CoreUpdate co = new CoreUpdate();
+            // CoreUpdate co = new CoreUpdate();
             String[] res = co.getCoreFix(bugId);
             List<String> list = Arrays.asList(res);
             String line;
@@ -99,6 +99,40 @@ public class DockerExecutor extends Executor {
                 }
             }
         } catch (Exception ex) {
+        }
+        return sb.toString();
+    }
+
+    // Web高亮显示diff
+    public String execPrintlnDiffW(String cmd, ProcessBuilder pb, String bugId) {
+        StringBuffer sb = new StringBuffer();
+        try {
+            if (OS.equals(OS_WINDOWS)) {
+                pb.command("cmd.exe", "/c", cmd);
+            } else {
+                pb.command("bash", "-c", cmd);
+            }
+            Process process = pb.start();
+            InputStreamReader inputStr = new InputStreamReader(process.getInputStream());
+            BufferedReader bufferReader = new BufferedReader(inputStr);
+            String BugId = bugId;
+            String[] res = co.getCoreFix(bugId);
+            List<String> list = Arrays.asList(res);
+            String line;
+            while ((line = bufferReader.readLine()) != null) {
+                if((line.startsWith("+") && line.charAt(1) != '+') || (line.startsWith("-") && line.charAt(1) != '-')){
+                    if(list.contains(line)){
+                        sb.append(line).append("***Core***").append("\n");
+                    }else {
+                        sb.append(line).append("\n");
+                    }
+                }else {
+                    sb.append(line).append("\n");
+                }
+                // sb.append(line).append("\n");
+            }
+        } catch (Exception ex) {
+            System.out.println("===bufferReader.readLine()为空！===");
         }
         return sb.toString();
     }

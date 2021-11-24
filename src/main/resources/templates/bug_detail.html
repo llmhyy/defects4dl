@@ -75,10 +75,10 @@
                     <button class="btn btn-primary btn-sm" type="button" v-on:click="seeIssue">GitHub_Issue</button>
                     <button class="btn btn-primary btn-sm" type="button" v-on:click="seeCommit">GitHub_commit</button>
                     <button class="btn btn-primary btn-sm" type="button" v-on:click="showDiff">Diff</button>
-                    <button id="btn_shapeFlow" class="btn btn-dark btn-sm" type="button" v-on:click="runShapeFlow">ShapeFlow</button>
-                    <button id="btn_DeepLocalize" class="btn btn-dark btn-sm" type="button" v-on:click="runDeepLocalize">DeepLocalize</button>
-                    <button id="btn_DEBAR" class="btn btn-dark btn-sm" type="button" v-on:click="runDEBAR">DEBAR</button>
-                    <button id="btn_GRIST" class="btn btn-dark btn-sm" type="button" v-on:click="runGRIST">GRIST</button>
+                    <button id="btn_shapeFlow" class="btn btn-success btn-sm" type="button" v-on:click="runShapeFlow">ShapeFlow</button>
+                    <button id="btn_DeepLocalize" class="btn btn-success btn-sm" type="button" v-on:click="runDeepLocalize">DeepLocalize</button>
+                    <button id="btn_DEBAR" class="btn btn-success btn-sm" type="button" v-on:click="runDEBAR">DEBAR</button>
+                    <button id="btn_GRIST" class="btn btn-success btn-sm" type="button" v-on:click="runGRIST">GRIST</button>
                     <button id="btn_buggy" class="btn btn-primary btn-sm" type="button" v-on:click="testBuggy">failing test</button>
                     <button id="btn_fix" class="btn btn-primary btn-sm" type="button" v-on:click="testFix">passing test</button>
                 </td>
@@ -100,7 +100,6 @@
         </div>
 
     </div>
-
 
 </div>
 </body>
@@ -178,7 +177,7 @@
                         type:"post",
                         success:function (data) {
 
-                            $("#tips").html("正在运行测试用例...");
+                            $("#tips").html("Running test cases...");
                             $(".nanobar").fadeIn();
                             //显示进度
                             nanobar.go(data);
@@ -220,7 +219,7 @@
                         type:"post",
                         success:function (data) {
 
-                            $("#tips").html("正在运行测试用例...");
+                            $("#tips").html("Running test cases...");
                             $(".nanobar").fadeIn();
                             //显示进度
                             nanobar.go(data);
@@ -262,7 +261,7 @@
                         type:"post",
                         success:function (data) {
 
-                            $("#tips").html("正在运行...");
+                            $("#tips").html("Running...");
                             $(".nanobar").fadeIn();
                             //显示进度
                             nanobar.go(data);
@@ -304,7 +303,7 @@
                         type:"post",
                         success:function (data) {
 
-                            $("#tips").html("正在运行...");
+                            $("#tips").html("Running...");
                             $(".nanobar").fadeIn();
                             //显示进度
                             nanobar.go(data);
@@ -346,7 +345,7 @@
                         type:"post",
                         success:function (data) {
 
-                            $("#tips").html("正在运行...");
+                            $("#tips").html("Running...");
                             $(".nanobar").fadeIn();
                             //显示进度
                             nanobar.go(data);
@@ -388,7 +387,7 @@
                         type:"post",
                         success:function (data) {
 
-                            $("#tips").html("正在运行...");
+                            $("#tips").html("Running...");
                             $(".nanobar").fadeIn();
                             //显示进度
                             nanobar.go(data);

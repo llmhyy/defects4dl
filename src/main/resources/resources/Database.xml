@@ -29,34 +29,6 @@
     </sir>
 
     <sir>
-        <name>GPflow</name>
-        <source>https://github.com/Liang813/GPflow</source>
-        <bug>
-            <id>gpflow99</id>
-            <errormessage>FailedPreconditionError</errormessage>
-            <describe>Not all variables in AF session are initialized</describe>
-            <operateScore>1</operateScore>
-            <type>API misuse</type>
-<!--            <localScore></localScore>-->
-<!--            <fixLength></fixLength>-->
-            <support_level>3</support_level>
-            <similar_bugs>tensorflow3168, tensorpack1008</similar_bugs>
-            <buggyVersion>
-                <buggytestCmd>Gpflow99-buggy.sh</buggytestCmd>
-                <buggycommit>4ea1fa8b74861d599e749b20d1ab11edced8039a</buggycommit>
-            </buggyVersion>
-            <fixVersion>
-                <fixtestCmd>Gpflow99-fix.sh</fixtestCmd>
-                <fixcommit>dad657e0be26732596c1c8c92c2f253de48513e9</fixcommit>
-            </fixVersion>
-            <character>0</character>
-            <issue_url>https://github.com/GPflow/GPflow/issues/99</issue_url>
-            <commit_url>https://github.com/GPflow/GPflow/pull/100/commits/dad657e0be26732596c1c8c92c2f253de48513e9</commit_url>
-            <detection_tools></detection_tools>
-        </bug>
-    </sir>
-
-    <sir>
         <name>edward</name>
         <source>https://github.com/Liang813/edward</source>
         <bug>
@@ -109,6 +81,202 @@
             <issue_url>https://github.com/tensorflow/models/issues/166</issue_url>
             <commit_url>https://github.com/tensorflow/models/commit/d8169710322cb6e20be61fef179e66d56d2b1151</commit_url>
             <detection_tools>DEBAR, GRIST</detection_tools>
+        </bug>
+    </sir>
+
+    <sir>
+        <name>Deep-Learning-TensorFlow</name>
+        <source>https://github.com/Liang813/Deep-Learning-TensorFlow</source>
+        <bug>
+            <id>deep-learning-tensorflow</id>
+            <errormessage>None</errormessage>
+            <describe>NaN may occur when calculating the cross entropy loss</describe>
+            <operateScore>1</operateScore>
+            <type>numeric error</type>
+            <!--            <localScore></localScore>-->
+            <!--            <fixLength></fixLength>-->
+            <support_level>2</support_level>
+            <similar_bugs>models166</similar_bugs>
+            <buggyVersion>
+                <buggytestCmd>Deep-Learning-TensorFlow-buggy.sh</buggytestCmd>
+                <buggycommit>53c69ce3e6af6213e73cff84c675c93c9a2a47f7</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>Deep-Learning-TensorFlow-fix.sh</fixtestCmd>
+                <fixcommit>726b371d42e853e61b4deac06ed064a61a619572</fixcommit>
+            </fixVersion>
+            <character>1</character>
+            <issue_url>https://github.com/blackecho/Deep-Learning-TensorFlow/commit/726b371d42e853e61b4deac06ed064a61a619572</issue_url>
+            <commit_url>https://github.com/blackecho/Deep-Learning-TensorFlow/commit/726b371d42e853e61b4deac06ed064a61a619572</commit_url>
+            <detection_tools>GRIST</detection_tools>
+        </bug>
+    </sir>
+
+    <sir>
+        <name>GPflow</name>
+        <source>https://github.com/Liang813/GPflow</source>
+        <bug>
+            <id>gpflow99</id>
+            <errormessage>FailedPreconditionError</errormessage>
+            <describe>Not all variables in AF session are initialized</describe>
+            <operateScore>1</operateScore>
+            <type>API misuse</type>
+            <!--            <localScore></localScore>-->
+            <!--            <fixLength></fixLength>-->
+            <support_level>3</support_level>
+            <similar_bugs>tensorflow3168, tensorpack1008</similar_bugs>
+            <buggyVersion>
+                <buggytestCmd>Gpflow99-buggy.sh</buggytestCmd>
+                <buggycommit>4ea1fa8b74861d599e749b20d1ab11edced8039a</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>Gpflow99-fix.sh</fixtestCmd>
+                <fixcommit>dad657e0be26732596c1c8c92c2f253de48513e9</fixcommit>
+            </fixVersion>
+            <character>0</character>
+            <issue_url>https://github.com/GPflow/GPflow/issues/99</issue_url>
+            <commit_url>https://github.com/GPflow/GPflow/pull/100/commits/dad657e0be26732596c1c8c92c2f253de48513e9</commit_url>
+            <detection_tools></detection_tools>
+        </bug>
+    </sir>
+
+    <sir>
+        <name>keras</name>
+        <source>https://github.com/Liang813/keras</source>
+        <bug>
+            <id>keras11657</id>
+            <errormessage>TypeError</errormessage>
+            <describe>KerasRegressor.predict does not squeeze batch dims,If the input to KerasRegressor.predict() is an array with one example, then the output should be a 1D array with one example, not a 0D array.</describe>
+            <operateScore>1</operateScore>
+            <type>shape mismatch</type>
+            <!--            <localScore></localScore>-->
+            <!--            <fixLength></fixLength>-->
+            <support_level>5</support_level>
+            <similar_bugs>tutorials382, edward46, ciphergan4, rlpyt27</similar_bugs>
+            <buggyVersion>
+                <buggytestCmd>keras11657-buggy.sh</buggytestCmd>
+                <buggycommit>7cd6c59789c8e469c0d3cab6bca7ae3d2d028002</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>keras11657-fix.sh</fixtestCmd>
+                <fixcommit>c2d01f5ea69170a2365050368dfa534b75592c06</fixcommit>
+            </fixVersion>
+            <character>1</character>
+            <issue_url>https://github.com/keras-team/keras/issues/11657</issue_url>
+            <commit_url>https://github.com/keras-team/keras/pull/11658/commits/c2d01f5ea69170a2365050368dfa534b75592c06</commit_url>
+            <detection_tools>ShapeFlow</detection_tools>
+        </bug>
+    </sir>
+
+    <sir>
+        <name>allennlp</name>
+        <source>https://github.com/Liang813/allennlp</source>
+        <bug>
+            <id>allennlp4612</id>
+            <errormessage>None</errormessage>
+            <describe>NaN grads appear when an empty string is given</describe>
+            <operateScore>1</operateScore>
+            <type>numeric error</type>
+            <!--            <localScore></localScore>-->
+            <!--            <fixLength></fixLength>-->
+            <support_level>3</support_level>
+            <similar_bugs>keras2672, pytorch-lightning139</similar_bugs>
+            <buggyVersion>
+                <buggytestCmd>allennlp4612-buggy.sh</buggytestCmd>
+                <buggycommit>e840a589afc4bfdac0165a8650145259a7603807</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>allennlp4612-fix.sh</fixtestCmd>
+                <fixcommit>b2bb2a364320142c733e306df1d04e4e8237150d</fixcommit>
+            </fixVersion>
+            <character>0</character>
+            <issue_url>https://github.com/allenai/allennlp/issues/4612</issue_url>
+            <commit_url>https://github.com/allenai/allennlp/pull/4615/commits/b2bb2a364320142c733e306df1d04e4e8237150d</commit_url>
+            <detection_tools></detection_tools>
+        </bug>
+    </sir>
+
+    <sir>
+        <name>segmentation_models.pytorch</name>
+        <source>https://github.com/Liang813/segmentation_models.pytorch</source>
+        <bug>
+            <id>segmentation_models.pytorch186</id>
+            <errormessage>AssertionError</errormessage>
+            <describe>This Bug is due to the fact that the divisor is not the same type as the dividend, resulting in the final result being 0</describe>
+            <operateScore>1</operateScore>
+            <type>type mismatch</type>
+            <!--            <localScore></localScore>-->
+            <!--            <fixLength></fixLength>-->
+            <support_level>7</support_level>
+            <similar_bugs>texar-pytorch94, pytorch-ts1, tensorpack408, tensorflowtts70, openkiwi38, tensorflowtts50</similar_bugs>
+            <buggyVersion>
+                <buggytestCmd>segmentation_models.pytorch186-buggy.sh</buggytestCmd>
+                <buggycommit>ecc848f7b600d0e5cc3a7bbe2a139e97de22da49</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>segmentation_models.pytorch186-fix.sh</fixtestCmd>
+                <fixcommit>6884ebf7b4a995cd9f53df8fc529e0f74c438851</fixcommit>
+            </fixVersion>
+            <character>0</character>
+            <issue_url>https://github.com/qubvel/segmentation_models.pytorch/pull/186</issue_url>
+            <commit_url>https://github.com/qubvel/segmentation_models.pytorch/pull/186/commits/6884ebf7b4a995cd9f53df8fc529e0f74c438851</commit_url>
+            <detection_tools></detection_tools>
+        </bug>
+    </sir>
+
+    <sir>
+        <name>keras</name>
+        <source>https://github.com/Liang813/keras</source>
+        <bug>
+            <id>keras2672</id>
+            <errormessage>None</errormessage>
+            <describe>cos mode does not carefully deal with division by zero, might be the cause of NaN. output = K.batch_dot(l1, l2, self.dot_axes) / denominator  </describe>
+            <operateScore>1</operateScore>
+            <type>numeric error</type>
+            <!--            <localScore></localScore>-->
+            <!--            <fixLength></fixLength>-->
+            <support_level>3</support_level>
+            <similar_bugs>allennlp4612, pytorch-lightning139</similar_bugs>
+            <buggyVersion>
+                <buggytestCmd>keras2672-buggy.sh</buggytestCmd>
+                <buggycommit>973b5570aa4aea71323d6c08614d5e2a8f50a6ec</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>keras2672-fix.sh</fixtestCmd>
+                <fixcommit>58cbb4bf425fc80771ebfe8053cbfe928a081b61</fixcommit>
+            </fixVersion>
+            <character>0</character>
+            <issue_url>https://github.com/keras-team/keras/issues/2672</issue_url>
+            <commit_url>https://github.com/keras-team/keras/pull/2725/commits/58cbb4bf425fc80771ebfe8053cbfe928a081b61</commit_url>
+            <detection_tools></detection_tools>
+        </bug>
+    </sir>
+
+    <sir>
+        <name>tensorflow</name>
+        <source>https://github.com/Liang813/tensorflow</source>
+        <bug>
+            <id>tensorflow3168</id>
+            <errormessage>FailedPreconditionError</errormessage>
+            <describe>Initialize local variables in fully_connected_preloaded</describe>
+            <operateScore>1</operateScore>
+            <type>API misuse</type>
+            <!--            <localScore></localScore>-->
+            <!--            <fixLength></fixLength>-->
+            <support_level>3</support_level>
+            <similar_bugs>gpflow99, tensorpack1008</similar_bugs>
+            <buggyVersion>
+                <buggytestCmd>tensorflow3168-buggy.sh</buggytestCmd>
+                <buggycommit>aedd2173deef51661ab0cabcb9009d249e744e31</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>tensorflow3168-fix.sh</fixtestCmd>
+                <fixcommit>11f92de8c8c9cd35106c0f4dd3b0bfaac7581a2f</fixcommit>
+            </fixVersion>
+            <character>0</character>
+            <issue_url>https://github.com/tensorflow/tensorflow/issues/3168</issue_url>
+            <commit_url>https://github.com/tensorflow/tensorflow/commit/11f92de8c8c9cd35106c0f4dd3b0bfaac7581a2f</commit_url>
+            <detection_tools></detection_tools>
         </bug>
     </sir>
 
@@ -280,34 +448,6 @@
     </sir>
 
     <sir>
-        <name>tensorflow</name>
-        <source>https://github.com/Liang813/tensorflow</source>
-        <bug>
-            <id>tensorflow3168</id>
-            <errormessage>FailedPreconditionError</errormessage>
-            <describe>Initialize local variables in fully_connected_preloaded</describe>
-            <operateScore>1</operateScore>
-            <type>API misuse</type>
-<!--            <localScore></localScore>-->
-<!--            <fixLength></fixLength>-->
-            <support_level>3</support_level>
-            <similar_bugs>gpflow99, tensorpack1008</similar_bugs>
-            <buggyVersion>
-                <buggytestCmd>tensorflow3168-buggy.sh</buggytestCmd>
-                <buggycommit>aedd2173deef51661ab0cabcb9009d249e744e31</buggycommit>
-            </buggyVersion>
-            <fixVersion>
-                <fixtestCmd>tensorflow3168-fix.sh</fixtestCmd>
-                <fixcommit>11f92de8c8c9cd35106c0f4dd3b0bfaac7581a2f</fixcommit>
-            </fixVersion>
-            <character>0</character>
-            <issue_url>https://github.com/tensorflow/tensorflow/issues/3168</issue_url>
-            <commit_url>https://github.com/tensorflow/tensorflow/commit/11f92de8c8c9cd35106c0f4dd3b0bfaac7581a2f</commit_url>
-            <detection_tools></detection_tools>
-        </bug>
-    </sir>
-
-    <sir>
         <name>transformers</name>
         <source>https://github.com/Liang813/transformers</source>
         <bug>
@@ -332,34 +472,6 @@
             <issue_url>https://github.com/huggingface/transformers/issues/1962</issue_url>
             <commit_url>https://github.com/huggingface/transformers/pull/1966/commits/a1aec9c2a1776832c28d3a9975d2f15999f089ac</commit_url>
             <detection_tools>ShapeFlow</detection_tools>
-        </bug>
-    </sir>
-
-    <sir>
-        <name>allennlp</name>
-        <source>https://github.com/Liang813/allennlp</source>
-        <bug>
-            <id>allennlp4612</id>
-            <errormessage>nan</errormessage>
-            <describe>NaN grads appear when an empty string is given</describe>
-            <operateScore>1</operateScore>
-            <type>numeric error</type>
-<!--            <localScore></localScore>-->
-<!--            <fixLength></fixLength>-->
-            <support_level>3</support_level>
-            <similar_bugs>keras2672, pytorch-lightning139</similar_bugs>
-            <buggyVersion>
-                <buggytestCmd>allennlp4612-buggy.sh</buggytestCmd>
-                <buggycommit>e840a589afc4bfdac0165a8650145259a7603807</buggycommit>
-            </buggyVersion>
-            <fixVersion>
-                <fixtestCmd>allennlp4612-fix.sh</fixtestCmd>
-                <fixcommit>b2bb2a364320142c733e306df1d04e4e8237150d</fixcommit>
-            </fixVersion>
-            <character>0</character>
-            <issue_url>https://github.com/allenai/allennlp/issues/4612</issue_url>
-            <commit_url>https://github.com/allenai/allennlp/pull/4615/commits/b2bb2a364320142c733e306df1d04e4e8237150d</commit_url>
-            <detection_tools></detection_tools>
         </bug>
     </sir>
 
@@ -614,34 +726,6 @@
     </sir>
 
     <sir>
-        <name>Deep-Learning-TensorFlow</name>
-        <source>https://github.com/Liang813/Deep-Learning-TensorFlow</source>
-        <bug>
-            <id>deep-learning-tensorflow</id>
-            <errormessage>None</errormessage>
-            <describe>NaN may occur when calculating the cross entropy loss</describe>
-            <operateScore>1</operateScore>
-            <type>numeric error</type>
-<!--            <localScore></localScore>-->
-<!--            <fixLength></fixLength>-->
-            <support_level>2</support_level>
-            <similar_bugs>models166</similar_bugs>
-            <buggyVersion>
-                <buggytestCmd>Deep-Learning-TensorFlow-buggy.sh</buggytestCmd>
-                <buggycommit>53c69ce3e6af6213e73cff84c675c93c9a2a47f7</buggycommit>
-            </buggyVersion>
-            <fixVersion>
-                <fixtestCmd>Deep-Learning-TensorFlow-fix.sh</fixtestCmd>
-                <fixcommit>726b371d42e853e61b4deac06ed064a61a619572</fixcommit>
-            </fixVersion>
-            <character>1</character>
-            <issue_url>https://github.com/blackecho/Deep-Learning-TensorFlow/commit/726b371d42e853e61b4deac06ed064a61a619572</issue_url>
-            <commit_url>https://github.com/blackecho/Deep-Learning-TensorFlow/commit/726b371d42e853e61b4deac06ed064a61a619572</commit_url>
-            <detection_tools>GRIST</detection_tools>
-        </bug>
-    </sir>
-
-    <sir>
         <name>DCGAN-tensorflow</name>
         <source>https://github.com/Liang813/DCGAN-tensorflow</source>
         <bug>
@@ -693,90 +777,6 @@
             <character>0</character>
             <issue_url>https://github.com/carpedm20/DCGAN-tensorflow/issues/17</issue_url>
             <commit_url>https://github.com/carpedm20/DCGAN-tensorflow/commit/550534e89c93993eadc817af0d68fdb09d82d4c6</commit_url>
-            <detection_tools></detection_tools>
-        </bug>
-    </sir>
-
-    <sir>
-        <name>keras</name>
-        <source>https://github.com/Liang813/keras</source>
-        <bug>
-            <id>keras11657</id>
-            <errormessage>TypeError</errormessage>
-            <describe>KerasRegressor.predict does not squeeze batch dims,If the input to KerasRegressor.predict() is an array with one example, then the output should be a 1D array with one example, not a 0D array.</describe>
-            <operateScore>1</operateScore>
-            <type>shape mismatch</type>
-<!--            <localScore></localScore>-->
-<!--            <fixLength></fixLength>-->
-            <support_level>5</support_level>
-            <similar_bugs>tutorials382, edward46, ciphergan4, rlpyt27</similar_bugs>
-            <buggyVersion>
-                <buggytestCmd>keras11657-buggy.sh</buggytestCmd>
-                <buggycommit>7cd6c59789c8e469c0d3cab6bca7ae3d2d028002</buggycommit>
-            </buggyVersion>
-            <fixVersion>
-                <fixtestCmd>keras11657-fix.sh</fixtestCmd>
-                <fixcommit>c2d01f5ea69170a2365050368dfa534b75592c06</fixcommit>
-            </fixVersion>
-            <character>1</character>
-            <issue_url>https://github.com/keras-team/keras/issues/11657</issue_url>
-            <commit_url>https://github.com/keras-team/keras/pull/11658/commits/c2d01f5ea69170a2365050368dfa534b75592c06</commit_url>
-            <detection_tools>ShapeFlow</detection_tools>
-        </bug>
-    </sir>
-
-    <sir>
-        <name>keras</name>
-        <source>https://github.com/Liang813/keras</source>
-        <bug>
-            <id>keras2672</id>
-            <errormessage>nan</errormessage>
-            <describe>cos mode does not carefully deal with division by zero, might be the cause of NaN. output = K.batch_dot(l1, l2, self.dot_axes) / denominator  </describe>
-            <operateScore>1</operateScore>
-            <type>numeric error</type>
-<!--            <localScore></localScore>-->
-<!--            <fixLength></fixLength>-->
-            <support_level>3</support_level>
-            <similar_bugs>allennlp4612, pytorch-lightning139</similar_bugs>
-            <buggyVersion>
-                <buggytestCmd>keras2672-buggy.sh</buggytestCmd>
-                <buggycommit>973b5570aa4aea71323d6c08614d5e2a8f50a6ec</buggycommit>
-            </buggyVersion>
-            <fixVersion>
-                <fixtestCmd>keras2672-fix.sh</fixtestCmd>
-                <fixcommit>58cbb4bf425fc80771ebfe8053cbfe928a081b61</fixcommit>
-            </fixVersion>
-            <character>0</character>
-            <issue_url>https://github.com/keras-team/keras/issues/2672</issue_url>
-            <commit_url>https://github.com/keras-team/keras/pull/2725/commits/58cbb4bf425fc80771ebfe8053cbfe928a081b61</commit_url>
-            <detection_tools></detection_tools>
-        </bug>
-    </sir>
-
-    <sir>
-        <name>segmentation_models.pytorch</name>
-        <source>https://github.com/Liang813/segmentation_models.pytorch</source>
-        <bug>
-            <id>segmentation_models.pytorch186</id>
-            <errormessage>AssertionError</errormessage>
-            <describe>This Bug is due to the fact that the divisor is not the same type as the dividend, resulting in the final result being 0</describe>
-            <operateScore>1</operateScore>
-            <type>type mismatch</type>
-<!--            <localScore></localScore>-->
-<!--            <fixLength></fixLength>-->
-            <support_level>7</support_level>
-            <similar_bugs>texar-pytorch94, pytorch-ts1, tensorpack408, tensorflowtts70, openkiwi38, tensorflowtts50</similar_bugs>
-            <buggyVersion>
-                <buggytestCmd>segmentation_models.pytorch186-buggy.sh</buggytestCmd>
-                <buggycommit>ecc848f7b600d0e5cc3a7bbe2a139e97de22da49</buggycommit>
-            </buggyVersion>
-            <fixVersion>
-                <fixtestCmd>segmentation_models.pytorch186-fix.sh</fixtestCmd>
-                <fixcommit>6884ebf7b4a995cd9f53df8fc529e0f74c438851</fixcommit>
-            </fixVersion>
-            <character>0</character>
-            <issue_url>https://github.com/qubvel/segmentation_models.pytorch/pull/186</issue_url>
-            <commit_url>https://github.com/qubvel/segmentation_models.pytorch/pull/186/commits/6884ebf7b4a995cd9f53df8fc529e0f74c438851</commit_url>
             <detection_tools></detection_tools>
         </bug>
     </sir>

@@ -8,20 +8,24 @@ public class Forward {
 
     @RequestMapping("/bugList")
     public String bugList(){
-        return "bug";
+        return "bug.html";
     }
 
     @RequestMapping("/bugDetail")
     public String bugDetail(){
-        return "bug_detail";
+        return "bug_detail.html";
     }
 
     @RequestMapping("/showDiff")
     public String codeDiff(){
-        return "showDiff";
+        return "showDiff.html";
     }
     @RequestMapping("/diff")
     public String codeDiff1(){
-        return "diff";
+        return "diff.html";
+    }
+    @RequestMapping("/javadoc")
+    public String javadoc(){
+        return "index.html";
     }
 }

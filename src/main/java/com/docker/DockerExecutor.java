@@ -122,14 +122,13 @@ public class DockerExecutor extends Executor {
             while ((line = bufferReader.readLine()) != null) {
                 if((line.startsWith("+") && line.charAt(1) != '+') || (line.startsWith("-") && line.charAt(1) != '-')){
                     if(list.contains(line)){
-                        sb.append(line).append("  ***Core fix***").append("\n");
+                        sb.append(line).append("  ######### Core Fix #########").append("\n");
                     }else {
                         sb.append(line).append("\n");
                     }
                 }else {
                     sb.append(line).append("\n");
                 }
-                // sb.append(line).append("\n");
             }
         } catch (Exception ex) {
             System.out.println("===bufferReader.readLine()为空！===");

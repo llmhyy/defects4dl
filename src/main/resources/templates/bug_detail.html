@@ -76,7 +76,7 @@
                     <button class="btn btn-primary btn-sm" type="button" v-on:click="seeCommit">GitHub_commit</button>
                     <button class="btn btn-primary btn-sm" type="button" v-on:click="showDiff">Diff</button>
                     <button id="btn_shapeFlow" class="btn btn-success btn-sm" type="button" v-on:click="runShapeFlow">ShapeFlow</button>
-                    <button id="btn_DeepLocalize" class="btn btn-success btn-sm" type="button" v-on:click="runDeepLocalize">DeepLocalize</button>
+<!--                    <button id="btn_DeepLocalize" class="btn btn-success btn-sm" type="button" v-on:click="runDeepLocalize">DeepLocalize</button>-->
                     <button id="btn_DEBAR" class="btn btn-success btn-sm" type="button" v-on:click="runDEBAR">DEBAR</button>
                     <button id="btn_GRIST" class="btn btn-success btn-sm" type="button" v-on:click="runGRIST">GRIST</button>
                     <button id="btn_buggy" class="btn btn-primary btn-sm" type="button" v-on:click="testBuggy">failing test</button>
@@ -133,9 +133,7 @@
                     // alert(vm.similar_bug_list[0])
                     if (vm.dataInfoDetail.detection_tools.search("ShapeFlow") == -1){
                         $("#btn_shapeFlow").attr({"disabled":"disabled"});
-                    }
-                    if (vm.dataInfoDetail.detection_tools.search("DeepLocalize") == -1){
-                        $("#btn_DeepLocalize").attr({"disabled":"disabled"});
+                        $("#btn_shapeFlow").css('class','btn-primary')
                     }
                     if (vm.dataInfoDetail.detection_tools.search("DEBAR") == -1){
                         $("#btn_DEBAR").attr({"disabled":"disabled"});
@@ -367,48 +365,6 @@
                         //显示结果
                         vm.toolInfo = response.data;
                         // $("#btn_DEBAR").removeAttr("disabled");
-                    })
-            },
-            runDeepLocalize: function (){
-                $("#btn_DeepLocalize").attr({"disabled":"disabled"});
-                var options = {
-                    classname: 'my-class',
-                    id: 'my-id',
-                    target: document.getElementById('progress')
-                };
-                var nanobar = new Nanobar( options );
-                //新加的
-                var intelval=setInterval(function () {
-
-                    //执行ajax
-                    $.ajax({
-                        url:"testProgress",
-                        dataType:"text",
-                        type:"post",
-                        success:function (data) {
-
-                            $("#tips").html("Running...");
-                            $(".nanobar").fadeIn();
-                            //显示进度
-                            nanobar.go(data);
-                        }
-                    })
-                },1000);
-
-                var bugId = window.localStorage.getItem('bugID');
-                document.getElementById("bt").innerHTML = "";
-                document.getElementById("ft").innerHTML = "";
-                //vm.isShow = true;
-                axios.get("runDeepLocalize?bugId="+ bugId)
-                    .then(response => {
-                        //结束后台进度查询
-                        clearInterval(intelval);
-                        nanobar.go(100);
-                        $("#tips").html("");
-                        $(".nanobar").fadeOut();
-                        //显示结果
-                        vm.toolInfo = response.data;
-                        // $("#btn_DeepLocalize").removeAttr("disabled");
                     })
             },
             jumpSimilarBug: function (bugID) {

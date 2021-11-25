@@ -625,7 +625,7 @@
 <!--            <localScore></localScore>-->
 <!--            <fixLength></fixLength>-->
             <support_level>2</support_level>
-            <similar_bugs>models166, gpflow409</similar_bugs>
+            <similar_bugs>models166</similar_bugs>
             <buggyVersion>
                 <buggytestCmd>Deep-Learning-TensorFlow-buggy.sh</buggytestCmd>
                 <buggycommit>53c69ce3e6af6213e73cff84c675c93c9a2a47f7</buggycommit>
@@ -833,34 +833,6 @@
             <character>0</character>
             <issue_url>https://github.com/nrontsis/PILCO/issues/25</issue_url>
             <commit_url>https://github.com/nrontsis/PILCO/commit/c9230408b92276e1d9054e98d67bb6386e00bb9e</commit_url>
-            <detection_tools></detection_tools>
-        </bug>
-    </sir>
-
-    <sir>
-        <name>GPflow</name>
-        <source>https://github.com/Liang813/GPflow</source>
-        <bug>
-            <id>gpflow409</id>
-            <errormessage>None</errormessage>
-            <describe>Adding a jitter to the tf.acos-operation fixes the gradient problem</describe>
-            <operateScore>5</operateScore>
-            <type>numeric error</type>
-<!--            <localScore></localScore>-->
-<!--            <fixLength></fixLength>-->
-            <support_level>2</support_level>
-            <similar_bugs>deep-learning-tensorflow</similar_bugs>
-            <buggyVersion>
-                <buggytestCmd>GPflow409-buggy.sh</buggytestCmd>
-                <buggycommit>ca4d3ebe1594d6950a975bcac00784ea2e693be4</buggycommit>
-            </buggyVersion>
-            <fixVersion>
-                <fixtestCmd>GPflow409-fix.sh</fixtestCmd>
-                <fixcommit>bf8f9a10a466c9d8bb88e85abd2c0ecc4420dc95</fixcommit>
-            </fixVersion>
-            <character>0</character>
-            <issue_url>https://github.com/GPflow/GPflow/issues/409</issue_url>
-            <commit_url>https://github.com/GPflow/GPflow/pull/411/commits/bf8f9a10a466c9d8bb88e85abd2c0ecc4420dc95</commit_url>
             <detection_tools></detection_tools>
         </bug>
     </sir>
@@ -1104,6 +1076,34 @@
             <character></character>
             <issue_url>https://github.com/naturomics/CapsNet-Tensorflow/issues/30</issue_url>
             <commit_url>https://github.com/naturomics/CapsNet-Tensorflow/commit/d8361505f7fbfd0eb21e3cd6d167fcbc717dcf5a</commit_url>
+            <detection_tools></detection_tools>
+        </bug>
+    </sir>
+
+    <sir>
+        <name>GPflow</name>
+        <source>https://github.com/Liang813/GPflow</source>
+        <bug>
+            <id>gpflow409</id>
+            <errormessage>None</errormessage>
+            <describe>Adding a jitter to the tf.acos-operation fixes the gradient problem</describe>
+            <operateScore>5</operateScore>
+            <type>numeric error</type>
+            <!--            <localScore></localScore>-->
+            <!--            <fixLength></fixLength>-->
+            <support_level>2</support_level>
+            <similar_bugs>deep-learning-tensorflow</similar_bugs>
+            <buggyVersion>
+                <buggytestCmd>GPflow409-buggy.sh</buggytestCmd>
+                <buggycommit>ca4d3ebe1594d6950a975bcac00784ea2e693be4</buggycommit>
+            </buggyVersion>
+            <fixVersion>
+                <fixtestCmd>GPflow409-fix.sh</fixtestCmd>
+                <fixcommit>bf8f9a10a466c9d8bb88e85abd2c0ecc4420dc95</fixcommit>
+            </fixVersion>
+            <character>0</character>
+            <issue_url>https://github.com/GPflow/GPflow/issues/409</issue_url>
+            <commit_url>https://github.com/GPflow/GPflow/pull/411/commits/bf8f9a10a466c9d8bb88e85abd2c0ecc4420dc95</commit_url>
             <detection_tools></detection_tools>
         </bug>
     </sir>

@@ -132,13 +132,18 @@
                     vm.similar_bug_list = response.data.similar_bugs.split(',');
                     // alert(vm.similar_bug_list[0])
                     if (vm.dataInfoDetail.detection_tools.search("ShapeFlow") == -1){
+                        // $("#btn_shapeFlow").attr({"disabled":"disabled"});
+                        $("#btn_shapeFlow").attr({"class":"btn btn-dark btn-sm"});
                         $("#btn_shapeFlow").attr({"disabled":"disabled"});
-                        $("#btn_shapeFlow").css('class','btn-primary')
                     }
                     if (vm.dataInfoDetail.detection_tools.search("DEBAR") == -1){
+                        // $("#btn_DEBAR").attr({"disabled":"disabled"});
+                        $("#btn_DEBAR").attr({"class":"btn btn-dark btn-sm"});
                         $("#btn_DEBAR").attr({"disabled":"disabled"});
                     }
                     if (vm.dataInfoDetail.detection_tools.search("GRIST") == -1){
+                        // $("#btn_GRIST").attr({"disabled":"disabled"});
+                        $("#btn_GRIST").attr({"class":"btn btn-dark btn-sm"});
                         $("#btn_GRIST").attr({"disabled":"disabled"});
                     }
                 })

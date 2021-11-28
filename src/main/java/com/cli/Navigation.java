@@ -1,5 +1,6 @@
 package com.cli;
 
+import com.ConsoleColors.ConsoleColors;
 import com.DefectsAction;
 import com.docker.DockerExecutor;
 
@@ -39,12 +40,11 @@ public class Navigation {
 
         System.out.println("Starting docker...");
         System.out.println("DataSet start successful ");
-        System.out.println("When you first use our library, you need to pull the Docker Images down using the 'pullBug' command!!! ");
-        System.out.println("You can also pull a single image through the `pullOneBug <bugId>` command!!!");
-        System.out.println("If you've already downloaded these Docker Images, you can use `runBug` to start all Containers or `startOneBug <bugId>` command to start a single container!!! ");
-
+        System.out.println(ConsoleColors.YELLOW + "When you first use our library, you need to pull the Docker Images down using the 'pullBug' command!!! ");
+        System.out.println(ConsoleColors.YELLOW + "You can also pull a single image through the `pullOneBug <bugId>` command!!!");
+        System.out.println(ConsoleColors.YELLOW + "If you've previously pulled a docker image and the container is now closed, you can use `runBug` to start all Containers or `startOneBug <bugId>` command to start a single container!!! ");
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
-        System.out.print("defects4dl#:");
+        System.out.print(ConsoleColors.RESET + "defects4dl#:");
         try {
 
             String cmd = bf.readLine().trim();

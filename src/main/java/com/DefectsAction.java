@@ -164,7 +164,7 @@ public class DefectsAction {
     // 运行ShapeFlow
     public String runShapeFlow(String bugId) throws Exception {
         String Cmd = bugId + "-ShapeFlow.sh";
-        return dockerServer.runShapeFlow(Cmd, bugId);
+        return dockerServer.runTool(Cmd, bugId);
     }
     // 运行GRIST
     public String runGRIST(String bugId) throws Exception {

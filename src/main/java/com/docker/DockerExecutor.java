@@ -28,11 +28,14 @@ public class DockerExecutor extends Executor {
     private final static String DOCKER_EXEC_BASED_CMD = "docker exec";
     private final static String CAT = "cat";
 
+    // 命令行输出diff信息
     public void runPrintln(String arg,String bugId) {
         String cmd = DOCKER_EXEC_BASED_CMD + " " + "" + bugId + " " + BASH + " -c " + "\""
                 + arg + "\"";
         execPrintlnDiff(cmd, pb, bugId);
     }
+
+    // Web端获取diff信息
     public String diffRunPrintln(String arg,String bugId) {
         String cmd = DOCKER_EXEC_BASED_CMD + " " + "" + bugId + " " + BASH + " -c " + "\""
                 + arg + "\"";
@@ -45,22 +48,29 @@ public class DockerExecutor extends Executor {
                 + "/" + SCRIPTS_FOLDER + "/" + arg;
         execPrintlnTest(cmd, pb);
     }
-    public void readTxt(String bugId,String version){
-        // 读取script目录下的txt文件
-        String cmd = DOCKER_EXEC_BASED_CMD + " " + bugId + " " + CAT + " " + "/" + SCRIPTS_FOLDER + "/"+ bugId + "-" + version + ".txt";
-        execPrintln(cmd, pb);
-    }
 
-    public String readTxtW(String bugId,String version){
-        // 读取script目录下的txt文件
-        String cmd = DOCKER_EXEC_BASED_CMD + " " + bugId + " " + CAT + " " + "/" + SCRIPTS_FOLDER + "/"+ bugId + "-" + version + ".txt";
+    public String runTestW(String arg,String bugId) {
+        String cmd = DOCKER_EXEC_BASED_CMD + " " + bugId + " " + "bash "
+                + "/" + SCRIPTS_FOLDER + "/" + arg;
         return execPrintlnW(cmd, pb);
     }
 
-    public String readShapeFlow(String bugId){
-        String cmd = DOCKER_EXEC_BASED_CMD + " " + bugId + " " + CAT + " " + "/" + SCRIPTS_FOLDER + "/"+ bugId + "-ShapeFlow"  + ".txt";
-        return execPrintlnW(cmd, pb);
-    }
+//    public void readTxt(String bugId,String version){
+//        // 读取script目录下的txt文件
+//        String cmd = DOCKER_EXEC_BASED_CMD + " " + bugId + " " + CAT + " " + "/" + SCRIPTS_FOLDER + "/"+ bugId + "-" + version + ".txt";
+//        execPrintlnTest(cmd, pb);
+//    }
+
+//    public String readTxtW(String bugId,String version){
+//        // 读取script目录下的txt文件
+//        String cmd = DOCKER_EXEC_BASED_CMD + " " + bugId + " " + CAT + " " + "/" + SCRIPTS_FOLDER + "/"+ bugId + "-" + version + ".txt";
+//        return execPrintlnW(cmd, pb);
+//    }
+
+//    public String readShapeFlow(String bugId){
+//        String cmd = DOCKER_EXEC_BASED_CMD + " " + bugId + " " + CAT + " " + "/" + SCRIPTS_FOLDER + "/"+ bugId + "-ShapeFlow"  + ".txt";
+//        return execPrintlnW(cmd, pb);
+//    }
 
     public String runTool(String arg,String bugId) {
         String cmd = DOCKER_EXEC_BASED_CMD + " " + bugId + " " + "bash "
@@ -98,7 +108,8 @@ public class DockerExecutor extends Executor {
                     System.out.println(ConsoleColors.RESET + line);
                 }
             }
-        } catch (Exception ex) {
+        } catch (Exception e) {
+            System.out.println(e);
         }
         return sb.toString();
     }
@@ -130,34 +141,16 @@ public class DockerExecutor extends Executor {
                     sb.append(line).append("\n");
                 }
             }
-        } catch (Exception ex) {
+        } catch (Exception e) {
             System.out.println("===bufferReader.readLine()为空！===");
         }
         return sb.toString();
     }
 
-    public String execPrintln(String cmd, ProcessBuilder pb) {
-        StringBuffer sb = new StringBuffer();
-        try {
-            if (OS.equals(OS_WINDOWS)) {
-                pb.command("cmd.exe", "/c", cmd);
-            } else {
-                pb.command("bash", "-c", cmd);
-            }
-            Process process = pb.start();
-            InputStreamReader inputStr = new InputStreamReader(process.getInputStream());
-            BufferedReader bufferReader = new BufferedReader(inputStr);
-            String line;
-            while ((line = bufferReader.readLine()) != null) {
-                System.out.println(line);
-            }
-        } catch (Exception ex) {
-        }
-        return sb.toString();
-    }
-
-    // 运行测试用例
+    // 执行测试用例
     public String execPrintlnTest(String cmd, ProcessBuilder pb) {
+        // 获取标准错误输出流
+        pb.redirectErrorStream(true);
         StringBuffer sb = new StringBuffer();
         try {
             if (OS.equals(OS_WINDOWS)) {
@@ -168,21 +161,23 @@ public class DockerExecutor extends Executor {
             Process process = pb.start();
             InputStreamReader inputStr = new InputStreamReader(process.getInputStream());
             BufferedReader bufferReader = new BufferedReader(inputStr);
-
-            //====================
             String line;
+            System.out.println("执行了测试用例！");
+
             while ((line = bufferReader.readLine()) != null) {
                 System.out.println(line);
             }
-            System.out.println("运行测试用例");
-            //====================
 
-        } catch (Exception ex) {
+        } catch (Exception e) {
+            System.out.println(e);
         }
         return sb.toString();
     }
+
 
     public String execPrintlnW(String cmd, ProcessBuilder pb) {
+        // 获取标准错误输出流
+        pb.redirectErrorStream(true);
         StringBuffer sb = new StringBuffer();
         try {
             if (OS.equals(OS_WINDOWS)) {
@@ -197,8 +192,7 @@ public class DockerExecutor extends Executor {
             while ((line = bufferReader.readLine()) != null) {
                 sb.append(line).append("\n");
             }
-            //System.out.println("运行测试用例");
-        } catch (Exception ex) {
+        } catch (Exception e) {
             System.out.println("===bufferReader.readLine()为空！===");
         }
         return sb.toString();
@@ -225,7 +219,8 @@ public class DockerExecutor extends Executor {
             while ((line = bufferReader.readLine()) != null) {
                 sb.append(line).append("\n");
             }
-        } catch (Exception ex) {
+        } catch (Exception e) {
+            System.out.println(e);
         }
         return sb.toString();
     }

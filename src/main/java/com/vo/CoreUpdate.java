@@ -34,7 +34,7 @@ public class CoreUpdate {
 
     public  String[] getCoreFix(String bugId){
         switch (bugId){
-            case "edward":
+            case "edward46":
                 return edward46;
             case "keras11657":
                 return keras11657;

@@ -33,7 +33,8 @@ public class DockerServer {
     }
 
     public String runTestW(String cmd,String bugId,String version) {
-        return dockerExecutor.runTestW(cmd, bugId);
+        return dockerExecutor.readTxtW(bugId, version);
+        // return dockerExecutor.runTestW(cmd, bugId);
     }
 
 //    public String runShapeFlow(String cmd,String bugId) {

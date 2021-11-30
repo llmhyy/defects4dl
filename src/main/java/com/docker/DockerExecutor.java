@@ -22,7 +22,6 @@ public class DockerExecutor extends Executor {
     private final static String SCRIPTS_FOLDER = "script";
     CoreUpdate co = new CoreUpdate();
     private final static String BASH = "bash";
-
     public static String DOCKER_JAVA_PLAIN_CONTAINER_ID = "fc379fe8669b";
 
     private final static String DOCKER_EXEC_BASED_CMD = "docker exec";
@@ -61,11 +60,11 @@ public class DockerExecutor extends Executor {
 //        execPrintlnTest(cmd, pb);
 //    }
 
-//    public String readTxtW(String bugId,String version){
-//        // 读取script目录下的txt文件
-//        String cmd = DOCKER_EXEC_BASED_CMD + " " + bugId + " " + CAT + " " + "/" + SCRIPTS_FOLDER + "/"+ bugId + "-" + version + ".txt";
-//        return execPrintlnW(cmd, pb);
-//    }
+    public String readTxtW(String bugId,String version){
+        // 读取script目录下的txt文件
+        String cmd = DOCKER_EXEC_BASED_CMD + " " + bugId + " " + CAT + " " + "/" + SCRIPTS_FOLDER + "/"+ bugId + "-" + version + ".txt";
+        return execPrintlnW(cmd, pb);
+    }
 
 //    public String readShapeFlow(String bugId){
 //        String cmd = DOCKER_EXEC_BASED_CMD + " " + bugId + " " + CAT + " " + "/" + SCRIPTS_FOLDER + "/"+ bugId + "-ShapeFlow"  + ".txt";
@@ -174,7 +173,7 @@ public class DockerExecutor extends Executor {
         return sb.toString();
     }
 
-
+    // Web版测试用例与工具的输出
     public String execPrintlnW(String cmd, ProcessBuilder pb) {
         // 获取标准错误输出流
         pb.redirectErrorStream(true);

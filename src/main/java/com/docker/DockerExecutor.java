@@ -23,7 +23,7 @@ public class DockerExecutor extends Executor {
     CoreUpdate co = new CoreUpdate();
     private final static String BASH = "bash";
     public static String DOCKER_JAVA_PLAIN_CONTAINER_ID = "fc379fe8669b";
-
+    private static StringBuffer de_sb = new StringBuffer();
     private final static String DOCKER_EXEC_BASED_CMD = "docker exec";
     private final static String CAT = "cat";
 
@@ -53,24 +53,13 @@ public class DockerExecutor extends Executor {
                 + "/" + SCRIPTS_FOLDER + "/" + arg;
         return execPrintlnW(cmd, pb);
     }
-
-//    public void readTxt(String bugId,String version){
-//        // 读取script目录下的txt文件
-//        String cmd = DOCKER_EXEC_BASED_CMD + " " + bugId + " " + CAT + " " + "/" + SCRIPTS_FOLDER + "/"+ bugId + "-" + version + ".txt";
-//        execPrintlnTest(cmd, pb);
-//    }
-
+    // 先注一下
     public String readTxtW(String bugId,String version){
         // 读取script目录下的txt文件
         String cmd = DOCKER_EXEC_BASED_CMD + " " + bugId + " " + CAT + " " + "/" + SCRIPTS_FOLDER + "/"+ bugId + "-" + version + ".txt";
         return execPrintlnW(cmd, pb);
     }
-
-//    public String readShapeFlow(String bugId){
-//        String cmd = DOCKER_EXEC_BASED_CMD + " " + bugId + " " + CAT + " " + "/" + SCRIPTS_FOLDER + "/"+ bugId + "-ShapeFlow"  + ".txt";
-//        return execPrintlnW(cmd, pb);
-//    }
-
+    // 先注一下
     public String runTool(String arg,String bugId) {
         String cmd = DOCKER_EXEC_BASED_CMD + " " + bugId + " " + "bash "
                 + "/" + SCRIPTS_FOLDER + "/" + arg;
@@ -177,7 +166,7 @@ public class DockerExecutor extends Executor {
     public String execPrintlnW(String cmd, ProcessBuilder pb) {
         // 获取标准错误输出流
         pb.redirectErrorStream(true);
-        StringBuffer sb = new StringBuffer();
+        // StringBuffer sb = new StringBuffer();
         try {
             if (OS.equals(OS_WINDOWS)) {
                 pb.command("cmd.exe", "/c", cmd);
@@ -187,14 +176,21 @@ public class DockerExecutor extends Executor {
             Process process = pb.start();
             InputStreamReader inputStr = new InputStreamReader(process.getInputStream());
             BufferedReader bufferReader = new BufferedReader(inputStr);
+            de_sb.delete(0, de_sb.length());
             String line;
             while ((line = bufferReader.readLine()) != null) {
-                sb.append(line).append("\n");
+                de_sb.append(line).append("\n");
             }
         } catch (Exception e) {
             System.out.println("===bufferReader.readLine()为空！===");
         }
-        return sb.toString();
+        System.out.println(de_sb.toString());
+        return de_sb.toString();
+    }
+
+    // 读取de_sb下的信息
+    public String readDe_sb(){
+        return de_sb.toString();
     }
 
     public String run(String arg,String bugId) {

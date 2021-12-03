@@ -164,26 +164,38 @@
             },
             testBuggy: function (){
                 $("#btn_buggy").attr({"disabled":"disabled"});
-                var options = {
-                    classname: 'my-class',
-                    id: 'my-id',
-                    target: document.getElementById('progress')
-                };
-                var nanobar = new Nanobar( options );
-                //新加的
-                var intelval=setInterval(function () {
-
+                // var options = {
+                //     classname: 'my-class',
+                //     id: 'my-id',
+                //     target: document.getElementById('progress')
+                // };
+                // var nanobar = new Nanobar( options );
+                // var intelval=setInterval(function () {
+                //
+                //     //执行ajax
+                //     $.ajax({
+                //         url:"testProgress",
+                //         dataType:"text",
+                //         type:"post",
+                //         success:function (data) {
+                //
+                //             $("#tips").html("Running test cases...");
+                //             $(".nanobar").fadeIn();
+                //             //显示进度
+                //             nanobar.go(data);
+                //         }
+                //     })
+                // },1000);
+                // var readRes=setInterval(() => {
+                var readRes=setInterval(function () {
                     //执行ajax
                     $.ajax({
-                        url:"testProgress",
+                        url:"readDe_sb",
                         dataType:"text",
                         type:"post",
                         success:function (data) {
-
                             $("#tips").html("Running test cases...");
-                            $(".nanobar").fadeIn();
-                            //显示进度
-                            nanobar.go(data);
+                            vm.buggyInfo = data;
                         }
                     })
                 },1000);
@@ -195,10 +207,12 @@
                 axios.get("getTestBuggy?bugId="+ bugId)
                     .then(response => {
                         //结束后台进度查询
-                        clearInterval(intelval);
-                        nanobar.go(100);
+                        // clearInterval(intelval);
+                        // 结束实时查询
+                        clearInterval(readRes);
+                        // nanobar.go(100);
                         $("#tips").html("");
-                        $(".nanobar").fadeOut();
+                        // $(".nanobar").fadeOut();
                         //显示test结果
                         vm.buggyInfo = response.data;
                         // $("#btn_buggy").removeAttr("disabled");
@@ -206,26 +220,16 @@
             },
             testFix:function (){
                 $("#btn_fix").attr({"disabled":"disabled"});
-                var options = {
-                    classname: 'my-class',
-                    id: 'my-id',
-                    target: document.getElementById('progress')
-                };
-                var nanobar = new Nanobar( options );
-                //新加的
-                var intelval=setInterval(function () {
-
+                var readRes=setInterval(function () {
                     //执行ajax
                     $.ajax({
-                        url:"testProgress",
+                        url:"readDe_sb",
                         dataType:"text",
                         type:"post",
                         success:function (data) {
-
                             $("#tips").html("Running test cases...");
-                            $(".nanobar").fadeIn();
-                            //显示进度
-                            nanobar.go(data);
+                            //实时显示test结果
+                            vm.fixInfo = data;
                         }
                     })
                 },1000);
@@ -233,41 +237,27 @@
                 var bugId = window.localStorage.getItem('bugID');
                 document.getElementById("bt").innerHTML = "";
                 document.getElementById("ti").innerHTML = "";
-                //vm.isShow = true;
+
                 axios.get("getTestFix?bugId="+ bugId)
                     .then(response => {
-                        //结束后台进度查询
-                        clearInterval(intelval);
-                        nanobar.go(100);
+                        clearInterval(readRes);
                         $("#tips").html("");
-                        $(".nanobar").fadeOut();
                         //显示test结果
                         vm.fixInfo = response.data;
-                        // $("#btn_fix").removeAttr("disabled");
                     })
             },
             runShapeFlow: function (){
                 $("#btn_shapeFlow").attr({"disabled":"disabled"});
-                var options = {
-                    classname: 'my-class',
-                    id: 'my-id',
-                    target: document.getElementById('progress')
-                };
-                var nanobar = new Nanobar( options );
-                //新加的
-                var intelval=setInterval(function () {
-
+                var readRes=setInterval(function () {
                     //执行ajax
                     $.ajax({
-                        url:"testProgress",
+                        url:"readDe_sb",
                         dataType:"text",
                         type:"post",
                         success:function (data) {
-
-                            $("#tips").html("Running...");
-                            $(".nanobar").fadeIn();
-                            //显示进度
-                            nanobar.go(data);
+                            $("#tips").html("Running ShapeFlow...");
+                            //实时显示结果
+                            vm.toolInfo = data;
                         }
                     })
                 },1000);
@@ -275,41 +265,26 @@
                 var bugId = window.localStorage.getItem('bugID');
                 document.getElementById("bt").innerHTML = "";
                 document.getElementById("ft").innerHTML = "";
-                //vm.isShow = true;
                 axios.get("runShapeFlow?bugId="+ bugId)
                     .then(response => {
-                        //结束后台进度查询
-                        clearInterval(intelval);
-                        nanobar.go(100);
+                        clearInterval(readRes);
                         $("#tips").html("");
-                        $(".nanobar").fadeOut();
                         //显示结果
                         vm.toolInfo = response.data;
-                        // $("#btn_shapeFlow").removeAttr("disabled");
                     })
             },
             runGRIST: function (){
                 $("#btn_GRIST").attr({"disabled":"disabled"});
-                var options = {
-                    classname: 'my-class',
-                    id: 'my-id',
-                    target: document.getElementById('progress')
-                };
-                var nanobar = new Nanobar( options );
-                //新加的
-                var intelval=setInterval(function () {
-
+                var readRes=setInterval(function () {
                     //执行ajax
                     $.ajax({
-                        url:"testProgress",
+                        url:"readDe_sb",
                         dataType:"text",
                         type:"post",
                         success:function (data) {
-
-                            $("#tips").html("Running...");
-                            $(".nanobar").fadeIn();
-                            //显示进度
-                            nanobar.go(data);
+                            $("#tips").html("Running GRIST...");
+                            //实时显示结果
+                            vm.toolInfo = data;
                         }
                     })
                 },1000);
@@ -317,41 +292,26 @@
                 var bugId = window.localStorage.getItem('bugID');
                 document.getElementById("bt").innerHTML = "";
                 document.getElementById("ft").innerHTML = "";
-                //vm.isShow = true;
                 axios.get("runGRIST?bugId="+ bugId)
                     .then(response => {
-                        //结束后台进度查询
-                        clearInterval(intelval);
-                        nanobar.go(100);
+                        clearInterval(readRes);
                         $("#tips").html("");
-                        $(".nanobar").fadeOut();
                         //显示结果
                         vm.toolInfo = response.data;
-                        // $("#btn_GRIST").removeAttr("disabled");
                     })
             },
             runDEBAR: function (){
                 $("#btn_DEBAR").attr({"disabled":"disabled"});
-                var options = {
-                    classname: 'my-class',
-                    id: 'my-id',
-                    target: document.getElementById('progress')
-                };
-                var nanobar = new Nanobar( options );
-                //新加的
-                var intelval=setInterval(function () {
-
+                var readRes=setInterval(function () {
                     //执行ajax
                     $.ajax({
-                        url:"testProgress",
+                        url:"readDe_sb",
                         dataType:"text",
                         type:"post",
                         success:function (data) {
-
-                            $("#tips").html("Running...");
-                            $(".nanobar").fadeIn();
-                            //显示进度
-                            nanobar.go(data);
+                            $("#tips").html("Running DEBAR...");
+                            //实时显示结果
+                            vm.toolInfo = data;
                         }
                     })
                 },1000);
@@ -359,17 +319,12 @@
                 var bugId = window.localStorage.getItem('bugID');
                 document.getElementById("bt").innerHTML = "";
                 document.getElementById("ft").innerHTML = "";
-                //vm.isShow = true;
                 axios.get("runDEBAR?bugId="+ bugId)
                     .then(response => {
-                        //结束后台进度查询
-                        clearInterval(intelval);
-                        nanobar.go(100);
+                        clearInterval(readRes);
                         $("#tips").html("");
-                        $(".nanobar").fadeOut();
                         //显示结果
                         vm.toolInfo = response.data;
-                        // $("#btn_DEBAR").removeAttr("disabled");
                     })
             },
             jumpSimilarBug: function (bugID) {

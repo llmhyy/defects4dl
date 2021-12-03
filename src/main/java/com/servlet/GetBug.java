@@ -3,6 +3,7 @@ package com.servlet;
 import com.DefectsAction;
 import com.DefectsDB;
 import com.alibaba.fastjson.JSON;
+import com.docker.DockerExecutor;
 import com.vo.Bug;
 import com.vo.SIR;
 import org.springframework.web.bind.annotation.*;
@@ -45,9 +46,9 @@ public class GetBug{
     @RequestMapping("/getTestBuggy")
     @CrossOrigin
     public String getTestBuggy(String bugId) throws Exception{
-        global = 0;
+        // global = 0;
         DefectsAction da = new DefectsAction();
-        global = 20;
+        // global = 20;
         String testBuggy = da.testBuggy(bugId);
         return testBuggy;
     }
@@ -55,11 +56,19 @@ public class GetBug{
     @RequestMapping("/getTestFix")
     @CrossOrigin
     public String getTestFix(String bugId) throws Exception{
-        global = 0;
+        // global = 0;
         DefectsAction da = new DefectsAction();
-        global = 20;
+        // global = 20;
         String testFix = da.testFix(bugId);
         return testFix;
+    }
+
+    @RequestMapping("/readDe_sb")
+    @CrossOrigin
+    public String readDe_sb() throws Exception{
+        DockerExecutor de = new DockerExecutor();
+        String res = de.readDe_sb();
+        return res;
     }
 
     @RequestMapping("/pullProgress")
@@ -88,9 +97,9 @@ public class GetBug{
     @RequestMapping("/runShapeFlow")
     @CrossOrigin
     public String runShapeFlow(String bugId) throws Exception{
-        global = 0;
+        // global = 0;
         DefectsAction da = new DefectsAction();
-        global = 20;
+        // global = 20;
         String res = da.runShapeFlow(bugId);
         return res;
     }
@@ -98,31 +107,22 @@ public class GetBug{
     @RequestMapping("/runDEBAR")
     @CrossOrigin
     public String runDEBAR(String bugId) throws Exception{
-        global = 0;
+        // global = 0;
         DefectsAction da = new DefectsAction();
-        global = 20;
+        // global = 20;
         String res = da.runDEBAR(bugId);
-        return res;
-    }
-
-    @RequestMapping("/runDeepLocalize")
-    @CrossOrigin
-    public String runDeepLocalize(String bugId) throws Exception{
-        global = 0;
-        DefectsAction da = new DefectsAction();
-        global = 20;
-        String res = da.runDeepLocalize(bugId);
         return res;
     }
 
     @RequestMapping("/runGRIST")
     @CrossOrigin
     public String runGRIST(String bugId) throws Exception{
-        global = 0;
+        // global = 0;
         DefectsAction da = new DefectsAction();
-        global = 20;
+        // global = 20;
         String res = da.runGRIST(bugId);
         return res;
     }
+
 
 }

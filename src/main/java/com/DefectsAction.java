@@ -176,12 +176,6 @@ public class DefectsAction {
         String Cmd = bugId + "-DEBAR.sh";
         return dockerServer.runTool(Cmd, bugId);
     }
-    // 运行DeepLocalize
-    public String runDeepLocalize(String bugId) throws Exception {
-        String Cmd = bugId + "-DeepLocalize.sh";
-        return dockerServer.runTool(Cmd, bugId);
-    }
-
 
     public String diff(String bugId) throws Exception {
 

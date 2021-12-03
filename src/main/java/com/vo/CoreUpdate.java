@@ -30,6 +30,10 @@ public class CoreUpdate {
     public final String[] models1063 = {"-  outputs = tf.split(axis=tf.nn.log_softmax(output), num_or_size_splits=beam_size, value=0)", "+  outputs = tf.split(axis=0, num_or_size_splits=beam_size, value=tf.nn.log_softmax(output))"};
     public final String[] models857 = {"-      logits, train_labels_node))", "+      labels=train_labels_node, logits=logits))"};
     public final String[] sact1 = {"-        tf.losses.softmax_cross_entropy(logits, one_hot_labels)", "+        tf.losses.softmax_cross_entropy(", "+            onehot_labels=one_hot_labels, logits=logits)"};
+    public final String[] texar_pytorch94 = {"-    padded = np.full((len(examples), pad_length), pad_value, dtype=np.long)", "+    padded = np.full((len(examples), pad_length), pad_value, dtype=np.int64)"};
+    public final String[] pytorch_ts1 = {"-        self.dtype = np.int32 if is_cat else np.float32", "+        self.dtype = np.int64 if is_cat else np.float32"};
+    public final String[] pilco25 = {"-            self.W = Param(np.ones((state_dim, state_dim)), trainable=False)", "+            self.W = Param(np.eye(state_dim, state_dim), trainable=False)"};
+    public final String[] gpflow409 = {"-        theta = tf.acos(tf.clip_by_value(numerator / \\", "+        theta = tf.acos(jitter + (1 - 2 * jitter) * cos_theta)"};
     public final String[] def = {};
 
     public  String[] getCoreFix(String bugId){
@@ -90,6 +94,14 @@ public class CoreUpdate {
                 return models857;
             case "sact1":
                 return sact1;
+            case "texar-pytorch94":
+                return texar_pytorch94;
+            case "pytorch-ts1":
+                return pytorch_ts1;
+            case "pilco25":
+                return pilco25;
+            case "gpflow409":
+                return gpflow409;
             default:
                 return def;
         }

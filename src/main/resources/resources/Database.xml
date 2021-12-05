@@ -898,7 +898,7 @@
         <source>https://github.com/Liang813/texar-pytorch</source>
         <bug>
             <id>texar-pytorch94</id>
-            <errormessage>None</errormessage>
+            <errormessage>AssertionError</errormessage>
             <describe>`np.long` is a platform-dependent type, which is equivalent to `int32` under Windows.</describe>
             <operateScore>1</operateScore>
             <type>type mismatch</type>

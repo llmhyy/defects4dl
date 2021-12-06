@@ -417,37 +417,40 @@ public class DefectsAction {
     }
     // Via bugId pull Bug
     public String PullOneBug(String bugId){
-        try (ProgressBar pb = new ProgressBar("Pull", 100)) {
-            pb.step();
-            pb.stepTo(30);
-            pullBug(bugId);
-            pb.stepTo(80);
-            reNameBug(bugId);
-            pb.stepTo(100);
-            pb.setExtraMessage("Pulling...");
-        }
+
+//        try (ProgressBar pb = new ProgressBar("Pull", 100)) {
+//            pb.stepTo(10);
+//            pullBug(bugId);
+//            pb.stepTo(80);
+//            reNameBug(bugId);
+//            pb.stepTo(100);
+//            pb.setExtraMessage("Pulling...");
+//        }catch (Exception e){
+//            System.out.println(e);
+//        }
+        System.out.println("Since we need to go to docker to execute the command, we can't get the progress information.");
+        System.out.println("If there is no information output, don't worry, just wait for about a minute or two.");
+        pullBug(bugId);
+        reNameBug(bugId);
         return "Pull Success!";
     }
 
     public String pullBug(String bugId){
-        return  exec.exec("docker pull defects4dl/"+bugId);
+        return exec.exec("docker pull defects4dl/"+bugId);
     }
 
     public String reNameBug(String bugId){
-        return  exec.exec("docker run --name "+bugId+" -it -d defects4dl/"+bugId);
+        return exec.exec("docker run --name "+bugId+" -it -d defects4dl/"+bugId);
     }
 
     public  String  startOneBug(String bugId) {
-
         return exec.exec("docker start "+ bugId);
     }
     public  String  startDocker() {
-
         return exec.exec("docker start "+ DockerExecutor.DOCKER_JAVA_PLAIN_CONTAINER_ID);
     }
 
     public String exit() {
-
         return exec.exec("docker stop "+DockerExecutor.DOCKER_JAVA_PLAIN_CONTAINER_ID);
     }
 

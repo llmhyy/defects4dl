@@ -36,6 +36,7 @@ public class Execute extends Executor{
     }
 
     public String exec(String cmd) {
+        pb.redirectErrorStream(true);
         StringBuilder builder = new StringBuilder();
         try {
             //String OS = System.getProperty("os.name").toLowerCase();
@@ -50,6 +51,7 @@ public class Execute extends Executor{
             String line;
             while ((line = bufferReader.readLine()) != null){
                 builder.append("\n").append(line);
+                System.out.println(line);
             }
         } catch (IOException ex) {
             ex.printStackTrace();

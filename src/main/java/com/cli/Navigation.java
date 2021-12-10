@@ -42,7 +42,8 @@ public class Navigation {
         System.out.println("DataSet start successful ");
         System.out.println(ConsoleColors.YELLOW + "When you first use our library, you need to pull the Docker Images down using the 'pullBug' command!!! ");
         System.out.println(ConsoleColors.YELLOW + "You can also pull a single image through the `pullOneBug <bugId>` command!!!");
-        System.out.println(ConsoleColors.YELLOW + "If you've previously pulled a docker image and the container is now closed, you can use `runBug` to start all Containers or `startOneBug <bugId>` command to start a single container!!! ");
+        System.out.println(ConsoleColors.YELLOW + "If you've previously pulled a docker image and the container is now closed,");
+        System.out.println(ConsoleColors.YELLOW + "you can use `runBug` to start all Containers or `startOneBug <bugId>` command to start a single container!!! ");
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
         System.out.print(ConsoleColors.RESET + "defects4dl#:");
         try {

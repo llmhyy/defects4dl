@@ -5,7 +5,7 @@
         <source>https://github.com/Liang813/tutorials</source>
         <bug>
             <id>tutorials382</id>
-            <errormessage>None</errormessage>
+            <errormessage>AssertionError</errormessage>
             <describe>CrossEntropy's size does not match that needed by the mask</describe>
             <operateScore>1</operateScore>
             <type>shape mismatch</type>

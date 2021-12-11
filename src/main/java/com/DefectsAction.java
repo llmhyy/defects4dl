@@ -430,9 +430,14 @@ public class DefectsAction {
 //        }
         System.out.println("Since we need to go to docker to execute the command, we can't get the progress information.");
         System.out.println("If there is no information output, don't worry, just wait for about a minute or two.");
-        pullBug(bugId);
-        reNameBug(bugId);
-        return "Pull Success!";
+        try {
+            pullBug(bugId);
+            reNameBug(bugId);
+            return "Pull Success!";
+        } catch(Exception e){
+            System.out.println(e);
+            return "Pull failed!";
+        }
     }
 
     public String pullBug(String bugId){

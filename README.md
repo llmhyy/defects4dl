@@ -1,6 +1,8 @@
 # gDefects4dl
 A deep learning general bug library.
 
+General Bug list see [https://docs.google.com/spreadsheets/d/1uLxWENPkzYmLDZ4wGNN_Dd--N6wrbNCGnSuYvq_08IU/edit?pli=1#gid=1153330528](https://docs.google.com/spreadsheets/d/1uLxWENPkzYmLDZ4wGNN_Dd--N6wrbNCGnSuYvq_08IU/edit?pli=1#gid=1153330528)  
+
 gDefects4dl is available in two ways，the Command line and Websites.
 
 ## Setting up gDefects4dl

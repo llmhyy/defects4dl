@@ -37,9 +37,11 @@ public class DefectsDB {
                 String describe =bugItem.getElementsByTagName(Constant.XML_BUG_DESCRIBE).item(0).getTextContent();
                 String type = bugItem.getElementsByTagName(Constant.XML_BUG_TYPE).item(0).getTextContent();
 
-                // String operateScore = bugItem.getElementsByTagName(Constant.XML_OPERATE_SCORE).item(0).getTextContent();
-                // String localScore = bugItem.getElementsByTagName(Constant.XML_BUG_LOCAL_SCORE).item(0).getTextContent();
-                // String fixLength = bugItem.getElementsByTagName(Constant.XML_BUG_FIX_LENGTH).item(0).getTextContent();
+                // 删除
+//                String operateScore = bugItem.getElementsByTagName(Constant.XML_OPERATE_SCORE).item(0).getTextContent();
+//                String localScore = bugItem.getElementsByTagName(Constant.XML_BUG_LOCAL_SCORE).item(0).getTextContent();
+//                String fixLength = bugItem.getElementsByTagName(Constant.XML_BUG_FIX_LENGTH).item(0).getTextContent();
+
                 String support_level = bugItem.getElementsByTagName(Constant.XML_SUPPORT_LEVEL).item(0).getTextContent();
                 String similar_bugs = bugItem.getElementsByTagName(Constant.XAL_SIMILAR_BUGS).item(0).getTextContent();
                 String character = bugItem.getElementsByTagName(Constant.XML_BUG_CHARACTER).item(0).getTextContent();

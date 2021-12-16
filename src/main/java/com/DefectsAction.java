@@ -39,11 +39,16 @@ public class DefectsAction {
         Bug bug = DefectsDB.getBug(bugId);
         String errorMessage = bug.getErrorMessage();
         String describe = bug.getDescribe();
-        // String operateScore = bug.getOperateScore();
         String character = bug.getCharacter();
         String issue_url = bug.getIssue_url();
         String commit_url = bug.getCommit_url();
         String type = bug.getType();
+
+        // 删除
+//        String operateScore = bug.getOperateScore();
+//        String localScore = localMark(bugId);
+//        String fixLength = stringLength(bugId);
+
         String detection_tools = bug.getDetection_tools();
         String support_level = bug.getSupport_level();
         String similar_bugs = bug.getSimilar_bugs();
@@ -58,6 +63,11 @@ public class DefectsAction {
         sb.append("Issue_url: ").append(issue_url).append("\n");
         sb.append("Commit_url: ").append(commit_url).append("\n");
         sb.append("ErrorMessage: ").append(errorMessage).append("\n");
+
+        // 删除
+//        sb.append("Positioning difficulty: ").append(localScore).append("\n");
+//        sb.append("Repair difficulty: ").append(fixLength).append(" + ").append(operateScore).append("\n");
+
         sb.append("Support_Level: ").append(support_level).append("\n");
         sb.append("Similar_Bugs: ").append(similar_bugs).append("\n");
         sb.append("Detection_Tools: ").append(detection_tools).append("\n");
@@ -81,11 +91,6 @@ public class DefectsAction {
                 .append("\n");
         //String diffCount = dockerServer.run(cdCmd+";git rev-list " + buggycommit + ".." + fixcommit + " --count");
         //sb.append("Commits count between BuggyVersion and FixVersion:").append(diffCount);
-//        String localMark = localMark(bugId);
-//        sb.append("Positioning difficulty:").append(localMark).append("\n");
-//        String stringLength = stringLength(bugId);
-//
-//        sb.append("Repair difficulty:").append(stringLength).append("+").append(operateScore).append("\n");
         return sb.toString();
 
     }
@@ -95,7 +100,6 @@ public class DefectsAction {
         Bug bug = DefectsDB.getBug(bugId);
         String errorMessage = bug.getErrorMessage();
         String describe = bug.getDescribe();
-        // String operateScore = bug.getOperateScore();
         String type = bug.getType();
         BuggyVersion buggyVersion = bug.getBuggyVersion();
         String buggytestCmd = buggyVersion.getBuggytestCmd();
@@ -108,8 +112,10 @@ public class DefectsAction {
         FixVersion FixVersion = new FixVersion(fixtestCmd,fixcommit);
 
         // 获取location分数与修复字符串长度
-        // String localScore = localMark(bugId);
-        // String fixLength = stringLength(bugId);
+//        String operateScore = bug.getOperateScore();
+//        String localScore = localMark(bugId);
+//        String fixLength = stringLength(bugId);
+
         String support_level = bug.getSupport_level();
         String character = bug.getCharacter();
         String issue_url = bug.getIssue_url();

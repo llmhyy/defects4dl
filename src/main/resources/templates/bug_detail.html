@@ -62,6 +62,16 @@
                 <td colspan="1" class="item-title">Bug Type:</td>
                 <td colspan="1">{{ dataInfoDetail.type }}</td>
             </tr>
+
+<!--            <tr>-->
+<!--                <td colspan="1" class="item-title">Bug Type:</td>-->
+<!--                <td colspan="1">{{ dataInfoDetail.type }}</td>-->
+<!--                <td>Positioning difficulty:</td>-->
+<!--                <td>{{ dataInfoDetail.localScore }}</td>-->
+<!--                <td>Repair difficulty:</td>-->
+<!--                <td>{{ dataInfoDetail.fixLength }} + {{ dataInfoDetail.operateScore }}</td>-->
+<!--            </tr>-->
+
             <tr>
                 <td class="item-title">Similar Bugs:</td>
                 <td><a href="" v-for="item in similar_bug_list" @click="jumpSimilarBug(item)">{{ item }}&nbsp;</a></td>

@@ -5,10 +5,10 @@ public class Bug {
     private String bugID;
     private String errorMessage;  // 报错信息
     private String describe;    // 错误描述
-//    private String operateScore; // operate操作符分数
     private String type;   // General Bug类别
     private BuggyVersion BuggyVersion;
     private FixVersion FixVersion;
+//    private String operateScore; // operate操作符分数
 //    private String localScore;   // 定位难度
 //    private String fixLength;  // 通过修改字符的长度与修改的行数计算的修复难度
     private String support_level; // 支持度，bug通用性的显示
@@ -19,20 +19,37 @@ public class Bug {
     private String similar_bugs; // 库中相似的Bug
 
 
-    public Bug(String bugID, String errorMessage, String describe, String type, BuggyVersion buggyVersion, FixVersion fixVersion, String support_level, String character, String issue_url, String commit_url, String detection_tools, String similar_bugs) {
-        this.bugID = bugID;
-        this.errorMessage = errorMessage;
-        this.describe = describe;
-        this.type = type;
-        this.BuggyVersion = buggyVersion;
-        this.FixVersion = fixVersion;
-        this.support_level = support_level;
-        this.character = character;
-        this.issue_url = issue_url;
-        this.commit_url = commit_url;
-        this.detection_tools = detection_tools;
-        this.similar_bugs = similar_bugs;
-    }
+//    public Bug(String bugID, String errorMessage, String describe, String type, BuggyVersion buggyVersion, FixVersion fixVersion, String operateScore, String localScore, String fixLength, String support_level, String character, String issue_url, String commit_url, String detection_tools, String similar_bugs) {
+//        this.bugID = bugID;
+//        this.errorMessage = errorMessage;
+//        this.describe = describe;
+//        this.type = type;
+//        this.BuggyVersion = buggyVersion;
+//        this.FixVersion = fixVersion;
+//        this.operateScore = operateScore;
+//        this.localScore = localScore;
+//        this.fixLength = fixLength;
+//        this.support_level = support_level;
+//        this.character = character;
+//        this.issue_url = issue_url;
+//        this.commit_url = commit_url;
+//        this.detection_tools = detection_tools;
+//        this.similar_bugs = similar_bugs;
+//    }
+public Bug(String bugID, String errorMessage, String describe, String type, BuggyVersion buggyVersion, FixVersion fixVersion, String support_level, String character, String issue_url, String commit_url, String detection_tools, String similar_bugs) {
+    this.bugID = bugID;
+    this.errorMessage = errorMessage;
+    this.describe = describe;
+    this.type = type;
+    this.BuggyVersion = buggyVersion;
+    this.FixVersion = fixVersion;
+    this.support_level = support_level;
+    this.character = character;
+    this.issue_url = issue_url;
+    this.commit_url = commit_url;
+    this.detection_tools = detection_tools;
+    this.similar_bugs = similar_bugs;
+}
 
     public String getType() {
         return type;
@@ -81,22 +98,6 @@ public class Bug {
     public void setFixVersion(FixVersion fixVersion) {
         this.FixVersion = fixVersion;
     }
-
-//    public String getLocalScore() {
-//        return localScore;
-//    }
-//
-//    public String getFixLength() {
-//        return fixLength;
-//    }
-//
-//    public void setLocalScore(String localScore) {
-//        this.localScore = localScore;
-//    }
-//
-//    public void setFixLength(String fixLength) {
-//        this.fixLength = fixLength;
-//    }
 
     public String getSupport_level() {
         return support_level;

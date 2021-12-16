@@ -7,7 +7,7 @@
             <id>tutorials382</id>
             <errormessage>AssertionError</errormessage>
             <describe>CrossEntropy's size does not match that needed by the mask</describe>
-            <operateScore>1</operateScore>
+<!--            <operateScore>1</operateScore>-->
             <type>shape mismatch</type>
 <!--            <localScore></localScore>-->
 <!--            <fixLength></fixLength>-->
@@ -35,7 +35,7 @@
             <id>edward46</id>
             <errormessage>AssertionError</errormessage>
             <describe>Match outputs of distribution methods to SciPy convention</describe>
-            <operateScore>1</operateScore>
+<!--            <operateScore>1</operateScore>-->
             <type>shape mismatch</type>
 <!--            <localScore></localScore>-->
 <!--            <fixLength></fixLength>-->
@@ -63,7 +63,7 @@
             <id>models166</id>
             <errormessage>None</errormessage>
             <describe>Use the tensorflow cross entropy function to prevent nan losses.</describe>
-            <operateScore>3</operateScore>
+<!--            <operateScore>3</operateScore>-->
             <type>numeric error</type>
 <!--            <localScore></localScore>-->
 <!--            <fixLength></fixLength>-->
@@ -91,7 +91,7 @@
             <id>deep-learning-tensorflow</id>
             <errormessage>None</errormessage>
             <describe>NaN may occur when calculating the cross entropy loss</describe>
-            <operateScore>1</operateScore>
+<!--            <operateScore>1</operateScore>-->
             <type>numeric error</type>
             <!--            <localScore></localScore>-->
             <!--            <fixLength></fixLength>-->
@@ -119,10 +119,10 @@
             <id>gpflow99</id>
             <errormessage>FailedPreconditionError</errormessage>
             <describe>Not all variables in AF session are initialized</describe>
-            <operateScore>1</operateScore>
+<!--            <operateScore>1</operateScore>-->
             <type>API misuse</type>
-            <!--            <localScore></localScore>-->
-            <!--            <fixLength></fixLength>-->
+<!--            <localScore></localScore>-->
+<!--            <fixLength></fixLength>-->
             <support_level>3</support_level>
             <similar_bugs>tensorflow3168, tensorpack1008</similar_bugs>
             <buggyVersion>
@@ -147,7 +147,7 @@
             <id>keras11657</id>
             <errormessage>TypeError</errormessage>
             <describe>KerasRegressor.predict does not squeeze batch dims,If the input to KerasRegressor.predict() is an array with one example, then the output should be a 1D array with one example, not a 0D array.</describe>
-            <operateScore>1</operateScore>
+<!--            <operateScore>1</operateScore>-->
             <type>shape mismatch</type>
             <!--            <localScore></localScore>-->
             <!--            <fixLength></fixLength>-->
@@ -175,10 +175,10 @@
             <id>allennlp4612</id>
             <errormessage>None</errormessage>
             <describe>NaN grads appear when an empty string is given</describe>
-            <operateScore>1</operateScore>
+<!--            <operateScore>1</operateScore>-->
             <type>numeric error</type>
-            <!--            <localScore></localScore>-->
-            <!--            <fixLength></fixLength>-->
+<!--            <localScore></localScore>-->
+<!--            <fixLength></fixLength>-->
             <support_level>3</support_level>
             <similar_bugs>keras2672, pytorch-lightning139</similar_bugs>
             <buggyVersion>
@@ -203,7 +203,7 @@
             <id>segmentation_models.pytorch186</id>
             <errormessage>AssertionError</errormessage>
             <describe>This Bug is due to the fact that the divisor is not the same type as the dividend, resulting in the final result being 0</describe>
-            <operateScore>1</operateScore>
+<!--            <operateScore>1</operateScore>-->
             <type>type mismatch</type>
             <!--            <localScore></localScore>-->
             <!--            <fixLength></fixLength>-->
@@ -231,10 +231,10 @@
             <id>keras2672</id>
             <errormessage>None</errormessage>
             <describe>cos mode does not carefully deal with division by zero, might be the cause of NaN. output = K.batch_dot(l1, l2, self.dot_axes) / denominator  </describe>
-            <operateScore>1</operateScore>
+<!--            <operateScore>1</operateScore>-->
             <type>numeric error</type>
-            <!--            <localScore></localScore>-->
-            <!--            <fixLength></fixLength>-->
+<!--            <localScore></localScore>-->
+<!--            <fixLength></fixLength>-->
             <support_level>3</support_level>
             <similar_bugs>allennlp4612, pytorch-lightning139</similar_bugs>
             <buggyVersion>
@@ -259,7 +259,7 @@
             <id>tensorflow3168</id>
             <errormessage>FailedPreconditionError</errormessage>
             <describe>Initialize local variables in fully_connected_preloaded</describe>
-            <operateScore>1</operateScore>
+<!--            <operateScore>1</operateScore>-->
             <type>API misuse</type>
             <!--            <localScore></localScore>-->
             <!--            <fixLength></fixLength>-->
@@ -315,7 +315,7 @@
             <id>deep-learning-tensorflow5</id>
             <errormessage>None</errormessage>
             <describe>missing tf.nn.softmax() in create_softmax_layer</describe>
-            <operateScore>1</operateScore>
+<!--            <operateScore>1</operateScore>-->
             <type>architecture design convention</type>
 <!--            <localScore></localScore>-->
 <!--            <fixLength></fixLength>-->
@@ -343,7 +343,7 @@
             <id>models857</id>
             <errormessage>ValueError</errormessage>
             <describe>Function using error, parameter using parameter sequence using error.</describe>
-            <operateScore>1</operateScore>
+<!--            <operateScore>1</operateScore>-->
             <type>API misuse</type>
 <!--            <localScore></localScore>-->
 <!--            <fixLength></fixLength>-->
@@ -398,7 +398,7 @@
             <id>pytorch-lightning139</id>
             <errormessage>ZeroDivisionError</errormessage>
             <describe>If dataset size = 1 batch, a zero division error will be reported</describe>
-            <operateScore>1</operateScore>
+<!--            <operateScore>1</operateScore>-->
             <type>numeric error</type>
 <!--            <localScore></localScore>-->
 <!--            <fixLength></fixLength>-->
@@ -426,7 +426,7 @@
             <id>transformers1152</id>
             <errormessage>TypeError</errormessage>
             <describe>List does not match tuple</describe>
-            <operateScore>1</operateScore>
+<!--            <operateScore>1</operateScore>-->
             <type>type mismatch</type>
 <!--            <localScore></localScore>-->
 <!--            <fixLength></fixLength>-->
@@ -454,7 +454,7 @@
             <id>transformers1962</id>
             <errormessage>ValueError</errormessage>
             <describe>TFBertModel ValueError: Tried to convert 'dims' to a tensor and failed. Error: Cannot convert a partially known TensorShape to a Tensor</describe>
-            <operateScore>1</operateScore>
+<!--            <operateScore>1</operateScore>-->
             <type>shape mismatch</type>
 <!--            <localScore></localScore>-->
 <!--            <fixLength></fixLength>-->
@@ -482,7 +482,7 @@
             <id>botorch162</id>
             <errormessage>None</errormessage>
             <describe>inv_transform was crapping out when drawing a large number of samples because the base sample was exactly 1.0( see issue #161). While we were previously subtracting off a small number (1e-10), this number wasn't sufficient. I found that (1-e6) was the smallest base 10 number we could subtract off to get rid of the -inf.</describe>
-            <operateScore>1</operateScore>
+<!--            <operateScore>1</operateScore>-->
             <type>numeric error</type>
 <!--            <localScore></localScore>-->
 <!--            <fixLength></fixLength>-->
@@ -510,7 +510,7 @@
             <id>ggnn.pytorch9</id>
             <errormessage>IndexError</errormessage>
             <describe>Indexing 0-dim tensor error</describe>
-            <operateScore>1</operateScore>
+<!--            <operateScore>1</operateScore>-->
             <type>API misuse</type>
 <!--            <localScore></localScore>-->
 <!--            <fixLength></fixLength>-->
@@ -538,7 +538,7 @@
             <id>dcgan-completion.tensorflow</id>
             <errormessage>TypeError</errormessage>
             <describe>Arguments to one function are taken into another function</describe>
-            <operateScore>2</operateScore>
+<!--            <operateScore>2</operateScore>-->
             <type>API misuse</type>
 <!--            <localScore></localScore>-->
 <!--            <fixLength></fixLength>-->
@@ -566,7 +566,7 @@
             <id>sact1</id>
             <errormessage>ValueError</errormessage>
             <describe>Function using error, parameter using parameter sequence using error.</describe>
-            <operateScore>1</operateScore>
+<!--            <operateScore>1</operateScore>-->
             <type>API misuse</type>
 <!--            <localScore></localScore>-->
 <!--            <fixLength></fixLength>-->
@@ -594,7 +594,7 @@
             <id>models1063</id>
             <errormessage>TypeError</errormessage>
             <describe>The assignment of two arguments to the function is reversed</describe>
-            <operateScore>1</operateScore>
+<!--            <operateScore>1</operateScore>-->
             <type>API misuse</type>
 <!--            <localScore></localScore>-->
 <!--            <fixLength></fixLength>-->
@@ -622,7 +622,7 @@
             <id>models1707</id>
             <errormessage>AssertionError</errormessage>
             <describe>This works around a bug in earlier proto versions that automatically infer these values to be integer instead of float.</describe>
-            <operateScore>1</operateScore>
+<!--            <operateScore>1</operateScore>-->
             <type>type mismatch</type>
 <!--            <localScore></localScore>-->
 <!--            <fixLength></fixLength>-->
@@ -676,7 +676,7 @@
             <id>tensorflow-examples10</id>
             <errormessage>None</errormessage>
             <describe>Author forgot to compute the mean loss over a batch. It is not a problem with small batch size, but it could lead to issues with large batch size, as it leads to unrepresentative cost (NaN) ...</describe>
-            <operateScore>1</operateScore>
+<!--            <operateScore>1</operateScore>-->
             <type>numeric error</type>
 <!--            <localScore></localScore>-->
 <!--            <fixLength></fixLength>-->
@@ -704,7 +704,7 @@
             <id>deep-learning-tensorflow0</id>
             <errormessage>None</errormessage>
             <describe>Use tf.nn.softmax() only in the case of cross entropy loss</describe>
-            <operateScore>2</operateScore>
+<!--            <operateScore>2</operateScore>-->
             <type>architecture design convention</type>
 <!--            <localScore></localScore>-->
 <!--            <fixLength></fixLength>-->
@@ -732,7 +732,7 @@
             <id>dcgan-tensorflow108</id>
             <errormessage>TypeError</errormessage>
             <describe>A result of type int is required, but a result of type float is returned</describe>
-            <operateScore>1</operateScore>
+<!--            <operateScore>1</operateScore>-->
             <type>type mismatch</type>
 <!--            <localScore></localScore>-->
 <!--            <fixLength></fixLength>-->
@@ -760,7 +760,7 @@
             <id>dcgan-tensorflow17</id>
             <errormessage>InvalidArgumentError</errormessage>
             <describe>Failing to load data during Training on CelebA</describe>
-            <operateScore>5</operateScore>
+<!--            <operateScore>5</operateScore>-->
             <type>API misuse</type>
 <!--            <localScore></localScore>-->
 <!--            <fixLength></fixLength>-->
@@ -788,7 +788,7 @@
             <id>keras1141</id>
             <errormessage>ValueError</errormessage>
             <describe>Setting an array element with a sequence.</describe>
-            <operateScore>1</operateScore>
+<!--            <operateScore>1</operateScore>-->
             <type>type mismatch</type>
 <!--            <localScore></localScore>-->
 <!--            <fixLength></fixLength>-->
@@ -816,7 +816,7 @@
             <id>pilco25</id>
             <errormessage>None</errormessage>
             <describe>Function usage error during Initialisation of ExponentialReward</describe>
-            <operateScore>1</operateScore>
+<!--            <operateScore>1</operateScore>-->
             <type>API misuse</type>
 <!--            <localScore></localScore>-->
 <!--            <fixLength></fixLength>-->
@@ -844,7 +844,7 @@
             <id>probability1010</id>
             <errormessage>InvalidArgumentError</errormessage>
             <describe>tensorflow_probability.distributions.MixtureSameFamily only works with float32</describe>
-            <operateScore>2</operateScore>
+<!--            <operateScore>2</operateScore>-->
             <type>type mismatch</type>
 <!--            <localScore></localScore>-->
 <!--            <fixLength></fixLength>-->
@@ -872,7 +872,7 @@
             <id>transformers3711</id>
             <errormessage>AssertionError</errormessage>
             <describe>TransfoXLLMHead doesn't shift labels internally when called for loss</describe>
-            <operateScore>3</operateScore>
+<!--            <operateScore>3</operateScore>-->
             <type>shape mismatch</type>
 <!--            <localScore></localScore>-->
 <!--            <fixLength></fixLength>-->
@@ -900,7 +900,7 @@
             <id>texar-pytorch94</id>
             <errormessage>AssertionError</errormessage>
             <describe>`np.long` is a platform-dependent type, which is equivalent to `int32` under Windows.</describe>
-            <operateScore>1</operateScore>
+<!--            <operateScore>1</operateScore>-->
             <type>type mismatch</type>
 <!--            <localScore></localScore>-->
 <!--            <fixLength></fixLength>-->
@@ -928,7 +928,7 @@
             <id>pytorch-ts1</id>
             <errormessage>RuntimeError</errormessage>
             <describe>Operating system dependent errors</describe>
-            <operateScore>1</operateScore>
+<!--            <operateScore>1</operateScore>-->
             <type>type mismatch</type>
 <!--            <localScore></localScore>-->
 <!--            <fixLength></fixLength>-->
@@ -956,7 +956,7 @@
             <id>rlpyt27</id>
             <errormessage>RuntimeError</errormessage>
             <describe>MujocoLstmModel does not reshape lstm outputs similarly to AtariLstmModel. </describe>
-            <operateScore>2</operateScore>
+<!--            <operateScore>2</operateScore>-->
             <type>shape mismatch</type>
 <!--            <localScore></localScore>-->
 <!--            <fixLength></fixLength>-->
@@ -984,7 +984,7 @@
             <id>flownetpytorch51</id>
             <errormessage>RuntimeError</errormessage>
             <describe>Use torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu") </describe>
-            <operateScore>2</operateScore>
+<!--            <operateScore>2</operateScore>-->
             <type>API misuse</type>
 <!--            <localScore></localScore>-->
 <!--            <fixLength></fixLength>-->
@@ -1087,7 +1087,7 @@
             <id>gpflow409</id>
             <errormessage>None</errormessage>
             <describe>Adding a jitter to the tf.acos-operation fixes the gradient problem</describe>
-            <operateScore>5</operateScore>
+<!--            <operateScore>5</operateScore>-->
             <type>numeric error</type>
             <!--            <localScore></localScore>-->
             <!--            <fixLength></fixLength>-->
